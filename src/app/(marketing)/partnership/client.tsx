@@ -335,7 +335,7 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundSrc="/images/ilustrations/Digital_Contract_Signing.png"
         backgroundAlt="Partnership Vistara"
         eyebrow="PARTNERSHIP"
         titlePrefix={<><span>Partnership</span></>}

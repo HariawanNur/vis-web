@@ -25,7 +25,10 @@ const contactCards = [
   {
     icon: "HomeOutlined",
     title: "Alamat",
-    lines: ["Jl. Contoh Raya No. 123", "Jakarta, Indonesia 12345"],
+    lines: [
+      "Jl. Contoh Raya No. 123",
+      "Jakarta, Indonesia 12345"
+    ],
   },
   {
     icon: "PhoneOutlined",
@@ -228,7 +231,7 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundSrc="/images/ilustrations/Vistara_Office_Reception_1.png"
         backgroundAlt="Peta Lokasi Vistara"
         eyebrow="PETA LOKASI"
         titlePrefix={<>Peta </>}

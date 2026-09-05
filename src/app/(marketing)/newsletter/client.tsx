@@ -289,7 +289,7 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundSrc="/images/ilustrations/Digital_Contract_Signing.png"
         backgroundAlt="Newsletter Vistara"
         eyebrow={t("newsletterPage.hero.eyebrow")}
         titlePrefix={<><span>{t("newsletterPage.hero.titlePrefix")}</span></>}

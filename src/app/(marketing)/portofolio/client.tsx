@@ -866,7 +866,7 @@ export default function Page() {
         {/* Project grid */}
         <div className={styles.projectGrid}>
           {projects.map((project) => (
-            <Card className={styles.projectCard} key={project.title} bordered={false}>
+            <Card className={styles.projectCard} key={project.title} variant="borderless">
               <div className={styles.projectImage}>
                 <Image
                   src={project.image}
@@ -901,7 +901,7 @@ export default function Page() {
             {t("marketing.portfolio.caseStudy.title")}
           </Title>
 
-          <Card className={styles.caseStudyCard} bordered={false}>
+          <Card className={styles.caseStudyCard} variant="borderless">
             <Row gutter={[0, 0]} wrap={false}>
               <Col xs={24} lg={14}>
                 <div className={styles.caseStudyImage}>

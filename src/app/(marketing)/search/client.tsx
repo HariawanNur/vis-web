@@ -295,7 +295,7 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/network-tree.png"
+        backgroundSrc="/images/ilustrations/Neon_Network.png"
         backgroundAlt="Pencarian"
         eyebrow="PENCARIAN"
         titlePrefix={<span>Pencarian</span>}
