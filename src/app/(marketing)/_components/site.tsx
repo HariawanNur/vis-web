@@ -163,6 +163,20 @@ const useStyles = createStyles(({ css, token }) => ({
       display: none;
     }
   `,
+  locale: css`
+    width: 92px;
+
+    .ant-select-selector {
+      height: 40px !important;
+      border-color: ${token.colorBorderSecondary} !important;
+    }
+
+    .ant-select-selection-item {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+    }
+  `,
   mobileActions: css`
     display: none;
 
@@ -441,11 +455,19 @@ export function Header() {
           </Flex>
 
           <Flex className={styles.controls} align="center" gap={10}>
-            <Button icon={<Icon type="LoginOutlined" />} href="/login">
-              {t("nav.login")}
-            </Button>
-            <Button type="primary" icon={<Icon type="MailOutlined" />} href="/kontak">
-              {t("common.bookDemo")}
+            <Select
+              className={styles.locale}
+              aria-label={t("nav.changeLanguage")}
+              value={locale}
+              onChange={(value) => setLocale(value as Locale)}
+              options={Object.entries(localeNames).map(([value, label]) => ({
+                value,
+                label: value.toUpperCase(),
+                title: label,
+              }))}
+            />
+            <Button type="primary" icon={<Icon type="ArrowRightOutlined" />} href="/kontak">
+              {t("marketing.home.primaryAction")}
             </Button>
           </Flex>
 
@@ -511,7 +533,7 @@ export function Header() {
           />
           <ThemeToggle />
           <Button type="primary" icon={<Icon type="MailOutlined" />} href="/kontak" block onClick={() => setMobileOpen(false)}>
-            {t("common.bookDemo")}
+            {t("marketing.home.primaryAction")}
           </Button>
         </Space>
       </Drawer>
