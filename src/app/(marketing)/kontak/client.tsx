@@ -176,16 +176,6 @@ const useStyles = createStyles(({ css }) => ({
     object-fit: cover;
     object-position: center;
   `,
-  introShade: css`
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(10, 30, 61, 0.96) 0%,
-      rgba(10, 30, 61, 0.58) 52%,
-      rgba(10, 30, 61, 0.08) 100%
-    );
-  `,
   introQuote: css`
     position: absolute;
     right: 22px;
@@ -360,6 +350,7 @@ const useStyles = createStyles(({ css }) => ({
     margin-top: 8px;
   `,
   formPrivacy: css`
+    display: flex;
     margin-top: 12px;
     color: #8c99af;
     font-size: 12px;
@@ -834,14 +825,14 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundSrc="/images/ilustrations/Vistara_Office_Reception_2.png"
         backgroundAlt="Tim Vistara"
         eyebrow={t("marketing.contact.eyebrow")}
         titlePrefix={<><span>Mari Berdiskusi,</span><br /></>}
         titleAccent={<strong>Wujudkan Ide Anda</strong>}
         titleSuffix={null}
         description={<>Kami siap mendengarkan kebutuhan Anda dan membantu membangun solusi teknologi yang tepat untuk bisnis, organisasi, maupun proyek Anda.</>}
-        visual={<div className={styles.introVisual}><Image src="/images/ilustrations/Office_Call.png" alt="Tim Vistara" fill priority sizes="(max-width: 991px) 100vw, 52vw" className={styles.introImage} /><div className={styles.introShade} /><div className={styles.introQuote}><Text className={styles.introQuoteText}>&ldquo;Setiap percakapan adalah awal dari solusi yang lebih baik.&rdquo;</Text><Text className={styles.introQuoteAuthor}>&mdash; Tim Vistara</Text></div></div>}
+        visual={<div className={styles.introVisual}><div className={styles.introQuote}><Text className={styles.introQuoteText}>&ldquo;Setiap percakapan adalah awal dari solusi yang lebih baik.&rdquo;</Text><Text className={styles.introQuoteAuthor}>&mdash; Tim Vistara</Text></div></div>}
       />
 
       <div className={styles.pillsBar}>
@@ -984,8 +975,7 @@ export default function Page() {
                     Kirim Pesan
                   </Button>
                   <Text className={styles.formPrivacy}>
-                    Dengan mengirim formulir ini, Anda menyetujui{" "}
-                    <a href="/privacy">Kebijakan Privasi</a> kami.
+                    Dengan mengirim formulir ini, Anda menyetujui <a href="/kebijakan-privasi" style={{ padding: "0 3px" }}>Kebijakan Privasi</a> kami.
                   </Text>
                 </div>
               </Form>

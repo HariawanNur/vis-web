@@ -37,6 +37,7 @@ export interface MarketingHeroProps {
   description: React.ReactNode
   primaryAction?: MarketingHeroAction
   secondaryAction?: MarketingHeroAction
+  afterActions?: React.ReactNode
   pagerItems?: React.ReactNode[]
   pagerLabel?: string
   highlights?: MarketingHeroHighlight[]
@@ -269,6 +270,7 @@ export const MarketingHero: React.FC<MarketingHeroProps> = ({
   description,
   primaryAction,
   secondaryAction,
+  afterActions,
   pagerItems,
   pagerLabel,
   highlights,
@@ -310,6 +312,7 @@ export const MarketingHero: React.FC<MarketingHeroProps> = ({
                 )}
               </Flex>
             )}
+            {afterActions}
             {hasPager && pagerItems && pagerLabel && (
               <div className={styles.pager} aria-label={pagerLabel}>
                 {pagerItems.map((item, index) => (

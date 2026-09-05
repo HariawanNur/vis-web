@@ -175,11 +175,6 @@ const useStyles = createStyles(({ css }) => ({
     object-fit: cover;
     object-position: center;
   `,
-  introShade: css`
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(10, 30, 61, 0.96) 0%, rgba(10, 30, 61, 0.58) 52%, rgba(10, 30, 61, 0.08) 100%);
-  `,
   introBadge: css`
     position: absolute;
     right: 22px;
@@ -575,7 +570,7 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Coding_Workspace.png"
+        backgroundSrc="/images/ilustrations/Corporate_Cloud_Network.png"
         backgroundAlt="Solusi Vistara"
         eyebrow={t("marketing.solutions.eyebrow")}
         titlePrefix={<><span>Teknologi untuk</span><br /></>}
@@ -584,28 +579,34 @@ export default function Page() {
         description={t("marketing.solutions.description")}
         primaryAction={{ label: t("marketing.solutions.ctaPrimary"), href: "#solusi", icon: <Icon type="ArrowRightOutlined" /> }}
         secondaryAction={{ label: t("marketing.solutions.ctaSecondary"), href: "#studi-kasus", icon: <Icon type="ArrowRightOutlined" /> }}
+        afterActions={
+          <div className={styles.featurePills}>
+            {[
+              t("marketing.solutions.features.endToEnd"),
+              t("marketing.solutions.features.industry"),
+              t("marketing.solutions.features.trusted"),
+              t("marketing.solutions.features.support"),
+            ].map((label) => (
+              <span key={label} className={styles.featurePill}>
+                <Icon type="CheckCircleOutlined" className={styles.featurePillIcon} />
+                {label}
+              </span>
+            ))}
+          </div>
+        }
         visual={
           <div className={styles.introVisual}>
-            <Image
-              src="/images/ilustrations/Coding_Workspace.png"
-              alt="Solusi Vistara"
-              fill
-              priority
-              sizes="(max-width: 991px) 100vw, 50vw"
-              className={styles.introImage}
-            />
-            <div className={styles.introShade} />
             <div className={styles.introBadge}>
               <span className={styles.introBadgeTitle}>Ideas</span>
               <span className={styles.introBadgeTitle}>Into Impact</span>
-              <span className={styles.introBadgeText}>Mewujudkan ide menjadi solusi digital yang berdampak.</span>
+              <span className={styles.introBadgeText}>Menghubungkan Teknologi, Manusia, dan Peluang Baru.</span>
             </div>
           </div>
         }
       />
 
       {/* ── Solution Areas ── */}
-      <MarketingSection className={styles.section}>
+      <MarketingSection>
         <Flex align="center" justify="space-between" gap={16} wrap="wrap">
           <div>
             <Text className={styles.sectionLabel}>{t("marketing.solutions.areas.label")}</Text>

@@ -208,23 +208,52 @@ const useStyles = createStyles(({ css }) => ({
     object-fit: cover;
     object-position: center;
   `,
-  introShade: css`
+  introFeatureRail: css`
     position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(6, 32, 63, 0.96) 0%,
-      rgba(6, 32, 63, 0.58) 52%,
-      rgba(6, 32, 63, 0.08) 100%
-    );
+    top: 28px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 2;
+
+    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
+      right: 16px;
+      top: 16px;
+    }
+  `,
+  introFeatureItem: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 176px;
+    padding: 10px 12px;
+    border-radius: 14px;
+    background: rgba(7, 17, 31, 0.38);
+    backdrop-filter: blur(10px);
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 10px 24px rgba(3, 14, 32, 0.18);
+  `,
+  introFeatureIcon: css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
   `,
   introBadge: css`
     position: absolute;
     right: 22px;
     bottom: 24px;
-    width: 180px;
-    padding: 16px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    width: 164px;
+    padding: 18px 16px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 18px;
     background: rgba(245, 251, 255, 0.96);
     color: #0b1532;
@@ -233,16 +262,16 @@ const useStyles = createStyles(({ css }) => ({
   introBadgeTitle: css`
     display: block;
     color: #1e66d4;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 800;
     line-height: 1.15;
   `,
   introBadgeText: css`
     display: block;
-    margin-top: 4px;
+    margin-top: 6px;
     color: #37506f;
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 11px;
+    line-height: 1.4;
   `,
   section: css`
     padding-block: 72px;
@@ -648,15 +677,20 @@ export default function Page() {
         secondaryAction={{ label: t("marketing.services.ctaSecondary"), href: "#kontak", icon: <Icon type="ArrowRightOutlined" /> }}
         visual={
           <div className={styles.introVisual}>
-            <Image
-              src="/images/ilustrations/Coding_Workspace.png"
-              alt="Solusi Teknologi Vistara"
-              fill
-              priority
-              sizes="(max-width: 991px) 100vw, 52vw"
-              className={styles.introImage}
-            />
-            <div className={styles.introShade} />
+            <div className={styles.introFeatureRail}>
+              {[
+                "Solusi Terintegrasi",
+                "Berorientasi Hasil",
+                "Dukungan Berkelanjutan",
+              ].map((label) => (
+                <div key={label} className={styles.introFeatureItem}>
+                  <span className={styles.introFeatureIcon}>
+                    <Icon type="CheckCircleOutlined" />
+                  </span>
+                  <span>{label}</span>
+                </div>
+              ))}
+            </div>
             <div className={styles.introBadge}>
               <span className={styles.introBadgeTitle}>Ideas</span>
               <span className={styles.introBadgeTitle}>Into Impact</span>
@@ -668,7 +702,7 @@ export default function Page() {
         }
       />
 
-      <MarketingSection className={styles.section}>
+      <MarketingSection>
         <Text className={styles.sectionLabel}>
           {t("marketing.services.main.label")}
         </Text>

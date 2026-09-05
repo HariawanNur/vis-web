@@ -189,16 +189,6 @@ const useStyles = createStyles(({ css }) => ({
     object-fit: cover;
     object-position: center;
   `,
-  introShade: css`
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      90deg,
-      rgba(10, 30, 61, 0.96) 0%,
-      rgba(10, 30, 61, 0.58) 52%,
-      rgba(10, 30, 61, 0.08) 100%
-    );
-  `,
   introBadge: css`
     position: absolute;
     right: 22px;
@@ -224,6 +214,54 @@ const useStyles = createStyles(({ css }) => ({
     color: #37506f;
     font-size: 12px;
     line-height: 1.45;
+  `,
+
+  introStatCard: css`
+    position: absolute;
+    right: 22px;
+    top: 22px;
+    width: 170px;
+    padding: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    background: rgba(12, 23, 44, 0.72);
+    backdrop-filter: blur(12px);
+    color: #fff;
+    box-shadow: 0 18px 42px rgba(3, 14, 32, 0.22);
+  `,
+  introStatItem: css`
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+  `,
+  introStatValue: css`
+    display: block;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.1;
+  `,
+  introStatLabel: css`
+    display: block;
+    color: rgba(255, 255, 255, 0.76);
+    font-size: 11px;
+    line-height: 1.35;
+  `,
+  introStatIcon: css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex: 0 0 auto;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #7db4ff;
   `,
 
   /* ── Stats bar ── */
@@ -734,14 +772,14 @@ export default function Page() {
     <main className={styles.page}>
       {/* ─── Hero ─── */}
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundSrc="/images/ilustrations/Vistara_Office_Reception_2.png"
         backgroundAlt="Portofolio Vistara"
         eyebrow={t("marketing.portfolio.eyebrow")}
         titlePrefix={<span>{t("marketing.portfolio.title")}</span>}
         titleAccent={<strong>Dampak Nyata</strong>}
         titleSuffix={null}
         description={t("marketing.portfolio.description")}
-        visual={<div className={styles.introVisual}><Image src="/images/ilustrations/Office_Call.png" alt="Portofolio Vistara" fill priority sizes="(max-width: 991px) 100vw, 48vw" className={styles.introImage} /><div className={styles.introShade} /><div className={styles.introBadge}><span className={styles.introBadgeTitle}>Ideas</span><span className={styles.introBadgeTitle}>Into Impact</span><span className={styles.introBadgeText}>Solusi nyata untuk dampak nyata di berbagai industri.</span></div></div>}
+        visual={<div className={styles.introVisual}><div className={styles.introStatCard}><div className={styles.introStatItem}><span className={styles.introStatIcon}><Icon type="CheckCircleOutlined" /></span><span><span className={styles.introStatValue}>50+</span><span className={styles.introStatLabel}>Proyek Selesai</span></span></div><div className={styles.introStatItem}><span className={styles.introStatIcon}><Icon type="TeamOutlined" /></span><span><span className={styles.introStatValue}>30+</span><span className={styles.introStatLabel}>Klien Puas</span></span></div><div className={styles.introStatItem}><span className={styles.introStatIcon}><Icon type="AppstoreOutlined" /></span><span><span className={styles.introStatValue}>10+</span><span className={styles.introStatLabel}>Industri</span></span></div></div></div>}
       />
 
       <div className={styles.statsBar}>

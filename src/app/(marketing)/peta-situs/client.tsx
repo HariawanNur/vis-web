@@ -166,12 +166,6 @@ const useStyles = createStyles(({ css }) => ({
     background-position: center;
     opacity: 0.12;
   `,
-  introShade: css`
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: linear-gradient(135deg, rgba(7, 17, 31, 0.96) 0%, rgba(10, 47, 110, 0.88) 50%, rgba(22, 119, 255, 0.72) 100%);
-  `,
   introInner: css`
     position: relative;
     z-index: 2;

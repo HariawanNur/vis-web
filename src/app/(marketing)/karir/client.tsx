@@ -208,11 +208,6 @@ const useStyles = createStyles(({ css }) => ({
     object-fit: cover;
     object-position: center;
   `,
-  introShade: css`
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, rgba(6, 32, 63, 0.96) 0%, rgba(6, 32, 63, 0.58) 52%, rgba(6, 32, 63, 0.08) 100%);
-  `,
   introBadge: css`
     position: absolute;
     right: 22px;
@@ -578,7 +573,7 @@ export default function Page() {
   return (
     <main className={styles.page}>
       <MarketingHero
-        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundSrc="/images/ilustrations/Collaborative_Ideas.png"
         backgroundAlt="Tim Vistara"
         eyebrow="Karier di Vistara"
         titlePrefix={<><span>Bersama Talenta Hebat,</span><br /></>}
@@ -587,29 +582,29 @@ export default function Page() {
         description={<>Di Vistara, kami percaya teknologi yang berdampak lahir dari manusia yang luar biasa. Bergabunglah bersama kami dan jadi bagian dari solusi nyata untuk Indonesia yang lebih maju.</>}
         primaryAction={{ label: "Lihat Lowongan", href: "#lowongan", icon: <Icon type="ArrowRightOutlined" /> }}
         secondaryAction={{ label: "Kenali Budaya Kami", href: "#budaya", icon: <Icon type="ArrowRightOutlined" /> }}
-        visual={<div className={styles.introVisual}><Image src="/images/ilustrations/Office_Call.png" alt="Tim Vistara" fill priority sizes="(max-width: 991px) 100vw, 52vw" className={styles.introImage} /><div className={styles.introShade} /><div className={styles.introBadge}><span className={styles.introBadgeTitle}>Great People</span><span className={styles.introBadgeTitle}>Build Greater</span><span className={styles.introBadgeTitle}>Solutions</span><span className={styles.introBadgeText}>Budaya kerja yang kolaboratif dan saling tumbuh.</span></div></div>}
+        visual={<div className={styles.introVisual}><div className={styles.introBadge}><span className={styles.introBadgeTitle}>Great People</span><span className={styles.introBadgeTitle}>Build Greater</span><span className={styles.introBadgeTitle}>Solutions</span><span className={styles.introBadgeText}>Budaya kerja yang kolaboratif dan saling tumbuh.</span></div></div>}
       />
-      
+
       <div className={styles.statsBar}>
-          <MarketingContainer>
-            <Row gutter={[0, 0]}>
-              {[
-                ["50+", "Talenta Profesional"],
-                ["30+", "Proyek Inovatif"],
-                ["6+", "Tahun Pertumbuhan"],
-                ["", "Lingkungan Kerja Kolaboratif"],
-              ].map(([value, label], index) => (
-                <Col xs={24} sm={12} lg={6} key={label} className={styles.statItem}>
-                  <span className={styles.statIcon}>
-                    <Icon type={["ShieldOutlined", "TeamOutlined", "CalendarOutlined", "HeartOutlined"][index] as IconName} />
-                  </span>
-                  <Text className={styles.statValue}>{value}</Text>
-                  <Text className={styles.statLabel}>{label}</Text>
-                </Col>
-              ))}
-            </Row>
-          </MarketingContainer>
-        </div>
+        <MarketingContainer>
+          <Row gutter={[0, 0]}>
+            {[
+              ["50+", "Talenta Profesional"],
+              ["30+", "Proyek Inovatif"],
+              ["6+", "Tahun Pertumbuhan"],
+              ["", "Lingkungan Kerja Kolaboratif"],
+            ].map(([value, label], index) => (
+              <Col xs={24} sm={12} lg={6} key={label} className={styles.statItem}>
+                <span className={styles.statIcon}>
+                  <Icon type={["ShieldOutlined", "TeamOutlined", "CalendarOutlined", "HeartOutlined"][index] as IconName} />
+                </span>
+                <Text className={styles.statValue}>{value}</Text>
+                <Text className={styles.statLabel}>{label}</Text>
+              </Col>
+            ))}
+          </Row>
+        </MarketingContainer>
+      </div>
       <MarketingSection className={styles.section}>
         <Row gutter={[28, 28]} align="top">
           <Col xs={24} lg={8}>
