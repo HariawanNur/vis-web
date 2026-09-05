@@ -14,7 +14,6 @@ import {
   Input,
   Row,
   Select,
-  Space,
   Typography,
 } from "@/components";
 import { ThemeToggle } from "@/components/ThemeToggle";
@@ -332,15 +331,28 @@ const useStyles = createStyles(({ css, token }) => ({
     flex: 0 0 auto;
   `,
   newsletter: css`
+    display: flex;
+    width: 100%;
+
     .ant-input {
       height: 42px;
       background: rgba(255, 255, 255, 0.08);
       border-color: rgba(255, 255, 255, 0.12);
+      border-top-right-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
       color: #fff;
+    }
+
+    .ant-input::placeholder {
+      color: rgba(226, 232, 240, 0.52);
     }
 
     .ant-btn {
       height: 42px;
+      border-top-left-radius: 0 !important;
+      border-bottom-left-radius: 0 !important;
+      margin-left: -1px;
+      flex: 0 0 56px;
     }
   `,
   footerBottom: css`
@@ -632,10 +644,10 @@ export function Footer() {
                 {t("footer.newsletterTitle")}
               </Title>
               <Text className={styles.footerText}>{t("footer.newsletterNote")}</Text>
-              <Space.Compact className={styles.newsletter} block>
+              <div className={styles.newsletter}>
                 <Input aria-label={t("footer.newsletterPlaceholder")} placeholder={t("footer.newsletterPlaceholder")} />
                 <Button type="primary" aria-label={t("footer.newsletterAction")} icon={<Icon type="ArrowRightOutlined" />} />
-              </Space.Compact>
+              </div>
             </Col>
           </Row>
 

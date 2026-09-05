@@ -103,7 +103,7 @@ export const marketingSiteData: MarketingSiteData = {
     ],
     info: [
       { id: "email", icon: "MailOutlined", labelKey: "form.email", value: "hello@kasera.id", href: "mailto:hello@kasera.id" },
-      { id: "phone", icon: "PhoneOutlined", labelKey: "form.phone", value: "+62 21 555 0199", href: "tel:+62215550199" },
+      { id: "phone", icon: "PhoneOutlined", labelKey: "form.phone", value: "+6285117158205", href: "tel:+62215550199" },
       { id: "address", icon: "EnvironmentOutlined", labelKey: "form.address", value: "Jakarta, Indonesia" },
     ],
     businessTypeOptions: [
