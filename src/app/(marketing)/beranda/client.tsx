@@ -591,7 +591,11 @@ export default function Page() {
         backgroundAlt={t("app.description")}
         eyebrow={t("marketing.home.eyebrow")}
         titlePrefix={t("marketing.home.titlePrefix")}
-        titleAccent={t("marketing.home.titleAccent")}
+        titleAccent={(
+          <span style={{ display: "flex" }}>
+            {t("marketing.home.titleAccent")}
+          </span>
+        )}
         titleSuffix={t("marketing.home.titleSuffix")}
         description={t("marketing.home.description")}
         primaryAction={{
@@ -665,7 +669,7 @@ export default function Page() {
         <div className={styles.aboutWrap}>
           <div className={styles.aboutMedia}>
             <Image
-              src="/images/ilustrations/Vistara_Office_Reception_1.png"
+              src="/images/sample/05_monitoring_produksi.jpg"
               fill
               alt={t("marketing.home.about.imageAlt")}
               className={styles.aboutImage}

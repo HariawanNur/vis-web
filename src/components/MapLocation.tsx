@@ -192,6 +192,8 @@ const INITIAL_CENTER = {
 
 const DEFAULT_PADDING = { top: 0, bottom: 0, left: 0, right: 0 };
 
+const CARTO_APIKEY = process.env.NEXT_PUBLIC_CARTO_APIKEY ?? undefined;
+
 type ViewportState = {
   latitude: number;
   longitude: number;
@@ -278,6 +280,7 @@ export interface MapLocationProps {
   height?: number;
   compact?: boolean;
   preview?: boolean;
+  cartoApiKey?: string;
   locations?: LocationItem[];
   center?: { latitude: number; longitude: number; zoom?: number };
   activeLocationId?: string | number | null;
@@ -996,6 +999,7 @@ export function MapLocation({
   height = 600,
   compact = false,
   preview = false,
+  cartoApiKey = CARTO_APIKEY,
   locations = [],
   center = INITIAL_CENTER,
   activeLocationId,
@@ -1338,15 +1342,19 @@ export function MapLocation({
     return [] as Array<{ label: string; description?: string; color: string }>;
   }, [legendItems]);
 
+  const cartoTileUrl = useMemo(() => {
+    const baseUrl = "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png";
+    if (!cartoApiKey) return baseUrl;
+    return `${baseUrl}?apiKey=${encodeURIComponent(cartoApiKey)}`;
+  }, [cartoApiKey]);
+
   const osmMapStyle = useMemo(
     () => ({
       version: 8,
       sources: {
         carto: {
           type: "raster",
-          tiles: [
-            "https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png",
-          ],
+          tiles: [cartoTileUrl],
           tileSize: 256,
           attribution: "© OpenStreetMap contributors © CARTO",
         },
@@ -1359,7 +1367,7 @@ export function MapLocation({
         },
       ],
     }),
-    [],
+    [cartoTileUrl],
   );
 
   useEffect(() => {

@@ -705,10 +705,10 @@ export default function Page() {
               <Card className={styles.cultureCard}>
                 <Image
                   src={[
-                    "/images/ilustrations/Office_Call.png",
-                    "/images/ilustrations/Coding_Workspace.png",
-                    "/images/ilustrations/Vistara_Office_Reception_1.png",
-                    "/images/ilustrations/Vistara_Office_Reception_2.png",
+                    "/images/sample/01_ecommerce_marketplace.jpg",
+                    "/images/sample/07_pembelajaran_digital.jpg",
+                    "/images/sample/05_monitoring_produksi.jpg",
+                    "/images/sample/04_portal_layanan_publik.jpg",
                   ][index]}
                   alt={item}
                   fill

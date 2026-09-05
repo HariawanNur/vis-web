@@ -12,10 +12,12 @@ import {
   MarketingHero,
   Row,
   Typography,
+  type LocationItem,
   type IconName,
 } from "@/components";
 import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
+import { MapLocation } from "@/components";
 
 const { Text, Title } = Typography;
 
@@ -43,6 +45,22 @@ const landmarks = [
   "RS Umum Jakarta (1.2km)",
   "Gedung Perkantoran Plaza (300m)",
 ] as const;
+
+const officeLocation = [
+  {
+    id: "vistara-office",
+    title: "Vistara Teknologi Indonesia",
+    description: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    info: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    category: "office",
+    latitude: -6.175392,
+    longitude: 106.827153,
+    status: "on_track",
+    statusLabel: "Kantor Utama",
+    progress: 100,
+    targetDate: "Siap dikunjungi",
+  },
+] satisfies LocationItem[];
 
 const useStyles = createStyles(({ css }) => ({
   page: css`
@@ -126,19 +144,6 @@ const useStyles = createStyles(({ css }) => ({
     color: #5d6c86;
     font-size: 13px;
     line-height: 1.7;
-  `,
-  mapPlaceholder: css`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 360px;
-    border: 1px solid #dfe6f1;
-    border-radius: 18px;
-    background: #f7f9fc;
-    color: #8c99af;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: center;
   `,
   landmarksList: css`
     margin-top: 24px;
@@ -270,9 +275,15 @@ export default function Page() {
           Lokasi Kami
         </Title>
 
-        <Card className={styles.mapPlaceholder} style={{ marginTop: 24, background: "#f7f9fc" }}>
-          <Text>Peta akan ditampilkan di sini</Text>
-        </Card>
+        <div style={{ marginTop: 24 }}>
+          <MapLocation
+            height={360}
+            compact
+            preview
+            locations={officeLocation}
+            center={{ latitude: -6.175392, longitude: 106.827153, zoom: 15 }}
+          />
+        </div>
 
         <div className={styles.landmarksList}>
           <Title level={4} style={{ marginBottom: 12 }}>

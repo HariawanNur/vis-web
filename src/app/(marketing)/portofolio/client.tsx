@@ -27,56 +27,56 @@ const projects = [
     tag: "E-Commerce",
     description:
       "Platform perdagangan hasil pertanian lokal yang menghubungkan petani dengan pasar lebih luas.",
-    image: "/images/ilustrations/Salon_Interior.png",
+    image: "/images/sample/09_tanihub_marketplace.jpg",
   },
   {
     title: "Sistem Manajemen Rumah Sakit",
     tag: "Sistem Informasi",
     description:
       "Solusi digital untuk manajemen pasien, rekam medis, dan operasional rumah sakit.",
-    image: "/images/ilustrations/Coding_Workspace.png",
+    image: "/images/sample/02_sistem_informasi.jpg",
   },
   {
     title: "Migrasi Infrastruktur ke Cloud",
     tag: "Cloud & Infrastruktur",
     description:
       "Modernisasi infrastruktur TI dengan arsitektur cloud yang scalable, aman, dan efisien.",
-    image: "/images/ilustrations/Office_Call.png",
+    image: "/images/sample/03_cloud_infrastruktur.jpg",
   },
   {
     title: "Portal Layanan Publik",
     tag: "Pemerintahan",
     description:
       "Platform layanan publik terpadu untuk meningkatkan transparansi dan efisiensi pelayanan.",
-    image: "/images/ilustrations/Vistara_Office_Reception_1.png",
+    image: "/images/sample/04_portal_layanan_publik.jpg",
   },
   {
     title: "Monitoring Produksi Berbasis IoT",
     tag: "IoT",
     description:
       "Solusi IoT untuk pemantauan mesin dan optimasi proses produksi secara real-time.",
-    image: "/images/ilustrations/Vistara_Office_Reception_2.png",
+    image: "/images/sample/05_monitoring_produksi.jpg",
   },
   {
     title: "Audit & Penguatan Keamanan",
     tag: "Keamanan Siber",
     description:
       "Assessment keamanan, implementasi security best practice, dan monitoring berkelanjutan.",
-    image: "/images/ilustrations/Salon_Interior.png",
+    image: "/images/sample/06_audit_keamanan.jpg",
   },
   {
     title: "Platform Pembelajaran Digital",
     tag: "Pendidikan",
     description:
       "Ekosistem pembelajaran online untuk sekolah dan institusi pendidikan.",
-    image: "/images/ilustrations/Coding_Workspace.png",
+    image: "/images/sample/07_pembelajaran_digital.jpg",
   },
   {
     title: "Sistem Analitik Keuangan",
     tag: "Keuangan",
     description:
       "Platform analitik dan pelaporan keuangan untuk pengambilan keputusan yang lebih cepat.",
-    image: "/images/ilustrations/Office_Call.png",
+    image: "/images/sample/08_analitik_keuangan.jpg",
   },
 ] as const;
 
@@ -906,7 +906,7 @@ export default function Page() {
               <Col xs={24} lg={14}>
                 <div className={styles.caseStudyImage}>
                   <Image
-                    src="/images/ilustrations/Salon_Interior.png"
+                    src="/images/sample/09_tanihub_marketplace.jpg"
                     alt="Transformasi Digital di Sektor Pertanian"
                     fill
                     sizes="(max-width: 991px) 100vw, 58vw"

@@ -12,71 +12,69 @@ import {
   Typography,
   type IconName,
 } from "@/components";
+import { useI18n } from "@/i18n";
+import type { TranslationKey } from "@/i18n/locales";
 import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
 const { Text, Title, Paragraph } = Typography;
 
 const sections = [
-  { id: "apa-itu-cookies", title: "Apa itu Cookies" },
-  { id: "cookie-yang-kami-gunakan", title: "Cookie yang Kami Gunakan" },
-  { id: "mengapa-menggunakan-cookies", title: "Mengapa Kami Menggunakan Cookies" },
-  { id: "mengelola-preferensi", title: "Mengelola Preferensi Cookies" },
-  { id: "cookie-pihak-ketiga", title: "Cookie Pihak Ketiga" },
-  { id: "hubungi-kami", title: "Hubungi Kami" },
+  { id: "apa-itu-cookies", titleKey: "cookiesPage.sections.whatIsCookies" },
+  { id: "cookie-yang-kami-gunakan", titleKey: "cookiesPage.sections.cookieTypes" },
+  { id: "mengapa-menggunakan-cookies", titleKey: "cookiesPage.sections.whyWeUse" },
+  { id: "mengelola-preferensi", titleKey: "cookiesPage.sections.managePreferences" },
+  { id: "cookie-pihak-ketiga", titleKey: "cookiesPage.sections.thirdParty" },
+  { id: "hubungi-kami", titleKey: "cookiesPage.sections.contactUs" },
 ] as const;
 
-const cookieTypes: { icon: IconName; title: string; description: string }[] = [
+const cookieTypes: { icon: IconName; title: TranslationKey; description: TranslationKey }[] = [
   {
     icon: "LockOutlined",
-    title: "Essensial",
-    description:
-      "Cookie yang diperlukan agar situs web dapat berfungsi dengan baik. Cookie ini tidak dapat dinonaktifkan karena merupakan bagian dari cara kerja layanan kami.",
+    title: "cookiesPage.cookieTypes.essential.title",
+    description: "cookiesPage.cookieTypes.essential.description",
   },
   {
     icon: "SettingOutlined",
-    title: "Fungsional",
-    description:
-      "Cookie yang memungkinkan situs web mengingat pilihan yang Anda buat, seperti bahasa, wilayah, atau pengaturan tampilan, untuk memberikan pengalaman yang lebih personal.",
+    title: "cookiesPage.cookieTypes.functional.title",
+    description: "cookiesPage.cookieTypes.functional.description",
   },
   {
     icon: "BarChartOutlined",
-    title: "Analitik",
-    description:
-      "Cookie yang mengumpulkan informasi tentang cara pengunjung menggunakan situs web, seperti halaman yang paling sering dikunjungi dan waktu respons server, untuk membantu kami meningkatkan kinerja situs.",
+    title: "cookiesPage.cookieTypes.analytics.title",
+    description: "cookiesPage.cookieTypes.analytics.description",
   },
   {
     icon: "BulbOutlined",
-    title: "Pemasaran",
-    description:
-      "Cookie yang digunakan untuk melacak aktivitas pengunjung di berbagai situs web. Tujuannya adalah menampilkan iklan yang relevan dan menarik bagi pengguna individu.",
+    title: "cookiesPage.cookieTypes.marketing.title",
+    description: "cookiesPage.cookieTypes.marketing.description",
   },
 ];
 
-const reasons = [
-  "Memastikan situs web berfungsi dengan baik dan sesuai ekspektasi pengguna.",
-  "Mengingat preferensi dan pengaturan yang telah Anda pilih.",
-  "Menganalisis lalu lintas dan pola penggunaan untuk meningkatkan kualitas layanan.",
-  "Menyediakan konten dan iklan yang relevan dengan minat Anda.",
-  "Melindungi keamanan akun dan mencegah penyalahgunaan.",
+const reasons: TranslationKey[] = [
+  "cookiesPage.reasons.ensureFunction",
+  "cookiesPage.reasons.rememberPreferences",
+  "cookiesPage.reasons.analyzeTraffic",
+  "cookiesPage.reasons.relevantContent",
+  "cookiesPage.reasons.security",
 ];
 
-const contactCards: { icon: IconName; label: string; value: string; href?: string }[] = [
+const contactCards: { icon: IconName; label: TranslationKey; value: string; href?: string }[] = [
   {
     icon: "MailOutlined",
-    label: "Email",
+    label: "cookiesPage.contact.email",
     value: "privacy@vistara.co.id",
     href: "mailto:privacy@vistara.co.id",
   },
   {
     icon: "PhoneOutlined",
-    label: "Telepon",
+    label: "cookiesPage.contact.phone",
     value: "+62 21 5555 0123",
     href: "tel:+622155550123",
   },
   {
     icon: "EnvironmentOutlined",
-    label: "Alamat",
+    label: "cookiesPage.contact.address",
     value: "Jl. Teknologi No. 88, Jakarta Selatan, DKI Jakarta 12345, Indonesia",
   },
 ];
@@ -179,6 +177,7 @@ const useStyles = createStyles(({ css }) => ({
     font-weight: 850;
     line-height: 1.2;
     letter-spacing: -0.03em;
+    white-space: pre-line;
   `,
   heroBadgeLabel: css`
     display: block;
@@ -516,6 +515,7 @@ const useStyles = createStyles(({ css }) => ({
 
 export default function Page() {
   const { styles } = useStyles();
+  const { t } = useI18n();
   const [activeSection, setActiveSection] = useState<string>(sections[0].id);
   const sectionRefs = useRef<Record<string, HTMLElement | null>>({});
 
@@ -550,18 +550,12 @@ export default function Page() {
     <main className={styles.page}>
       <MarketingHero
         backgroundSrc="/images/ilustrations/Vistara_Office_Reception_2.png"
-        backgroundAlt="Kebijakan Cookies"
-        eyebrow="KEBIJAKAN COOKIES"
-        titlePrefix={<span>Kebijakan </span>}
-        titleAccent={<strong>Cookies</strong>}
+        backgroundAlt={t("cookiesPage.hero.alt")}
+        eyebrow={t("cookiesPage.hero.eyebrow")}
+        titlePrefix={<span>{t("cookiesPage.hero.titlePrefix")} </span>}
+        titleAccent={<strong>{t("cookiesPage.hero.titleAccent")}</strong>}
         titleSuffix={null}
-        description={
-          <>
-            Kebijakan ini menjelaskan bagaimana PT. Vistara Teknologi Indonesia
-            menggunakan cookies dan teknologi serupa saat Anda mengunjungi dan
-            menggunakan situs web kami.
-          </>
-        }
+        description={t("cookiesPage.hero.description")}
         visual={
           <div className={styles.heroBadge}>
             <div className={styles.heroBadgeGlow} />
@@ -570,10 +564,10 @@ export default function Page() {
                 <Icon type="SafetyCertificateOutlined" />
               </div>
               <span className={styles.heroBadgeText}>
-                Privasi Anda,<br />Komitmen Kami
+                {t("cookiesPage.hero.visualTitle")}
               </span>
               <span className={styles.heroBadgeLabel}>
-                Pengelolaan cookies yang transparan dan bertanggung jawab
+                {t("cookiesPage.hero.visualDescription")}
               </span>
             </div>
           </div>
@@ -584,7 +578,7 @@ export default function Page() {
         <div className={styles.layoutGrid}>
           <aside className={styles.sidebar}>
             <Title level={5} className={styles.sidebarTitle}>
-              Daftar Isi
+              {t("cookiesPage.sidebar.title")}
             </Title>
             {sections.map((section, index) => (
               <button
@@ -601,19 +595,18 @@ export default function Page() {
                 >
                   {index + 1}
                 </span>
-                {section.title}
+                {t(section.titleKey)}
               </button>
             ))}
             <div className={styles.sidebarQuestionCard}>
               <Title level={5} className={styles.sidebarQuestionTitle}>
-                Pertanyaan?
+                {t("cookiesPage.sidebar.questionTitle")}
               </Title>
               <Text className={styles.sidebarQuestionText}>
-                Jika Anda memiliki pertanyaan tentang kebijakan cookies kami,
-                jangan ragu untuk menghubungi kami.
+                {t("cookiesPage.sidebar.questionText")}
               </Text>
               <Button type="primary" href="/kontak" block>
-                Hubungi Kami
+                {t("cookiesPage.sidebar.questionAction")}
               </Button>
             </div>
           </aside>
@@ -621,14 +614,14 @@ export default function Page() {
           <div className={styles.contentArea}>
             <div className={styles.contentHeader}>
               <Text className={styles.lastUpdated}>
-                Terakhir diperbarui: 1 September 2026
+                {t("cookiesPage.lastUpdated")}
               </Text>
               <button
                 className={styles.printButton}
                 onClick={() => window.print()}
               >
                 <Icon type="PrinterOutlined" />
-                Cetak
+                {t("cookiesPage.print")}
               </button>
             </div>
 
@@ -641,20 +634,13 @@ export default function Page() {
             >
               <Title level={3} className={styles.sectionHeading}>
                 <span className={styles.sectionNumber}>1</span>
-                Apa itu Cookies
+                {t("cookiesPage.sections.whatIsCookies")}
               </Title>
               <Paragraph className={styles.sectionText}>
-                Cookies adalah file teks kecil yang disimpan di perangkat Anda
-                (komputer, tablet, atau ponsel) saat Anda mengunjungi situs web.
-                Cookies umumnya digunakan agar situs web dapat mengenali perangkat
-                pengguna dan mengingat informasi tertentu tentang kunjungan
-                sebelumnya.
+                {t("cookiesPage.section1.p1")}
               </Paragraph>
               <Paragraph className={styles.sectionText}>
-                Cookies membantu kami menyediakan pengalaman browsing yang lebih
-                baik, memahami cara pengunjung berinteraksi dengan situs kami, dan
-                meningkatkan kualitas layanan kami. Cookies yang kami gunakan tidak
-                menyimpan informasi yang dapat diidentifikasi secara langsung.
+                {t("cookiesPage.section1.p2")}
               </Paragraph>
             </div>
 
@@ -667,11 +653,10 @@ export default function Page() {
             >
               <Title level={3} className={styles.sectionHeading}>
                 <span className={styles.sectionNumber}>2</span>
-                Cookie yang Kami Gunakan
+                {t("cookiesPage.sections.cookieTypes")}
               </Title>
               <Paragraph className={styles.sectionText}>
-                Kami menggunakan berbagai jenis cookies untuk berbagai tujuan.
-                Berikut adalah kategori cookies yang kami gunakan:
+                {t("cookiesPage.section2.intro")}
               </Paragraph>
               <div className={styles.cookieGrid}>
                 {cookieTypes.map((cookie) => (
@@ -680,10 +665,10 @@ export default function Page() {
                       <Icon type={cookie.icon} />
                     </span>
                     <Title level={4} className={styles.cookieCardTitle}>
-                      {cookie.title}
+                      {t(cookie.title)}
                     </Title>
                     <Paragraph className={styles.cookieCardDescription}>
-                      {cookie.description}
+                      {t(cookie.description)}
                     </Paragraph>
                   </Card>
                 ))}
@@ -699,14 +684,14 @@ export default function Page() {
             >
               <Title level={3} className={styles.sectionHeading}>
                 <span className={styles.sectionNumber}>3</span>
-                Mengapa Kami Menggunakan Cookies
+                {t("cookiesPage.sections.whyWeUse")}
               </Title>
               <Paragraph className={styles.sectionText}>
-                Kami menggunakan cookies untuk berbagai tujuan, antara lain:
+                {t("cookiesPage.section3.intro")}
               </Paragraph>
               <ul className={styles.bulletList}>
                 {reasons.map((reason) => (
-                  <li key={reason}>{reason}</li>
+                  <li key={reason}>{t(reason)}</li>
                 ))}
               </ul>
             </div>
@@ -720,19 +705,13 @@ export default function Page() {
             >
               <Title level={3} className={styles.sectionHeading}>
                 <span className={styles.sectionNumber}>4</span>
-                Mengelola Preferensi Cookies
+                {t("cookiesPage.sections.managePreferences")}
               </Title>
               <Paragraph className={styles.sectionText}>
-                Anda memiliki hak untuk mengontrol penggunaan cookies. Anda dapat
-                mengatur preferensi cookies melalui pengaturan browser yang Anda
-                gunakan. Sebagian besar browser memungkinkan Anda untuk memblokir
-                atau menghapus cookies dari situs web tertentu atau semua situs web.
+                {t("cookiesPage.section4.p1")}
               </Paragraph>
               <Paragraph className={styles.sectionText}>
-                Namun, perlu diingat bahwa menonaktifkan atau memblokir cookies
-                tertentu dapat mempengaruhi fungsionalitas dan pengalaman Anda
-                saat menggunakan situs web kami. Fitur-fitur tertentu mungkin tidak
-                berfungsi dengan baik jika cookies dinonaktifkan.
+                {t("cookiesPage.section4.p2")}
               </Paragraph>
             </div>
 
@@ -745,20 +724,13 @@ export default function Page() {
             >
               <Title level={3} className={styles.sectionHeading}>
                 <span className={styles.sectionNumber}>5</span>
-                Cookie Pihak Ketiga
+                {t("cookiesPage.sections.thirdParty")}
               </Title>
               <Paragraph className={styles.sectionText}>
-                Situs web kami mungkin menggunakan cookie pihak ketiga yang
-                disediakan oleh layanan analitik seperti Google Analytics. Cookie
-                pihak ketiga ini membantu kami menganalisis lalu lintas web dan
-                memahami cara pengunjung menggunakan situs kami.
+                {t("cookiesPage.section5.p1")}
               </Paragraph>
               <Paragraph className={styles.sectionText}>
-                Informasi yang dikumpulkan oleh cookie pihak ketiga dikirim dan
-                disimpan oleh penyedia layanan masing-masing sesuai dengan
-                kebijakan privasi mereka. Kami menyarankan Anda untuk membaca
-                kebijakan privasi dari penyedia layanan pihak ketiga tersebut untuk
-                memahami bagaimana mereka mengelola data.
+                {t("cookiesPage.section5.p2")}
               </Paragraph>
             </div>
 
@@ -771,12 +743,10 @@ export default function Page() {
             >
               <Title level={3} className={styles.sectionHeading}>
                 <span className={styles.sectionNumber}>6</span>
-                Hubungi Kami
+                {t("cookiesPage.sections.contactUs")}
               </Title>
               <Paragraph className={styles.sectionText}>
-                Jika Anda memiliki pertanyaan, keluhan, atau permintaan terkait
-                Kebijakan Cookies ini, silakan hubungi kami melalui saluran
-                berikut:
+                {t("cookiesPage.section6.intro")}
               </Paragraph>
               <div className={styles.contactGrid}>
                 {contactCards.map((card) => (
@@ -784,7 +754,7 @@ export default function Page() {
                     <span className={styles.contactCardIcon}>
                       <Icon type={card.icon} />
                     </span>
-                    <Text className={styles.contactCardLabel}>{card.label}</Text>
+                    <Text className={styles.contactCardLabel}>{t(card.label)}</Text>
                     {card.href ? (
                       <a href={card.href} style={{ textDecoration: "none" }}>
                         <Paragraph className={styles.contactCardValue}>
@@ -806,13 +776,12 @@ export default function Page() {
 
       <section className={styles.bottomContact}>
         <MarketingContainer>
-          <Text className={styles.bottomContactLabel}>Hubungi Kami</Text>
+          <Text className={styles.bottomContactLabel}>{t("cookiesPage.bottomContact.label")}</Text>
           <Title level={2} className={styles.bottomContactTitle}>
-            Ada Pertanyaan?
+            {t("cookiesPage.bottomContact.title")}
           </Title>
           <Paragraph className={styles.bottomContactDescription}>
-            Tim kami siap membantu Anda mengenai kebijakan cookies dan privasi
-            data.
+            {t("cookiesPage.bottomContact.description")}
           </Paragraph>
           <div className={styles.contactGrid}>
             {contactCards.map((card) => (

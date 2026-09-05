@@ -15,18 +15,19 @@ import {
   Typography,
   type IconName,
 } from "@/components";
+import { useI18n } from "@/i18n";
 import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
 const { Text, Title } = Typography;
 
 const services = [
-  { name: "Website", status: "Operasional", responseTime: "120ms" },
-  { name: "API", status: "Operasional", responseTime: "85ms" },
-  { name: "Dashboard", status: "Operasional", responseTime: "95ms" },
-  { name: "Email Service", status: "Maintenance", responseTime: "-" },
-  { name: "Database", status: "Operasional", responseTime: "45ms" },
-  { name: "CDN", status: "Operasional", responseTime: "32ms" },
+  { nameKey: "statusPage.services.website", statusKey: "statusPage.states.operational", responseTime: "120ms" },
+  { nameKey: "statusPage.services.api", statusKey: "statusPage.states.operational", responseTime: "85ms" },
+  { nameKey: "statusPage.services.dashboard", statusKey: "statusPage.states.operational", responseTime: "95ms" },
+  { nameKey: "statusPage.services.email", statusKey: "statusPage.states.maintenance", responseTime: "-" },
+  { nameKey: "statusPage.services.database", statusKey: "statusPage.states.operational", responseTime: "45ms" },
+  { nameKey: "statusPage.services.cdn", statusKey: "statusPage.states.operational", responseTime: "32ms" },
 ] as const;
 
 const useStyles = createStyles(({ css }) => ({
@@ -222,58 +223,59 @@ const useStyles = createStyles(({ css }) => ({
 
 export default function Page() {
   const { styles } = useStyles();
+  const { t, locale } = useI18n();
 
   return (
     <main className={styles.page}>
       <MarketingHero
         backgroundSrc="/images/ilustrations/Office_Call.png"
-        backgroundAlt="Status Layanan Vistara"
-        eyebrow="STATUS LAYANAN"
-        titlePrefix={<>Status </>}
-        titleAccent="Layanan"
+        backgroundAlt={t("statusPage.hero.alt")}
+        eyebrow={t("statusPage.hero.eyebrow")}
+        titlePrefix={<>{t("statusPage.hero.titlePrefix")} </>}
+        titleAccent={t("statusPage.hero.titleAccent")}
         titleSuffix={null}
-        description="Pantau status operasional seluruh layanan Vistara secara real-time."
+        description={t("statusPage.hero.description")}
       />
 
       <MarketingSection className={styles.section}>
-        <Text className={styles.sectionLabel}>Status Terkini</Text>
+        <Text className={styles.sectionLabel}>{t("statusPage.section.label")}</Text>
         <Title level={2} className={styles.sectionTitle}>
-          Status Sistem
+          {t("statusPage.section.title")}
         </Title>
         <Text className={styles.sectionDescription}>
-          Berikut adalah status operasional seluruh layanan kami.
+          {t("statusPage.section.description")}
         </Text>
 
         <div className={styles.overallStatus}>
           <div className={styles.overallStatusDot} />
-          <Text className={styles.overallStatusText}>Semua Sistem Operasional</Text>
+          <Text className={styles.overallStatusText}>{t("statusPage.section.overallStatus")}</Text>
         </div>
 
         <div className={styles.servicesGrid}>
           {services.map((service) => (
-            <Card key={service.name} className={styles.serviceCard}>
+            <Card key={service.nameKey} className={styles.serviceCard}>
               <div className={styles.serviceHeader}>
                 <Title level={5} className={styles.serviceName}>
-                  {service.name}
+                  {t(service.nameKey)}
                 </Title>
                 <span
                   className={`${styles.statusBadge} ${
-                    service.status === "Operasional"
+                    service.statusKey === "statusPage.states.operational"
                       ? styles.statusOperational
                       : styles.statusMaintenance
                   }`}
                 >
-                  {service.status}
+                  {t(service.statusKey)}
                 </span>
               </div>
-              <Text className={styles.serviceResponseLabel}>Response Time</Text>
+              <Text className={styles.serviceResponseLabel}>{t("statusPage.service.responseLabel")}</Text>
               <Text className={styles.serviceResponse}>{service.responseTime}</Text>
             </Card>
           ))}
         </div>
 
         <Text className={styles.lastUpdated}>
-          Terakhir diperbarui: {new Date().toLocaleDateString("id-ID", {
+          {t("statusPage.section.lastUpdated")}: {new Date().toLocaleDateString(locale, {
             day: "numeric",
             month: "long",
             year: "numeric",
@@ -287,16 +289,16 @@ export default function Page() {
         <Card className={styles.ctaCard}>
           <div className={styles.ctaInner}>
             <div className={styles.ctaGlow} />
-            <Text className={styles.ctaLabel}>Siap Memulai?</Text>
+            <Text className={styles.ctaLabel}>{t("statusPage.cta.label")}</Text>
             <Title level={2} className={styles.ctaTitle}>
-              Diskusikan Ide Anda dengan Tim Vistara
+              {t("statusPage.cta.title")}
             </Title>
             <Text className={styles.ctaDescription}>
-              Tidak ada ide yang terlalu kecil. Mari wujudkan bersama.
+              {t("statusPage.cta.description")}
             </Text>
             <Flex className={styles.ctaActions} justify="space-between" gap={16} wrap="wrap">
               <Button type="primary" size="large" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
-                Konsultasi Gratis
+                {t("statusPage.cta.action")}
               </Button>
             </Flex>
           </div>

@@ -109,7 +109,7 @@ const useStyles = createStyles(({ css }) => ({
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url(/images/ilustrations/Coding_Workspace.png);
+    background-image: url(/images/sample/07_pembelajaran_digital.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.12;

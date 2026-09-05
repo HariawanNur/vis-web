@@ -65,7 +65,7 @@ const useStyles = createStyles(({ css }) => ({
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url(/images/ilustrations/Vistara_Office_Reception_2.png);
+    background-image: url(/images/sample/03_cloud_infrastruktur.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.18;

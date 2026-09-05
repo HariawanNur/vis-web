@@ -64,18 +64,18 @@ const solutionAreas = [
 ] as const;
 
 const industries = [
-  { title: "E-Commerce & Retail", description: "Platform digital untuk pertumbuhan penjualan.", image: "/images/ilustrations/Salon_Interior.png" },
-  { title: "Pendidikan", description: "Solusi teknologi untuk ekosistem belajar modern.", image: "/images/ilustrations/Coding_Workspace.png" },
-  { title: "Kesehatan", description: "Sistem informasi untuk layanan kesehatan yang lebih baik.", image: "/images/ilustrations/Office_Call.png" },
-  { title: "Manufaktur & Distribusi", description: "Otomasi dan integrasi untuk rantai pasok yang efisien.", image: "/images/ilustrations/Vistara_Office_Reception_1.png" },
-  { title: "Keuangan", description: "Sistem digital untuk layanan keuangan yang aman dan andal.", image: "/images/ilustrations/Vistara_Office_Reception_2.png" },
-  { title: "Pemerintahan", description: "Transformasi digital untuk layanan publik yang lebih transparan.", image: "/images/ilustrations/Salon_Interior.png" },
+  { title: "E-Commerce & Retail", description: "Platform digital untuk pertumbuhan penjualan.", image: "/images/sample/01_ecommerce_marketplace.jpg" },
+  { title: "Pendidikan", description: "Solusi teknologi untuk ekosistem belajar modern.", image: "/images/sample/07_pembelajaran_digital.jpg" },
+  { title: "Kesehatan", description: "Sistem informasi untuk layanan kesehatan yang lebih baik.", image: "/images/sample/06_audit_keamanan.jpg" },
+  { title: "Manufaktur & Distribusi", description: "Otomasi dan integrasi untuk rantai pasok yang efisien.", image: "/images/sample/05_monitoring_produksi.jpg" },
+  { title: "Keuangan", description: "Sistem digital untuk layanan keuangan yang aman dan andal.", image: "/images/sample/08_analitik_keuangan.jpg" },
+  { title: "Pemerintahan", description: "Transformasi digital untuk layanan publik yang lebih transparan.", image: "/images/sample/04_portal_layanan_publik.jpg" },
 ] as const;
 
 const caseStudies = [
-  { tag: "E-Commerce", title: "Marketplace Pertanian Digital", description: "Menghubungkan petani lokal dengan jaringan pasok yang lebih luas melalui platform digital.", image: "/images/ilustrations/Salon_Interior.png" },
-  { tag: "Manufaktur", title: "Sistem Monitoring Produksi", description: "Solusi IoT untuk pemantauan mesin dan peningkatan efisiensi produksi.", image: "/images/ilustrations/Coding_Workspace.png" },
-  { tag: "Pemerintahan", title: "Portal Layanan Publik", description: "Platform layanan publik terpadu untuk meningkatkan akses dan transparansi.", image: "/images/ilustrations/Office_Call.png" },
+  { tag: "E-Commerce", title: "Marketplace Pertanian Digital", description: "Menghubungkan petani lokal dengan jaringan pasok yang lebih luas melalui platform digital.", image: "/images/sample/09_tanihub_marketplace.jpg" },
+  { tag: "Manufaktur", title: "Sistem Monitoring Produksi", description: "Solusi IoT untuk pemantauan mesin dan peningkatan efisiensi produksi.", image: "/images/sample/05_monitoring_produksi.jpg" },
+  { tag: "Pemerintahan", title: "Portal Layanan Publik", description: "Platform layanan publik terpadu untuk meningkatkan akses dan transparansi.", image: "/images/sample/04_portal_layanan_publik.jpg" },
 ] as const;
 
 const processSteps = [

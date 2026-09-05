@@ -17,8 +17,10 @@ import {
   Row,
   Select,
   Typography,
+  type LocationItem,
   type IconName,
 } from "@/components";
+import { MapLocation } from "@/components";
 import { useI18n } from "@/i18n";
 import { submitMarketingContact, type MarketingContactInput } from "@/lib/marketing-api";
 import { useMarketingData } from "@/lib/use-marketing-data";
@@ -27,6 +29,22 @@ import { MarketingContainer, MarketingSection } from "../_components/site";
 
 const { Paragraph, Text, Title } = Typography;
 const { TextArea } = Input;
+
+const officeLocation = [
+  {
+    id: "vistara-office",
+    title: "Vistara Teknologi Indonesia",
+    description: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    info: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    category: "office" as const,
+    latitude: -6.175392,
+    longitude: 106.827153,
+    status: "on_track" as const,
+    statusLabel: "Kantor Utama",
+    progress: 100,
+    targetDate: "Siap dikunjungi",
+  },
+] satisfies LocationItem[];
 
 const contactInfoItems = [
   {
@@ -510,152 +528,6 @@ const useStyles = createStyles(({ css }) => ({
     border-radius: 10px !important;
     margin-bottom: 20px !important;
   `,
-  mapIllustration: css`
-    position: relative;
-    width: 100%;
-    height: 100%;
-    min-height: 340px;
-    background:
-      linear-gradient(rgba(200, 216, 240, 0.5) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(200, 216, 240, 0.5) 1px, transparent 1px),
-      linear-gradient(135deg, #d4e3f5 0%, #e8edf5 40%, #dfe8f2 100%);
-    background-size: 60px 60px, 60px 60px, 100% 100%;
-
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          45deg,
-          transparent 0%,
-          transparent 38%,
-          rgba(180, 200, 230, 0.4) 38%,
-          rgba(180, 200, 230, 0.4) 40%,
-          transparent 40%,
-          transparent 100%
-        ),
-        linear-gradient(
-          -30deg,
-          transparent 0%,
-          transparent 52%,
-          rgba(180, 200, 230, 0.35) 52%,
-          rgba(180, 200, 230, 0.35) 54%,
-          transparent 54%,
-          transparent 100%
-        ),
-        linear-gradient(
-          80deg,
-          transparent 0%,
-          transparent 68%,
-          rgba(160, 190, 225, 0.3) 68%,
-          rgba(160, 190, 225, 0.3) 70%,
-          transparent 70%,
-          transparent 100%
-        );
-    }
-
-    &::after {
-      content: "Vistara Teknologi Indonesia";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: #5d6c86;
-      font-size: 13px;
-      font-weight: 700;
-      text-align: center;
-      white-space: nowrap;
-    }
-  `,
-  mapPin: css`
-    position: absolute;
-    top: 42%;
-    left: 55%;
-    width: 28px;
-    height: 28px;
-    border-radius: 50% 50% 50% 0;
-    background: #e74c3c;
-    transform: rotate(-45deg);
-    box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: #fff;
-      transform: translate(-50%, -50%);
-    }
-  `,
-  mapLabel: css`
-    position: absolute;
-    top: 36%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 14px;
-    border-radius: 8px;
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-    white-space: nowrap;
-
-    &::after {
-      content: "";
-      position: absolute;
-      bottom: -5px;
-      left: 50%;
-      width: 10px;
-      height: 10px;
-      border-radius: 0 0 2px 0;
-      background: #fff;
-      transform: translateX(-50%) rotate(45deg);
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.06);
-    }
-  `,
-  mapLabelText: css`
-    display: block;
-    color: #0b1532;
-    font-size: 12px;
-    font-weight: 800;
-    text-align: center;
-    line-height: 1.3;
-  `,
-  mapLabelSubtext: css`
-    display: block;
-    color: #8c99af;
-    font-size: 10px;
-    text-align: center;
-  `,
-  mapZoomControls: css`
-    position: absolute;
-    right: 14px;
-    bottom: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-  `,
-  mapZoomBtn: css`
-    display: grid;
-    width: 32px;
-    height: 32px;
-    place-items: center;
-    background: #fff;
-    color: #5d6c86;
-    font-size: 14px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-
-    &:hover {
-      background: #f0f4f8;
-    }
-  `,
   faqHeader: css`
     display: flex;
     align-items: center;
@@ -1066,27 +938,15 @@ export default function Page() {
             Buka di Google Maps
           </Button>
 
-          <Card className={styles.mapContent}>
-            <div className={styles.mapIllustration}>
-              <div className={styles.mapPin} />
-              <div className={styles.mapLabel}>
-                <Text className={styles.mapLabelText}>
-                  Vistara Teknologi Indonesia
-                </Text>
-                <Text className={styles.mapLabelSubtext}>
-                  Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345
-                </Text>
-              </div>
-              <div className={styles.mapZoomControls}>
-                <button className={styles.mapZoomBtn} aria-label="Zoom in">
-                  <Icon type="PlusOutlined" size={14} />
-                </button>
-                <button className={styles.mapZoomBtn} aria-label="Zoom out">
-                  <Icon type="MinusOutlined" size={14} />
-                </button>
-              </div>
-            </div>
-          </Card>
+          <div className={styles.mapContent}>
+            <MapLocation
+              height={360}
+              compact
+              preview
+              locations={officeLocation}
+              center={{ latitude: -6.175392, longitude: 106.827153, zoom: 15 }}
+            />
+          </div>
         </MarketingContainer>
       </section>
 

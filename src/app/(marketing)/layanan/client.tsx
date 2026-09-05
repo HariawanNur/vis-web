@@ -82,18 +82,18 @@ const processSteps = [
 ] as const;
 
 const industries = [
-  { title: "E-Commerce & Retail", image: "/images/ilustrations/Salon_Interior.png" },
-  { title: "Pendidikan", image: "/images/ilustrations/Coding_Workspace.png" },
-  { title: "Kesehatan", image: "/images/ilustrations/Office_Call.png" },
+  { title: "E-Commerce & Retail", image: "/images/sample/01_ecommerce_marketplace.jpg" },
+  { title: "Pendidikan", image: "/images/sample/07_pembelajaran_digital.jpg" },
+  { title: "Kesehatan", image: "/images/sample/06_audit_keamanan.jpg" },
   {
     title: "Manufaktur & Distribusi",
-    image: "/images/ilustrations/Vistara_Office_Reception_1.png",
+    image: "/images/sample/05_monitoring_produksi.jpg",
   },
   {
     title: "Keuangan",
-    image: "/images/ilustrations/Vistara_Office_Reception_2.png",
+    image: "/images/sample/04_portal_layanan_publik.jpg",
   },
-  { title: "Pemerintahan", image: "/images/ilustrations/Salon_Interior.png" },
+  { title: "Pemerintahan", image: "/images/sample/04_portal_layanan_publik.jpg" },
 ] as const;
 
 const faqs = [
@@ -840,7 +840,7 @@ export default function Page() {
           <div className={styles.caseStudyBody}>
             <div className={styles.caseStudyImage}>
               <Image
-                src="/images/ilustrations/Salon_Interior.png"
+                src="/images/sample/09_tanihub_marketplace.jpg"
                 alt={t("marketing.services.caseStudy.featured.title")}
                 fill
                 sizes="(max-width: 991px) 100vw, 420px"

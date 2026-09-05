@@ -49,7 +49,7 @@ const useStyles = createStyles(({ css }) => ({
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url(/images/ilustrations/network-tree.png);
+    background-image: url(/images/sample/02_sistem_informasi.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.12;

@@ -17,6 +17,7 @@ import {
   Typography,
   type IconName,
 } from "@/components";
+import { useI18n } from "@/i18n";
 import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
@@ -25,22 +26,27 @@ const { Text, Title } = Typography;
 const benefits = [
   {
     icon: "BulbOutlined",
-    title: "Insight Gratis",
-    description: "Akses artikel dan analisis mendalam tentang tren teknologi tanpa biaya.",
+    titleKey: "newsletterPage.benefits.freeInsight.title",
+    descriptionKey: "newsletterPage.benefits.freeInsight.description",
   },
   {
     icon: "ClockCircleOutlined",
-    title: "Update Mingguan",
-    description: "Ringkasan perkembangan terkini dikirim setiap minggu ke email Anda.",
+    titleKey: "newsletterPage.benefits.weeklyUpdate.title",
+    descriptionKey: "newsletterPage.benefits.weeklyUpdate.description",
   },
   {
     icon: "StarOutlined",
-    title: "Konten Eksklusif",
-    description: "Dapatkan akses ke studi kasus dan白paper yang tidak tersedia di publik.",
+    titleKey: "newsletterPage.benefits.exclusiveContent.title",
+    descriptionKey: "newsletterPage.benefits.exclusiveContent.description",
   },
 ] as const;
 
-const interests = ["Teknologi", "Bisnis", "Desain", "Studi Kasus"] as const;
+const interests = [
+  { key: "technology", labelKey: "newsletterPage.interests.technology" },
+  { key: "business", labelKey: "newsletterPage.interests.business" },
+  { key: "design", labelKey: "newsletterPage.interests.design" },
+  { key: "caseStudies", labelKey: "newsletterPage.interests.caseStudies" },
+] as const;
 
 const useStyles = createStyles(({ css }) => ({
   page: css`
@@ -255,6 +261,7 @@ const useStyles = createStyles(({ css }) => ({
 
 export default function Page() {
   const { styles } = useStyles();
+  const { t } = useI18n();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [selectedInterests, setSelectedInterests] = useState<string[]>([]);
@@ -284,29 +291,29 @@ export default function Page() {
       <MarketingHero
         backgroundSrc="/images/ilustrations/Office_Call.png"
         backgroundAlt="Newsletter Vistara"
-        eyebrow="NEWSLETTER"
-        titlePrefix={<><span>Newsletter</span></>}
+        eyebrow={t("newsletterPage.hero.eyebrow")}
+        titlePrefix={<><span>{t("newsletterPage.hero.titlePrefix")}</span></>}
         titleAccent={null}
         titleSuffix={null}
-        description="Tetap terhubung dengan wawasan teknologi dan bisnis terbaru dari Vistara."
+        description={t("newsletterPage.hero.description")}
       />
 
       <MarketingSection className={styles.section}>
-        <Text className={styles.sectionLabel}>Berlangganan Sekarang</Text>
+        <Text className={styles.sectionLabel}>{t("newsletterPage.signup.label")}</Text>
         <Title level={2} className={styles.sectionTitle}>
-          Dapatkan Insight Terbaru
+          {t("newsletterPage.signup.title")}
         </Title>
         <Text className={styles.sectionDescription}>
-          Isi formulir di bawah untuk mulai menerima newsletter mingguan kami.
+          {t("newsletterPage.signup.description")}
         </Text>
 
         <Card className={styles.subscribeCard}>
           <div className={styles.formField}>
             <Text style={{ display: "block", marginBottom: 6, fontWeight: 700, fontSize: 13 }}>
-              Nama Lengkap
+              {t("form.name")}
             </Text>
             <Input
-              placeholder="Masukkan nama Anda"
+              placeholder={t("newsletterPage.signup.namePlaceholder")}
               className={styles.formInput}
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -315,10 +322,10 @@ export default function Page() {
 
           <div className={styles.formField}>
             <Text style={{ display: "block", marginBottom: 6, fontWeight: 700, fontSize: 13 }}>
-              Email
+              {t("form.email")}
             </Text>
             <Input
-              placeholder="nama@perusahaan.com"
+              placeholder={t("newsletterPage.signup.emailPlaceholder")}
               className={styles.formInput}
               type="email"
               value={email}
@@ -328,16 +335,16 @@ export default function Page() {
 
           <div className={styles.formField}>
             <Text style={{ display: "block", marginBottom: 10, fontWeight: 700, fontSize: 13 }}>
-              Minat Anda
+              {t("newsletterPage.signup.interestsLabel")}
             </Text>
             <div className={styles.checkboxGroup}>
               {interests.map((interest) => (
-                <span key={interest} className={styles.checkbox}>
+                <span key={interest.key} className={styles.checkbox}>
                   <Checkbox
-                    checked={selectedInterests.includes(interest)}
-                    onChange={(e) => handleInterestChange(interest, e.target.checked)}
+                    checked={selectedInterests.includes(interest.key)}
+                    onChange={(e) => handleInterestChange(interest.key, e.target.checked)}
                   >
-                    {interest}
+                    {t(interest.labelKey)}
                   </Checkbox>
                 </span>
               ))}
@@ -351,30 +358,30 @@ export default function Page() {
             onClick={handleSubmit}
             icon={<Icon type="SendOutlined" />}
           >
-            Berlangganan
+            {t("newsletterPage.signup.action")}
           </Button>
         </Card>
       </MarketingSection>
 
       <MarketingSection className={styles.section}>
-        <Text className={styles.sectionLabel}>Mengapa Berlangganan?</Text>
+        <Text className={styles.sectionLabel}>{t("newsletterPage.benefits.label")}</Text>
         <Title level={2} className={styles.sectionTitle}>
-          Manfaat Newsletter Kami
+          {t("newsletterPage.benefits.title")}
         </Title>
         <Text className={styles.sectionDescription}>
-          Kami menghadirkan konten berkualitas yang relevan dengan kebutuhan Anda.
+          {t("newsletterPage.benefits.description")}
         </Text>
 
         <div className={styles.benefitsGrid} style={{ marginTop: 24 }}>
           {benefits.map((benefit) => (
-            <Card key={benefit.title} className={styles.benefitCard}>
+            <Card key={benefit.titleKey} className={styles.benefitCard}>
               <span className={styles.benefitIcon}>
                 <Icon type={benefit.icon as IconName} />
               </span>
               <Title level={4} className={styles.benefitTitle}>
-                {benefit.title}
+                {t(benefit.titleKey)}
               </Title>
-              <Text className={styles.benefitDescription}>{benefit.description}</Text>
+              <Text className={styles.benefitDescription}>{t(benefit.descriptionKey)}</Text>
             </Card>
           ))}
         </div>
@@ -384,16 +391,16 @@ export default function Page() {
         <Card className={styles.ctaCard}>
           <div className={styles.ctaInner}>
             <div className={styles.ctaGlow} />
-            <Text className={styles.ctaLabel}>Siap Memulai?</Text>
+            <Text className={styles.ctaLabel}>{t("newsletterPage.cta.label")}</Text>
             <Title level={2} className={styles.ctaTitle}>
-              Diskusikan Ide Anda dengan Tim Vistara
+              {t("newsletterPage.cta.title")}
             </Title>
             <Text className={styles.ctaDescription}>
-              Tidak ada ide yang terlalu kecil. Mari wujudkan bersama.
+              {t("newsletterPage.cta.description")}
             </Text>
             <Flex className={styles.ctaActions} justify="space-between" gap={16} wrap="wrap">
               <Button type="primary" size="large" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
-                Konsultasi Gratis
+                {t("newsletterPage.cta.action")}
               </Button>
             </Flex>
           </div>

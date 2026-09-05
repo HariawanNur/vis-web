@@ -12,6 +12,8 @@ import {
   Typography,
   type IconName,
 } from "@/components";
+import { useI18n } from "@/i18n";
+import type { TranslationKey } from "@/i18n/locales";
 import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
@@ -22,102 +24,98 @@ type FaqCategory = "semua" | "layanan" | "harga" | "teknis" | "dukungan";
 interface FaqItem {
   id: number;
   category: FaqCategory;
-  question: string;
-  answer: string;
+  question: TranslationKey;
+  answer: TranslationKey;
 }
 
-const categories: { key: FaqCategory; label: string }[] = [
-  { key: "semua", label: "Semua" },
-  { key: "layanan", label: "Layanan" },
-  { key: "harga", label: "Harga" },
-  { key: "teknis", label: "Teknis" },
-  { key: "dukungan", label: "Dukungan" },
-];
+const categories = [
+  { key: "semua", labelKey: "faqPage.categories.all" },
+  { key: "layanan", labelKey: "faqPage.categories.services" },
+  { key: "harga", labelKey: "faqPage.categories.pricing" },
+  { key: "teknis", labelKey: "faqPage.categories.technical" },
+  { key: "dukungan", labelKey: "faqPage.categories.support" },
+ ] as const;
+
+const categoryLabels = {
+  semua: "faqPage.categories.all",
+  layanan: "faqPage.categories.services",
+  harga: "faqPage.categories.pricing",
+  teknis: "faqPage.categories.technical",
+  dukungan: "faqPage.categories.support",
+} as const;
 
 const faqItems: FaqItem[] = [
   {
     id: 1,
     category: "layanan",
-    question: "Apa saja layanan yang disediakan oleh Vistara?",
-    answer:
-      "Vistara menyediakan berbagai layanan teknologi informasi termasuk pengembangan aplikasi web dan mobile, konsultasi IT, transformasi digital, pengembangan platform e-commerce, serta solusi bisnis berbasis cloud. Kami melayani berbagai skala proyek dari startup hingga perusahaan enterprise.",
+    question: "faqPage.items.q1.question",
+    answer: "faqPage.items.q1.answer",
   },
   {
     id: 2,
     category: "layanan",
-    question: "Bagaimana cara memulai kerja sama dengan Vistara?",
-    answer:
-      "Anda dapat memulai dengan menghubungi tim kami melalui halaman kontak atau email ke info@vistara.co.id. Tim kami akan menjadwalkan konsultasi awal gratis untuk memahami kebutuhan bisnis Anda, kemudian menyusun proposal yang sesuai dengan tujuan dan anggaran proyek Anda.",
+    question: "faqPage.items.q2.question",
+    answer: "faqPage.items.q2.answer",
   },
   {
     id: 3,
     category: "layanan",
-    question: "Apakah Vistara menerima proyek skala kecil?",
-    answer:
-      "Tentu, kami menerima proyek dari berbagai skala. Kami memahami bahwa setiap bisnis memiliki kebutuhan yang berbeda. Tim kami akan menyesuaikan solusi dan pendekatan sesuai dengan skala dan kompleksitas proyek Anda, termasuk proyek-proyek berskala kecil dan menengah.",
+    question: "faqPage.items.q3.question",
+    answer: "faqPage.items.q3.answer",
   },
   {
     id: 4,
     category: "harga",
-    question: "Bagaimana model penetapan harga di Vistara?",
-    answer:
-      "Kami menawarkan beberapa model harga yang fleksibel: project-based (harga tetap per proyek), time-based (per jam atau per bulan), dan retainer (langganan bulanan untuk dukungan berkelanjutan). Harga disesuaikan dengan kompleksitas, durasi, dan lingkup proyek. Hubungi kami untuk mendapatkan penawaran yang tepat.",
+    question: "faqPage.items.q4.question",
+    answer: "faqPage.items.q4.answer",
   },
   {
     id: 5,
     category: "harga",
-    question: "Apakah tersedia konsultasi gratis sebelum memulai proyek?",
-    answer:
-      "Ya, kami menyediakan konsultasi awal gratis selama 30-60 menit. Dalam sesi ini, tim kami akan mendengarkan kebutuhan Anda, memberikan gambaran solusi yang tepat, dan memberikan estimasi biaya awal. Tidak ada kewajiban untuk melanjutkan setelah konsultasi.",
+    question: "faqPage.items.q5.question",
+    answer: "faqPage.items.q5.answer",
   },
   {
     id: 6,
     category: "harga",
-    question: "Apakah ada opsi pembayaran bertahap?",
-    answer:
-      "Ya, untuk proyek berskala besar, kami menyediakan opsi pembayaran bertahap yang disesuaikan dengan milestone proyek. Biasanya pembayaran dibagi menjadi 3-4 tahap sesuai dengan progres pekerjaan. Detail pembayaran akan tertuang dalam perjanjian kontrak.",
+    question: "faqPage.items.q6.question",
+    answer: "faqPage.items.q6.answer",
   },
   {
     id: 7,
     category: "teknis",
-    question: "Teknologi apa saja yang digunakan oleh Vistara?",
-    answer:
-      "Vistara menggunakan teknologi modern dan terkini termasuk React, Next.js, TypeScript, Node.js, Python, React Native, Flutter, serta infrastruktur cloud dari AWS, GCP, dan Azure. Kami memilih teknologi yang paling sesuai dengan kebutuhan proyek Anda untuk hasil optimal.",
+    question: "faqPage.items.q7.question",
+    answer: "faqPage.items.q7.answer",
   },
   {
     id: 8,
     category: "teknis",
-    question: "Bagaimana Vistara menjamin keamanan data klien?",
-    answer:
-      "Keamanan data adalah prioritas utama kami. Kami menerapkan standar keamanan tinggi termasuk enkripsi data end-to-end, autentikasi multi-faktor, audit keamanan berkala, penetration testing, serta kepatuhan terhadap standar ISO 27001 dan peraturan perlindungan data yang berlaku.",
+    question: "faqPage.items.q8.question",
+    answer: "faqPage.items.q8.answer",
   },
   {
     id: 9,
     category: "teknis",
-    question: "Apakah Vistara menyediakan layanan migrasi sistem?",
-    answer:
-      "Ya, kami menyediakan layanan migrasi sistem dari platform lama ke platform baru. Tim kami akan melakukan analisis menyeluruh terhadap sistem yang ada, merencanakan strategi migrasi yang minim risiko, dan memastikan transisi yang mulus tanpa gangguan operasional yang signifikan.",
+    question: "faqPage.items.q9.question",
+    answer: "faqPage.items.q9.answer",
   },
   {
     id: 10,
     category: "dukungan",
-    question: "Bagaimana cara menghubungi dukungan teknis Vistara?",
-    answer:
-      "Anda dapat menghubungi dukungan teknis kami melalui email ke support@vistara.co.id, telepon ke +62 21 5555 0123, atau melalui portal ticketing yang tersedia untuk klien. Tim dukungan kami beroperasi pada hari kerja, Senin hingga Jumat, pukul 09.00 hingga 18.00 WIB.",
+    question: "faqPage.items.q10.question",
+    answer: "faqPage.items.q10.answer",
   },
   {
     id: 11,
     category: "dukungan",
-    question: "Apakah Vistara menyediakan layanan pemeliharaan pasca-peluncuran?",
-    answer:
-      "Ya, kami menyediakan layanan pemeliharaan dan dukungan pasca-peluncuran yang mencakup pemantauan performa, perbaikan bug, pembaruan keamanan, serta pengembangan fitur baru. Kami menawarkan paket SLA (Service Level Agreement) dengan tingkat respons yang disesuaikan.",
+    question: "faqPage.items.q11.question",
+    answer: "faqPage.items.q11.answer",
   },
   {
     id: 12,
     category: "dukungan",
-    question: "Berapa lama waktu respons untuk tiket dukungan?",
-    answer:
-      "Waktu respons kami bervariasi berdasarkan tingkat prioritas: Critical (1 jam), High (4 jam), Medium (1 hari kerja), dan Low (3 hari kerja). Klien dengan paket SLA premium mendapat prioritas respons yang lebih cepat dan akses langsung ke tim teknis senior.",
+    question: "faqPage.items.q12.question",
+    answer: "faqPage.items.q12.answer",
   },
 ];
 
@@ -219,6 +217,7 @@ const useStyles = createStyles(({ css }) => ({
     font-weight: 850;
     line-height: 1.2;
     letter-spacing: -0.03em;
+    white-space: pre-line;
   `,
   heroBadgeLabel: css`
     display: block;
@@ -424,6 +423,7 @@ const useStyles = createStyles(({ css }) => ({
 
 export default function Page() {
   const { styles } = useStyles();
+  const { t } = useI18n();
   const [activeCategory, setActiveCategory] = useState<FaqCategory>("semua");
   const [searchQuery, setSearchQuery] = useState("");
   const [openItems, setOpenItems] = useState<Set<number>>(new Set());
@@ -463,18 +463,12 @@ export default function Page() {
     <main className={styles.page}>
       <MarketingHero
         backgroundSrc="/images/ilustrations/Vistara_Office_Reception_2.png"
-        backgroundAlt="FAQ"
-        eyebrow="FAQ"
-        titlePrefix={<span>Pertanyaan </span>}
-        titleAccent={<strong>Umum</strong>}
+        backgroundAlt={t("faqPage.hero.alt")}
+        eyebrow={t("faqPage.hero.eyebrow")}
+        titlePrefix={<span>{t("faqPage.hero.titlePrefix")} </span>}
+        titleAccent={<strong>{t("faqPage.hero.titleAccent")}</strong>}
         titleSuffix={null}
-        description={
-          <>
-            Temukan jawaban atas pertanyaan yang paling sering ditanyakan
-            mengenai layanan, harga, aspek teknis, dan dukungan dari PT. Vistara
-            Teknologi Indonesia.
-          </>
-        }
+        description={t("faqPage.hero.description")}
         visual={
           <div className={styles.heroBadge}>
             <div className={styles.heroBadgeGlow} />
@@ -483,10 +477,10 @@ export default function Page() {
                 <Icon type="QuestionCircleOutlined" />
               </div>
               <span className={styles.heroBadgeText}>
-                Kami Siap<br />Membantu Anda
+                {t("faqPage.hero.visualTitle")}
               </span>
               <span className={styles.heroBadgeLabel}>
-                Jawaban atas pertanyaan Anda ada di sini
+                {t("faqPage.hero.visualDescription")}
               </span>
             </div>
           </div>
@@ -498,7 +492,7 @@ export default function Page() {
           <Input
             className={styles.searchInput}
             prefix={<Icon type="SearchOutlined" />}
-            placeholder="Cari pertanyaan Anda di sini..."
+            placeholder={t("faqPage.searchPlaceholder")}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             allowClear
@@ -514,7 +508,7 @@ export default function Page() {
               }`}
               onClick={() => setActiveCategory(cat.key)}
             >
-              {cat.label}
+              {t(cat.labelKey)}
             </button>
           ))}
         </div>
@@ -523,10 +517,6 @@ export default function Page() {
           <div className={styles.faqList}>
             {filteredFaqs.map((item) => {
               const isOpen = openItems.has(item.id);
-              const categoryLabel = categories.find(
-                (c) => c.key === item.category
-              )?.label;
-
               return (
                 <div
                   key={item.id}
@@ -541,10 +531,10 @@ export default function Page() {
                   >
                     <span>
                       <span className={styles.faqCategoryTag}>
-                        {categoryLabel}
+              {t(categoryLabels[item.category])}
                       </span>
                       <br />
-                      {item.question}
+                      {t(item.question)}
                     </span>
                     <span
                       className={`${styles.faqIcon} ${
@@ -555,7 +545,7 @@ export default function Page() {
                     </span>
                   </button>
                   {isOpen && (
-                    <div className={styles.faqAnswer}>{item.answer}</div>
+                    <div className={styles.faqAnswer}>{t(item.answer)}</div>
                   )}
                 </div>
               );
@@ -567,8 +557,7 @@ export default function Page() {
               <Icon type="SearchOutlined" />
             </div>
             <Paragraph className={styles.noResultsText}>
-              Tidak ditemukan pertanyaan yang sesuai dengan pencarian Anda.
-              Coba kata kunci lain atau lihat semua kategori.
+              {t("faqPage.noResults")}
             </Paragraph>
           </div>
         )}
@@ -577,21 +566,19 @@ export default function Page() {
       <section className={styles.ctaSection}>
         <MarketingContainer>
           <div className={styles.ctaCard}>
-            <Text className={styles.ctaLabel}>Masih Ada Pertanyaan?</Text>
+            <Text className={styles.ctaLabel}>{t("faqPage.cta.label")}</Text>
             <Title level={2} className={styles.ctaTitle}>
-              Kami Siap Membantu
+              {t("faqPage.cta.title")}
             </Title>
             <Paragraph className={styles.ctaDescription}>
-              Jika Anda tidak menemukan jawaban atas pertanyaan Anda di atas,
-              jangan ragu untuk menghubungi tim kami. Kami dengan senang hati akan
-              menjawab setiap pertanyaan Anda.
+              {t("faqPage.cta.description")}
             </Paragraph>
             <Flex justify="center" gap={12}>
               <Button type="primary" size="large" href="/kontak">
-                Hubungi Kami <Icon type="ArrowRightOutlined" />
+                {t("faqPage.cta.primaryAction")} <Icon type="ArrowRightOutlined" />
               </Button>
               <Button size="large" href="/beranda">
-                Kembali ke Beranda
+                {t("faqPage.cta.secondaryAction")}
               </Button>
             </Flex>
           </div>

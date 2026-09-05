@@ -78,7 +78,7 @@ const useStyles = createStyles(({ css }) => ({
     position: absolute;
     inset: 0;
     z-index: 0;
-    background-image: url(/images/ilustrations/Office_Call.png);
+    background-image: url(/images/sample/04_portal_layanan_publik.jpg);
     background-size: cover;
     background-position: center;
     opacity: 0.12;
