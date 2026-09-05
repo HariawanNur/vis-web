@@ -192,6 +192,10 @@ const useStyles = createStyles(({ css, token }) => ({
     position: relative;
     width: 100%;
     min-height: 560px;
+
+    @media (max-width: ${token.screenSM}px) {
+      display: none;
+    }
   `,
   heroFloatingCard: css`
     position: absolute;

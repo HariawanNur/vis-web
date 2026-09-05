@@ -60,6 +60,9 @@
     "portfolio": "Portfolio",
     "career": "Career",
     "contact": "Contact",
+    "features": "Features",
+    "benefits": "Benefits",
+    "pricing": "Pricing",
     "login": "Log in",
     "openMenu": "Open navigation menu",
     "closeMenu": "Close navigation menu",
@@ -79,7 +82,12 @@
     "copyright": "All rights reserved.",
     "newsletterTitle": "Technology and business insights in your inbox",
     "newsletterPlaceholder": "Your email address",
-    "newsletterAction": "Subscribe"
+    "newsletterAction": "Subscribe",
+    "social": {
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
   },
   "status": {
     "loading": "Loading...",

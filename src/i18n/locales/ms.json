@@ -60,6 +60,9 @@
     "portfolio": "Portfolio",
     "career": "Kerjaya",
     "contact": "Hubungi",
+    "features": "Ciri",
+    "benefits": "Manfaat",
+    "pricing": "Harga",
     "login": "Log masuk",
     "openMenu": "Buka menu navigasi",
     "closeMenu": "Tutup menu navigasi",
@@ -79,7 +82,12 @@
     "copyright": "Hak cipta terpelihara.",
     "newsletterTitle": "Wawasan teknologi dan perniagaan dalam e-mel anda",
     "newsletterPlaceholder": "Alamat e-mel anda",
-    "newsletterAction": "Langgan"
+    "newsletterAction": "Langgan",
+    "social": {
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
   },
   "status": {
     "loading": "Memuatkan...",

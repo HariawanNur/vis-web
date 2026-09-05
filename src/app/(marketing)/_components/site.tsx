@@ -256,10 +256,10 @@ const useStyles = createStyles(({ css, token }) => ({
       radial-gradient(circle at 84% 76%, rgba(255, 255, 255, 0.08), transparent 24%);
   `,
   footerMain: css`
-    padding: 46px 0 28px;
+    padding: 44px 0 26px;
 
     @media (max-width: ${token.screenSM}px) {
-      padding: 32px 0 18px;
+      padding: 30px 0 18px;
     }
   `,
   footerBrand: css`
@@ -274,7 +274,7 @@ const useStyles = createStyles(({ css, token }) => ({
     margin: 0 !important;
   `,
   footerBrandText: css`
-    margin-top: 10px;
+    margin-top: 8px;
     color: rgba(226, 232, 240, 0.74);
     font-size: 13px;
     line-height: 1.75;
@@ -299,7 +299,7 @@ const useStyles = createStyles(({ css, token }) => ({
   footerLink: css`
     display: block;
     width: fit-content;
-    margin-bottom: 10px;
+    margin-bottom: 9px;
     color: rgba(226, 232, 240, 0.7);
     font-size: 13px;
     text-decoration: none;
@@ -309,7 +309,7 @@ const useStyles = createStyles(({ css, token }) => ({
     }
 
     @media (max-width: ${token.screenSM}px) {
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
   `,
   footerText: css`
@@ -321,7 +321,7 @@ const useStyles = createStyles(({ css, token }) => ({
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     color: rgba(226, 232, 240, 0.84);
     font-size: 13px;
     line-height: 1.6;
@@ -348,11 +348,11 @@ const useStyles = createStyles(({ css, token }) => ({
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 22px 0 28px;
+    padding: 20px 0 26px;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
 
     @media (max-width: ${token.screenSM}px) {
-      padding: 18px 0 22px;
+      padding: 16px 0 20px;
     }
 
     @media (max-width: ${token.screenMD}px) {
@@ -362,7 +362,7 @@ const useStyles = createStyles(({ css, token }) => ({
   `,
   footerBottomLinks: css`
     display: flex;
-    gap: 18px;
+    gap: 14px;
     flex-wrap: wrap;
   `,
   footerSocial: css`
@@ -523,7 +523,7 @@ export function Header() {
           ))}
         </nav>
 
-        <Space direction="vertical" size={14} style={{ width: "100%", marginTop: 18 }}>
+        <Flex vertical gap={14} style={{ width: "100%", marginTop: 18 }}>
           <Select
             aria-label={t("nav.changeLanguage")}
             value={locale}
@@ -538,7 +538,7 @@ export function Header() {
           <Button type="primary" icon={<Icon type="MailOutlined" />} href="/kontak" block onClick={() => setMobileOpen(false)}>
             {t("marketing.home.primaryAction")}
           </Button>
-        </Space>
+        </Flex>
       </Drawer>
       </header>
       <div className={styles.headerSpacer} />
@@ -572,19 +572,19 @@ export function Footer() {
 
       <MarketingContainer>
         <div className={styles.footerMain}>
-          <Row gutter={[32, 28]}>
-            <Col xs={24} sm={12} lg={7}>
+          <Row gutter={[28, 24]}>
+            <Col xs={24} sm={12} lg={6}>
               <Link href="/beranda" className={styles.footerBrand}>
-                <Image src="/images/branch.webp" alt={t("app.logoAlt")} width={42} height={42} priority />
+                <Image src="/images/branch.webp" alt={t("app.logoAlt")} width={44} height={44} priority />
                 <Title level={4} className={styles.footerBrandName}>
                   {t("app.brand")}
                 </Title>
               </Link>
               <Text className={styles.footerBrandText}>{t("footer.summary")}</Text>
               <div className={styles.footerSocial}>
-                <Button className={styles.footerSocialButton} type="text" shape="circle" aria-label="LinkedIn" icon={<Icon type="LinkedinFilled" />} />
-                <Button className={styles.footerSocialButton} type="text" shape="circle" aria-label="Instagram" icon={<Icon type="InstagramFilled" />} />
-                <Button className={styles.footerSocialButton} type="text" shape="circle" aria-label="YouTube" icon={<Icon type="YoutubeFilled" />} />
+                <Button className={styles.footerSocialButton} type="text" shape="circle" aria-label={t("footer.social.linkedin")} icon={<Icon type="LinkedinFilled" />} />
+                <Button className={styles.footerSocialButton} type="text" shape="circle" aria-label={t("footer.social.instagram")} icon={<Icon type="InstagramFilled" />} />
+                <Button className={styles.footerSocialButton} type="text" shape="circle" aria-label={t("footer.social.youtube")} icon={<Icon type="YoutubeFilled" />} />
               </div>
             </Col>
 
@@ -594,19 +594,22 @@ export function Footer() {
               </Title>
               <Link className={styles.footerLink} href="/beranda">{t("nav.home")}</Link>
               <Link className={styles.footerLink} href="/tentang-kami">{t("nav.about")}</Link>
-              <Link className={styles.footerLink} href="/kontak">{t("nav.contact")}</Link>
+              <Link className={styles.footerLink} href="/fitur">{t("nav.services")}</Link>
+              <Link className={styles.footerLink} href="/solusi">{t("nav.solution")}</Link>
+              <Link className={styles.footerLink} href="/portofolio">{t("nav.portfolio")}</Link>
+              <Link className={styles.footerLink} href="/karir">{t("nav.career")}</Link>
             </Col>
 
-            <Col xs={12} sm={8} lg={4}>
+            <Col xs={12} sm={8} lg={5}>
               <Title level={5} className={styles.footerTitle}>
                 {t("footer.services")}
               </Title>
-              <Link className={styles.footerLink} href="/fitur">{t("nav.features")}</Link>
-              <Link className={styles.footerLink} href="/manfaat">{t("nav.benefits")}</Link>
-              <Link className={styles.footerLink} href="/harga">{t("nav.pricing")}</Link>
+              <Link className={styles.footerLink} href="/fitur">{t("marketing.home.services.items.ecommerce.title")}</Link>
+              <Link className={styles.footerLink} href="/fitur">{t("marketing.home.services.items.custom.title")}</Link>
+              <Link className={styles.footerLink} href="/fitur">{t("marketing.home.services.items.consulting.title")}</Link>
             </Col>
 
-            <Col xs={24} sm={8} lg={4}>
+            <Col xs={24} sm={8} lg={5}>
               <Title level={5} className={styles.footerTitle}>
                 {t("footer.contact")}
               </Title>
@@ -624,21 +627,21 @@ export function Footer() {
               </div>
             </Col>
 
-            <Col xs={24} sm={8} lg={5}>
+            <Col xs={24} sm={8} lg={4}>
               <Title level={5} className={styles.footerTitle}>
                 {t("footer.newsletterTitle")}
               </Title>
               <Text className={styles.footerText}>{t("footer.newsletterNote")}</Text>
               <Space.Compact className={styles.newsletter} block>
                 <Input aria-label={t("footer.newsletterPlaceholder")} placeholder={t("footer.newsletterPlaceholder")} />
-                <Button type="primary">{t("footer.newsletterAction")}</Button>
+                <Button type="primary" aria-label={t("footer.newsletterAction")} icon={<Icon type="ArrowRightOutlined" />} />
               </Space.Compact>
             </Col>
           </Row>
 
           <Flex className={styles.footerBottom}>
             <Text className={styles.footerText}>
-              © {year} {t("app.brand")}. {t("footer.copyright")}
+              © {year} {t("app.fullTitle")} {t("footer.copyright")}
             </Text>
 
             <div className={styles.footerBottomLinks}>

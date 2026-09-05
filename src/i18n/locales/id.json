@@ -60,6 +60,9 @@
     "portfolio": "Portofolio",
     "career": "Karir",
     "contact": "Kontak",
+    "features": "Fitur",
+    "benefits": "Manfaat",
+    "pricing": "Harga",
     "login": "Masuk",
     "openMenu": "Buka menu navigasi",
     "closeMenu": "Tutup menu navigasi",
@@ -79,7 +82,12 @@
     "copyright": "Hak cipta dilindungi.",
     "newsletterTitle": "Insight teknologi dan bisnis di email Anda",
     "newsletterPlaceholder": "Alamat email Anda",
-    "newsletterAction": "Berlangganan"
+    "newsletterAction": "Berlangganan",
+    "social": {
+      "linkedin": "LinkedIn",
+      "instagram": "Instagram",
+      "youtube": "YouTube"
+    }
   },
   "status": {
     "loading": "Memuat...",
