@@ -311,6 +311,16 @@ const useStyles = createStyles(({ css, token }) => ({
       margin-bottom: 7px;
     }
   `,
+  footerContactLink: css`
+    color: rgba(226, 232, 240, 0.84);
+    font-size: 13px;
+    line-height: 1.6;
+    text-decoration: none;
+
+    &:hover {
+      color: #fff;
+    }
+  `,
   footerText: css`
     color: rgba(226, 232, 240, 0.72) !important;
     font-size: 13px;
@@ -562,6 +572,9 @@ export function Footer() {
   const { styles } = useStyles();
   const { t } = useI18n();
   const year = new Date().getFullYear();
+  const contactEmail = t("footer.contactEmail");
+  const contactPhone = t("footer.contactPhone");
+  const whatsappNumber = contactPhone.replace(/\D/g, "");
 
   return (
     <footer className={styles.footer}>
@@ -587,7 +600,7 @@ export function Footer() {
           <Row gutter={[28, 24]}>
             <Col xs={24} sm={12} lg={6}>
               <Link href="/beranda" className={styles.footerBrand}>
-                <Image src="/images/branch.webp" alt={t("app.logoAlt")} width={44} height={44} priority />
+                <Image src="/images/logo.webp" alt={t("app.logoAlt")} width={44} height={44} priority />
                 <Title level={4} className={styles.footerBrandName}>
                   {t("app.brand")}
                 </Title>
@@ -627,11 +640,15 @@ export function Footer() {
               </Title>
               <div className={styles.contactItem}>
                 <Icon className={styles.contactIcon} type="MailOutlined" />
-                <span>{t("footer.contactEmail")}</span>
+                <a className={styles.footerContactLink} href={`mailto:${contactEmail}`}>
+                  <span>{contactEmail}</span>
+                </a>
               </div>
               <div className={styles.contactItem}>
                 <Icon className={styles.contactIcon} type="PhoneOutlined" />
-                <span>{t("footer.contactPhone")}</span>
+                <a className={styles.footerContactLink} href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noreferrer">
+                  <span>{contactPhone}</span>
+                </a>
               </div>
               <div className={styles.contactItem}>
                 <Icon className={styles.contactIcon} type="EnvironmentOutlined" />
