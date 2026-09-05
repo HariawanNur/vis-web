@@ -50,8 +50,10 @@ const useStyles = createStyles(({ css, token }) => ({
     }
   `,
   header: css`
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 60;
     min-height: 80px;
     border-bottom: 1px solid ${token.colorBorderSecondary};
@@ -181,6 +183,13 @@ const useStyles = createStyles(({ css, token }) => ({
     padding-bottom: 14px;
     margin-bottom: 14px;
     border-bottom: 1px solid ${token.colorBorderSecondary};
+  `,
+  headerSpacer: css`
+    height: 80px;
+
+    @media (max-width: ${token.screenSM}px) {
+      height: ${marketingTokens.header.mobileHeight}px;
+    }
   `,
   footer: css`
     margin-top: auto;
@@ -396,7 +405,8 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className={styles.header}>
+    <>
+      <header className={styles.header}>
       <MarketingContainer>
         <Flex className={styles.headerInner} align="center" justify="space-between" gap={24} wrap="nowrap">
           <Link href="/beranda" className={styles.brand} onClick={() => setMobileOpen(false)}>
@@ -405,8 +415,8 @@ export function Header() {
                 className={styles.logo}
                 src="/images/branch.webp"
                 alt={t("app.logoAlt")}
-                width={150}
-                height={50}
+                width={42}
+                height={42}
                 priority
               />
               <span style={{ display: "none" }}>
@@ -505,7 +515,9 @@ export function Header() {
           </Button>
         </Space>
       </Drawer>
-    </header>
+      </header>
+      <div className={styles.headerSpacer} />
+    </>
   );
 }
 
