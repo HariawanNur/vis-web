@@ -814,25 +814,6 @@ export default function Page() {
           ))}
         </div>
       </MarketingSection>
-
-      <MarketingSection>
-        <div className={styles.cta}>
-          <div className={styles.ctaGlow} />
-          <div className={styles.ctaInner}>
-            <div>
-              <Title level={2} className={styles.ctaTitle}>
-                {t("marketing.home.cta.title")}
-              </Title>
-              <Text className={styles.ctaDesc}>
-                {t("marketing.home.cta.description")}
-              </Text>
-            </div>
-            <Button type="primary" size="large" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
-              {t("marketing.home.cta.action")}
-            </Button>
-          </div>
-        </div>
-      </MarketingSection>
     </main>
   );
 }
