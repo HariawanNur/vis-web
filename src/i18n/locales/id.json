@@ -1,0 +1,980 @@
+{
+  "app": {
+    "brand": "Vistara",
+    "tagline": "Satu Desain, Banyak Solusi",
+    "logoAlt": "Logo Vistara",
+    "fullTitle": "Vistara - PT. Vistara Teknologi Indonesia",
+    "description": "Enterprise design system dan platform digital untuk corporate website, dashboard, SaaS, IoT, dan aplikasi klien."
+  },
+  "common": {
+    "learnMore": "Pelajari lebih lanjut",
+    "viewAll": "Lihat semua",
+    "getStarted": "Mulai sekarang",
+    "startFreeTrial": "Mulai uji coba gratis",
+    "contactSales": "Hubungi sales",
+    "bookDemo": "Jadwalkan demo",
+    "submit": "Kirim",
+    "send": "Kirim pesan",
+    "cancel": "Batal",
+    "close": "Tutup",
+    "back": "Kembali",
+    "next": "Lanjut",
+    "yes": "Ya",
+    "no": "Tidak",
+    "daysLeft": "hari tersisa",
+    "or": "atau"
+  },
+  "notFound": {
+    "title": "Halaman tidak ditemukan",
+    "description": "Halaman ini sudah dihapus atau tidak tersedia. Kembali ke beranda salon untuk melihat booking, POS, stok, dan laporan.",
+    "home": "Kembali ke beranda",
+    "dashboard": "Lihat dashboard",
+    "product": "Vistara Teknologi Indonesia"
+  },
+  "login": {
+    "brand": "Vistara",
+    "mock": {
+      "title": "Shortcut akun mock",
+      "otpHint": "Kode MFA: 123456",
+      "platform": "Platform Admin",
+      "owner": "Tenant Owner",
+      "manager": "Tenant Manager"
+    },
+    "administration": "Platform Administration",
+    "title": "Login Backoffice",
+    "subtitle": "Login untuk mengakses dashboard admin",
+    "emailPlaceholder": "Masukkan email Anda",
+    "passwordPlaceholder": "Masukkan password Anda",
+    "rememberMe": "Ingat saya",
+    "forgotPassword": "Lupa password?",
+    "submit": "Login",
+    "divider": "atau masuk dengan",
+    "googleLogin": "Login dengan Google",
+    "copyright": "© 2024 Kasera. All rights reserved.",
+    "brandDescription": "Kelola semua tenant, paket, pengguna, dan sistem dalam satu platform.",
+    "dashboardPreviewAlt": "Pratinjau dashboard administrasi Kasera",
+    "securityTitle": "Sistem Aman",
+    "securityDescription": "Keamanan data terjamin dengan standar enterprise."
+  },
+  "verify": {
+    "title": "Verifikasi Dua Langkah",
+    "enterpriseTitle": "Keamanan berlapis untuk setiap akses.",
+    "enterpriseDescription": "Verifikasi identitas memastikan hanya pengguna berwenang yang dapat mengakses workspace dan data organisasi.",
+    "encrypted": "Kode dan kredensial ditransmisikan secara terenkripsi",
+    "protected": "Akses dilindungi oleh kebijakan keamanan enterprise",
+    "subtitle": "Masukkan kode verifikasi yang dikirim ke",
+    "resend": "Kirim ulang kode",
+    "resendIn": "Kirim ulang kode dalam",
+    "submit": "Verifikasi",
+    "altMethod": "Gunakan metode lain",
+    "backToLogin": "Kembali ke login",
+    "codeLabel": "Kode verifikasi enam digit",
+    "destinationFallback": "aplikasi autentikator Anda",
+    "error": "Kode verifikasi tidak valid. Silakan coba lagi.",
+    "resendError": "Kode belum dapat dikirim ulang. Silakan coba lagi."
+  },
+  "success": {
+    "title": "Login Berhasil!",
+    "eyebrow": "Identity verified",
+    "enterpriseTitle": "Akses aman. Workspace siap.",
+    "enterpriseDescription": "Identitas Anda telah diverifikasi dan sesi aman telah dibuat untuk workspace ini.",
+    "systemStatus": "Seluruh layanan autentikasi beroperasi normal",
+    "welcome": "Selamat datang kembali 👋",
+    "redirecting": "Mengalihkan ke dashboard...",
+    "redirectProgress": "Progres pengalihan ke dashboard",
+    "securityTitle": "Akses Anda Aman",
+    "securityDescription": "Kami menjaga keamanan data dan akses Anda dengan standar enterprise."
+  },
+  "session": {
+    "expired": "Sesi Anda telah berakhir.",
+    "extended": "Sesi berhasil diperpanjang.",
+    "idleWarningTitle": "Sesi akan berakhir",
+    "idleWarningDescription": "Tidak ada aktivitas terdeteksi. Perpanjang sesi agar tetap masuk.",
+    "idleWarningStaySignedIn": "Tetap masuk",
+    "idleWarningLogoutNow": "Keluar sekarang",
+    "idleWarningFinal": "Sesi akan segera berakhir."
+  },
+  "dashboard": {
+    "platformConsole": "Platform Admin",
+    "tenantWorkspace": "Salon Cantik",
+    "notifications": "Notifikasi",
+    "messages": "Pesan",
+    "recentUpdates": "Pembaruan terbaru",
+    "signOut": "Keluar",
+    "tenantLocation": "Jakarta Selatan",
+    "viewAll": "Lihat semua",
+    "viewSchedule": "Lihat jadwal",
+    "fromLastMonth": "dari bulan lalu",
+    "fromYesterday": "dari kemarin",
+    "nav": {
+      "overview": "Dashboard",
+      "booking": "Booking & Appointment",
+      "pos": "POS & Kasir",
+      "crm": "Pelanggan & CRM",
+      "staffCommission": "Staff & Komisi",
+      "inventory": "Inventory",
+      "sales": "Penjualan",
+      "onlineStore": "Online Store",
+      "marketing": "Marketing & Engagement",
+      "analytics": "Laporan & Analytics",
+      "outlets": "Outlet",
+      "tenants": "Tenants",
+      "users": "Users",
+      "memberships": "Memberships",
+      "packages": "Packages",
+      "subscriptions": "Subscriptions",
+      "billing": "Billing",
+      "usageQuota": "Usage & Quota",
+      "systemHealth": "System Health",
+      "systemLogs": "System Logs",
+      "auditLogs": "Audit Logs",
+      "settings": "Pengaturan",
+      "salon": "Salon",
+      "teams": "Tim",
+      "appointments": "Janji Temu",
+      "transactions": "Transaksi",
+      "customers": "Pelanggan",
+      "services": "Layanan",
+      "staff": "Tim",
+      "reports": "Laporan",
+      "mainNavigation": "Navigasi utama",
+      "workspace": "Workspace",
+      "openMenu": "Buka menu"
+    },
+    "support": {
+      "title": "Sistem Aman",
+      "description": "Keamanan data terjamin dengan standar enterprise"
+    },
+    "period": {
+      "last30Days": "30 Hari Terakhir",
+      "thisYear": "Tahun Ini",
+      "thisWeek": "Minggu Ini",
+      "thisMonth": "Bulan Ini"
+    },
+    "month": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "Mei",
+      "jun": "Jun",
+      "jul": "Jul"
+    },
+    "day": {
+      "mon": "Sen",
+      "tue": "Sel",
+      "wed": "Rab",
+      "thu": "Kam",
+      "fri": "Jum",
+      "sat": "Sab",
+      "sun": "Min"
+    },
+    "time": {
+      "twoMinutesAgo": "2 menit lalu",
+      "fiveMinutesAgo": "5 menit lalu",
+      "twelveMinutesAgo": "12 menit lalu",
+      "fifteenMinutesAgo": "15 menit lalu",
+      "thirtyMinutesAgo": "30 menit lalu",
+      "oneHourAgo": "1 jam lalu",
+      "threeHoursAgo": "3 jam lalu"
+    },
+    "status": {
+      "operational": "Operasional",
+      "healthy": "Sehat",
+      "inProgress": "Diproses",
+      "confirmed": "Dikonfirmasi",
+      "pending": "Menunggu"
+    },
+    "plan": {
+      "enterprise": "Enterprise",
+      "business": "Business",
+      "pro": "Pro"
+    },
+    "platform": {
+      "brand": "Kasera",
+      "title": "Dashboard",
+      "headerSubtitle": "Platform Admin",
+      "searchPlaceholder": "Cari tenant, user, paket...",
+      "greeting": "Dashboard",
+      "subtitle": "Ringkasan performa platform Kasera",
+      "growthOverview": "Revenue Overview",
+      "growthHint": "Pertumbuhan pendapatan dan tenant",
+      "recentActivity": "Aktivitas Terbaru",
+      "topTenants": "Top Tenants",
+      "subscriptionBreakdown": "Distribusi Subscription",
+      "systemHealth": "System Health",
+      "kpi": {
+        "totalTenants": "Total Tenants",
+        "activeUsers": "Total Users",
+        "monthlyRevenue": "Total Revenue",
+        "activeSubscriptions": "Active Subscriptions"
+      },
+      "chart": {
+        "revenue": "Pendapatan",
+        "tenants": "Tenant"
+      },
+      "activity": {
+        "tenantJoined": "Tenant baru ditambahkan",
+        "paymentReceived": "Pembayaran berhasil",
+        "subscriptionUpgraded": "Paket ditingkatkan",
+        "systemUpdated": "Sistem diperbarui"
+      },
+      "tenant": {
+        "lumina": "Salon Cantik",
+        "belle": "Glow Beauty",
+        "aura": "Elegant Salon",
+        "glow": "Aura Beauty"
+      },
+      "quick": {
+        "addTenant": "Tambah Tenant",
+        "manageUsers": "Pengguna Platform",
+        "viewBilling": "Billing & Invoice",
+        "platformSettings": "Pengaturan Platform"
+      },
+      "health": {
+        "api": "API Services",
+        "database": "Database"
+      }
+    },
+    "tenant": {
+      "brand": "GLOW BEAUTY",
+      "title": "Dashboard",
+      "headerSubtitle": "Salon Cantik",
+      "searchPlaceholder": "Cari menu, laporan, atau data...",
+      "greeting": "Ringkasan Bisnis Hari Ini",
+      "subtitle": "Pantau performa operasional dan fokus pada hal yang membutuhkan perhatian",
+      "todayDate": "Hari ini • 30 Agustus 2026",
+      "allOutlets": "Semua Outlet",
+      "newAppointment": "Tambah Janji Temu",
+      "revenueOverview": "Tren Pendapatan",
+      "revenueHint": "Performa pendapatan bersih tujuh hari terakhir",
+      "days": "Hari",
+      "recentActivity": "Aktivitas Terbaru",
+      "todayAppointments": "Janji Temu Hari Ini",
+      "nextAppointments": "7 appointment berikutnya",
+      "serviceDistribution": "Distribusi Layanan",
+      "topServices": "Top Layanan",
+      "topStaff": "Top Staff",
+      "commission": "Lihat komisi",
+      "utilization": "utilisasi",
+      "whatsappAutomation": "WhatsApp Automation",
+      "sent": "terkirim",
+      "deliveryRate": "Delivery rate",
+      "readRate": "Read rate",
+      "bookings": "transaksi",
+      "kpi": {
+        "todayRevenue": "Pendapatan Hari Ini",
+        "todayAppointments": "Appointment Hari Ini",
+        "todayCustomers": "Customer Hari Ini",
+        "noShow": "No-show",
+        "staffUtilization": "Utilisasi Staff",
+        "revenueDetail": "↑ 12,5% dari kemarin",
+        "appointmentDetail": "7 appointment berikutnya",
+        "customerDetail": "+6 customer baru",
+        "noShowDetail": "6,2% dari seluruh booking",
+        "staffDetail": "10 dari 12 staff aktif"
+      },
+      "chart": {
+        "revenue": "Pendapatan",
+        "appointments": "Janji Temu"
+      },
+      "activity": {
+        "bookingCreated": "Janji temu baru",
+        "paymentCompleted": "Transaksi baru diterima",
+        "customerRegistered": "Pelanggan baru terdaftar",
+        "stockLow": "Layanan diperbarui"
+      },
+      "automation": {
+        "confirmation": "Booking Confirmation",
+        "reminder": "Appointment Reminder",
+        "followUp": "Review & Follow-up"
+      },
+      "commerce": {
+        "title": "Penjualan Omnichannel",
+        "description": "Satu customer, order, dan inventory untuk seluruh channel",
+        "manageStore": "Kelola store",
+        "pos": "POS Outlet",
+        "store": "Online Store",
+        "whatsapp": "WhatsApp Order",
+        "orders": "pesanan",
+        "totalSales": "Total penjualan hari ini"
+      },
+      "inventory": {
+        "title": "Shared Inventory",
+        "description": "Stok yang sama digunakan oleh POS dan online store",
+        "lowStock": "Stok menipis",
+        "sku": "SKU",
+        "units": "unit tersisa",
+        "sold": "terjual",
+        "restock": "Restock sekarang"
+      },
+      "customer": {
+        "maya": "Maya Sari",
+        "sarah": "Sarah Wijaya",
+        "rina": "Rina Marsela",
+        "diana": "Dewi Lestari"
+      },
+      "category": {
+        "hair": "Hair",
+        "face": "Treatment",
+        "nails": "Nail",
+        "body": "Facial"
+      },
+      "service": {
+        "hairColoring": "Hair Treatment",
+        "facialTreatment": "Facial Premium",
+        "hairSpa": "Hair Color",
+        "manicure": "Manicure & Pedicure"
+      },
+      "quick": {
+        "newAppointment": "Tambah Janji Temu",
+        "addCustomer": "Tambah Pelanggan",
+        "recordSale": "Tambah Layanan",
+        "viewReports": "Laporan Penjualan"
+      }
+    }
+  },
+  "nav": {
+    "home": "Beranda",
+    "features": "Fitur",
+    "benefits": "Manfaat",
+    "pricing": "Harga",
+    "about": "Tentang kami",
+    "contact": "Kontak",
+    "login": "Masuk",
+    "openMenu": "Buka menu navigasi",
+    "closeMenu": "Tutup menu navigasi",
+    "changeLanguage": "Ganti bahasa"
+  },
+  "footer": {
+    "summary": "Satu platform sederhana untuk menjalankan dan mengembangkan bisnis kecantikan Anda.",
+    "product": "Produk",
+    "company": "Perusahaan",
+    "support": "Dukungan",
+    "legal": "Legal",
+    "privacy": "Kebijakan privasi",
+    "terms": "Ketentuan layanan",
+    "copyright": "Hak cipta dilindungi.",
+    "newsletterTitle": "Tips pertumbuhan salon di email Anda",
+    "newsletterPlaceholder": "Alamat email Anda",
+    "newsletterAction": "Berlangganan"
+  },
+  "status": {
+    "loading": "Memuat...",
+    "submitting": "Mengirim...",
+    "success": "Berhasil",
+    "error": "Terjadi kesalahan",
+    "empty": "Data belum tersedia",
+    "retry": "Coba lagi",
+    "contactSent": "Pesan Anda telah terkirim.",
+    "contactFailed": "Pesan tidak dapat dikirim. Silakan coba lagi."
+  },
+  "bootstrap": {
+    "title": "Menyiapkan ruang kerja Anda",
+    "subtitle": "Mohon tunggu sebentar...",
+    "slow": "Proses sedikit lebih lama dari biasanya. Anda dapat mencoba lagi tanpa kehilangan data.",
+    "errorTitle": "Ruang kerja belum dapat disiapkan",
+    "errorDescription": "Periksa koneksi Anda, lalu coba lagi. Berikan ID permintaan kepada tim dukungan jika masalah berlanjut.",
+    "requestId": "ID permintaan",
+    "securityTitle": "Data Anda Aman",
+    "securityDescription": "Kami memastikan keamanan data dan akses Anda dengan enkripsi berlapis.",
+    "steps": {
+      "auth": "Mengautentikasi sesi",
+      "tenant": "Memuat konteks organisasi",
+      "permissions": "Memuat izin akses",
+      "workspace": "Menyiapkan aplikasi",
+      "ready": "Ruang kerja siap"
+    }
+  },
+  "form": {
+    "name": "Nama",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Telepon",
+    "address": "Alamat",
+    "businessType": "Jenis bisnis",
+    "teamSize": "Ukuran tim",
+    "message": "Apa yang bisa kami bantu?",
+    "optional": "Opsional",
+    "selectPlaceholder": "Pilih salah satu",
+    "namePlaceholder": "Nama lengkap Anda",
+    "emailPlaceholder": "anda@bisnis.com",
+    "phonePlaceholder": "+62...",
+    "messagePlaceholder": "Ceritakan salon dan kebutuhan Anda",
+    "required": "Kolom ini wajib diisi",
+    "invalidEmail": "Masukkan alamat email yang valid",
+    "privacyConsent": "Dengan mengirim formulir, Anda menyetujui kebijakan privasi kami.",
+    "options": {
+      "business": {
+        "salon": "Salon rambut atau kecantikan",
+        "barbershop": "Barbershop",
+        "spa": "Spa",
+        "clinic": "Klinik kecantikan",
+        "other": "Lainnya"
+      },
+      "team": {
+        "oneToFive": "1-5 orang",
+        "sixToFifteen": "6-15 orang",
+        "sixteenToFifty": "16-50 orang",
+        "fiftyPlus": "51+ orang"
+      }
+    }
+  },
+  "marketing": {
+    "home": {
+      "eyebrow": "Manajemen salon jadi sederhana",
+      "title": "Lebih banyak waktu untuk pelanggan. Lebih sedikit waktu untuk administrasi.",
+      "description": "Kelola booking, pembayaran, staf, stok, dan hubungan pelanggan dari satu tempat.",
+      "stats": {
+        "salons": "bisnis kecantikan",
+        "bookings": "booking dikelola",
+        "uptime": "waktu aktif platform",
+        "support": "dukungan pelanggan"
+      }
+    },
+    "features": {
+      "eyebrow": "Semua yang Anda butuhkan",
+      "title": "Dibuat untuk cara kerja bisnis kecantikan",
+      "description": "Hubungkan setiap bagian operasional harian tanpa alat yang rumit.",
+      "groups": {
+        "customer": {
+          "title": "Pengalaman pelanggan",
+          "description": "Buat setiap kunjungan lancar, personal, dan mudah diulang."
+        },
+        "operations": {
+          "title": "Operasional salon",
+          "description": "Jaga tim dan bisnis tetap selaras setiap hari."
+        }
+      },
+      "cards": {
+        "booking": {
+          "title": "Booking online",
+          "description": "Pelanggan dapat memilih layanan dan staf yang tersedia kapan saja."
+        },
+        "members": {
+          "title": "Profil pelanggan",
+          "description": "Simpan riwayat kunjungan, preferensi, catatan, dan loyalitas bersama."
+        },
+        "whatsapp": {
+          "title": "Pengingat WhatsApp",
+          "description": "Kirim konfirmasi dan pengingat otomatis untuk mengurangi kunjungan terlewat."
+        },
+        "pos": {
+          "title": "Kasir dan POS",
+          "description": "Proses layanan, produk, diskon, dan pembayaran dalam satu transaksi."
+        },
+        "staff": {
+          "title": "Staf dan komisi",
+          "description": "Kelola jadwal, performa, dan perhitungan komisi dengan jelas."
+        },
+        "inventory": {
+          "title": "Inventaris",
+          "description": "Pantau stok produk, pemakaian, dan batas stok rendah."
+        },
+        "reports": {
+          "title": "Laporan bisnis",
+          "description": "Pahami pendapatan, layanan, pelanggan, dan performa tim."
+        }
+      }
+    },
+    "benefits": {
+      "eyebrow": "Dampak bisnis nyata",
+      "title": "Jalankan salon yang lebih tenang dan menguntungkan",
+      "description": "Otomatiskan pekerjaan berulang dan fokuskan energi pada hal penting.",
+      "cards": {
+        "saveTime": {
+          "title": "Hemat waktu administrasi",
+          "description": "Gantikan jadwal, perhitungan, dan rekap harian manual."
+        },
+        "noShows": {
+          "title": "Kurangi pelanggan tidak hadir",
+          "description": "Pengingat otomatis membantu pelanggan datang tepat waktu."
+        },
+        "revenue": {
+          "title": "Tingkatkan pendapatan berulang",
+          "description": "Gunakan riwayat pelanggan untuk layanan yang lebih relevan."
+        },
+        "decisions": {
+          "title": "Ambil keputusan lebih jelas",
+          "description": "Lihat angka tepercaya tanpa menyusun ulang spreadsheet."
+        }
+      },
+      "stats": {
+        "adminTime": "hemat administrasi per minggu",
+        "noShows": "lebih sedikit janji terlewat",
+        "repeatVisits": "lebih banyak kunjungan ulang"
+      }
+    },
+    "pricing": {
+      "eyebrow": "Harga sederhana",
+      "title": "Paket untuk setiap tahap pertumbuhan",
+      "description": "Mulai sesuai kebutuhan dan tingkatkan saat bisnis berkembang.",
+      "perMonth": "per bulan",
+      "contactUs": "Hubungi kami",
+      "highlights": {
+        "trial": {
+          "title": "Uji coba gratis",
+          "description": "Jelajahi produk sebelum memilih paket."
+        },
+        "setup": {
+          "title": "Pengaturan mudah",
+          "description": "Siapkan layanan, staf, dan jadwal dengan cepat."
+        },
+        "support": {
+          "title": "Dukungan membantu",
+          "description": "Tim kami siap saat Anda membutuhkan panduan."
+        }
+      },
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "Untuk salon mandiri yang mulai lebih teratur."
+        },
+        "growth": {
+          "name": "Growth",
+          "description": "Untuk tim berkembang yang membutuhkan kontrol lengkap."
+        },
+        "multiBranch": {
+          "name": "Multi-cabang",
+          "description": "Untuk bisnis yang mengelola beberapa lokasi."
+        }
+      },
+      "features": {
+        "booking": "Booking online",
+        "pos": "Kasir dan POS",
+        "members": "Database pelanggan",
+        "allStarter": "Semua fitur Starter",
+        "staff": "Staf dan komisi",
+        "inventory": "Manajemen inventaris",
+        "whatsapp": "Notifikasi WhatsApp",
+        "reports": "Laporan lanjutan",
+        "allGrowth": "Semua fitur Growth",
+        "multiBranch": "Dashboard multi-cabang",
+        "roles": "Peran dan akses khusus",
+        "prioritySupport": "Dukungan prioritas"
+      },
+      "comparison": {
+        "booking": "Booking online",
+        "pos": "Kasir dan POS",
+        "staff": "Komisi staf",
+        "inventory": "Inventaris",
+        "branches": "Lokasi bisnis"
+      },
+      "values": {
+        "oneBranch": "1 lokasi",
+        "unlimited": "Tanpa batas"
+      }
+    },
+    "about": {
+      "eyebrow": "Tentang Kasera",
+      "title": "Teknologi yang membantu bisnis kecantikan berkembang",
+      "description": "Kami membuat alat praktis dengan pemilik salon dan tim sebagai pusatnya.",
+      "stats": {
+        "founded": "didirikan",
+        "team": "anggota tim",
+        "cities": "kota dijangkau",
+        "customers": "pelanggan bisnis"
+      },
+      "values": {
+        "salonFirst": {
+          "title": "Utamakan salon",
+          "description": "Kami mulai dari tantangan nyata para profesional kecantikan."
+        },
+        "simple": {
+          "title": "Tetap sederhana",
+          "description": "Software yang andal harus tetap jelas dan mudah digunakan."
+        },
+        "reliable": {
+          "title": "Bangun kepercayaan",
+          "description": "Sistem andal dan dukungan jujur mendasari setiap keputusan."
+        },
+        "grow": {
+          "title": "Tumbuh bersama",
+          "description": "Kesuksesan kami mengikuti pertumbuhan jangka panjang pelanggan."
+        }
+      }
+    },
+    "contact": {
+      "eyebrow": "Bicara dengan kami",
+      "title": "Mari temukan pengaturan yang tepat untuk salon Anda",
+      "description": "Ceritakan cara kerja bisnis Anda dan tim kami akan membantu langkah berikutnya.",
+      "promises": {
+        "response": {
+          "title": "Respons cepat",
+          "description": "Tim kami akan menjawab dalam satu hari kerja."
+        },
+        "demo": {
+          "title": "Demo sesuai kebutuhan",
+          "description": "Lihat alur kerja yang cocok untuk tim dan layanan Anda."
+        },
+        "noPressure": {
+          "title": "Tanpa tekanan",
+          "description": "Dapatkan jawaban praktis tanpa penjualan yang memaksa."
+        }
+      },
+      "visit": {
+        "title": "Yang akan Anda dapatkan",
+        "demo": {
+          "title": "Tur produk langsung",
+          "description": "Lihat alur booking hingga pembayaran dalam sesi terpandu."
+        },
+        "workflow": {
+          "title": "Tinjauan alur kerja",
+          "description": "Diskusikan proses saat ini dan kendala Anda."
+        },
+        "migration": {
+          "title": "Panduan pengaturan",
+          "description": "Pahami pilihan onboarding dan migrasi data."
+        }
+      }
+    },
+    "title": "Pemasaran",
+    "subtitle": "Kelola kampanye dan automasi WhatsApp",
+    "newCampaign": "Kampanye Baru",
+    "kpi": {
+      "sentToday": "Terkirim Hari Ini",
+      "delivered": "Terkirim",
+      "read": "Dibaca",
+      "activeCampaigns": "Kampanye Aktif"
+    }
+  },
+  "admin": {
+    "audit": {
+      "title": "Jejak Audit",
+      "recent": "Aktivitas Terbaru",
+      "search": "Cari pengguna atau sumber daya...",
+      "action": "Aksi",
+      "export": "Ekspor",
+      "col": {
+        "timestamp": "Waktu",
+        "user": "Pengguna",
+        "action": "Aksi",
+        "resource": "Sumber Daya",
+        "ip": "Alamat IP",
+        "details": "Detail"
+      }
+    },
+    "billing": {
+      "title": "Penagihan & Faktur",
+      "invoices": "Faktur",
+      "export": "Ekspor CSV",
+      "col": {
+        "invoice": "Faktur #",
+        "tenant": "Tenant",
+        "amount": "Jumlah",
+        "status": "Status",
+        "dueDate": "Jatuh Tempo",
+        "paidDate": "Tanggal Bayar"
+      }
+    },
+    "health": {
+      "title": "Kesehatan Sistem",
+      "services": "Status Layanan",
+      "col": {
+        "service": "Layanan",
+        "status": "Status",
+        "latency": "Latensi",
+        "uptime": "Uptime"
+      }
+    },
+    "logs": {
+      "title": "Log Sistem",
+      "recent": "Log Terbaru",
+      "search": "Cari pesan atau sumber...",
+      "level": "Level",
+      "export": "Ekspor",
+      "col": {
+        "timestamp": "Waktu",
+        "level": "Level",
+        "source": "Sumber",
+        "message": "Pesan",
+        "user": "Pengguna"
+      }
+    },
+    "packages": {
+      "title": "Paket Langganan",
+      "create": "Buat Paket",
+      "yearly": "Tahunan",
+      "features": "Fitur",
+      "edit": "Ubah"
+    },
+    "settings": {
+      "title": "Pengaturan Platform",
+      "save": "Simpan",
+      "tabs": {
+        "general": "Umum",
+        "security": "Keamanan",
+        "notifications": "Notifikasi",
+        "integrations": "Integrasi",
+        "billing": "Penagihan"
+      },
+      "general": {
+        "title": "Pengaturan Umum",
+        "platformName": "Nama Platform",
+        "supportEmail": "Email Dukungan",
+        "defaultTimezone": "Zona Waktu Default",
+        "maintenanceMode": "Mode Pemeliharaan"
+      },
+      "security": {
+        "title": "Pengaturan Keamanan",
+        "sessionTimeout": "Timeout Sesi",
+        "maxLoginAttempts": "Percobaan Login Maks",
+        "enforce2FA": "Paksa 2FA",
+        "ipWhitelist": "Daftar Putih IP"
+      },
+      "notifications": {
+        "title": "Pengaturan Notifikasi",
+        "smtpHost": "Host SMTP",
+        "smtpPort": "Port SMTP",
+        "emailEnabled": "Email Aktif",
+        "slackEnabled": "Slack Aktif"
+      },
+      "integrations": {
+        "title": "Pengaturan Integrasi",
+        "midtransKey": "Kunci API Midtrans",
+        "whatsappApi": "API WhatsApp",
+        "googleMaps": "Google Maps"
+      },
+      "billing": {
+        "title": "Pengaturan Penagihan",
+        "currency": "Mata Uang",
+        "taxRate": "Tarif Pajak",
+        "autoGenerateInvoice": "Auto Generate Faktur",
+        "gracePeriod": "Masa Tenggang"
+      }
+    },
+    "subscriptions": {
+      "title": "Langganan Aktif",
+      "list": "Daftar Langganan",
+      "manage": "Kelola",
+      "col": {
+        "tenant": "Tenant",
+        "package": "Paket",
+        "status": "Status",
+        "startDate": "Tanggal Mulai",
+        "nextBilling": "Penagihan Berikutnya",
+        "amount": "Jumlah",
+        "actions": "Aksi"
+      }
+    },
+    "tenants": {
+      "title": "Manajemen Tenant",
+      "list": "Daftar Tenant",
+      "search": "Cari tenant...",
+      "plan": "Paket",
+      "status": "Status",
+      "view": "Lihat",
+      "col": {
+        "name": "Nama Tenant",
+        "owner": "Pemilik",
+        "plan": "Paket",
+        "users": "Pengguna",
+        "revenue": "Pendapatan",
+        "status": "Status",
+        "created": "Dibuat",
+        "actions": "Aksi"
+      }
+    },
+    "usage": {
+      "title": "Penggunaan & Kuota",
+      "list": "Daftar Penggunaan",
+      "col": {
+        "tenant": "Tenant",
+        "plan": "Paket",
+        "apiCalls": "Panggilan API",
+        "storage": "Penyimpanan",
+        "users": "Pengguna",
+        "status": "Status"
+      }
+    },
+    "users": {
+      "title": "Manajemen Pengguna",
+      "list": "Daftar Pengguna",
+      "search": "Cari pengguna...",
+      "role": "Peran",
+      "manage": "Kelola",
+      "col": {
+        "name": "Nama",
+        "email": "Email",
+        "role": "Peran",
+        "scope": "Cakupan",
+        "status": "Status",
+        "lastLogin": "Login Terakhir",
+        "actions": "Aksi"
+      }
+    }
+  },
+  "appointments": {
+    "title": "Janji Temu",
+    "subtitle": "Kelola jadwal dan reservasi janji temu",
+    "newBooking": "Booking Baru",
+    "schedule": "Jadwal",
+    "kpi": {
+      "today": "Hari Ini",
+      "upcoming": "Mendatang",
+      "completed": "Selesai",
+      "noShow": "Tidak Hadir"
+    }
+  },
+  "customers": {
+    "title": "Pelanggan",
+    "subtitle": "Kelola database dan hubungan pelanggan",
+    "addNew": "Tambah Baru",
+    "database": "Basis Data Pelanggan",
+    "kpi": {
+      "total": "Total Pelanggan",
+      "active": "Aktif",
+      "newMonth": "Baru Bulan Ini",
+      "atRisk": "Berisiko"
+    }
+  },
+  "inventory": {
+    "title": "Inventaris",
+    "subtitle": "Kelola stok produk dan bahan habis pakai",
+    "addProduct": "Tambah Produk",
+    "management": "Manajemen Inventaris",
+    "kpi": {
+      "totalSku": "Total SKU",
+      "lowStock": "Stok Rendah",
+      "outOfStock": "Habis",
+      "totalValue": "Total Nilai"
+    }
+  },
+  "outlets": {
+    "title": "Cabang",
+    "subtitle": "Kelola multi-cabang dan kinerja",
+    "addOutlet": "Tambah Cabang",
+    "kpi": {
+      "total": "Total Cabang",
+      "active": "Aktif",
+      "staff": "Staf",
+      "revenue": "Pendapatan"
+    }
+  },
+  "reports": {
+    "title": "Laporan & Analitik",
+    "subtitle": "Pantau kinerja bisnis secara menyeluruh",
+    "export": "Ekspor",
+    "kpi": {
+      "revenue": "Pendapatan",
+      "transactions": "Transaksi",
+      "avgTransaction": "Rata-rata Transaksi",
+      "growth": "Pertumbuhan"
+    }
+  },
+  "sales": {
+    "title": "Penjualan",
+    "subtitle": "Pantau transaksi dan pesanan multi-kanal",
+    "export": "Ekspor",
+    "orders": "Pesanan",
+    "kpi": {
+      "today": "Hari Ini",
+      "pos": "POS",
+      "online": "Online",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "setting": {
+    "title": "Pengaturan",
+    "subtitle": "Kelola pengaturan organisasi dan sistem",
+    "save": "Simpan"
+  },
+  "store": {
+    "title": "Toko Online",
+    "subtitle": "Kelola produk dan pesanan toko online",
+    "addProduct": "Tambah Produk",
+    "kpi": {
+      "products": "Produk",
+      "ordersToday": "Pesanan Hari Ini",
+      "revenue": "Pendapatan",
+      "conversion": "Konversi"
+    }
+  },
+  "teams": {
+    "title": "Tim & Komisi",
+    "subtitle": "Kelola staf, jadwal, dan komisi",
+    "addStaff": "Tambah Staf",
+    "directory": "Direktori Staf",
+    "kpi": {
+      "activeStaff": "Staf Aktif",
+      "totalCommission": "Total Komisi",
+      "avgPerStaff": "Rata-rata/Staf",
+      "topPerformer": "Top Performer"
+    }
+  },
+  "transactions": {
+    "title": "Transaksi & Kasir",
+    "subtitle": "Kelola penjualan POS dan riwayat transaksi",
+    "newTransaction": "Transaksi Baru",
+    "history": "Riwayat",
+    "kpi": {
+      "todaySales": "Penjualan Hari Ini",
+      "transactions": "Transaksi",
+      "average": "Rata-rata",
+      "refunds": "Refund"
+    }
+  },
+  "mapDetails": {
+    "title": "Detail Peta",
+    "viewAll": "Lihat Semua"
+  },
+  "mapLocation": {
+    "actions": {
+      "viewProject": "Lihat Proyek"
+    },
+    "empty": {
+      "title": "Belum Ada Proyek",
+      "description": "Belum ada proyek di peta ini",
+      "button": "Tambah Proyek"
+    },
+    "geo": {
+      "button": "Lokasi Saat Ini",
+      "failed": "Gagal mendapatkan lokasi",
+      "loading": "Mencari lokasi...",
+      "noSupport": "Geolocation tidak didukung",
+      "permissionDenied": "Izin lokasi ditolak",
+      "success": "Lokasi ditemukan",
+      "unavailable": "Lokasi tidak tersedia"
+    },
+    "search": "Cari",
+    "searchPlaceholder": "Cari lokasi...",
+    "searching": "Mencari...",
+    "categories": {
+      "all": "Semua",
+      "tourism": "Wisata",
+      "restaurant": "Restoran",
+      "cafe": "Kafe",
+      "hotel": "Hotel",
+      "shopping": "Belanja",
+      "hospital": "Rumah Sakit",
+      "pharmacy": "Apotek",
+      "school": "Sekolah",
+      "bank": "Bank",
+      "atm": "ATM",
+      "gasStation": "SPBU",
+      "park": "Taman",
+      "airport": "Bandara",
+      "placeOfWorship": "Tempat Ibadah",
+      "office": "Kantor",
+      "trainStation": "Stasiun Kereta",
+      "busStation": "Terminal Bus",
+      "police": "Kepolisian",
+      "postOffice": "Kantor Pos"
+    }
+  },
+  "project": {
+    "labels": {
+      "budget": "Anggaran",
+      "projectId": "ID Proyek",
+      "startDate": "Tanggal Mulai",
+      "target": "Target"
+    },
+    "status": {
+      "attention": "Perlu Perhatian",
+      "completed": "Selesai",
+      "delayed": "Terlambat",
+      "inactive": "Tidak Aktif",
+      "onTrack": "Sesuai Jadwal"
+    }
+  }
+}

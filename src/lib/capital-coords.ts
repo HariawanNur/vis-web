@@ -1,0 +1,28 @@
+export const CAPITAL_COORDS: Record<string, { latitude: number; longitude: number; zoom: number }> = {
+  ID: { latitude: -6.2088, longitude: 106.8456, zoom: 7 },
+  MY: { latitude: 3.139, longitude: 101.6869, zoom: 7 },
+  SG: { latitude: 1.3521, longitude: 103.8198, zoom: 11 },
+  TH: { latitude: 13.7563, longitude: 100.5018, zoom: 7 },
+  PH: { latitude: 14.5995, longitude: 120.9842, zoom: 7 },
+  VN: { latitude: 21.0285, longitude: 105.8542, zoom: 7 },
+  KH: { latitude: 11.5564, longitude: 104.9282, zoom: 8 },
+  LA: { latitude: 17.9757, longitude: 102.6331, zoom: 8 },
+  MM: { latitude: 19.7633, longitude: 96.0785, zoom: 6 },
+  AU: { latitude: -35.2809, longitude: 149.13, zoom: 6 },
+  NZ: { latitude: -41.2865, longitude: 174.7762, zoom: 7 },
+  US: { latitude: 38.9072, longitude: -77.0369, zoom: 5 },
+  CA: { latitude: 45.4215, longitude: -75.6972, zoom: 4 },
+  GB: { latitude: 51.5072, longitude: -0.1276, zoom: 8 },
+  FR: { latitude: 48.8566, longitude: 2.3522, zoom: 8 },
+  DE: { latitude: 52.52, longitude: 13.405, zoom: 8 },
+  NL: { latitude: 52.3676, longitude: 4.9041, zoom: 8 },
+  TR: { latitude: 39.9334, longitude: 32.8597, zoom: 7 },
+  JP: { latitude: 35.6762, longitude: 139.6503, zoom: 7 },
+  KR: { latitude: 37.5665, longitude: 126.978, zoom: 7 },
+  CN: { latitude: 39.9042, longitude: 116.4074, zoom: 5 },
+  IN: { latitude: 28.6139, longitude: 77.209, zoom: 6 },
+  SA: { latitude: 24.7136, longitude: 46.6753, zoom: 6 },
+  AE: { latitude: 24.4539, longitude: 54.3773, zoom: 7 },
+}
+
+export const getCapitalCoords = (countryCode: string) => CAPITAL_COORDS[countryCode.toUpperCase()] ?? CAPITAL_COORDS.ID

@@ -1,0 +1,977 @@
+{
+  "app": {
+    "brand": "Vistara",
+    "tagline": "One Design, Many Solutions",
+    "logoAlt": "Vistara logo",
+    "fullTitle": "Vistara - PT. Vistara Teknologi Indonesia",
+    "description": "Enterprise design system and digital platform for corporate websites, dashboards, SaaS, IoT, and client applications."
+  },
+  "common": {
+    "learnMore": "Learn more",
+    "viewAll": "View all",
+    "getStarted": "Get started",
+    "startFreeTrial": "Start free trial",
+    "contactSales": "Contact sales",
+    "bookDemo": "Book a demo",
+    "submit": "Submit",
+    "send": "Send message",
+    "cancel": "Cancel",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "yes": "Yes",
+    "no": "No",
+    "daysLeft": "days left",
+    "or": "or"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "This page has been removed or is unavailable. Return to the salon home page to view bookings, POS, stock, and reports.",
+    "home": "Back to home",
+    "dashboard": "View dashboard",
+    "product": "Vistara Teknologi Indonesia"
+  },
+  "login": {
+    "brand": "Vistara",
+    "mock": {
+      "title": "Mock account shortcuts",
+      "otpHint": "MFA code: 123456",
+      "platform": "Platform Admin",
+      "owner": "Tenant Owner",
+      "manager": "Tenant Manager"
+    },
+    "administration": "Platform Administration",
+    "title": "Backoffice Login",
+    "subtitle": "Login to access the admin dashboard",
+    "emailPlaceholder": "Enter your email",
+    "passwordPlaceholder": "Enter your password",
+    "rememberMe": "Remember me",
+    "forgotPassword": "Forgot password?",
+    "submit": "Login",
+    "divider": "or sign in with",
+    "googleLogin": "Login with Google",
+    "copyright": "© 2024 Kasera. All rights reserved.",
+    "brandDescription": "Manage all tenants, packages, users, and systems in one platform.",
+    "dashboardPreviewAlt": "Kasera administration dashboard preview",
+    "securityTitle": "Secure System",
+    "securityDescription": "Data security guaranteed with enterprise standards."
+  },
+  "verify": {
+    "title": "Two-Factor Verification",
+    "enterpriseTitle": "Layered security for every access.",
+    "enterpriseDescription": "Identity verification ensures only authorized users can access organizational workspaces and data.",
+    "encrypted": "Codes and credentials are transmitted securely",
+    "protected": "Access is protected by enterprise security policies",
+    "subtitle": "Enter the verification code sent to",
+    "resend": "Resend code",
+    "resendIn": "Resend code in",
+    "submit": "Verify",
+    "altMethod": "Use another method",
+    "backToLogin": "Back to login",
+    "codeLabel": "Six-digit verification code",
+    "destinationFallback": "your authenticator app",
+    "error": "The verification code is invalid. Please try again.",
+    "resendError": "The code could not be resent. Please try again."
+  },
+  "success": {
+    "title": "Login Successful!",
+    "eyebrow": "Identity verified",
+    "enterpriseTitle": "Secure access. Workspace ready.",
+    "enterpriseDescription": "Your identity has been verified and a secure session has been established for this workspace.",
+    "systemStatus": "All authentication services are operational",
+    "welcome": "Welcome back 👋",
+    "redirecting": "Redirecting to dashboard...",
+    "redirectProgress": "Dashboard redirect progress",
+    "securityTitle": "Your Access Is Secure",
+    "securityDescription": "We protect your data and access with enterprise security standards."
+  },
+  "session": {
+    "expired": "Your session has expired.",
+    "extended": "Your session was extended.",
+    "idleWarningTitle": "Your session is ending",
+    "idleWarningDescription": "No activity was detected. Extend your session to stay signed in.",
+    "idleWarningStaySignedIn": "Stay signed in",
+    "idleWarningLogoutNow": "Log out now",
+    "idleWarningFinal": "Your session will end shortly."
+  },
+  "dashboard": {
+    "platformConsole": "Platform Admin",
+    "tenantWorkspace": "Salon Cantik",
+    "notifications": "Notifications",
+    "messages": "Messages",
+    "recentUpdates": "Recent updates",
+    "signOut": "Sign out",
+    "tenantLocation": "South Jakarta",
+    "viewAll": "View all",
+    "viewSchedule": "View schedule",
+    "fromLastMonth": "from last month",
+    "fromYesterday": "from yesterday",
+    "nav": {
+      "overview": "Dashboard",
+      "booking": "Booking & Appointment",
+      "pos": "POS & Checkout",
+      "crm": "Customers & CRM",
+      "staffCommission": "Staff & Commission",
+      "inventory": "Inventory",
+      "sales": "Sales",
+      "onlineStore": "Online Store",
+      "marketing": "Marketing & Engagement",
+      "analytics": "Reports & Analytics",
+      "outlets": "Outlets",
+      "tenants": "Tenants",
+      "users": "Users",
+      "subscriptions": "Subscriptions",
+      "auditLogs": "Audit Logs",
+      "settings": "Settings",
+      "appointments": "Appointments",
+      "customers": "Customers",
+      "services": "Services",
+      "staff": "Team",
+      "reports": "Reports",
+      "mainNavigation": "Main navigation",
+      "workspace": "Workspace",
+      "openMenu": "Open menu",
+      "packages": "Packages",
+      "billing": "Billing",
+      "usageQuota": "Usage & Quota",
+      "systemLogs": "System Logs",
+      "systemHealth": "System Health",
+      "memberships": "Memberships"
+    },
+    "support": {
+      "title": "Secure System",
+      "description": "Enterprise-grade data security"
+    },
+    "period": {
+      "last30Days": "Last 30 Days",
+      "thisYear": "This Year",
+      "thisWeek": "This Week",
+      "thisMonth": "This Month"
+    },
+    "month": {
+      "jan": "Jan",
+      "feb": "Feb",
+      "mar": "Mar",
+      "apr": "Apr",
+      "may": "May",
+      "jun": "Jun",
+      "jul": "Jul"
+    },
+    "day": {
+      "mon": "Mon",
+      "tue": "Tue",
+      "wed": "Wed",
+      "thu": "Thu",
+      "fri": "Fri",
+      "sat": "Sat",
+      "sun": "Sun"
+    },
+    "time": {
+      "twoMinutesAgo": "2 minutes ago",
+      "fiveMinutesAgo": "5 minutes ago",
+      "twelveMinutesAgo": "12 minutes ago",
+      "fifteenMinutesAgo": "15 minutes ago",
+      "thirtyMinutesAgo": "30 minutes ago",
+      "oneHourAgo": "1 hour ago",
+      "threeHoursAgo": "3 hours ago"
+    },
+    "status": {
+      "operational": "Operational",
+      "healthy": "Healthy",
+      "inProgress": "In progress",
+      "confirmed": "Confirmed",
+      "pending": "Pending"
+    },
+    "plan": {
+      "enterprise": "Enterprise",
+      "business": "Business",
+      "pro": "Pro"
+    },
+    "platform": {
+      "brand": "Kasera",
+      "title": "Dashboard",
+      "headerSubtitle": "Platform Admin",
+      "searchPlaceholder": "Search tenants, users, packages...",
+      "greeting": "Dashboard",
+      "subtitle": "Kasera platform performance summary",
+      "growthOverview": "Revenue Overview",
+      "growthHint": "Revenue and tenant growth",
+      "recentActivity": "Recent Activities",
+      "topTenants": "Top Tenants",
+      "subscriptionBreakdown": "Subscription Distribution",
+      "systemHealth": "System Health",
+      "kpi": {
+        "totalTenants": "Total Tenants",
+        "activeUsers": "Total Users",
+        "monthlyRevenue": "Total Revenue",
+        "activeSubscriptions": "Active Subscriptions"
+      },
+      "chart": {
+        "revenue": "Revenue",
+        "tenants": "Tenants"
+      },
+      "activity": {
+        "tenantJoined": "New tenant added",
+        "paymentReceived": "Payment received",
+        "subscriptionUpgraded": "Package upgraded",
+        "systemUpdated": "System updated"
+      },
+      "tenant": {
+        "lumina": "Salon Cantik",
+        "belle": "Glow Beauty",
+        "aura": "Elegant Salon",
+        "glow": "Aura Beauty"
+      },
+      "quick": {
+        "addTenant": "Add Tenant",
+        "manageUsers": "Platform Users",
+        "viewBilling": "Billing & Invoice",
+        "platformSettings": "Platform Settings"
+      },
+      "health": {
+        "api": "API Services",
+        "database": "Database"
+      }
+    },
+    "tenant": {
+      "brand": "GLOW BEAUTY",
+      "title": "Dashboard",
+      "headerSubtitle": "Salon Cantik",
+      "searchPlaceholder": "Search menus, reports, or data...",
+      "greeting": "Today's Business Overview",
+      "subtitle": "Monitor operations and focus on areas that need attention",
+      "todayDate": "Today • 30 August 2026",
+      "allOutlets": "All Outlets",
+      "newAppointment": "Add Appointment",
+      "revenueOverview": "Revenue Trend",
+      "revenueHint": "Net revenue performance over the last seven days",
+      "days": "Days",
+      "recentActivity": "Recent Activities",
+      "todayAppointments": "Today's Appointments",
+      "nextAppointments": "Next 7 appointments",
+      "serviceDistribution": "Service Distribution",
+      "topServices": "Top Services",
+      "topStaff": "Top Staff",
+      "commission": "View commission",
+      "utilization": "utilization",
+      "whatsappAutomation": "WhatsApp Automation",
+      "sent": "sent",
+      "deliveryRate": "Delivery rate",
+      "readRate": "Read rate",
+      "bookings": "transactions",
+      "kpi": {
+        "todayRevenue": "Today's Revenue",
+        "todayAppointments": "Today's Appointments",
+        "todayCustomers": "Today's Customers",
+        "noShow": "No-show",
+        "staffUtilization": "Staff Utilization",
+        "revenueDetail": "↑ 12.5% from yesterday",
+        "appointmentDetail": "7 upcoming appointments",
+        "customerDetail": "+6 new customers",
+        "noShowDetail": "6.2% of all bookings",
+        "staffDetail": "10 of 12 staff active"
+      },
+      "chart": {
+        "revenue": "Revenue",
+        "appointments": "Appointments"
+      },
+      "activity": {
+        "bookingCreated": "New appointment",
+        "paymentCompleted": "New transaction received",
+        "customerRegistered": "New customer registered",
+        "stockLow": "Service updated"
+      },
+      "automation": {
+        "confirmation": "Booking Confirmation",
+        "reminder": "Appointment Reminder",
+        "followUp": "Review & Follow-up"
+      },
+      "commerce": {
+        "title": "Omnichannel Sales",
+        "description": "One customer, order, and inventory layer across every channel",
+        "manageStore": "Manage store",
+        "pos": "Outlet POS",
+        "store": "Online Store",
+        "whatsapp": "WhatsApp Order",
+        "orders": "orders",
+        "totalSales": "Total sales today"
+      },
+      "inventory": {
+        "title": "Shared Inventory",
+        "description": "The same stock is available to POS and the online store",
+        "lowStock": "Low stock",
+        "sku": "SKU",
+        "units": "units left",
+        "sold": "sold",
+        "restock": "Restock now"
+      },
+      "customer": {
+        "maya": "Maya Sari",
+        "sarah": "Sarah Wijaya",
+        "rina": "Rina Marsela",
+        "diana": "Dewi Lestari"
+      },
+      "category": {
+        "hair": "Hair",
+        "face": "Treatment",
+        "nails": "Nail",
+        "body": "Facial"
+      },
+      "service": {
+        "hairColoring": "Hair Treatment",
+        "facialTreatment": "Premium Facial",
+        "hairSpa": "Hair Color",
+        "manicure": "Manicure & Pedicure"
+      },
+      "quick": {
+        "newAppointment": "Add Appointment",
+        "addCustomer": "Add Customer",
+        "recordSale": "Add Service",
+        "viewReports": "Sales Report"
+      }
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "features": "Features",
+    "benefits": "Benefits",
+    "pricing": "Pricing",
+    "about": "About us",
+    "contact": "Contact",
+    "login": "Log in",
+    "openMenu": "Open navigation menu",
+    "closeMenu": "Close navigation menu",
+    "changeLanguage": "Change language"
+  },
+  "footer": {
+    "summary": "One simple platform to run and grow your beauty business.",
+    "product": "Product",
+    "company": "Company",
+    "support": "Support",
+    "legal": "Legal",
+    "privacy": "Privacy policy",
+    "terms": "Terms of service",
+    "copyright": "All rights reserved.",
+    "newsletterTitle": "Salon growth tips in your inbox",
+    "newsletterPlaceholder": "Your email address",
+    "newsletterAction": "Subscribe"
+  },
+  "status": {
+    "loading": "Loading...",
+    "submitting": "Sending...",
+    "success": "Success",
+    "error": "Something went wrong",
+    "empty": "No data available",
+    "retry": "Try again",
+    "contactSent": "Your message has been sent.",
+    "contactFailed": "We could not send your message. Please try again."
+  },
+  "bootstrap": {
+    "title": "Preparing your workspace",
+    "subtitle": "Please wait a moment...",
+    "slow": "This is taking a little longer than usual. You can retry without losing data.",
+    "errorTitle": "We could not prepare your workspace",
+    "errorDescription": "Check your connection and try again. Share the request ID with support if the problem continues.",
+    "requestId": "Request ID",
+    "securityTitle": "Your Data Is Secure",
+    "securityDescription": "We protect your data and access with layered encryption.",
+    "steps": {
+      "auth": "Authenticating session",
+      "tenant": "Loading organization context",
+      "permissions": "Loading permissions",
+      "workspace": "Preparing application",
+      "ready": "Workspace ready"
+    }
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "password": "Password",
+    "phone": "Phone",
+    "address": "Address",
+    "businessType": "Business type",
+    "teamSize": "Team size",
+    "message": "How can we help?",
+    "optional": "Optional",
+    "selectPlaceholder": "Select an option",
+    "namePlaceholder": "Your full name",
+    "emailPlaceholder": "you@business.com",
+    "phonePlaceholder": "+62...",
+    "messagePlaceholder": "Tell us about your salon and what you need",
+    "required": "This field is required",
+    "invalidEmail": "Enter a valid email address",
+    "privacyConsent": "By submitting, you agree to our privacy policy.",
+    "options": {
+      "business": {
+        "salon": "Hair or beauty salon",
+        "barbershop": "Barbershop",
+        "spa": "Spa",
+        "clinic": "Beauty clinic",
+        "other": "Other"
+      },
+      "team": {
+        "oneToFive": "1-5 people",
+        "sixToFifteen": "6-15 people",
+        "sixteenToFifty": "16-50 people",
+        "fiftyPlus": "51+ people"
+      }
+    }
+  },
+  "marketing": {
+    "home": {
+      "eyebrow": "Salon management, made simple",
+      "title": "More time for clients. Less time on admin.",
+      "description": "Manage bookings, payments, staff, stock, and customer relationships from one place.",
+      "stats": {
+        "salons": "beauty businesses",
+        "bookings": "bookings managed",
+        "uptime": "platform uptime",
+        "support": "customer support"
+      }
+    },
+    "features": {
+      "eyebrow": "Everything you need",
+      "title": "Built for the way beauty businesses work",
+      "description": "Connect every part of your daily operation without complicated tools.",
+      "groups": {
+        "customer": {
+          "title": "Customer experience",
+          "description": "Make every visit smooth, personal, and easy to repeat."
+        },
+        "operations": {
+          "title": "Salon operations",
+          "description": "Keep your team and business in sync every day."
+        }
+      },
+      "cards": {
+        "booking": {
+          "title": "Online booking",
+          "description": "Let clients book available services and staff anytime."
+        },
+        "members": {
+          "title": "Customer profiles",
+          "description": "Keep visit history, preferences, notes, and loyalty details together."
+        },
+        "whatsapp": {
+          "title": "WhatsApp reminders",
+          "description": "Send confirmations and reminders automatically to reduce missed visits."
+        },
+        "pos": {
+          "title": "Cashier and POS",
+          "description": "Process services, products, discounts, and payments in one checkout."
+        },
+        "staff": {
+          "title": "Staff and commissions",
+          "description": "Manage schedules, performance, and commission calculations clearly."
+        },
+        "inventory": {
+          "title": "Inventory",
+          "description": "Track product stock, usage, and low-stock levels."
+        },
+        "reports": {
+          "title": "Business reports",
+          "description": "Understand revenue, services, customers, and team performance."
+        }
+      }
+    },
+    "benefits": {
+      "eyebrow": "Real business impact",
+      "title": "Run a calmer, more profitable salon",
+      "description": "Automate repetitive work and focus your energy where it matters.",
+      "cards": {
+        "saveTime": {
+          "title": "Save admin time",
+          "description": "Replace manual schedules, calculations, and daily recaps."
+        },
+        "noShows": {
+          "title": "Reduce no-shows",
+          "description": "Automated reminders help clients arrive on time."
+        },
+        "revenue": {
+          "title": "Grow repeat revenue",
+          "description": "Use customer history to deliver more relevant service."
+        },
+        "decisions": {
+          "title": "Make clearer decisions",
+          "description": "See reliable numbers without rebuilding spreadsheets."
+        }
+      },
+      "stats": {
+        "adminTime": "saved on admin each week",
+        "noShows": "fewer missed appointments",
+        "repeatVisits": "more repeat visits"
+      }
+    },
+    "pricing": {
+      "eyebrow": "Simple pricing",
+      "title": "A plan for every stage of growth",
+      "description": "Start with what you need and upgrade as your business grows.",
+      "perMonth": "per month",
+      "contactUs": "Contact us",
+      "highlights": {
+        "trial": {
+          "title": "Free trial",
+          "description": "Explore the product before choosing a plan."
+        },
+        "setup": {
+          "title": "Easy setup",
+          "description": "Get your services, staff, and schedule ready quickly."
+        },
+        "support": {
+          "title": "Helpful support",
+          "description": "Our team is ready when you need guidance."
+        }
+      },
+      "plans": {
+        "starter": {
+          "name": "Starter",
+          "description": "For independent salons getting organized."
+        },
+        "growth": {
+          "name": "Growth",
+          "description": "For growing teams that need complete control."
+        },
+        "multiBranch": {
+          "name": "Multi-branch",
+          "description": "For businesses managing multiple locations."
+        }
+      },
+      "features": {
+        "booking": "Online booking",
+        "pos": "Cashier and POS",
+        "members": "Customer database",
+        "allStarter": "Everything in Starter",
+        "staff": "Staff and commissions",
+        "inventory": "Inventory management",
+        "whatsapp": "WhatsApp notifications",
+        "reports": "Advanced reports",
+        "allGrowth": "Everything in Growth",
+        "multiBranch": "Multi-branch dashboard",
+        "roles": "Custom roles and access",
+        "prioritySupport": "Priority support"
+      },
+      "comparison": {
+        "booking": "Online booking",
+        "pos": "Cashier and POS",
+        "staff": "Staff commissions",
+        "inventory": "Inventory",
+        "branches": "Business locations"
+      },
+      "values": {
+        "oneBranch": "1 location",
+        "unlimited": "Unlimited"
+      }
+    },
+    "about": {
+      "eyebrow": "About Kasera",
+      "title": "Technology that helps beauty businesses thrive",
+      "description": "We build practical tools with salon owners and teams at the center.",
+      "stats": {
+        "founded": "founded",
+        "team": "team members",
+        "cities": "cities reached",
+        "customers": "business customers"
+      },
+      "values": {
+        "salonFirst": {
+          "title": "Salon first",
+          "description": "We start with real challenges faced by beauty professionals."
+        },
+        "simple": {
+          "title": "Keep it simple",
+          "description": "Powerful software should still feel clear and approachable."
+        },
+        "reliable": {
+          "title": "Earn trust",
+          "description": "Reliable systems and honest support underpin every decision."
+        },
+        "grow": {
+          "title": "Grow together",
+          "description": "Our success follows the long-term growth of our customers."
+        }
+      }
+    },
+    "contact": {
+      "eyebrow": "Talk to us",
+      "title": "Let us find the right setup for your salon",
+      "description": "Tell us how your business works and our team will help you take the next step.",
+      "promises": {
+        "response": {
+          "title": "Fast response",
+          "description": "Expect a reply from our team within one business day."
+        },
+        "demo": {
+          "title": "A tailored demo",
+          "description": "See workflows that match your team and services."
+        },
+        "noPressure": {
+          "title": "No pressure",
+          "description": "Get practical answers without a hard sell."
+        }
+      },
+      "visit": {
+        "title": "What to expect",
+        "demo": {
+          "title": "Live product tour",
+          "description": "See booking through checkout in a guided session."
+        },
+        "workflow": {
+          "title": "Workflow review",
+          "description": "Discuss your current process and pain points."
+        },
+        "migration": {
+          "title": "Setup guidance",
+          "description": "Understand onboarding and data migration options."
+        }
+      }
+    },
+    "title": "Marketing",
+    "subtitle": "Manage campaigns and WhatsApp automation",
+    "newCampaign": "New Campaign",
+    "kpi": {
+      "sentToday": "Sent Today",
+      "delivered": "Delivered",
+      "read": "Read",
+      "activeCampaigns": "Active Campaigns"
+    }
+  },
+  "admin": {
+    "audit": {
+      "title": "Audit Trail",
+      "recent": "Recent Activity",
+      "search": "Search user or resource...",
+      "action": "Action",
+      "export": "Export",
+      "col": {
+        "timestamp": "Timestamp",
+        "user": "User",
+        "action": "Action",
+        "resource": "Resource",
+        "ip": "IP Address",
+        "details": "Details"
+      }
+    },
+    "billing": {
+      "title": "Billing & Invoices",
+      "invoices": "Invoices",
+      "export": "Export CSV",
+      "col": {
+        "invoice": "Invoice #",
+        "tenant": "Tenant",
+        "amount": "Amount",
+        "status": "Status",
+        "dueDate": "Due Date",
+        "paidDate": "Paid Date"
+      }
+    },
+    "health": {
+      "title": "System Health",
+      "services": "Service Status",
+      "col": {
+        "service": "Service",
+        "status": "Status",
+        "latency": "Latency",
+        "uptime": "Uptime"
+      }
+    },
+    "logs": {
+      "title": "System Logs",
+      "recent": "Recent Logs",
+      "search": "Search message or source...",
+      "level": "Level",
+      "export": "Export",
+      "col": {
+        "timestamp": "Timestamp",
+        "level": "Level",
+        "source": "Source",
+        "message": "Message",
+        "user": "User"
+      }
+    },
+    "packages": {
+      "title": "Subscription Packages",
+      "create": "Create Package",
+      "yearly": "Yearly",
+      "features": "Features",
+      "edit": "Edit"
+    },
+    "settings": {
+      "title": "Platform Settings",
+      "save": "Save",
+      "tabs": {
+        "general": "General",
+        "security": "Security",
+        "notifications": "Notifications",
+        "integrations": "Integrations",
+        "billing": "Billing"
+      },
+      "general": {
+        "title": "General Settings",
+        "platformName": "Platform Name",
+        "supportEmail": "Support Email",
+        "defaultTimezone": "Default Timezone",
+        "maintenanceMode": "Maintenance Mode"
+      },
+      "security": {
+        "title": "Security Settings",
+        "sessionTimeout": "Session Timeout",
+        "maxLoginAttempts": "Max Login Attempts",
+        "enforce2FA": "Enforce 2FA",
+        "ipWhitelist": "IP Whitelist"
+      },
+      "notifications": {
+        "title": "Notification Settings",
+        "smtpHost": "SMTP Host",
+        "smtpPort": "SMTP Port",
+        "emailEnabled": "Email Enabled",
+        "slackEnabled": "Slack Enabled"
+      },
+      "integrations": {
+        "title": "Integration Settings",
+        "midtransKey": "Midtrans API Key",
+        "whatsappApi": "WhatsApp API",
+        "googleMaps": "Google Maps"
+      },
+      "billing": {
+        "title": "Billing Settings",
+        "currency": "Currency",
+        "taxRate": "Tax Rate",
+        "autoGenerateInvoice": "Auto Generate Invoice",
+        "gracePeriod": "Grace Period"
+      }
+    },
+    "subscriptions": {
+      "title": "Active Subscriptions",
+      "list": "Subscription List",
+      "manage": "Manage",
+      "col": {
+        "tenant": "Tenant",
+        "package": "Package",
+        "status": "Status",
+        "startDate": "Start Date",
+        "nextBilling": "Next Billing",
+        "amount": "Amount",
+        "actions": "Actions"
+      }
+    },
+    "tenants": {
+      "title": "Tenant Management",
+      "list": "Tenant List",
+      "search": "Search tenants...",
+      "plan": "Plan",
+      "status": "Status",
+      "view": "View",
+      "col": {
+        "name": "Tenant Name",
+        "owner": "Owner",
+        "plan": "Plan",
+        "users": "Users",
+        "revenue": "Revenue",
+        "status": "Status",
+        "created": "Created",
+        "actions": "Actions"
+      }
+    },
+    "usage": {
+      "title": "Usage & Quota",
+      "list": "Usage List",
+      "col": {
+        "tenant": "Tenant",
+        "plan": "Plan",
+        "apiCalls": "API Calls",
+        "storage": "Storage",
+        "users": "Users",
+        "status": "Status"
+      }
+    },
+    "users": {
+      "title": "User Management",
+      "list": "User List",
+      "search": "Search users...",
+      "role": "Role",
+      "manage": "Manage",
+      "col": {
+        "name": "Name",
+        "email": "Email",
+        "role": "Role",
+        "scope": "Scope",
+        "status": "Status",
+        "lastLogin": "Last Login",
+        "actions": "Actions"
+      }
+    }
+  },
+  "appointments": {
+    "title": "Appointments",
+    "subtitle": "Manage appointment schedules and reservations",
+    "newBooking": "New Booking",
+    "schedule": "Schedule",
+    "kpi": {
+      "today": "Today",
+      "upcoming": "Upcoming",
+      "completed": "Completed",
+      "noShow": "No-show"
+    }
+  },
+  "customers": {
+    "title": "Customers",
+    "subtitle": "Manage customer database and relationships",
+    "addNew": "Add New",
+    "database": "Customer Database",
+    "kpi": {
+      "total": "Total Customers",
+      "active": "Active",
+      "newMonth": "New This Month",
+      "atRisk": "At Risk"
+    }
+  },
+  "inventory": {
+    "title": "Inventory",
+    "subtitle": "Manage product stock and consumables",
+    "addProduct": "Add Product",
+    "management": "Inventory Management",
+    "kpi": {
+      "totalSku": "Total SKUs",
+      "lowStock": "Low Stock",
+      "outOfStock": "Out of Stock",
+      "totalValue": "Total Value"
+    }
+  },
+  "outlets": {
+    "title": "Outlets",
+    "subtitle": "Manage multi-outlet and performance",
+    "addOutlet": "Add Outlet",
+    "kpi": {
+      "total": "Total Outlets",
+      "active": "Active",
+      "staff": "Staff",
+      "revenue": "Revenue"
+    }
+  },
+  "reports": {
+    "title": "Reports & Analytics",
+    "subtitle": "Monitor overall business performance",
+    "export": "Export",
+    "kpi": {
+      "revenue": "Revenue",
+      "transactions": "Transactions",
+      "avgTransaction": "Avg Transaction",
+      "growth": "Growth"
+    }
+  },
+  "sales": {
+    "title": "Sales",
+    "subtitle": "Track multi-channel transactions and orders",
+    "export": "Export",
+    "orders": "Orders",
+    "kpi": {
+      "today": "Today",
+      "pos": "POS",
+      "online": "Online",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "setting": {
+    "title": "Settings",
+    "subtitle": "Manage organization and system settings",
+    "save": "Save"
+  },
+  "store": {
+    "title": "Online Store",
+    "subtitle": "Manage online store products and orders",
+    "addProduct": "Add Product",
+    "kpi": {
+      "products": "Products",
+      "ordersToday": "Orders Today",
+      "revenue": "Revenue",
+      "conversion": "Conversion"
+    }
+  },
+  "teams": {
+    "title": "Staff & Commission",
+    "subtitle": "Manage staff, schedules, and commissions",
+    "addStaff": "Add Staff",
+    "directory": "Staff Directory",
+    "kpi": {
+      "activeStaff": "Active Staff",
+      "totalCommission": "Total Commission",
+      "avgPerStaff": "Avg per Staff",
+      "topPerformer": "Top Performer"
+    }
+  },
+  "transactions": {
+    "title": "Transactions & POS",
+    "subtitle": "Manage POS sales and transaction history",
+    "newTransaction": "New Transaction",
+    "history": "History",
+    "kpi": {
+      "todaySales": "Today's Sales",
+      "transactions": "Transactions",
+      "average": "Average",
+      "refunds": "Refunds"
+    }
+  },
+  "mapDetails": {
+    "title": "Map Details",
+    "viewAll": "View All"
+  },
+  "mapLocation": {
+    "actions": {
+      "viewProject": "View Project"
+    },
+    "empty": {
+      "title": "No Projects Yet",
+      "description": "No projects on this map yet",
+      "button": "Add Project"
+    },
+    "geo": {
+      "button": "Current Location",
+      "failed": "Failed to get location",
+      "loading": "Finding location...",
+      "noSupport": "Geolocation not supported",
+      "permissionDenied": "Location permission denied",
+      "success": "Location found",
+      "unavailable": "Location unavailable"
+    },
+    "search": "Search",
+    "searchPlaceholder": "Search location...",
+    "searching": "Searching...",
+    "categories": {
+      "all": "All",
+      "tourism": "Tourism",
+      "restaurant": "Restaurant",
+      "cafe": "Cafe",
+      "hotel": "Hotel",
+      "shopping": "Shopping",
+      "hospital": "Hospital",
+      "pharmacy": "Pharmacy",
+      "school": "School",
+      "bank": "Bank",
+      "atm": "ATM",
+      "gasStation": "Gas Station",
+      "park": "Park",
+      "airport": "Airport",
+      "placeOfWorship": "Place of Worship",
+      "office": "Office",
+      "trainStation": "Train Station",
+      "busStation": "Bus Station",
+      "police": "Police",
+      "postOffice": "Post Office"
+    }
+  },
+  "project": {
+    "labels": {
+      "budget": "Budget",
+      "projectId": "Project ID",
+      "startDate": "Start Date",
+      "target": "Target"
+    },
+    "status": {
+      "attention": "Needs Attention",
+      "completed": "Completed",
+      "delayed": "Delayed",
+      "inactive": "Inactive",
+      "onTrack": "On Track"
+    }
+  }
+}

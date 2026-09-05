@@ -1,0 +1,43 @@
+{
+  "name": "vis-web",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "type-check": "tsc --noEmit",
+    "debug:local": "npm run type-check && dotenv -e .env.local -- next dev",
+    "debug:dev": "npm run type-check && dotenv -e .env.dev -- next dev",
+    "debug:uat": "npm run type-check && dotenv -e .env.uat -- next dev",
+    "build:dev": "npm run type-check && shx rm -rf build && dotenv -e .env.dev -- next build && shx mv out build",
+    "build:uat": "npm run type-check && shx rm -rf build && dotenv -e .env.uat -- next build && shx mv out build",
+    "build:prod": "npm run type-check && shx rm -rf build && dotenv -e .env.prod -- next build && shx mv out build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^6.3.2",
+    "antd": "^6.6.0",
+    "antd-style": "^4.1.0",
+    "classnames": "^2.5.1",
+    "framer-motion": "^13.1.0",
+    "maplibre-gl": "^6.3.0",
+    "msw": "^2.15.0",
+    "next": "16.2.11",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "react-map-gl": "^8.1.2",
+    "recharts": "^3.10.0",
+    "shx": "^0.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.11",
+    "typescript": "^5"
+  }
+}
