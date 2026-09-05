@@ -29,29 +29,29 @@ const serviceCards = [
 ] as const;
 
 const industries = [
-  { titleKey: "marketing.home.industries.items.commerce", image: "/images/ilustrations/Office_Call.png" },
-  { titleKey: "marketing.home.industries.items.manufacturing", image: "/images/ilustrations/Device_Mockup_1.png" },
-  { titleKey: "marketing.home.industries.items.agri", image: "/images/ilustrations/Salon_Interior.png" },
-  { titleKey: "marketing.home.industries.items.education", image: "/images/ilustrations/Device_Mockup_2.png" },
-  { titleKey: "marketing.home.industries.items.health", image: "/images/ilustrations/Office_Call.png" },
-  { titleKey: "marketing.home.industries.items.finance", image: "/images/ilustrations/Device_Mockup_1.png" },
+  { titleKey: "marketing.home.industries.items.commerce", image: "/images/sample/01_ecommerce_marketplace.jpg" },
+  { titleKey: "marketing.home.industries.items.manufacturing", image: "/images/sample/05_monitoring_produksi.jpg" },
+  { titleKey: "marketing.home.industries.items.agri", image: "/images/sample/13_agritech_inovasi.jpg" },
+  { titleKey: "marketing.home.industries.items.education", image: "/images/sample/07_pembelajaran_digital.jpg" },
+  { titleKey: "marketing.home.industries.items.health", image: "/images/sample/06_audit_keamanan.jpg" },
+  { titleKey: "marketing.home.industries.items.finance", image: "/images/sample/08_analitik_keuangan.jpg" },
 ] as const;
 
 const projectCards = [
   {
-    image: "/images/ilustrations/Device_Mockup_1.png",
+    image: "/images/sample/09_tanihub_marketplace.jpg",
     titleKey: "marketing.home.projects.items.agri.title",
     descriptionKey: "marketing.home.projects.items.agri.description",
     tagKeys: ["marketing.home.projects.tags.ecommerce", "marketing.home.projects.tags.webMobile"],
   },
   {
-    image: "/images/ilustrations/Salon_Interior.png",
+    image: "/images/sample/03_cloud_infrastruktur.jpg",
     titleKey: "marketing.home.projects.items.ops.title",
     descriptionKey: "marketing.home.projects.items.ops.description",
     tagKeys: ["marketing.home.projects.tags.custom", "marketing.home.projects.tags.iot"],
   },
   {
-    image: "/images/ilustrations/Device_Mockup_2.png",
+    image: "/images/sample/07_pembelajaran_digital.jpg",
     titleKey: "marketing.home.projects.items.education.title",
     descriptionKey: "marketing.home.projects.items.education.description",
     tagKeys: ["marketing.home.projects.tags.webApp", "marketing.home.projects.tags.cloud"],
