@@ -79,6 +79,7 @@
     "newsletterNote": "Dapatkan wawasan terkini tentang teknologi, reka bentuk, dan perniagaan daripada pasukan Vistara.",
     "privacy": "Dasar privasi",
     "terms": "Terma perkhidmatan",
+    "siteMap": "Peta Situs",
     "copyright": "Hak cipta terpelihara.",
     "newsletterTitle": "Wawasan teknologi dan perniagaan dalam e-mel anda",
     "newsletterPlaceholder": "Alamat e-mel anda",
@@ -204,24 +205,26 @@
         "kicker": "Tentang Kami",
         "title": "Rakan Teknologi untuk Masa Depan yang Lebih Baik",
         "subtitle": "Membantu perniagaan berkembang melalui penyelesaian digital yang boleh dipercayai dan mampan",
-        "description": "Kami percaya teknologi ialah pemangkin perubahan positif. PT. Vistara Teknologi Indonesia membantu syarikat, PKS, dan organisasi membina penyelesaian digital yang inovatif, boleh dipercayai, dan mampan.",
-        "action": "Kenali Kami",
+        "description": "PT. Vistara Teknologi Indonesia ialah syarikat teknologi maklumat yang komited untuk menyediakan penyelesaian digital yang inovatif, boleh dipercayai, dan mampan untuk pelbagai industri di Indonesia.",
+        "action": "Hubungi Kami",
         "imageAlt": "Bahagian dalaman pejabat Vistara",
-        "panelLabel": "SISTEM REKA BENTUK",
+        "panelLabel": "Teknologi\nManusia\nImpak Sebenar",
         "panelTitle": "Satu Reka Bentuk, Banyak Solusi",
         "storyLabel": "Tentang Vistara",
         "storyTitle": "Lebih Daripada Sekadar Syarikat Teknologi",
-        "storyDescription": "Kami membina platform dan sistem yang menghubungkan strategi, reka bentuk, dan pelaksanaan supaya perniagaan boleh bergerak lebih pantas dan konsisten.",
-        "storyQuote": "Kami percaya teknologi yang baik harus terasa ringkas, memberi impak, dan sedia berkembang bersama perniagaan.",
+        "storyDescription": "Kami percaya teknologi mempunyai kekuatan untuk membuka peluang baharu, meningkatkan kecekapan, dan mencipta impak positif untuk masyarakat. Sejak awal penubuhan, Vistara hadir dengan visi menjadi rakan yang dipercayai dalam merealisasikan transformasi digital di Indonesia.",
+        "storyQuote": "Kami membina penyelesaian hari ini untuk masa depan yang lebih baik.",
         "storyQuoteAuthor": "Pasukan Vistara",
         "storyImageAlt": "Ruang kerja dan pasukan Vistara",
         "storyBadgeTitle": "Ideas Into Impact",
-        "storyBadgeText": "Setiap penyelesaian direka untuk hasil yang nyata.",
+        "storyBadgeText": "Nilai yang kami pegang dalam setiap langkah.",
         "visionLabel": "Visi & Misi",
-        "visionTitle": "Menjadi rakan teknologi yang dipercayai untuk transformasi digital",
-        "visionDescription": "Kami mahu membantu organisasi membina asas digital yang jelas, cekap, dan tahan lama.",
+        "visionTitle": "Komitmen Kami untuk Masa Depan",
+        "visionDescription": "Kami komited untuk menyediakan penyelesaian teknologi yang bukan sahaja meningkatkan kecekapan, malah membuka peluang yang lebih besar pada masa depan.",
+        "visionCardTitle": "Visi",
+        "visionCardDescription": "Menjadi syarikat teknologi dipercayai yang menyediakan penyelesaian digital bertaraf dunia untuk kemajuan Indonesia.",
         "missionLabel": "Misi Kami",
-        "missionTitle": "Apa yang kami jaga dalam setiap projek",
+        "missionTitle": "Misi",
         "missionItems": {
           "quality": "Menyampaikan penyelesaian yang kemas, stabil, dan mudah digunakan.",
           "people": "Menjaga proses kerja yang kolaboratif bersama pasukan klien.",
@@ -229,28 +232,32 @@
           "trust": "Membina hubungan jangka panjang berasaskan hasil dan kepercayaan."
         },
         "principlesLabel": "Nilai Kami",
-        "principlesTitle": "Prinsip yang membimbing kerja kami",
+        "principlesTitle": "Prinsip yang menggerakkan setiap langkah",
         "principlesDescription": "Empat nilai ini membentuk cara kami mereka, membina, dan menyokong klien.",
         "journeyLabel": "Perjalanan Kami",
         "journeyTitle": "Tonggak Pertumbuhan Vistara",
         "journeyDescription": "Bagaimana kami berkembang daripada asas awal ke arah masa depan.",
         "journey": {
           "items": {
-            "2022": {
+            "2023": {
               "title": "Vistara ditubuhkan",
               "description": "Memulakan perjalanan sebagai rakan digital untuk keperluan perniagaan moden."
             },
-            "2023": {
-              "title": "Memperluas pasukan dan perkhidmatan",
-              "description": "Menambah keupayaan reka bentuk, kejuruteraan, dan pelaksanaan."
-            },
             "2024": {
-              "title": "Membentuk produk yang lebih matang",
-              "description": "Mengukuhkan proses penghantaran supaya lebih stabil dan boleh skala."
+              "title": "Projek pelanggan pertama",
+              "description": "Melaksanakan projek pertama bersama pelanggan e-dagang."
             },
             "2025": {
-              "title": "Fokus pada impak yang lebih luas",
-              "description": "Membina penyelesaian untuk perniagaan yang mahu bergerak lebih pantas."
+              "title": "Perkhidmatan diperluas",
+              "description": "Melangkaui sektor pendidikan dan kesihatan dengan penyelesaian yang relevan."
+            },
+            "2026": {
+              "title": "Rakan yang lebih luas",
+              "description": "Menjadi rakan teknologi bagi lebih daripada 30 klien."
+            },
+            "future": {
+              "title": "Terus berinovasi",
+              "description": "Terus berinovasi untuk Indonesia yang lebih baik."
             }
           }
         },
@@ -260,10 +267,10 @@
         "ctaAction": "Hubungi Kami",
         "ctaSecondaryAction": "Lihat Perkhidmatan",
         "stats": {
-          "projects": "Projek Disiapkan",
-          "clients": "Klien Berpuas Hati",
-          "industries": "Industri Diliputi",
-          "satisfaction": "Tahap Kepuasan"
+          "projects": "ditubuhkan",
+          "clients": "ahli pasukan",
+          "industries": "bandar dicapai",
+          "satisfaction": "pelanggan perniagaan"
         }
       },
       "industries": {
@@ -527,6 +534,305 @@
       "delivered": "Dihantar",
       "read": "Dibaca",
       "activeCampaigns": "Kempen Aktif"
+    },
+    "career": {
+      "eyebrow": "Kerjaya di Vistara",
+      "title": "Bersama Bakat Hebat, Wujudkan Masa Depan Digital",
+      "description": "Di Vistara, kami percaya teknologi yang memberi impak lahir dari manusia yang luar biasa. Sertai kami dan jadi sebahagian daripada penyelesaian sebenar untuk Indonesia yang lebih maju.",
+      "badge": {
+        "title": "Great People Build Greater Solutions",
+        "text": "Budaya kerja yang kolaboratif dan saling berkembang."
+      },
+      "whyJoin": {
+        "label": "Mengapa Sertai Kami",
+        "title": "Lebih Daripada Sekadar Pekerjaan",
+        "description": "Kami menyediakan persekitaran kerja yang menyokong perkembangan kerjaya, memberi ruang untuk berinovasi, dan mencipta impak sebenar bagi masyarakat."
+      },
+      "values": {
+        "careerDev": { "title": "Pembangunan Kerjaya", "description": "Latihan, pensijilan, dan bimbingan berterusan." },
+        "flexible": { "title": "Kerja Fleksibel", "description": "Kerja hibrid dan waktu kerja yang adaptif." },
+        "meaningful": { "title": "Projek Bermakna", "description": "Teknologi untuk impak sebenar dalam pelbagai industri." },
+        "solid": { "title": "Pasukan yang Mantap", "description": "Kerjasama dengan bakat merentas disiplin." },
+        "wellbeing": { "title": "Kesejahteraan Pekerja", "description": "Insurans, manfaat kesihatan, dan program kesejahteraan." },
+        "inclusive": { "title": "Persekitaran Inklusif", "description": "Kesamarataan peluang untuk semua." }
+      },
+      "openings": {
+        "label": "Kejawatan Terkini",
+        "title": "Cari Peranan yang Sepadan dengan Minat Anda",
+        "viewAll": "Lihat Semua Kejawatan",
+        "searchPlaceholder": "Cari jawatan, kemahiran, atau kata kunci...",
+        "department": "Semua Jabatan",
+        "type": "Semua Jenis Kerja",
+        "location": "Semua Lokasi",
+        "detail": "Lihat Butiran",
+        "list": [
+          { "title": "Frontend Developer", "team": "Product & Engineering", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "CodeOutlined" },
+          { "title": "Backend Developer", "team": "Product & Engineering", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "DatabaseOutlined" },
+          { "title": "UI/UX Designer", "team": "Product & Design", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "EditOutlined" },
+          { "title": "DevOps Engineer", "team": "Infrastructure", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "On-site", "icon": "CloudServerOutlined" },
+          { "title": "IT Consultant", "team": "Consulting & Solutions", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "On-site", "icon": "TeamOutlined" }
+        ]
+      },
+      "culture": {
+        "label": "Kehidupan di Vistara",
+        "title": "Budaya Kerja yang Menginspirasi",
+        "viewGallery": "Lihat Galeri",
+        "items": [
+          { "title": "Kerjasama Tanpa Batas", "image": "/images/ilustrations/Office_Call.png" },
+          { "title": "Ruang untuk Berinovasi", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "title": "Bersama Mencipta Impak", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+          { "title": "Persekitaran Kerja yang Selesa", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" }
+        ]
+      },
+      "testimonials": {
+        "label": "Apa Kata Pasukan Kami",
+        "title": "Cerita Mereka di Vistara",
+        "items": [
+          { "quote": "Vistara memberi saya ruang belajar yang besar untuk berkembang dan menyumbang kepada projek sebenar yang memberi impak.", "name": "Aisyah Rahma", "role": "UI/UX Designer" },
+          { "quote": "Persekitaran kerja di Vistara sangat kolaboratif. Setiap idea dihargai dan kami sentiasa digalakkan untuk terus belajar.", "name": "Dimas Pratama", "role": "Backend Developer" }
+        ]
+      },
+      "faq": {
+        "label": "Soalan Lazim",
+        "title": "Soalan Tentang Kerjaya di Vistara",
+        "items": [
+          "Bagaimana proses pengambilan pekerja?",
+          "Adakah ada program latihan industri?",
+          "Bolehkah kerja dari rumah?",
+          "Apakah manfaat yang diberikan?"
+        ]
+      },
+      "cta": {
+        "label": "Mari berkerjaya bersama",
+        "title": "Jadi Sebahagian daripada Perubahan",
+        "description": "Bersama yang hebat, kita wujudkan penyelesaian teknologi untuk Indonesia yang lebih baik.",
+        "primaryAction": "Lihat Semua Kejawatan",
+        "secondaryAction": "Hubungi Kami"
+      }
+    },
+    "services": {
+      "eyebrow": "Perkhidmatan Kami",
+      "title": "Penyelesaian Teknologi untuk Pertumbuhan Anda",
+      "description": "Kami menyediakan perkhidmatan teknologi maklumat yang komprehensif, daripada pembangunan aplikasi, perundingan, sehingga pengurusan infrastruktur teknologi, untuk membantu perniagaan anda berkembang lebih pantas dan mampan.",
+      "ctaPrimary": "Konsultasi Percuma",
+      "ctaSecondary": "Bincangkan Keperluan",
+      "features": {
+        "integrated": "Penyelesaian Bersepadu",
+        "results": "Bertumpu pada Hasil",
+        "sustainability": "Sokongan Berterusan"
+      },
+      "main": {
+        "label": "Perkhidmatan Utama",
+        "title": "Perkhidmatan Teknologi yang Kami Tawarkan",
+        "description": "Penyelesaian lengkap untuk memenuhi keperluan digital perniagaan anda, disokong oleh pasukan berpengalaman dan pendekatan yang bertumpu pada hasil sebenar.",
+        "viewAll": "Lihat Semua Perkhidmatan",
+        "items": [
+          { "title": "Pembangunan Aplikasi E-Dagang", "kbl": "KBLI 62191", "description": "Membina platform perdagangan digital yang selamat, boleh skala, dan berfokus pada pertumbuhan perniagaan anda.", "icon": "ShoppingCartOutlined" },
+          { "title": "Pembangunan Aplikasi & Sistem Khas", "kbl": "KBLI 62199", "description": "Penyelesaian perisian untuk keperluan perniagaan khusus, integrasi sistem, IoT, keselamatan siber, dan aplikasi khas lain.", "icon": "CodeOutlined" },
+          { "title": "Perundingan Komputer & Pengurusan TI", "kbl": "KBLI 62209", "description": "Perundingan teknologi, perancangan sistem, pengurusan infrastruktur, keselamatan, dan pengurusan kemudahan komputer.", "icon": "TeamOutlined" }
+        ]
+      },
+      "supporting": {
+        "label": "Perkhidmatan Sokongan",
+        "title": "Perkhidmatan Pemenuhan Digital Lain",
+        "items": [
+          { "title": "Pembangunan Web & Mudah Alih", "icon": "MobileOutlined" },
+          { "title": "Integrasi Sistem", "icon": "ApiOutlined" },
+          { "title": "Internet of Things (IoT)", "icon": "WifiOutlined" },
+          { "title": "Keselamatan Siber (Cybersecurity)", "icon": "SafetyOutlined" },
+          { "title": "Data & Penyelesaian Awan", "icon": "CloudOutlined" },
+          { "title": "Penyelenggaraan & Sokongan Teknikal", "icon": "ToolOutlined" }
+        ]
+      },
+      "process": {
+        "label": "Proses Kerja",
+        "title": "Daripada Keperluan kepada Penyelesaian Sebenar",
+        "description": "Kami menggunakan proses kerja yang berstruktur dan telus untuk memastikan setiap penyelesaian yang kami sediakan selari dengan matlamat perniagaan anda.",
+        "cta": "Konsultasi Projek Anda",
+        "steps": [
+          { "number": "01", "title": "Analisis Keperluan", "description": "Memahami matlamat, cabaran, dan keperluan perniagaan anda." },
+          { "number": "02", "title": "Reka Bentuk Penyelesaian", "description": "Menyusun seni bina dan peta jalan yang tepat." },
+          { "number": "03", "title": "Pembangunan & Pelaksanaan", "description": "Membina penyelesaian dengan standard kualiti tinggi." },
+          { "number": "04", "title": "Pengujian & Penilaian", "description": "Memastikan penyelesaian berjalan dengan optimum dan selamat." },
+          { "number": "05", "title": "Sokongan Berterusan", "description": "Menemani pertumbuhan perniagaan anda." }
+        ]
+      },
+      "industries": {
+        "label": "Industri yang Kami Layani",
+        "title": "Penyelesaian untuk Pelbagai Industri",
+        "viewAll": "Lihat Semua Industri",
+        "items": [
+          { "title": "E-Dagang & Runcit", "image": "/images/ilustrations/Salon_Interior.png" },
+          { "title": "Pendidikan", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "title": "Kesihatan", "image": "/images/ilustrations/Office_Call.png" },
+          { "title": "Pembuatan & Pengedaran", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+          { "title": "Kewangan", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
+          { "title": "Kerajaan", "image": "/images/ilustrations/Salon_Interior.png" }
+        ]
+      },
+      "caseStudy": {
+        "label": "Kajian Kes",
+        "title": "Kisah Kejayaan Bersama Vistara",
+        "description": "Lihat bagaimana kami membantu pelbagai organisasi merealisasikan transformasi digital mereka.",
+        "viewAll": "Lihat Semua Kajian Kes",
+        "featured": {
+          "tag": "E-Dagang",
+          "title": "Platform Pasaran Pertanian",
+          "description": "Menghubungkan petani tempatan dengan pembeli di seluruh Indonesia melalui platform digital yang memendekkan rantaian bekalan.",
+          "viewDetail": "Lihat Butiran"
+        }
+      },
+      "cta": {
+        "label": "Bersedia untuk Memulakan?",
+        "title": "Bincangkan Keperluan Teknologi Anda",
+        "description": "Pasukan kami sedia membantu anda mencari penyelesaian terbaik untuk perniagaan anda.",
+        "action": "Konsultasi Percuma"
+      },
+      "faq": {
+        "label": "Soalan Lazim",
+        "title": "Soalan yang Sering Ditanya",
+        "viewAll": "Lihat Semua FAQ",
+        "items": [
+          "Apakah perkhidmatan yang ditawarkan oleh Vistara?",
+          "Berapa lama masa pembangunan aplikasi?",
+          "Adakah Vistara menyediakan sokongan selepas pelaksanaan?"
+        ]
+      }
+    },
+    "portfolio": {
+      "eyebrow": "Portfolio Vistara",
+      "title": "Penyelesaian Sebenar, Impak Sebenar",
+      "description": "Pelbagai projek yang telah kami jalankan bersama klien daripada pelbagai industri, menyampaikan penyelesaian teknologi yang relevan, inovatif, dan memberi impak sebenar bagi pertumbuhan perniagaan.",
+      "filters": ["Semua", "E-Dagang", "Sistem Maklumat", "Awan & Infrastruktur", "IoT", "Keselamatan Siber", "Kerajaan", "Pendidikan", "Kesihatan"],
+      "searchPlaceholder": "Cari projek atau klien...",
+      "industryFilter": "Semua Industri",
+      "techFilter": "Semua Teknologi",
+      "sortLabel": "Susun mengikut",
+      "sortNewest": "Terbaru",
+      "viewAllProjects": "Lihat Semua Portfolio",
+      "stats": {
+        "completed": { "value": "50+", "label": "Projek Selesai" },
+        "clients": { "value": "30+", "label": "Klien Berpuas Hati" },
+        "industries": { "value": "10+", "label": "Industri" }
+      },
+      "projects": [
+        { "title": "Pasaran Pertanian Digital", "tag": "E-Dagang", "description": "Platform perdagangan produk pertanian tempatan yang menghubungkan petani dengan pasaran yang lebih luas.", "image": "/images/ilustrations/Salon_Interior.png" },
+        { "title": "Sistem Pengurusan Hospital", "tag": "Sistem Maklumat", "description": "Penyelesaian digital untuk pengurusan pesakit, rekod perubatan, dan operasi hospital.", "image": "/images/ilustrations/Coding_Workspace.png" },
+        { "title": "Migrasi Infrastruktur ke Awan", "tag": "Awan & Infrastruktur", "description": "Modenisasi infrastruktur TI dengan seni bina awan yang boleh skala, selamat, dan cekap.", "image": "/images/ilustrations/Office_Call.png" },
+        { "title": "Portal Perkhidmatan Awam", "tag": "Kerajaan", "description": "Platform perkhidmatan awam bersepadu untuk meningkatkan ketelusan dan kecekapan perkhidmatan.", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+        { "title": "Pemantauan Produksi Berasaskan IoT", "tag": "IoT", "description": "Penyelesaian IoT untuk pemantauan mesin dan pengoptimuman proses produksi secara masa nyata.", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
+        { "title": "Audit & Penguatan Keselamatan", "tag": "Keselamatan Siber", "description": "Penilaian keselamatan, pelaksanaan amalan terbaik keselamatan, dan pemantauan berterusan.", "image": "/images/ilustrations/Salon_Interior.png" },
+        { "title": "Platform Pembelajaran Digital", "tag": "Pendidikan", "description": "Ekosistem pembelajaran dalam talian untuk sekolah dan institusi pendidikan.", "image": "/images/ilustrations/Coding_Workspace.png" },
+        { "title": "Sistem Analitik Kewangan", "tag": "Kewangan", "description": "Platform analitik dan pelaporan kewangan untuk membuat keputusan yang lebih pantas.", "image": "/images/ilustrations/Office_Call.png" }
+      ],
+      "caseStudy": {
+        "label": "Kajian Kes Utama",
+        "title": "Transformasi Digital dalam Sektor Pertanian",
+        "tag": "E-Dagang",
+        "projectTitle": "TaniHub - Pasaran Pertanian Digital",
+        "description": "Kami membantu TaniHub membina platform e-dagang untuk menghubungkan petani tempatan dengan pembeli di seluruh Indonesia. Penyelesaian ini meningkatkan kecekapan rantaian bekalan dan membuka akses pasaran yang lebih luas bagi petani.",
+        "stats": [
+          { "value": "300% dalam 1 tahun", "label": "Peningkatan transaksi" },
+          { "value": "10,000+ petani menyertai", "label": "" },
+          { "value": "Liputan 34 provinsi", "label": "" }
+        ],
+        "viewFull": "Lihat Kajian Kes Penuh",
+        "video": "Tonton Video (2:30)"
+      },
+      "clients": {
+        "label": "Klien Kami",
+        "title": "Dipercayai oleh Pelbagai Organisasi",
+        "description": "Kami bangga dapat bekerjasama dengan organisasi daripada pelbagai industri.",
+        "names": ["TaniHub", "RS Sejahtera", "EduSmart", "Bank Nusantara", "Pemda Digital", "Industri Maju"]
+      },
+      "cta": {
+        "label": "Mari Berkolaborasi",
+        "title": "Realisasikan Projek Digital Anda Bersama Vistara",
+        "description": "Bincangkan keperluan anda dengan pasukan kami, dan cari penyelesaian terbaik untuk perniagaan anda.",
+        "action": "Konsultasi Percuma"
+      }
+    },
+    "solutions": {
+      "eyebrow": "Penyelesaian Vistara",
+      "title": "Teknologi untuk Cabaran Sebenar",
+      "description": "Penyelesaian teknologi bersepadu untuk membantu perniagaan anda menyesuaikan diri, berinovasi, dan berkembang lebih pantas dalam era digital.",
+      "ctaPrimary": "Konsultasi Keperluan",
+      "ctaSecondary": "Lihat Kajian Kes",
+      "features": {
+        "endToEnd": "Penyelesaian Hujung ke Hujung",
+        "industry": "Disesuaikan untuk Industri",
+        "trusted": "Selamat & Dipercayai",
+        "support": "Sokongan Berterusan"
+      },
+      "areas": {
+        "label": "Bidang Penyelesaian Kami",
+        "title": "Penyelesaian yang Relevan untuk Perniagaan Anda",
+        "description": "Kami menyampaikan penyelesaian teknologi yang direka bentuk mengikut keperluan industri dan matlamat perniagaan anda.",
+        "viewAll": "Lihat Semua Penyelesaian",
+        "items": [
+          { "title": "Penyelesaian E-Dagang", "description": "Platform perdagangan digital yang selamat, boleh skala, dan mudah diurus.", "icon": "ShoppingCartOutlined" },
+          { "title": "Sistem Maklumat Tersuai", "description": "Aplikasi web & mudah alih mengikut proses perniagaan unik anda.", "icon": "CodeOutlined" },
+          { "title": "Penyelesaian Awan & Infrastruktur", "description": "Seni bina awan, migrasi, dan pengurusan infrastruktur moden.", "icon": "CloudOutlined" },
+          { "title": "Internet of Things (IoT)", "description": "Penyelesaian IoT untuk pemantauan, automasi, dan kecekapan operasi.", "icon": "WifiOutlined" },
+          { "title": "Keselamatan Siber", "description": "Perlindungan sistem, data, dan infrastruktur daripada ancaman digital.", "icon": "SafetyOutlined" },
+          { "title": "Data & Kecerdasan Buatan", "description": "Pemanfaatan data untuk pandangan perniagaan yang lebih bijak.", "icon": "BarChartOutlined" },
+          { "title": "Integrasi Sistem", "description": "Menghubungkan pelbagai sistem untuk aliran kerja yang cekap.", "icon": "ApiOutlined" },
+          { "title": "Perundingan & Pengurusan TI", "description": "Perancangan, audit, dan pengurusan kemudahan TI anda.", "icon": "TeamOutlined" }
+        ]
+      },
+      "industries": {
+        "label": "Untuk Setiap Industri",
+        "title": "Mendorong Kemajuan dalam Pelbagai Sektor",
+        "viewAll": "Lihat Semua Industri",
+        "items": [
+          { "title": "E-Dagang & Runcit", "description": "Platform digital untuk pertumbuhan jualan.", "image": "/images/ilustrations/Salon_Interior.png" },
+          { "title": "Pendidikan", "description": "Penyelesaian teknologi untuk ekosistem pembelajaran moden.", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "title": "Kesihatan", "description": "Sistem maklumat untuk perkhidmatan kesihatan yang lebih baik.", "image": "/images/ilustrations/Office_Call.png" },
+          { "title": "Pembuatan & Pengedaran", "description": "Automasi dan integrasi untuk rantaian bekalan yang cekap.", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+          { "title": "Kewangan", "description": "Sistem digital untuk perkhidmatan kewangan yang selamat dan boleh dipercayai.", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
+          { "title": "Kerajaan", "description": "Transformasi digital untuk perkhidmatan awam yang lebih telus.", "image": "/images/ilustrations/Salon_Interior.png" }
+        ]
+      },
+      "caseStudy": {
+        "label": "Kisah Kejayaan",
+        "title": "Penyelesaian Kami, Impak Sebenar",
+        "viewAll": "Lihat Semua Kajian Kes",
+        "items": [
+          { "tag": "E-Dagang", "title": "Pasaran Pertanian Digital", "description": "Menghubungkan petani tempatan dengan rangkaian bekalan yang lebih luas melalui platform digital.", "image": "/images/ilustrations/Salon_Interior.png" },
+          { "tag": "Pembuatan", "title": "Sistem Pemantauan Produksi", "description": "Penyelesaian IoT untuk pemantauan mesin dan peningkatan kecekapan produksi.", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "tag": "Kerajaan", "title": "Portal Perkhidmatan Awam", "description": "Platform perkhidmatan awam bersepadu untuk meningkatkan akses dan ketelusan.", "image": "/images/ilustrations/Office_Call.png" }
+        ]
+      },
+      "process": {
+        "label": "Proses Kolaborasi",
+        "title": "Daripada Idea kepada Impak",
+        "description": "Kami bekerjasama dengan anda melalui proses yang berstruktur dan telus.",
+        "viewAll": "Lihat Semua Proses",
+        "steps": [
+          { "number": "01", "title": "Perbincangan Awal", "description": "Memahami keperluan dan cabaran anda." },
+          { "number": "02", "title": "Analisis & Reka Bentuk", "description": "Menyusun penyelesaian dan seni bina terbaik." },
+          { "number": "03", "title": "Pembangunan", "description": "Membina penyelesaian dengan standard kualiti tinggi." },
+          { "number": "04", "title": "Pelaksanaan", "description": "Pengerahan dan integrasi ke persekitaran anda." },
+          { "number": "05", "title": "Sokongan Berterusan", "description": "Pemantauan, penyelenggaraan, dan pembangunan selanjutnya." }
+        ]
+      },
+      "cta": {
+        "label": "Bersedia Menghadapi Cabaran Digital?",
+        "title": "Cari Penyelesaian Terbaik untuk Perniagaan Anda",
+        "description": "Bincangkan keperluan anda bersama pasukan pakar kami.",
+        "primaryAction": "Konsultasi Percuma",
+        "secondaryAction": "Hubungi Kami"
+      },
+      "faq": {
+        "label": "Soalan Lazim",
+        "title": "Soalan yang Sering Ditanya",
+        "viewAll": "Lihat Semua FAQ",
+        "items": [
+          "Bolehkah penyelesaian disesuaikan dengan keperluan perniagaan kami?",
+          "Berapa lama masa pelaksanaan penyelesaian?",
+          "Adakah Vistara menyediakan latihan untuk pasukan kami?"
+        ]
+      }
     }
   },
   "admin": {

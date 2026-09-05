@@ -644,7 +644,7 @@ export function Footer() {
               </Title>
               <Link className={styles.footerLink} href="/beranda">{t("nav.home")}</Link>
               <Link className={styles.footerLink} href="/tentang-kami">{t("nav.about")}</Link>
-              <Link className={styles.footerLink} href="/fitur">{t("nav.services")}</Link>
+              <Link className={styles.footerLink} href="/layanan">{t("nav.services")}</Link>
               <Link className={styles.footerLink} href="/solusi">{t("nav.solution")}</Link>
               <Link className={styles.footerLink} href="/portofolio">{t("nav.portfolio")}</Link>
               <Link className={styles.footerLink} href="/karir">{t("nav.career")}</Link>
@@ -654,9 +654,9 @@ export function Footer() {
               <Title level={5} className={styles.footerTitle}>
                 {t("footer.services")}
               </Title>
-              <Link className={styles.footerLink} href="/fitur">{t("marketing.home.services.items.ecommerce.title")}</Link>
-              <Link className={styles.footerLink} href="/fitur">{t("marketing.home.services.items.custom.title")}</Link>
-              <Link className={styles.footerLink} href="/fitur">{t("marketing.home.services.items.consulting.title")}</Link>
+              <Link className={styles.footerLink} href="/layanan">{t("marketing.home.services.items.ecommerce.title")}</Link>
+              <Link className={styles.footerLink} href="/layanan">{t("marketing.home.services.items.custom.title")}</Link>
+              <Link className={styles.footerLink} href="/layanan">{t("marketing.home.services.items.consulting.title")}</Link>
             </Col>
 
             <Col xs={24} sm={8} lg={5}>
@@ -711,8 +711,9 @@ export function Footer() {
             </Text>
 
             <div className={styles.footerBottomLinks}>
-              <Link className={styles.footerLink} href="/privacy">{t("footer.privacy")}</Link>
-              <Link className={styles.footerLink} href="/terms">{t("footer.terms")}</Link>
+              <Link className={styles.footerLink} href="/kebijakan-privasi">{t("footer.privacy")}</Link>
+              <Link className={styles.footerLink} href="/syarat-ketentuan">{t("footer.terms")}</Link>
+              <Link className={styles.footerLink} href="/peta-situs">{t("footer.siteMap")}</Link>
             </div>
           </Flex>
         </div>

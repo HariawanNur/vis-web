@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
+
 import {
   Button,
   Card,
@@ -8,475 +10,973 @@ import {
   createStyles,
   Flex,
   Icon,
+  MarketingHero,
   Row,
   Typography,
   type IconName,
 } from "@/components";
 import { useI18n } from "@/i18n";
-import { useMarketingData } from "@/lib/use-marketing-data";
 import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
 const { Paragraph, Text, Title } = Typography;
 
+const projects = [
+  {
+    title: "Marketplace Pertanian Digital",
+    tag: "E-Commerce",
+    description:
+      "Platform perdagangan hasil pertanian lokal yang menghubungkan petani dengan pasar lebih luas.",
+    image: "/images/ilustrations/Salon_Interior.png",
+  },
+  {
+    title: "Sistem Manajemen Rumah Sakit",
+    tag: "Sistem Informasi",
+    description:
+      "Solusi digital untuk manajemen pasien, rekam medis, dan operasional rumah sakit.",
+    image: "/images/ilustrations/Coding_Workspace.png",
+  },
+  {
+    title: "Migrasi Infrastruktur ke Cloud",
+    tag: "Cloud & Infrastruktur",
+    description:
+      "Modernisasi infrastruktur TI dengan arsitektur cloud yang scalable, aman, dan efisien.",
+    image: "/images/ilustrations/Office_Call.png",
+  },
+  {
+    title: "Portal Layanan Publik",
+    tag: "Pemerintahan",
+    description:
+      "Platform layanan publik terpadu untuk meningkatkan transparansi dan efisiensi pelayanan.",
+    image: "/images/ilustrations/Vistara_Office_Reception_1.png",
+  },
+  {
+    title: "Monitoring Produksi Berbasis IoT",
+    tag: "IoT",
+    description:
+      "Solusi IoT untuk pemantauan mesin dan optimasi proses produksi secara real-time.",
+    image: "/images/ilustrations/Vistara_Office_Reception_2.png",
+  },
+  {
+    title: "Audit & Penguatan Keamanan",
+    tag: "Keamanan Siber",
+    description:
+      "Assessment keamanan, implementasi security best practice, dan monitoring berkelanjutan.",
+    image: "/images/ilustrations/Salon_Interior.png",
+  },
+  {
+    title: "Platform Pembelajaran Digital",
+    tag: "Pendidikan",
+    description:
+      "Ekosistem pembelajaran online untuk sekolah dan institusi pendidikan.",
+    image: "/images/ilustrations/Coding_Workspace.png",
+  },
+  {
+    title: "Sistem Analitik Keuangan",
+    tag: "Keuangan",
+    description:
+      "Platform analitik dan pelaporan keuangan untuk pengambilan keputusan yang lebih cepat.",
+    image: "/images/ilustrations/Office_Call.png",
+  },
+] as const;
+
+const filterTabs = [
+  "Semua",
+  "E-Commerce",
+  "Sistem Informasi",
+  "Cloud & Infrastruktur",
+  "IoT",
+  "Keamanan Siber",
+  "Pemerintahan",
+  "Pendidikan",
+  "Kesehatan",
+] as const;
+
+const stats = [
+  { value: "50+", label: "Proyek Selesai" },
+  { value: "30+", label: "Klien Puas" },
+  { value: "10+", label: "Industri" },
+] as const;
+
+const caseStudyStats = [
+  { value: "300% dalam 1 tahun", label: "Peningkatan transaksi" },
+  { value: "10.000+ petani bergabung", label: "" },
+  { value: "Cover area 34 provinsi", label: "" },
+] as const;
+
+const clientNames = [
+  "TaniHub",
+  "RS Sejahtera",
+  "EduSmart",
+  "Bank Nusantara",
+  "Pemda Digital",
+  "Industri Maju",
+] as const;
+
 const useStyles = createStyles(({ css }) => ({
   page: css`
-    overflow: hidden;
-    color: #0b1230;
+    color: #0b1532;
     background: #fff;
   `,
+
+  /* ── Hero ── */
   hero: css`
     position: relative;
-    min-height: 430px;
-    background: #f8f7fb;
+    overflow: hidden;
+    padding-block: 48px 0 !important;
+    background: linear-gradient(135deg, #0a1e3d 0%, #0d2b5e 50%, #0e3470 100%);
+  `,
+  introInner: css`
+    position: relative;
+    min-height: 400px;
+    padding-bottom: 22px;
+  `,
+  breadcrumb: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 12px;
+  `,
+  eyebrow: css`
+    display: block;
+    margin-top: 16px;
+    color: #6fb2ff !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  `,
+  introTitle: css`
+    margin: 8px 0 12px !important;
+    color: #fff !important;
+    font-size: clamp(34px, 4.8vw, 58px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -0.05em;
+    font-weight: 850 !important;
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 660px;
+    span {
+      display: block;
+    }
+
+    strong {
+      color: #67b0ff;
+      font-weight: inherit;
     }
   `,
-  heroImage: css`
+  introDescription: css`
+    max-width: 600px;
+    margin: 0 !important;
+    color: rgba(232, 240, 255, 0.88) !important;
+    font-size: 16px !important;
+    line-height: 1.75 !important;
+  `,
+  introVisual: css`
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: min(48vw, 620px);
+    height: 100%;
+
+    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
+      position: relative;
+      width: 100%;
+      min-height: 280px;
+      margin-top: 26px;
+    }
+  `,
+  introImage: css`
     object-fit: cover;
-    object-position: center 53%;
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      object-position: 65% center;
-    }
+    object-position: center;
   `,
-  heroShade: css`
+  introShade: css`
     position: absolute;
     inset: 0;
     background: linear-gradient(
       90deg,
-      #fff 0%,
-      rgba(255, 255, 255, 0.97) 28%,
-      rgba(255, 255, 255, 0.48) 51%,
-      rgba(255, 255, 255, 0) 72%
+      rgba(10, 30, 61, 0.96) 0%,
+      rgba(10, 30, 61, 0.58) 52%,
+      rgba(10, 30, 61, 0.08) 100%
     );
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.98),
-        rgba(255, 255, 255, 0.82)
-      );
-    }
   `,
-  heroInner: css`
-    position: relative;
-    z-index: 1;
-    min-height: 430px;
-    padding-top: 62px;
-    padding-bottom: 112px;
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 660px;
-      padding-top: 52px;
-      padding-bottom: 250px;
-    }
-  `,
-  heroCopy: css`
-    width: min(560px, 100%);
-  `,
-  eyebrow: css`
-    && {
-      display: block;
-      margin-bottom: 14px;
-      color: #6d2db8;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-    }
-  `,
-  heroTitle: css`
-    && {
-      max-width: 550px;
-      margin: 0 0 14px;
-      color: #0b1230;
-      font-size: clamp(34px, 4vw, 52px);
-      line-height: 1.1;
-      letter-spacing: -1.2px;
-      font-weight: 800;
-    }
-  `,
-  heroDescription: css`
-    && {
-      max-width: 530px;
-      margin: 0;
-      color: #34405f;
-      font-size: 16px;
-      line-height: 1.7;
-    }
-  `,
-  statsCard: css`
+  introBadge: css`
     position: absolute;
-    right: 0;
-    bottom: -48px;
-    left: 0;
-    z-index: 2;
-    border: 1px solid #e7e8ef;
-    border-radius: 14px;
-    background: rgba(255, 255, 255, 0.98);
-    box-shadow: 0 8px 24px rgba(22, 27, 54, 0.09);
+    right: 22px;
+    bottom: 24px;
+    width: 180px;
+    padding: 16px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    background: rgba(245, 251, 255, 0.96);
+    color: #0b1532;
+    box-shadow: 0 18px 42px rgba(3, 14, 32, 0.22);
+  `,
+  introBadgeTitle: css`
+    display: block;
+    color: #1e66d4;
+    font-size: 17px;
+    font-weight: 800;
+    line-height: 1.15;
+  `,
+  introBadgeText: css`
+    display: block;
+    margin-top: 4px;
+    color: #37506f;
+    font-size: 12px;
+    line-height: 1.45;
+  `,
 
-    :global(.ant-card-body) {
-      padding: 27px 30px;
+  /* ── Stats bar ── */
+  statsBar: css`
+    margin-top: 20px;
+    overflow: hidden;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(6, 23, 45, 0.08);
+  `,
+  statItem: css`
+    position: relative;
+    min-height: 86px;
+    padding: 20px 18px;
+    text-align: center;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 18px;
+      bottom: 18px;
+      right: 0;
+      width: 1px;
+      background: #e8edf5;
     }
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      bottom: -96px;
-
-      :global(.ant-card-body) {
-        padding: 12px 22px;
-      }
+    &:last-child::after {
+      display: none;
     }
   `,
-  stat: css`
-    min-height: 66px;
-    padding: 0 28px;
-    text-align: center;
-    border-right: 1px solid #e3e5ec;
-
-    &:last-child {
-      border-right: 0;
-    }
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 0;
-      padding: 16px 0;
-      text-align: left;
-      border-right: 0;
-      border-bottom: 1px solid #e3e5ec;
-
-      &:last-child {
-        border-bottom: 0;
-      }
-    }
+  statIcon: css`
+    display: grid;
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 8px;
+    place-items: center;
+    border-radius: 13px;
+    color: #1e66d4;
+    background: #edf5ff;
+    font-size: 20px;
   `,
   statValue: css`
-    && {
-      display: block;
-      color: #6d2db8;
-      font-size: 25px;
-      line-height: 1.2;
-      font-weight: 800;
-    }
+    display: block;
+    color: #1e66d4;
+    font-size: 26px;
+    line-height: 1.1;
+    font-weight: 850;
   `,
   statLabel: css`
-    && {
-      display: block;
-      margin-top: 7px;
-      color: #34405f;
-      font-size: 13px;
-      line-height: 1.45;
-    }
+    display: block;
+    margin-top: 3px;
+    color: #3f5373;
+    font-size: 13px;
   `,
-  benefits: css`
-    padding-top: 108px;
-    padding-bottom: 38px;
+
+  /* ── Section ── */
+  section: css`
+    padding-block: 72px;
 
     @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      padding-top: 150px;
+      padding-block: 56px;
     }
   `,
-  sectionHeading: css`
-    max-width: 680px;
-    margin: 0 auto 32px;
-    text-align: center;
+  sectionLabel: css`
+    display: block;
+    color: #1e66d4;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   `,
   sectionTitle: css`
-    && {
-      margin: 0;
-      color: #0b1230;
-      font-size: clamp(25px, 3vw, 36px);
-      line-height: 1.25;
-      font-weight: 800;
-    }
+    margin: 8px 0 8px !important;
+    color: #0b1532 !important;
+    font-size: clamp(28px, 3.2vw, 42px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em;
+    font-weight: 850 !important;
   `,
-  titleRule: css`
-    width: 42px;
-    height: 3px;
-    margin: 14px auto 0;
-    border-radius: 999px;
-    background: #7030b9;
+  sectionDescription: css`
+    margin: 0 !important;
+    color: #4d5b78 !important;
+    font-size: 15px !important;
+    line-height: 1.75 !important;
   `,
-  cardsRow: css`
-    align-items: stretch;
 
-    > div {
-      display: flex;
+  /* ── Filter tabs ── */
+  filterRow: css`
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   `,
-  benefitCard: css`
-    width: 100%;
-    min-height: 230px;
-    border: 1px solid #e3e5ed;
+  filterTab: css`
+    flex: 0 0 auto;
+    min-height: 38px;
+    padding: 0 18px;
+    border: 1px solid #dfe6f1;
+    border-radius: 999px;
+    background: #fff;
+    color: #4d5b78;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: #1677ff;
+      color: #1677ff;
+    }
+  `,
+  filterTabActive: css`
+    border-color: #1677ff;
+    background: #1677ff;
+    color: #fff;
+
+    &:hover {
+      color: #fff;
+    }
+  `,
+
+  /* ── Search bar ── */
+  searchBar: css`
+    display: grid;
+    grid-template-columns: 1.4fr repeat(3, minmax(0, 1fr));
+    gap: 10px;
+
+    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: ${designSystem.breakpoints.sm - 1}px) {
+      grid-template-columns: 1fr;
+    }
+  `,
+  searchInput: css`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 14px;
+    border: 1px solid #dfe6f1;
     border-radius: 12px;
-    box-shadow: 0 4px 14px rgba(24, 29, 57, 0.05);
+    background: #fff;
+    color: #94a3b8;
+    font-size: 13px;
+  `,
+  searchSelect: css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    min-height: 46px;
+    padding: 0 14px;
+    border: 1px solid #dfe6f1;
+    border-radius: 12px;
+    background: #fff;
+    color: #4d5b78;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+  `,
+
+  /* ── Project grid ── */
+  projectGrid: css`
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+
+    @media (max-width: ${designSystem.breakpoints.xl - 1}px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    @media (max-width: ${designSystem.breakpoints.sm - 1}px) {
+      grid-template-columns: 1fr;
+    }
+  `,
+  projectCard: css`
+    overflow: hidden;
+    border: 1px solid #dfe6f1;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgba(12, 24, 48, 0.04);
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      box-shadow: 0 14px 36px rgba(12, 24, 48, 0.1);
+      transform: translateY(-3px);
+    }
 
     :global(.ant-card-body) {
-      height: 100%;
-      padding: 24px;
+      padding: 0 !important;
     }
   `,
-  cardIcon: css`
-    display: grid;
-    width: 54px;
-    height: 54px;
-    flex: 0 0 54px;
-    place-items: center;
-    border-radius: 15px;
-    color: #6527ad;
-    background: linear-gradient(145deg, #f8f5ff, #eee7fa);
-    font-size: 27px;
-  `,
-  cardTitle: css`
-    && {
-      margin: 0;
-      color: #0b1230;
-      font-size: 17px;
-      line-height: 1.4;
-      font-weight: 750;
-    }
-  `,
-  cardDescription: css`
-    && {
-      margin: 20px 0 0;
-      color: #34405f;
-      font-size: 14px;
-      line-height: 1.75;
-    }
-  `,
-  cta: css`
+  projectImage: css`
     position: relative;
-    min-height: 210px;
-    margin-top: 42px;
+    width: 100%;
+    height: 180px;
     overflow: hidden;
-    border: 1px solid #e8e1f4;
-    border-radius: 14px;
-    background: linear-gradient(108deg, #f8f5fd 0%, #fff 65%, #ddd0f8 100%);
+  `,
+  projectImageImg: css`
+    object-fit: cover;
+    object-position: center;
+  `,
+  projectTag: css`
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0 10px;
+    border-radius: 999px;
+    background: rgba(22, 119, 255, 0.9);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    backdrop-filter: blur(4px);
+  `,
+  projectBody: css`
+    padding: 16px 18px 18px;
+  `,
+  projectTitle: css`
+    margin: 0 0 6px !important;
+    color: #0b1532 !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+  `,
+  projectDescription: css`
+    margin: 0 0 12px !important;
+    color: #4d5b78 !important;
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  `,
+  projectLink: css`
+    color: #1e66d4 !important;
+    font-size: 13px !important;
+    font-weight: 800 !important;
+    padding: 0 !important;
+  `,
+
+  /* ── Case study ── */
+  caseStudySection: css`
+    padding-block: 72px;
+    background: #f7f9fc;
 
     @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 430px;
-      margin-top: 28px;
+      padding-block: 56px;
     }
+  `,
+  caseStudyCard: css`
+    overflow: hidden;
+    border: 1px solid #dfe6f1;
+    border-radius: 22px;
+    background: #fff;
+    box-shadow: 0 14px 40px rgba(12, 24, 48, 0.06);
+  `,
+  caseStudyImage: css`
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    overflow: hidden;
+
+    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
+      min-height: 260px;
+    }
+  `,
+  caseStudyImageImg: css`
+    object-fit: cover;
+    object-position: center;
+  `,
+  caseStudyPlay: css`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    width: 64px;
+    height: 64px;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(22, 119, 255, 0.92);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+    }
+  `,
+  caseStudyBody: css`
+    padding: 28px 32px;
+
+    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
+      padding: 22px 20px;
+    }
+  `,
+  caseStudyTag: css`
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    padding: 0 12px;
+    border-radius: 999px;
+    background: #edf5ff;
+    color: #1e66d4;
+    font-size: 12px;
+    font-weight: 700;
+  `,
+  caseStudyTitle: css`
+    margin: 12px 0 8px !important;
+    color: #0b1532 !important;
+    font-size: clamp(22px, 2.6vw, 30px) !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.03em;
+    font-weight: 850 !important;
+  `,
+  caseStudyDescription: css`
+    margin: 0 0 20px !important;
+    color: #4d5b78 !important;
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  `,
+  caseStudyStats: css`
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+    padding: 16px 0;
+    border-top: 1px solid #edf1f7;
+    border-bottom: 1px solid #edf1f7;
+  `,
+  caseStudyStatValue: css`
+    display: block;
+    color: #1e66d4;
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 850;
+  `,
+  caseStudyStatLabel: css`
+    display: block;
+    margin-top: 2px;
+    color: #597091;
+    font-size: 12px;
+  `,
+  caseStudyActions: css`
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  `,
+  caseStudyVideoLink: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #4d5b78 !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    padding: 0 !important;
+
+    &:hover {
+      color: #1e66d4 !important;
+    }
+  `,
+
+  /* ── Clients ── */
+  clientsSection: css`
+    padding-block: 72px;
+
+    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
+      padding-block: 56px;
+    }
+  `,
+  clientsTrack: css`
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px 0 20px;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  `,
+  clientCard: css`
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    min-height: 120px;
+    padding: 20px;
+    border: 1px solid #dfe6f1;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(12, 24, 48, 0.04);
+    cursor: default;
+    transition: box-shadow 0.2s ease;
+
+    &:hover {
+      box-shadow: 0 10px 28px rgba(12, 24, 48, 0.08);
+    }
+  `,
+  clientIcon: css`
+    display: grid;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+    place-items: center;
+    border-radius: 14px;
+    background: #edf5ff;
+    color: #1e66d4;
+    font-size: 22px;
+  `,
+  clientName: css`
+    color: #0b1532;
+    font-size: 14px;
+    font-weight: 800;
+    text-align: center;
+  `,
+
+  /* ── CTA ── */
+  cta: css`
+    padding-block: 0 70px;
+  `,
+  ctaCard: css`
+    overflow: hidden;
+    border: 0;
+    border-radius: 22px;
+    background: linear-gradient(135deg, #0b2f68 0%, #113f89 56%, #0a234d 100%);
+    box-shadow: 0 26px 60px rgba(7, 20, 44, 0.18);
   `,
   ctaInner: css`
     position: relative;
-    z-index: 1;
-    min-height: 210px;
-    padding: 32px 380px 32px 42px;
-
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      padding-right: 300px;
-    }
+    min-height: 170px;
+    padding: 36px 40px;
+    color: #fff;
 
     @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 430px;
-      padding: 30px 24px 220px;
+      padding: 28px 24px;
     }
   `,
-  ctaCopy: css`
-    max-width: 610px;
+  ctaLabel: css`
+    display: block;
+    color: #9fc5ff !important;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   `,
   ctaTitle: css`
-    && {
-      margin: 0;
-      color: #0b1230;
-      font-size: clamp(22px, 2.4vw, 30px);
-      line-height: 1.35;
-      font-weight: 750;
-    }
+    margin: 8px 0 8px !important;
+    color: #fff !important;
+    font-size: clamp(24px, 3vw, 38px) !important;
+    line-height: 1.12 !important;
+    font-weight: 850 !important;
+  `,
+  ctaDescription: css`
+    max-width: 650px;
+    color: rgba(232, 240, 255, 0.88);
+    font-size: 15px;
+    line-height: 1.75;
   `,
   ctaActions: css`
     margin-top: 22px;
   `,
-  primaryButton: css`
-    && {
-      height: 42px;
-      border-color: #6c2ab5;
-      background: #6c2ab5;
-      box-shadow: none;
-    }
-  `,
-  secondaryButton: css`
-    && {
-      height: 42px;
-      color: #6527ad;
-      border-color: #7130b9;
-      background: #fff;
-    }
-  `,
-  device: css`
+  ctaGlow: css`
     position: absolute;
-    right: 28px;
-    bottom: 4px;
-    width: 330px;
-    height: auto;
-
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      right: 12px;
-      width: 285px;
-    }
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      right: 50%;
-      bottom: 8px;
-      width: 290px;
-      transform: translateX(50%);
-    }
+    inset: 0;
+    background:
+      radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.16), transparent 18%),
+      radial-gradient(circle at 20% 90%, rgba(255, 255, 255, 0.08), transparent 22%);
   `,
-  statusSection: css`
-    min-height: 420px;
-  `,
-  statusText: css`
-    && {
-      color: #34405f;
-      font-size: 16px;
-    }
+  linkButton: css`
+    color: #1e66d4 !important;
+    font-size: 12px !important;
+    font-weight: 800 !important;
   `,
 }));
 
+const clientIcons: IconName[] = [
+  "ShoppingOutlined",
+  "SafetyOutlined",
+  "ReadOutlined",
+  "BankOutlined",
+  "GlobalOutlined",
+  "ForkOutlined",
+];
+
 export default function Page() {
-  const { styles } = useStyles();
-  const { locale, t } = useI18n();
-  const { data, error, loading, refetch } = useMarketingData(locale);
-
-  if (loading || !data) {
-    if (error) {
-      return (
-        <main className={styles.page}>
-          <MarketingSection className={styles.statusSection}>
-            <Flex
-              vertical
-              align="center"
-              justify="center"
-              gap={18}
-              role="alert"
-            >
-              <Text className={styles.statusText}>{t("status.error")}</Text>
-              <Button type="primary" onClick={refetch}>
-                {t("status.retry")}
-              </Button>
-            </Flex>
-          </MarketingSection>
-        </main>
-      );
-    }
-
-    return (
-      <main className={styles.page}>
-        <MarketingSection className={styles.statusSection}>
-          <Flex align="center" justify="center" role="status">
-            <Text className={styles.statusText}>{t("status.loading")}</Text>
-          </Flex>
-        </MarketingSection>
-      </main>
-    );
-  }
+  const { styles, cx } = useStyles();
+  const { t } = useI18n();
+  const [activeFilter, setActiveFilter] = useState<string>("Semua");
 
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <Image
-          src="/images/ilustrations/Salon_Interior.png"
-          alt={t("marketing.benefits.title")}
-          fill
-          priority
-          sizes="100vw"
-          className={styles.heroImage}
-        />
-        <div className={styles.heroShade} />
-        <MarketingContainer className={styles.heroInner}>
-          <div className={styles.heroCopy}>
-            <Text className={styles.eyebrow}>
-              {t("marketing.benefits.eyebrow")}
-            </Text>
-            <Title level={1} className={styles.heroTitle}>
-              {t("marketing.benefits.title")}
-            </Title>
-            <Paragraph className={styles.heroDescription}>
-              {t("marketing.benefits.description")}
-            </Paragraph>
-          </div>
+      {/* ─── Hero ─── */}
+      <MarketingHero
+        backgroundSrc="/images/ilustrations/Office_Call.png"
+        backgroundAlt="Portofolio Vistara"
+        eyebrow={t("marketing.portfolio.eyebrow")}
+        titlePrefix={<span>{t("marketing.portfolio.title")}</span>}
+        titleAccent={<strong>Dampak Nyata</strong>}
+        titleSuffix={null}
+        description={t("marketing.portfolio.description")}
+        visual={<div className={styles.introVisual}><Image src="/images/ilustrations/Office_Call.png" alt="Portofolio Vistara" fill priority sizes="(max-width: 991px) 100vw, 48vw" className={styles.introImage} /><div className={styles.introShade} /><div className={styles.introBadge}><span className={styles.introBadgeTitle}>Ideas</span><span className={styles.introBadgeTitle}>Into Impact</span><span className={styles.introBadgeText}>Solusi nyata untuk dampak nyata di berbagai industri.</span></div></div>}
+      />
 
-          <Card className={styles.statsCard}>
-            <Row>
-              {data.benefits.stats.map((stat) => (
-                <Col xs={24} md={8} key={stat.id} className={styles.stat}>
+      <div className={styles.statsBar}>
+          <MarketingContainer>
+            <Row gutter={[0, 0]}>
+              {stats.map((stat, index) => (
+                <Col xs={24} sm={8} key={stat.label} className={styles.statItem}>
+                  <span className={styles.statIcon}>
+                    <Icon
+                      type={
+                        ["CheckCircleOutlined", "TeamOutlined", "AppstoreOutlined"][
+                          index
+                        ] as IconName
+                      }
+                    />
+                  </span>
                   <Text className={styles.statValue}>{stat.value}</Text>
-                  <Text className={styles.statLabel}>{t(stat.labelKey)}</Text>
+                  <Text className={styles.statLabel}>{stat.label}</Text>
                 </Col>
               ))}
+            </Row>
+          </MarketingContainer>
+        </div>
+      {/* ─── Projects ─── */}
+      <MarketingSection className={styles.section}>
+        <Flex
+          align="center"
+          justify="space-between"
+          gap={16}
+          wrap="wrap"
+          style={{ marginBottom: 24 }}
+        >
+          <div>
+            <Text className={styles.sectionLabel}>Proyek Kami</Text>
+            <Title level={2} className={styles.sectionTitle}>
+              {t("marketing.portfolio.title")}
+            </Title>
+          </div>
+          <Button type="link" href="#" className={styles.linkButton}>
+            {t("marketing.portfolio.viewAllProjects")}{" "}
+            <Icon type="ArrowRightOutlined" />
+          </Button>
+        </Flex>
+
+        {/* Filter tabs */}
+        <div className={styles.filterRow} style={{ marginBottom: 18 }}>
+          {filterTabs.map((tab) => (
+            <button
+              key={tab}
+              className={cx(
+                styles.filterTab,
+                activeFilter === tab && styles.filterTabActive,
+              )}
+              onClick={() => setActiveFilter(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
+
+        {/* Search bar */}
+        <div className={styles.searchBar} style={{ marginBottom: 24 }}>
+          <div className={styles.searchInput}>
+            <Icon type="SearchOutlined" />
+            <span>{t("marketing.portfolio.searchPlaceholder")}</span>
+          </div>
+          <div className={styles.searchSelect}>
+            <span>{t("marketing.portfolio.industryFilter")}</span>
+            <Icon type="DownOutlined" />
+          </div>
+          <div className={styles.searchSelect}>
+            <span>{t("marketing.portfolio.techFilter")}</span>
+            <Icon type="DownOutlined" />
+          </div>
+          <div className={styles.searchSelect}>
+            <span>
+              {t("marketing.portfolio.sortLabel")}:{" "}
+              {t("marketing.portfolio.sortNewest")}
+            </span>
+            <Icon type="DownOutlined" />
+          </div>
+        </div>
+
+        {/* Project grid */}
+        <div className={styles.projectGrid}>
+          {projects.map((project) => (
+            <Card className={styles.projectCard} key={project.title} bordered={false}>
+              <div className={styles.projectImage}>
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 1200px) 25vw, (max-width: 991px) 50vw, (max-width: 575px) 100vw, 25vw"
+                  className={styles.projectImageImg}
+                />
+                <span className={styles.projectTag}>{project.tag}</span>
+              </div>
+              <div className={styles.projectBody}>
+                <Title level={3} className={styles.projectTitle}>
+                  {project.title}
+                </Title>
+                <Paragraph className={styles.projectDescription}>
+                  {project.description}
+                </Paragraph>
+                <Button type="link" className={styles.projectLink}>
+                  Lihat Detail <Icon type="ArrowRightOutlined" />
+                </Button>
+              </div>
+            </Card>
+          ))}
+        </div>
+      </MarketingSection>
+
+      {/* ─── Case Study ─── */}
+      <section className={styles.caseStudySection}>
+        <MarketingContainer>
+          <Text className={styles.sectionLabel}>Studi Kasus Unggulan</Text>
+          <Title level={2} className={styles.sectionTitle} style={{ marginBottom: 28 }}>
+            {t("marketing.portfolio.caseStudy.title")}
+          </Title>
+
+          <Card className={styles.caseStudyCard} bordered={false}>
+            <Row gutter={[0, 0]} wrap={false}>
+              <Col xs={24} lg={14}>
+                <div className={styles.caseStudyImage}>
+                  <Image
+                    src="/images/ilustrations/Salon_Interior.png"
+                    alt="Transformasi Digital di Sektor Pertanian"
+                    fill
+                    sizes="(max-width: 991px) 100vw, 58vw"
+                    className={styles.caseStudyImageImg}
+                  />
+                  <div className={styles.caseStudyPlay}>
+                    <Icon type="PlayCircleOutlined" />
+                  </div>
+                </div>
+              </Col>
+              <Col xs={24} lg={10}>
+                <div className={styles.caseStudyBody}>
+                  <span className={styles.caseStudyTag}>
+                    {t("marketing.portfolio.caseStudy.tag")}
+                  </span>
+                  <Title level={2} className={styles.caseStudyTitle}>
+                    {t("marketing.portfolio.caseStudy.projectTitle")}
+                  </Title>
+                  <Paragraph className={styles.caseStudyDescription}>
+                    {t("marketing.portfolio.caseStudy.description")}
+                  </Paragraph>
+
+                  <div className={styles.caseStudyStats}>
+                    {caseStudyStats.map((stat) => (
+                      <div key={stat.value}>
+                        <Text className={styles.caseStudyStatValue}>
+                          {stat.value}
+                        </Text>
+                        {stat.label && (
+                          <Text className={styles.caseStudyStatLabel}>
+                            {stat.label}
+                          </Text>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className={styles.caseStudyActions}>
+                    <Button type="primary" icon={<Icon type="ArrowRightOutlined" />}>
+                      {t("marketing.portfolio.caseStudy.viewFull")}
+                    </Button>
+                    <Button
+                      type="link"
+                      className={styles.caseStudyVideoLink}
+                      icon={<Icon type="PlayCircleOutlined" />}
+                    >
+                      {t("marketing.portfolio.caseStudy.video")}
+                    </Button>
+                  </div>
+                </div>
+              </Col>
             </Row>
           </Card>
         </MarketingContainer>
       </section>
 
-      <MarketingSection className={styles.benefits}>
-        <div className={styles.sectionHeading}>
+      {/* ─── Clients ─── */}
+      <section className={styles.clientsSection}>
+        <MarketingContainer>
+          <Text className={styles.sectionLabel}>
+            {t("marketing.portfolio.clients.label")}
+          </Text>
           <Title level={2} className={styles.sectionTitle}>
-            {t("marketing.benefits.eyebrow")}
+            {t("marketing.portfolio.clients.title")}
           </Title>
-          <div className={styles.titleRule} />
-        </div>
+          <Paragraph
+            className={styles.sectionDescription}
+            style={{ marginBottom: 28, maxWidth: 520 }}
+          >
+            {t("marketing.portfolio.clients.description")}
+          </Paragraph>
 
-        <Row gutter={[16, 16]} className={styles.cardsRow}>
-          {data.benefits.cards.map((benefit) => (
-            <Col xs={24} sm={12} lg={6} key={benefit.id}>
-              <Card className={styles.benefitCard}>
-                <Flex align="center" gap={15}>
-                  <span className={styles.cardIcon}>
-                    <Icon type={benefit.icon as IconName} />
-                  </span>
-                  <Title level={3} className={styles.cardTitle}>
-                    {t(benefit.titleKey)}
-                  </Title>
-                </Flex>
-                <Paragraph className={styles.cardDescription}>
-                  {t(benefit.descriptionKey)}
-                </Paragraph>
-              </Card>
-            </Col>
-          ))}
-        </Row>
+          <div className={styles.clientsTrack}>
+            {clientNames.map((name, index) => (
+              <div className={styles.clientCard} key={name}>
+                <span className={styles.clientIcon}>
+                  <Icon type={clientIcons[index]} />
+                </span>
+                <Text className={styles.clientName}>{name}</Text>
+              </div>
+            ))}
+          </div>
+        </MarketingContainer>
+      </section>
 
-        <div className={styles.cta}>
-          <Flex vertical justify="center" className={styles.ctaInner}>
-            <div className={styles.ctaCopy}>
-              <Text className={styles.eyebrow}>
-                {t("marketing.benefits.eyebrow")}
-              </Text>
-              <Title level={2} className={styles.ctaTitle}>
-                {t("marketing.benefits.title")}
-              </Title>
-              <Flex className={styles.ctaActions} gap={14} wrap="wrap">
-                <Button
-                  type="primary"
-                  href="/kontak"
-                  icon={<Icon type="MailOutlined" />}
-                  className={styles.primaryButton}
-                >
-                  {t("common.contactSales")}
-                </Button>
-                <Button
-                  href="/kontak"
-                  icon={<Icon type="PlayCircleFilled" />}
-                  className={styles.secondaryButton}
-                >
-                  {t("common.bookDemo")}
-                </Button>
-              </Flex>
-            </div>
-          </Flex>
-          <Image
-            src="/images/ilustrations/Device_Mockup_1.png"
-            alt={t("app.description")}
-            width={600}
-            height={400}
-            className={styles.device}
-          />
-        </div>
+      {/* ─── CTA ─── */}
+      <MarketingSection className={styles.cta}>
+        <Card className={styles.ctaCard}>
+          <div className={styles.ctaInner}>
+            <div className={styles.ctaGlow} />
+            <Text className={styles.ctaLabel}>
+              {t("marketing.portfolio.cta.label")}
+            </Text>
+            <Title level={2} className={styles.ctaTitle}>
+              {t("marketing.portfolio.cta.title")}
+            </Title>
+            <Paragraph className={styles.ctaDescription}>
+              {t("marketing.portfolio.cta.description")}
+            </Paragraph>
+            <Flex className={styles.ctaActions} justify="space-between" gap={16} wrap="wrap">
+              <Button type="primary" href="/kontak">
+                {t("marketing.portfolio.cta.action")}{" "}
+                <Icon type="ArrowRightOutlined" />
+              </Button>
+              <Button href="/layanan">Lihat Layanan</Button>
+            </Flex>
+          </div>
+        </Card>
       </MarketingSection>
     </main>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Button, Col, createStyles, Flex, Icon, Row, Typography } from "@/components";
+import { Button, Col, createStyles, Icon, MarketingHero, Row, Typography } from "@/components";
 import { useI18n } from "@/i18n";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
@@ -586,71 +586,46 @@ export default function Page() {
 
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <Image
-          src="/images/ilustrations/Late_Night_Coding.png"
-          fill
-          priority
-          alt={t("app.description")}
-          className={styles.heroBackground}
-        />
-        <div className={styles.heroShade} />
-
-        <MarketingContainer className={styles.heroInner}>
-          <div className={styles.heroCopy}>
-            <Text className={styles.eyebrow}>{t("marketing.home.eyebrow")}</Text>
-            <Title className={styles.heroTitle}>
-              {t("marketing.home.titlePrefix")}
-              <span className={styles.heroTitleAccent}>{t("marketing.home.titleAccent")}</span>
-              {t("marketing.home.titleSuffix")}
-            </Title>
-            <Text className={styles.heroDesc}>
-              {t("marketing.home.description")}
-            </Text>
-            <Flex className={styles.heroActions} gap={12} wrap="wrap">
-              <Button type="primary" size="large" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
-                {t("marketing.home.primaryAction")}
-              </Button>
-              <Button size="large" href="/tentang-kami" icon={<Icon type="EyeOutlined" />}>
-                {t("marketing.home.secondaryAction")}
-              </Button>
-            </Flex>
-            <div className={styles.heroPager} aria-label={t("marketing.home.pagerLabel")}>
-              <span>01</span>
-              <span className={styles.heroPagerLine} />
-              <span>02</span>
-              <span className={styles.heroPagerLine} />
-              <span>03</span>
-            </div>
-          </div>
-
-          <div className={styles.heroVisual}>
-            <div className={styles.heroFloatingCard}>
-              {[
-                [t("marketing.home.highlights.innovative.title"), t("marketing.home.highlights.innovative.description")],
-                [t("marketing.home.highlights.trusted.title"), t("marketing.home.highlights.trusted.description")],
-                [t("marketing.home.highlights.sustainable.title"), t("marketing.home.highlights.sustainable.description")],
-              ].map(([title, desc]) => (
-                <div key={title} className={styles.heroFloatingItem}>
-                  <span className={styles.heroFloatingIcon}>
-                    <Icon type="CheckCircleOutlined" />
-                  </span>
-                  <span>
-                    <span className={styles.heroFloatingTitle}>{title}</span>
-                    <span className={styles.heroFloatingDesc}>{desc}</span>
-                  </span>
-                </div>
-              ))}
-            </div>
-
-            <div className={styles.heroSlogan}>
-              {t("marketing.home.sloganLine1")}
-              <br />
-              {t("marketing.home.sloganLine2")}
-            </div>
-          </div>
-        </MarketingContainer>
-      </section>
+      <MarketingHero
+        backgroundSrc="/images/ilustrations/Late_Night_Coding.png"
+        backgroundAlt={t("app.description")}
+        eyebrow={t("marketing.home.eyebrow")}
+        titlePrefix={t("marketing.home.titlePrefix")}
+        titleAccent={t("marketing.home.titleAccent")}
+        titleSuffix={t("marketing.home.titleSuffix")}
+        description={t("marketing.home.description")}
+        primaryAction={{
+          label: t("marketing.home.primaryAction"),
+          href: "/kontak",
+          icon: <Icon type="ArrowRightOutlined" />,
+          type: "primary",
+        }}
+        secondaryAction={{
+          label: t("marketing.home.secondaryAction"),
+          href: "/tentang-kami",
+          icon: <Icon type="EyeOutlined" />,
+        }}
+        pagerItems={["01", "02", "03"]}
+        pagerLabel={t("marketing.home.pagerLabel")}
+        highlights={[
+          {
+            title: t("marketing.home.highlights.innovative.title"),
+            description: t("marketing.home.highlights.innovative.description"),
+          },
+          {
+            title: t("marketing.home.highlights.trusted.title"),
+            description: t("marketing.home.highlights.trusted.description"),
+          },
+          {
+            title: t("marketing.home.highlights.sustainable.title"),
+            description: t("marketing.home.highlights.sustainable.description"),
+          },
+        ]}
+        sloganLines={[
+          t("marketing.home.sloganLine1"),
+          t("marketing.home.sloganLine2"),
+        ]}
+      />
 
       <MarketingSection>
         <div className={styles.sectionHead}>
@@ -660,7 +635,7 @@ export default function Page() {
               {t("marketing.home.services.title")}
             </Title>
           </div>
-          <Button type="link" className={styles.sectionLink} href="/fitur" icon={<Icon type="ArrowRightOutlined" />}>
+          <Button type="link" className={styles.sectionLink} href="/layanan" icon={<Icon type="ArrowRightOutlined" />}>
             {t("marketing.home.services.link")}
           </Button>
         </div>

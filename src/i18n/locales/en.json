@@ -79,6 +79,7 @@
     "newsletterNote": "Get the latest insights on technology, design, and business from the Vistara team.",
     "privacy": "Privacy policy",
     "terms": "Terms of service",
+    "siteMap": "Site Map",
     "copyright": "All rights reserved.",
     "newsletterTitle": "Technology and business insights in your inbox",
     "newsletterPlaceholder": "Your email address",
@@ -204,24 +205,26 @@
         "kicker": "About Us",
         "title": "A Technology Partner for a Better Future",
         "subtitle": "Helping businesses grow through reliable and sustainable digital solutions",
-        "description": "We believe technology is an enabler for positive change. PT. Vistara Teknologi Indonesia helps companies, SMEs, and organizations build innovative, reliable, and sustainable digital solutions.",
-        "action": "Get to Know Us",
+        "description": "PT. Vistara Teknologi Indonesia is an information technology company committed to delivering innovative, reliable, and sustainable digital solutions for diverse industries in Indonesia.",
+        "action": "Contact Us",
         "imageAlt": "Vistara office interior",
-        "panelLabel": "DESIGN SYSTEM",
+        "panelLabel": "Technology\nPeople\nReal Impact",
         "panelTitle": "One Design, Many Solutions",
         "storyLabel": "About Vistara",
         "storyTitle": "More Than Just a Technology Company",
-        "storyDescription": "We build platforms and systems that connect strategy, design, and execution so businesses can move faster and stay consistent.",
-        "storyQuote": "We believe good technology should feel simple, impactful, and ready to grow with the business.",
+        "storyDescription": "We believe technology has the power to open new opportunities, improve efficiency, and create positive impact for society. Since day one, Vistara has pursued a vision of becoming a trusted partner in digital transformation across Indonesia.",
+        "storyQuote": "We build solutions today for a better tomorrow.",
         "storyQuoteAuthor": "Vistara Team",
         "storyImageAlt": "Vistara workspace and team",
         "storyBadgeTitle": "Ideas Into Impact",
-        "storyBadgeText": "Every solution is designed for real outcomes.",
+        "storyBadgeText": "The values we hold in every step.",
         "visionLabel": "Vision & Mission",
-        "visionTitle": "To be a trusted technology partner for digital transformation",
-        "visionDescription": "We want to help organizations build a clear, efficient, and long-lasting digital foundation.",
+        "visionTitle": "Our Commitment for the Future",
+        "visionDescription": "We are committed to delivering technology solutions that not only improve efficiency, but also open greater opportunities for the future.",
+        "visionCardTitle": "Vision",
+        "visionCardDescription": "To become a trusted technology company that delivers world-class digital solutions for Indonesia's progress.",
         "missionLabel": "Our Mission",
-        "missionTitle": "What we protect in every project",
+        "missionTitle": "Mission",
         "missionItems": {
           "quality": "Deliver solutions that are clean, stable, and easy to use.",
           "people": "Keep the working process collaborative with client teams.",
@@ -229,28 +232,32 @@
           "trust": "Build long-term relationships based on results and trust."
         },
         "principlesLabel": "Our Values",
-        "principlesTitle": "Principles that guide our work",
+        "principlesTitle": "Principles that move every step",
         "principlesDescription": "These four values shape how we design, build, and support clients.",
         "journeyLabel": "Our Journey",
         "journeyTitle": "Vistara Growth Milestones",
         "journeyDescription": "How we evolved from the early foundation to the path ahead.",
         "journey": {
           "items": {
-            "2022": {
+            "2023": {
               "title": "Vistara was founded",
               "description": "Started the journey as a digital partner for modern business needs."
             },
-            "2023": {
-              "title": "Expanded team and services",
-              "description": "Added design, engineering, and implementation capabilities."
-            },
             "2024": {
-              "title": "Shaping more mature products",
-              "description": "Strengthened delivery processes to be more stable and scalable."
+              "title": "First client projects",
+              "description": "Delivered the first project together with e-commerce clients."
             },
             "2025": {
-              "title": "Focused on broader impact",
-              "description": "Building solutions for businesses that want to move faster."
+              "title": "Expanded services",
+              "description": "Reaching education and healthcare sectors with relevant solutions."
+            },
+            "2026": {
+              "title": "A broader partner",
+              "description": "Becoming a technology partner for more than 30 clients."
+            },
+            "future": {
+              "title": "Keep innovating",
+              "description": "Keep innovating for a better Indonesia."
             }
           }
         },
@@ -260,10 +267,10 @@
         "ctaAction": "Contact Us",
         "ctaSecondaryAction": "View Services",
         "stats": {
-          "projects": "Projects Delivered",
-          "clients": "Satisfied Clients",
-          "industries": "Industries Served",
-          "satisfaction": "Satisfaction Rate"
+          "projects": "founded",
+          "clients": "team members",
+          "industries": "cities reached",
+          "satisfaction": "business customers"
         }
       },
       "industries": {
@@ -527,6 +534,305 @@
       "delivered": "Delivered",
       "read": "Read",
       "activeCampaigns": "Active Campaigns"
+    },
+    "career": {
+      "eyebrow": "Career at Vistara",
+      "title": "Build the Future of Digital with Great Talent",
+      "description": "At Vistara, we believe impactful technology is born from extraordinary people. Join us and be part of real solutions for a more advanced Indonesia.",
+      "badge": {
+        "title": "Great People Build Greater Solutions",
+        "text": "A collaborative and growth-oriented work culture."
+      },
+      "whyJoin": {
+        "label": "Why Join Us",
+        "title": "More Than Just a Job",
+        "description": "We provide a work environment that supports career development, gives space for innovation, and creates real impact for society."
+      },
+      "values": {
+        "careerDev": { "title": "Career Development", "description": "Ongoing training, certification, and mentoring." },
+        "flexible": { "title": "Flexible Work", "description": "Hybrid work and adaptive working hours." },
+        "meaningful": { "title": "Meaningful Projects", "description": "Technology for real impact across various industries." },
+        "solid": { "title": "A Solid Team", "description": "Collaboration with cross-disciplinary talent." },
+        "wellbeing": { "title": "Employee Wellbeing", "description": "Insurance, health benefits, and wellbeing programs." },
+        "inclusive": { "title": "Inclusive Environment", "description": "Equal opportunities for everyone." }
+      },
+      "openings": {
+        "label": "Latest Openings",
+        "title": "Find a Role That Matches Your Passion",
+        "viewAll": "View All Openings",
+        "searchPlaceholder": "Search positions, skills, or keywords...",
+        "department": "All Departments",
+        "type": "All Work Types",
+        "location": "All Locations",
+        "detail": "View Details",
+        "list": [
+          { "title": "Frontend Developer", "team": "Product & Engineering", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "CodeOutlined" },
+          { "title": "Backend Developer", "team": "Product & Engineering", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "DatabaseOutlined" },
+          { "title": "UI/UX Designer", "team": "Product & Design", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "EditOutlined" },
+          { "title": "DevOps Engineer", "team": "Infrastructure", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "On-site", "icon": "CloudServerOutlined" },
+          { "title": "IT Consultant", "team": "Consulting & Solutions", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "On-site", "icon": "TeamOutlined" }
+        ]
+      },
+      "culture": {
+        "label": "Life at Vistara",
+        "title": "An Inspiring Work Culture",
+        "viewGallery": "View Gallery",
+        "items": [
+          { "title": "Limitless Collaboration", "image": "/images/ilustrations/Office_Call.png" },
+          { "title": "Room for Innovation", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "title": "Creating Impact Together", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+          { "title": "A Comfortable Work Environment", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" }
+        ]
+      },
+      "testimonials": {
+        "label": "What Our Team Says",
+        "title": "Their Stories at Vistara",
+        "items": [
+          { "quote": "Vistara gives me great room to grow and contribute to real impactful projects.", "name": "Aisyah Rahma", "role": "UI/UX Designer" },
+          { "quote": "The work environment at Vistara is highly collaborative. Every idea is valued and we are always encouraged to keep learning.", "name": "Dimas Pratama", "role": "Backend Developer" }
+        ]
+      },
+      "faq": {
+        "label": "Frequently Asked Questions",
+        "title": "Questions About Careers at Vistara",
+        "items": [
+          "What is the recruitment process?",
+          "Are there internship programs?",
+          "Is remote work available?",
+          "What benefits are provided?"
+        ]
+      },
+      "cta": {
+        "label": "Build your career with us",
+        "title": "Be Part of the Change",
+        "description": "Together with great people, we create technology solutions for a better Indonesia.",
+        "primaryAction": "View All Openings",
+        "secondaryAction": "Contact Us"
+      }
+    },
+    "services": {
+      "eyebrow": "Our Services",
+      "title": "Technology Solutions for Your Growth",
+      "description": "We provide comprehensive information technology services, from application development and consulting to technology infrastructure management, to help your business grow faster and sustainably.",
+      "ctaPrimary": "Free Consultation",
+      "ctaSecondary": "Discuss Your Needs",
+      "features": {
+        "integrated": "Integrated Solutions",
+        "results": "Results-Oriented",
+        "sustainability": "Ongoing Support"
+      },
+      "main": {
+        "label": "Main Services",
+        "title": "Technology Services We Offer",
+        "description": "Complete solutions to address your digital business needs, supported by an experienced team and a results-oriented approach.",
+        "viewAll": "View All Services",
+        "items": [
+          { "title": "E-Commerce App Development", "kbl": "KBLI 62191", "description": "Building secure, scalable digital commerce platforms focused on your business growth.", "icon": "ShoppingCartOutlined" },
+          { "title": "Custom Apps & Systems Development", "kbl": "KBLI 62199", "description": "Software solutions for specific business needs, system integration, IoT, cybersecurity, and other custom applications.", "icon": "CodeOutlined" },
+          { "title": "IT Consulting & Management", "kbl": "KBLI 62209", "description": "Technology consulting, system planning, infrastructure management, security, and computer facilities management.", "icon": "TeamOutlined" }
+        ]
+      },
+      "supporting": {
+        "label": "Supporting Services",
+        "title": "Additional Digital Fulfillment Services",
+        "items": [
+          { "title": "Web & Mobile Development", "icon": "MobileOutlined" },
+          { "title": "System Integration", "icon": "ApiOutlined" },
+          { "title": "Internet of Things (IoT)", "icon": "WifiOutlined" },
+          { "title": "Cybersecurity", "icon": "SafetyOutlined" },
+          { "title": "Data & Cloud Solution", "icon": "CloudOutlined" },
+          { "title": "Maintenance & Technical Support", "icon": "ToolOutlined" }
+        ]
+      },
+      "process": {
+        "label": "Work Process",
+        "title": "From Needs to Real Solutions",
+        "description": "We implement a structured and transparent work process to ensure every solution we deliver aligns with your business goals.",
+        "cta": "Consult Your Project",
+        "steps": [
+          { "number": "01", "title": "Needs Analysis", "description": "Understanding your business goals, challenges, and requirements." },
+          { "number": "02", "title": "Solution Design", "description": "Developing the right architecture and roadmap." },
+          { "number": "03", "title": "Development & Implementation", "description": "Building solutions with high-quality standards." },
+          { "number": "04", "title": "Testing & Evaluation", "description": "Ensuring the solution runs optimally and securely." },
+          { "number": "05", "title": "Ongoing Support", "description": "Accompanying your business growth." }
+        ]
+      },
+      "industries": {
+        "label": "Industries We Serve",
+        "title": "Solutions for Various Industries",
+        "viewAll": "View All Industries",
+        "items": [
+          { "title": "E-Commerce & Retail", "image": "/images/ilustrations/Salon_Interior.png" },
+          { "title": "Education", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "title": "Healthcare", "image": "/images/ilustrations/Office_Call.png" },
+          { "title": "Manufacturing & Distribution", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+          { "title": "Finance", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
+          { "title": "Government", "image": "/images/ilustrations/Salon_Interior.png" }
+        ]
+      },
+      "caseStudy": {
+        "label": "Case Studies",
+        "title": "Success Stories with Vistara",
+        "description": "See how we help various organizations achieve their digital transformation.",
+        "viewAll": "View All Case Studies",
+        "featured": {
+          "tag": "E-Commerce",
+          "title": "Agricultural Marketplace Platform",
+          "description": "Connecting local farmers with buyers across Indonesia through a digital platform that shortens the supply chain.",
+          "viewDetail": "View Details"
+        }
+      },
+      "cta": {
+        "label": "Ready to Start?",
+        "title": "Discuss Your Technology Needs",
+        "description": "Our team is ready to help you find the best solution for your business.",
+        "action": "Free Consultation"
+      },
+      "faq": {
+        "label": "Frequently Asked Questions",
+        "title": "Commonly Asked Questions",
+        "viewAll": "View All FAQ",
+        "items": [
+          "What services does Vistara offer?",
+          "How long does app development take?",
+          "Does Vistara provide support after implementation?"
+        ]
+      }
+    },
+    "portfolio": {
+      "eyebrow": "Vistara Portfolio",
+      "title": "Real Solutions, Real Impact",
+      "description": "Various projects we have worked on with clients from various industries, delivering relevant, innovative, and impactful technology solutions for business growth.",
+      "filters": ["All", "E-Commerce", "Information Systems", "Cloud & Infrastructure", "IoT", "Cybersecurity", "Government", "Education", "Healthcare"],
+      "searchPlaceholder": "Search projects or clients...",
+      "industryFilter": "All Industries",
+      "techFilter": "All Technologies",
+      "sortLabel": "Sort by",
+      "sortNewest": "Newest",
+      "viewAllProjects": "View All Portfolio",
+      "stats": {
+        "completed": { "value": "50+", "label": "Projects Completed" },
+        "clients": { "value": "30+", "label": "Satisfied Clients" },
+        "industries": { "value": "10+", "label": "Industries" }
+      },
+      "projects": [
+        { "title": "Digital Agricultural Marketplace", "tag": "E-Commerce", "description": "Local agricultural products trading platform connecting farmers with a wider market.", "image": "/images/ilustrations/Salon_Interior.png" },
+        { "title": "Hospital Management System", "tag": "Information Systems", "description": "Digital solution for patient management, medical records, and hospital operations.", "image": "/images/ilustrations/Coding_Workspace.png" },
+        { "title": "Cloud Infrastructure Migration", "tag": "Cloud & Infrastructure", "description": "IT infrastructure modernization with scalable, secure, and efficient cloud architecture.", "image": "/images/ilustrations/Office_Call.png" },
+        { "title": "Public Service Portal", "tag": "Government", "description": "Integrated public service platform to improve transparency and service efficiency.", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+        { "title": "IoT-Based Production Monitoring", "tag": "IoT", "description": "IoT solution for machine monitoring and real-time production process optimization.", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
+        { "title": "Security Audit & Hardening", "tag": "Cybersecurity", "description": "Security assessment, best practice implementation, and ongoing monitoring.", "image": "/images/ilustrations/Salon_Interior.png" },
+        { "title": "Digital Learning Platform", "tag": "Education", "description": "Online learning ecosystem for schools and educational institutions.", "image": "/images/ilustrations/Coding_Workspace.png" },
+        { "title": "Financial Analytics System", "tag": "Finance", "description": "Analytics and financial reporting platform for faster decision-making.", "image": "/images/ilustrations/Office_Call.png" }
+      ],
+      "caseStudy": {
+        "label": "Featured Case Study",
+        "title": "Digital Transformation in Agriculture",
+        "tag": "E-Commerce",
+        "projectTitle": "TaniHub - Digital Agricultural Marketplace",
+        "description": "We helped TaniHub build an e-commerce platform connecting local farmers with buyers across Indonesia. This solution improved supply chain efficiency and opened wider market access for farmers.",
+        "stats": [
+          { "value": "300% in 1 year", "label": "Transaction increase" },
+          { "value": "10,000+ farmers joined", "label": "" },
+          { "value": "Coverage across 34 provinces", "label": "" }
+        ],
+        "viewFull": "View Full Case Study",
+        "video": "Watch Video (2:30)"
+      },
+      "clients": {
+        "label": "Our Clients",
+        "title": "Trusted by Various Organizations",
+        "description": "We are proud to work with organizations from various industries.",
+        "names": ["TaniHub", "RS Sejahtera", "EduSmart", "Bank Nusantara", "Pemda Digital", "Industri Maju"]
+      },
+      "cta": {
+        "label": "Let's Collaborate",
+        "title": "Realize Your Digital Project with Vistara",
+        "description": "Discuss your needs with our team, and find the best solution for your business.",
+        "action": "Free Consultation"
+      }
+    },
+    "solutions": {
+      "eyebrow": "Vistara Solutions",
+      "title": "Technology for Real Challenges",
+      "description": "Integrated technology solutions to help your business adapt, innovate, and grow faster in the digital era.",
+      "ctaPrimary": "Consult Your Needs",
+      "ctaSecondary": "View Case Studies",
+      "features": {
+        "endToEnd": "End-to-End Solutions",
+        "industry": "Industry-Tailored",
+        "trusted": "Secure & Trusted",
+        "support": "Ongoing Support"
+      },
+      "areas": {
+        "label": "Our Solution Areas",
+        "title": "Solutions Relevant to Your Business",
+        "description": "We deliver technology solutions designed to match your industry needs and business goals.",
+        "viewAll": "View All Solutions",
+        "items": [
+          { "title": "E-Commerce Solutions", "description": "Secure, scalable, and easy-to-manage digital commerce platforms.", "icon": "ShoppingCartOutlined" },
+          { "title": "Custom Information Systems", "description": "Web & mobile applications tailored to your unique business processes.", "icon": "CodeOutlined" },
+          { "title": "Cloud & Infrastructure Solutions", "description": "Cloud architecture, migration, and modern infrastructure management.", "icon": "CloudOutlined" },
+          { "title": "Internet of Things (IoT)", "description": "IoT solutions for monitoring, automation, and operational efficiency.", "icon": "WifiOutlined" },
+          { "title": "Cybersecurity", "description": "Protection of systems, data, and infrastructure from digital threats.", "icon": "SafetyOutlined" },
+          { "title": "Data & Artificial Intelligence", "description": "Leveraging data for smarter business insights.", "icon": "BarChartOutlined" },
+          { "title": "System Integration", "description": "Connecting various systems for efficient workflows.", "icon": "ApiOutlined" },
+          { "title": "IT Consulting & Management", "description": "Planning, auditing, and managing your IT facilities.", "icon": "TeamOutlined" }
+        ]
+      },
+      "industries": {
+        "label": "For Every Industry",
+        "title": "Driving Progress Across Sectors",
+        "viewAll": "View All Industries",
+        "items": [
+          { "title": "E-Commerce & Retail", "description": "Digital platforms for sales growth.", "image": "/images/ilustrations/Salon_Interior.png" },
+          { "title": "Education", "description": "Technology solutions for modern learning ecosystems.", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "title": "Healthcare", "description": "Information systems for better healthcare services.", "image": "/images/ilustrations/Office_Call.png" },
+          { "title": "Manufacturing & Distribution", "description": "Automation and integration for efficient supply chains.", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
+          { "title": "Finance", "description": "Digital systems for secure and reliable financial services.", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
+          { "title": "Government", "description": "Digital transformation for more transparent public services.", "image": "/images/ilustrations/Salon_Interior.png" }
+        ]
+      },
+      "caseStudy": {
+        "label": "Success Stories",
+        "title": "Our Solutions, Real Impact",
+        "viewAll": "View All Case Studies",
+        "items": [
+          { "tag": "E-Commerce", "title": "Digital Agricultural Marketplace", "description": "Connecting local farmers with a wider supply network through a digital platform.", "image": "/images/ilustrations/Salon_Interior.png" },
+          { "tag": "Manufacturing", "title": "Production Monitoring System", "description": "IoT solution for machine monitoring and production efficiency improvement.", "image": "/images/ilustrations/Coding_Workspace.png" },
+          { "tag": "Government", "title": "Public Service Portal", "description": "Integrated public service platform to improve access and transparency.", "image": "/images/ilustrations/Office_Call.png" }
+        ]
+      },
+      "process": {
+        "label": "Collaboration Process",
+        "title": "From Idea to Impact",
+        "description": "We work with you through a structured and transparent process.",
+        "viewAll": "View All Processes",
+        "steps": [
+          { "number": "01", "title": "Initial Discussion", "description": "Understanding your needs and challenges." },
+          { "number": "02", "title": "Analysis & Design", "description": "Developing the best solution and architecture." },
+          { "number": "03", "title": "Development", "description": "Building solutions with high-quality standards." },
+          { "number": "04", "title": "Implementation", "description": "Deployment and integration into your environment." },
+          { "number": "05", "title": "Ongoing Support", "description": "Monitoring, maintenance, and further development." }
+        ]
+      },
+      "cta": {
+        "label": "Ready to Face Digital Challenges?",
+        "title": "Find the Best Solution for Your Business",
+        "description": "Discuss your needs with our team of experts.",
+        "primaryAction": "Free Consultation",
+        "secondaryAction": "Contact Us"
+      },
+      "faq": {
+        "label": "Frequently Asked Questions",
+        "title": "Commonly Asked Questions",
+        "viewAll": "View All FAQ",
+        "items": [
+          "Can solutions be customized to our business needs?",
+          "How long does solution implementation take?",
+          "Does Vistara provide training for our team?"
+        ]
+      }
     }
   },
   "admin": {

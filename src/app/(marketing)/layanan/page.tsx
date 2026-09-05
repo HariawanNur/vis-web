@@ -5,7 +5,7 @@ import Page from "./client"
 
 export const metadata: Metadata = {
   ...marketingMetadata.features,
-  alternates: { canonical: "/fitur" },
+  alternates: { canonical: "/layanan" },
 }
 
 export default Page
