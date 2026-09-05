@@ -25,10 +25,11 @@ const { Text, Title } = Typography;
 
 const marketingNav = [
   { key: "nav.home", href: "/beranda" },
-  { key: "nav.features", href: "/fitur" },
-  { key: "nav.benefits", href: "/manfaat" },
-  { key: "nav.pricing", href: "/harga" },
   { key: "nav.about", href: "/tentang-kami" },
+  { key: "nav.services", href: "/layanan" },
+  { key: "nav.solution", href: "/solusi" },
+  { key: "nav.portfolio", href: "/portofolio" },
+  { key: "nav.career", href: "/karir" },
   { key: "nav.contact", href: "/kontak" },
 ] as const;
 
