@@ -20,184 +20,366 @@ import { MarketingContainer, MarketingSection } from "../_components/site";
 
 const { Text, Title } = Typography;
 
-const useStyles = createStyles(({ css }) => ({
+const missionItems = [
+  "marketing.home.about.missionItems.quality",
+  "marketing.home.about.missionItems.people",
+  "marketing.home.about.missionItems.growth",
+  "marketing.home.about.missionItems.trust",
+] as const;
+
+const journeyItems = [
+  {
+    year: "2022",
+    titleKey: "marketing.home.about.journey.items.2022.title",
+    descriptionKey: "marketing.home.about.journey.items.2022.description",
+  },
+  {
+    year: "2023",
+    titleKey: "marketing.home.about.journey.items.2023.title",
+    descriptionKey: "marketing.home.about.journey.items.2023.description",
+  },
+  {
+    year: "2024",
+    titleKey: "marketing.home.about.journey.items.2024.title",
+    descriptionKey: "marketing.home.about.journey.items.2024.description",
+  },
+  {
+    year: "2025",
+    titleKey: "marketing.home.about.journey.items.2025.title",
+    descriptionKey: "marketing.home.about.journey.items.2025.description",
+  },
+] as const;
+
+const useStyles = createStyles(({ css, token }) => ({
   page: css`
-    min-height: calc(100vh - 80px);
-    overflow: hidden;
-    color: #11152f;
-    background: #fff;
+    min-height: 100vh;
+    background:
+      radial-gradient(circle at top right, rgba(22, 119, 255, 0.08), transparent 28%),
+      linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+    color: ${token.colorText};
+  `,
+  state: css`
+    min-height: 52vh;
+  `,
+  stateText: css`
+    color: ${token.colorTextSecondary};
   `,
   hero: css`
     position: relative;
-    min-height: 430px;
     overflow: hidden;
-    background: #faf9fe;
+    min-height: 640px;
+    background: #07111f;
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 560px;
+    @media (max-width: ${token.screenMD}px) {
+      min-height: 760px;
     }
   `,
   heroImage: css`
     object-fit: cover;
-    object-position: 74% center;
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      object-position: 62% center;
-    }
+    object-position: center;
+    filter: saturate(0.92) contrast(1.02);
   `,
   heroShade: css`
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      90deg,
-      #fff 0%,
-      rgba(255, 255, 255, 0.98) 38%,
-      rgba(255, 255, 255, 0.68) 55%,
-      rgba(255, 255, 255, 0.04) 76%
-    );
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      background: linear-gradient(
-        180deg,
-        #fff 0%,
-        rgba(255, 255, 255, 0.96) 56%,
-        rgba(255, 255, 255, 0.2) 82%
-      );
-    }
+    background:
+      linear-gradient(90deg, rgba(7, 17, 31, 0.94) 0%, rgba(7, 17, 31, 0.78) 44%, rgba(7, 17, 31, 0.2) 100%),
+      radial-gradient(circle at 78% 20%, rgba(22, 119, 255, 0.2), transparent 28%);
   `,
   heroInner: css`
     position: relative;
     z-index: 1;
-    min-height: 430px;
+    min-height: 640px;
+    padding-block: 56px;
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      min-height: 560px;
+    @media (max-width: ${token.screenMD}px) {
+      min-height: 760px;
+      padding-top: 42px;
       align-items: flex-start !important;
-      padding-top: 52px;
     }
   `,
   heroCopy: css`
-    width: min(620px, 62%);
+    width: min(640px, 58%);
 
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      width: min(560px, 72%);
+    @media (max-width: ${token.screenLG}px) {
+      width: min(580px, 74%);
     }
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
+    @media (max-width: ${token.screenMD}px) {
       width: 100%;
     }
   `,
-  eyebrow: css`
-    display: inline-block;
-    padding: 5px 12px;
-    border-radius: 999px;
-    color: #6e2db8;
-    background: #f1e9fc;
-    font-size: 12px;
-    font-weight: 800;
+  breadcrumb: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(226, 232, 240, 0.78);
+    font-size: 13px;
   `,
-  headline: css`
-    max-width: 610px;
-    margin: 18px 0 14px !important;
-    color: #11152f !important;
-    font-size: clamp(36px, 4vw, 54px) !important;
-    font-weight: 850 !important;
-    line-height: 1.1 !important;
-    letter-spacing: -1.6px;
+  breadcrumbActive: css`
+    color: #fff;
+    font-weight: 700;
+  `,
+  eyebrow: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.92);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  `,
+  heroTitle: css`
+    margin: 14px 0 12px !important;
+    color: #f8fbff !important;
+    font-size: clamp(40px, 5vw, 62px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.05em;
+    font-weight: 800 !important;
+  `,
+  heroTitleAccent: css`
+    display: block;
+    color: #67a8ff;
   `,
   heroDescription: css`
-    display: block;
-    max-width: 570px;
-    color: #35405e;
-    font-size: 15px;
-    line-height: 1.75;
+    max-width: 560px;
+    color: rgba(226, 232, 240, 0.92);
+    font-size: 18px;
+    line-height: 1.72;
   `,
-  heroButton: css`
-    height: 43px !important;
-    margin-top: 24px;
-    padding-inline: 20px !important;
-    border: 0 !important;
-    background: linear-gradient(135deg, #7735c7, #5d20ad) !important;
-    box-shadow: 0 8px 18px rgba(102, 39, 177, 0.2) !important;
-  `,
-  brandPanel: css`
-    min-width: 270px;
-    padding: 22px 24px;
-    border: 1px solid rgba(255, 255, 255, 0.24);
-    border-radius: 12px;
-    color: #fff;
-    background: linear-gradient(
-      135deg,
-      rgba(70, 20, 102, 0.94),
-      rgba(83, 29, 112, 0.82)
-    );
-    box-shadow: 0 16px 35px rgba(39, 18, 55, 0.2);
+  heroActions: css`
+    margin-top: 28px;
 
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      display: none !important;
+    .ant-btn {
+      height: 48px;
+      padding-inline: 20px;
+      font-weight: 700;
     }
   `,
-  brandName: css`
-    display: block;
-    color: #fff;
-    font-size: 19px;
-    font-weight: 800;
+  heroMeta: css`
+    margin-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
   `,
-  brandTagline: css`
-    display: block;
-    margin-top: 4px;
-    color: rgba(255, 255, 255, 0.82);
+  metaChip: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92);
     font-size: 12px;
   `,
-  content: css`
+  heroVisual: css`
     position: relative;
-    padding-top: 78px !important;
+    width: min(390px, 34%);
+    min-height: 460px;
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      padding-top: 40px !important;
+    @media (max-width: ${token.screenLG}px) {
+      display: none;
     }
   `,
-  statsCard: css`
-    position: absolute !important;
-    z-index: 2;
-    top: -50px;
-    right: 0;
-    left: 0;
-    border: 1px solid #ecebf3 !important;
-    border-radius: 14px !important;
-    box-shadow: 0 8px 25px rgba(38, 31, 62, 0.08) !important;
+  heroVisualCard: css`
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0 24px 54px rgba(4, 12, 24, 0.26);
+  `,
+  heroVisualImage: css`
+    object-fit: cover;
+    object-position: center;
+  `,
+  heroVisualOverlay: css`
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 20%, rgba(7, 17, 31, 0.82) 100%);
+  `,
+  heroVisualBadge: css`
+    position: absolute;
+    right: 18px;
+    bottom: 20px;
+    max-width: 170px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.58);
+    color: #fff;
+    backdrop-filter: blur(14px);
+  `,
+  heroVisualBadgeTitle: css`
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  `,
+  heroVisualBadgeText: css`
+    display: block;
+    margin-top: 2px;
+    color: rgba(226, 232, 240, 0.84);
+    font-size: 12px;
+    line-height: 1.5;
+  `,
+  sectionPad: css`
+    padding-block: 84px;
 
-    :global(.ant-card-body) {
-      padding: 0 !important;
-    }
-
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      position: static !important;
-      margin-bottom: 44px;
+    @media (max-width: ${token.screenMD}px) {
+      padding-block: 64px;
     }
   `,
-  stat: css`
+  sectionHeader: css`
+    max-width: 760px;
+    margin-bottom: 30px;
+  `,
+  sectionKicker: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: ${token.colorPrimary};
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  `,
+  sectionTitle: css`
+    margin: 8px 0 10px !important;
+    color: ${token.colorText} !important;
+    font-size: clamp(28px, 3vw, 42px) !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.04em;
+  `,
+  sectionDescription: css`
+    color: ${token.colorTextSecondary};
+    font-size: 16px;
+    line-height: 1.76;
+  `,
+  storyGrid: css`
+    align-items: stretch;
+  `,
+  storyCard: css`
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 28px;
+    background: ${token.colorBgContainer};
+    box-shadow: ${token.boxShadowSecondary};
+  `,
+  storyCopy: css`
+    padding: 32px;
+
+    @media (max-width: ${token.screenSM}px) {
+      padding: 24px;
+    }
+  `,
+  quoteCard: css`
+    margin-top: 20px;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(22, 119, 255, 0.08), rgba(96, 165, 250, 0.05));
+  `,
+  quoteMark: css`
+    color: ${token.colorPrimary};
+    font-size: 30px;
+    line-height: 1;
+  `,
+  quoteText: css`
+    color: ${token.colorText};
+    font-size: 14px;
+    line-height: 1.75;
+    font-weight: 700;
+  `,
+  quoteAuthor: css`
+    display: block;
+    margin-top: 6px;
+    color: ${token.colorTextSecondary};
+    font-size: 12px;
+  `,
+  storyImageWrap: css`
     position: relative;
-    min-height: 98px;
-    padding: 20px;
+    min-height: 420px;
+
+    @media (max-width: ${token.screenMD}px) {
+      min-height: 320px;
+    }
+  `,
+  storyImage: css`
+    object-fit: cover;
+    object-position: center;
+  `,
+  storyImageOverlay: css`
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, transparent 42%, rgba(7, 17, 31, 0.76) 100%),
+      radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.14), transparent 24%);
+  `,
+  storyBadge: css`
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    max-width: 220px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.54);
+    color: #fff;
+    backdrop-filter: blur(14px);
+  `,
+  storyBadgeTitle: css`
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  `,
+  storyBadgeText: css`
+    display: block;
+    margin-top: 2px;
+    color: rgba(226, 232, 240, 0.84);
+    font-size: 12px;
+    line-height: 1.5;
+  `,
+  statsStrip: css`
+    margin-top: 20px;
+    overflow: hidden;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 22px;
+    background: ${token.colorBgContainer};
+    box-shadow: ${token.boxShadow};
+  `,
+  statItem: css`
+    position: relative;
+    padding: 24px 18px;
     text-align: center;
 
     &::after {
+      content: "";
       position: absolute;
       top: 22px;
-      right: 0;
       bottom: 22px;
+      right: 0;
       width: 1px;
-      background: #e8e6ef;
-      content: "";
+      background: ${token.colorBorderSecondary};
     }
 
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
+    &:last-child::after {
+      display: none;
+    }
+
+    @media (max-width: ${token.screenMD}px) {
       &::after {
         top: auto;
+        left: 20px;
         right: 20px;
         bottom: 0;
-        left: 20px;
         width: auto;
         height: 1px;
       }
@@ -205,153 +387,206 @@ const useStyles = createStyles(({ css }) => ({
   `,
   statValue: css`
     display: block;
-    color: #6d2ebb;
-    font-size: 24px;
-    font-weight: 850;
+    color: ${token.colorPrimary};
+    font-size: 28px;
     line-height: 1.1;
+    font-weight: 800;
   `,
   statLabel: css`
     display: block;
     margin-top: 8px;
-    color: #34405d;
-    font-size: 12px;
+    color: ${token.colorTextSecondary};
+    font-size: 13px;
   `,
-  sectionHeading: css`
-    max-width: 680px;
-    margin: 0 auto 28px;
-    text-align: center;
+  panelCard: css`
+    height: 100%;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 26px;
+    background: ${token.colorBgContainer};
+    box-shadow: ${token.boxShadowSecondary};
   `,
-  sectionTitle: css`
-    margin: 0 0 9px !important;
-    color: #11152f !important;
-    font-size: clamp(24px, 2.7vw, 34px) !important;
-    font-weight: 850 !important;
+  panelCopy: css`
+    padding: 30px;
+
+    @media (max-width: ${token.screenSM}px) {
+      padding: 24px;
+    }
   `,
-  sectionDescription: css`
-    color: #59617b;
-    font-size: 14px;
-    line-height: 1.7;
+  panelTitle: css`
+    margin: 0 0 10px !important;
+    color: ${token.colorText} !important;
+    font-size: 28px !important;
+    line-height: 1.1 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em;
+  `,
+  panelDescription: css`
+    color: ${token.colorTextSecondary};
+    font-size: 15px;
+    line-height: 1.75;
+  `,
+  missionList: css`
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  `,
+  missionItem: css`
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid ${token.colorBorderSecondary};
+  `,
+  missionIcon: css`
+    flex: 0 0 auto;
+    margin-top: 2px;
+    color: ${token.colorPrimary};
+    font-size: 18px;
   `,
   valueCard: css`
     height: 100%;
-    min-height: 210px;
-    border: 1px solid #e8e7ef !important;
-    border-radius: 12px !important;
-    box-shadow: none !important;
-    text-align: center;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 22px;
+    background: ${token.colorBgContainer};
+    box-shadow: ${token.boxShadow};
 
     :global(.ant-card-body) {
-      height: 100%;
-      padding: 25px 20px !important;
+      padding: 24px !important;
     }
   `,
   valueIcon: css`
     display: grid;
     place-items: center;
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 14px;
-    border-radius: 50%;
-    color: #7732c2;
-    background: linear-gradient(145deg, #f6f1ff, #eee4ff);
-    font-size: 26px;
+    width: 54px;
+    height: 54px;
+    margin-bottom: 14px;
+    border-radius: 16px;
+    background: rgba(22, 119, 255, 0.08);
+    color: ${token.colorPrimary};
+    font-size: 24px;
   `,
   valueName: css`
     display: block;
     margin-bottom: 8px;
-    color: #11152f;
-    font-size: 15px;
+    color: ${token.colorText};
+    font-size: 16px;
     font-weight: 800;
   `,
   valueDescription: css`
+    color: ${token.colorTextSecondary};
+    font-size: 14px;
+    line-height: 1.72;
+  `,
+  timelineWrap: css`
+    position: relative;
+    margin-top: 8px;
+  `,
+  timelineTrack: css`
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    right: 20px;
+    height: 2px;
+    background: ${token.colorBorderSecondary};
+
+    @media (max-width: ${token.screenMD}px) {
+      display: none;
+    }
+  `,
+  timelineGrid: css`
+    position: relative;
+    z-index: 1;
+  `,
+  timelineCard: css`
+    height: 100%;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 22px;
+    background: ${token.colorBgContainer};
+    box-shadow: ${token.boxShadow};
+  `,
+  timelineInner: css`
+    padding: 22px 20px;
+  `,
+  timelineDot: css`
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    margin-bottom: 14px;
+    border-radius: 999px;
+    background: rgba(22, 119, 255, 0.1);
+    color: ${token.colorPrimary};
+    font-size: 11px;
+    font-weight: 800;
+  `,
+  timelineYear: css`
     display: block;
-    color: #3f4965;
-    font-size: 12px;
+    color: ${token.colorPrimary};
+    font-size: 15px;
+    font-weight: 800;
+  `,
+  timelineTitle: css`
+    display: block;
+    margin-top: 8px;
+    color: ${token.colorText};
+    font-size: 15px;
+    font-weight: 800;
+  `,
+  timelineDescription: css`
+    display: block;
+    margin-top: 8px;
+    color: ${token.colorTextSecondary};
+    font-size: 13px;
     line-height: 1.7;
   `,
-  lowerSection: css`
-    padding-top: 12px !important;
+  cta: css`
+    padding-block: 40px;
   `,
-  teamCard: css`
-    height: 100%;
-    min-height: 280px;
+  ctaCard: css`
     overflow: hidden;
-    border: 1px solid #e9e7ef !important;
-    border-radius: 12px !important;
-    box-shadow: none !important;
+    border: 0;
+    border-radius: 28px;
+    background: linear-gradient(135deg, #08172b 0%, #0a2f6e 48%, #1677ff 100%);
+    box-shadow: 0 24px 60px rgba(7, 17, 31, 0.18);
+  `,
+  ctaInner: css`
+    position: relative;
+    padding: 34px 38px;
+    color: #fff;
 
-    :global(.ant-card-body) {
-      height: 100%;
-      padding: 0 !important;
+    @media (max-width: ${token.screenSM}px) {
+      padding: 28px 22px;
     }
   `,
-  teamCopy: css`
-    padding: 32px;
-
-    @media (max-width: ${designSystem.breakpoints.sm - 1}px) {
-      padding: 26px 22px;
-    }
-  `,
-  teamTitle: css`
-    margin: 0 0 12px !important;
-    color: #6d2db7 !important;
-    font-size: 23px !important;
+  ctaTitle: css`
+    margin: 0 0 10px !important;
+    color: #fff !important;
+    font-size: clamp(26px, 3vw, 40px) !important;
+    line-height: 1.12 !important;
     font-weight: 800 !important;
   `,
-  teamDescription: css`
-    color: #3d4864;
-    font-size: 13px;
+  ctaDescription: css`
+    max-width: 760px;
+    color: rgba(226, 232, 240, 0.9);
+    font-size: 15px;
     line-height: 1.75;
   `,
-  teamPhoto: css`
-    position: relative;
-    min-height: 280px;
-    overflow: hidden;
-  `,
-  teamImage: css`
-    object-fit: cover;
-    object-position: center 36%;
-  `,
-  purposeCard: css`
-    height: 100%;
-    min-height: 280px;
-    border: 0 !important;
-    border-radius: 12px !important;
-    background: linear-gradient(135deg, #fbf9ff, #f6f1ff) !important;
-    box-shadow: none !important;
+  ctaActions: css`
+    margin-top: 22px;
 
-    :global(.ant-card-body) {
-      height: 100%;
-      padding: 28px !important;
+    .ant-btn {
+      height: 44px;
+      font-weight: 700;
     }
   `,
-  purposeItem: css`
-    padding-block: 18px;
-
-    & + & {
-      border-top: 1px solid #ddd8e8;
-    }
-  `,
-  purposeIcon: css`
-    display: grid;
-    flex: 0 0 46px;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    color: #7834c4;
-    background: #fff;
-    box-shadow: 0 6px 15px rgba(101, 43, 164, 0.08);
-    font-size: 23px;
-  `,
-  state: css`
-    min-height: 420px;
-    padding: 48px 20px;
-    text-align: center;
-  `,
-  stateText: css`
-    color: #59617b;
-    font-size: 15px;
+  ctaGlow: css`
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 86% 18%, rgba(255, 255, 255, 0.16), transparent 18%),
+      radial-gradient(circle at 16% 84%, rgba(255, 255, 255, 0.1), transparent 24%);
   `,
 }));
 
@@ -364,14 +599,7 @@ export default function Page() {
     return (
       <main className={styles.page}>
         <MarketingSection>
-          <Flex
-            className={styles.state}
-            vertical
-            align="center"
-            justify="center"
-            gap={16}
-            role="status"
-          >
+          <Flex className={styles.state} vertical align="center" justify="center" gap={16} role="status">
             <Icon type="LoadingOutlined" spin />
             <Text className={styles.stateText}>{t("status.loading")}</Text>
           </Flex>
@@ -384,14 +612,7 @@ export default function Page() {
     return (
       <main className={styles.page}>
         <MarketingSection>
-          <Flex
-            className={styles.state}
-            vertical
-            align="center"
-            justify="center"
-            gap={18}
-            role="alert"
-          >
+          <Flex className={styles.state} vertical align="center" justify="center" gap={18} role="alert">
             <Icon type="ExclamationCircleOutlined" />
             <Text className={styles.stateText}>{t("status.error")}</Text>
             <Button type="primary" onClick={refetch}>
@@ -409,82 +630,153 @@ export default function Page() {
     <main className={styles.page}>
       <section className={styles.hero}>
         <Image
-          src="/images/ilustrations/Salon_Interior.png"
-          alt={t("marketing.about.title")}
+          src="/images/ilustrations/Vistara_Office_Reception_2.png"
+          alt={t("marketing.home.about.imageAlt")}
           fill
           priority
           className={styles.heroImage}
         />
         <div className={styles.heroShade} />
         <MarketingContainer>
-          <Flex
-            className={styles.heroInner}
-            align="center"
-            justify="space-between"
-            gap={48}
-          >
+          <Flex className={styles.heroInner} align="center" justify="space-between" gap={40}>
             <div className={styles.heroCopy}>
-              <Text className={styles.eyebrow}>
-                {t("marketing.about.eyebrow")}
-              </Text>
-              <Title level={1} className={styles.headline}>
-                {t("marketing.about.title")}
-              </Title>
-              <Text className={styles.heroDescription}>
-                {t("marketing.about.description")}
-              </Text>
-              <Button
-                type="primary"
-                href="/kontak"
-                icon={<Icon type="CalendarOutlined" />}
-                className={styles.heroButton}
-              >
-                {t("common.bookDemo")}
-              </Button>
-            </div>
-            <Flex className={styles.brandPanel} align="center" gap={14}>
-              <Image
-                src="/images/logo.webp"
-                alt={t("app.logoAlt")}
-                width={58}
-                height={58}
-              />
-              <div>
-                <Text className={styles.brandName}>{t("app.brand")}</Text>
-                <Text className={styles.brandTagline}>{t("app.tagline")}</Text>
+              <div className={styles.breadcrumb}>
+                <span>{t("nav.home")}</span>
+                <span>•</span>
+                <span className={styles.breadcrumbActive}>{t("nav.about")}</span>
               </div>
-            </Flex>
+              <Text className={styles.eyebrow}>{t("marketing.home.about.kicker")}</Text>
+              <Title level={1} className={styles.heroTitle}>
+                <span>{t("marketing.home.about.title")}</span>
+                <span className={styles.heroTitleAccent}>{t("marketing.home.about.subtitle")}</span>
+              </Title>
+              <Text className={styles.heroDescription}>{t("marketing.home.about.description")}</Text>
+              <Flex className={styles.heroActions} gap={12} wrap="wrap">
+                <Button type="primary" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
+                  {t("marketing.home.about.action")}
+                </Button>
+                <Button href="/fitur" icon={<Icon type="EyeOutlined" />}>
+                  {t("marketing.home.services.link")}
+                </Button>
+              </Flex>
+              <div className={styles.heroMeta}>
+                <span className={styles.metaChip}><Icon type="SafetyCertificateOutlined" /> {t("marketing.home.about.panelLabel")}</span>
+                <span className={styles.metaChip}><Icon type="TeamOutlined" /> {t("marketing.home.about.panelTitle")}</span>
+              </div>
+            </div>
+
+            <div className={styles.heroVisual}>
+              <div className={styles.heroVisualCard}>
+                <Image
+                  src="/images/ilustrations/Vistara_Office_Reception_1.png"
+                  alt={t("marketing.home.about.imageAlt")}
+                  fill
+                  priority
+                  className={styles.heroVisualImage}
+                />
+                <div className={styles.heroVisualOverlay} />
+                <div className={styles.heroVisualBadge}>
+                  <Text className={styles.heroVisualBadgeTitle}>{t("marketing.home.about.panelTitle")}</Text>
+                  <Text className={styles.heroVisualBadgeText}>{t("marketing.home.about.panelLabel")}</Text>
+                </div>
+              </div>
+            </div>
           </Flex>
         </MarketingContainer>
       </section>
 
-      <MarketingSection className={styles.content}>
-        <Card className={styles.statsCard}>
-          <Row>
+      <MarketingSection className={styles.sectionPad}>
+        <Row className={styles.storyGrid} gutter={[24, 24]} align="stretch">
+          <Col xs={24} lg={12}>
+            <Card className={styles.storyCard}>
+              <div className={styles.storyCopy}>
+                <Text className={styles.sectionKicker}>{t("marketing.home.about.storyLabel")}</Text>
+                <Title level={2} className={styles.sectionTitle}>{t("marketing.home.about.storyTitle")}</Title>
+                <Text className={styles.sectionDescription}>{t("marketing.home.about.storyDescription")}</Text>
+                <div className={styles.quoteCard}>
+                  <Flex align="flex-start" gap={12}>
+                    <Icon className={styles.quoteMark} type="MessageOutlined" />
+                    <span>
+                      <Text className={styles.quoteText}>{t("marketing.home.about.storyQuote")}</Text>
+                      <Text className={styles.quoteAuthor}>{t("marketing.home.about.storyQuoteAuthor")}</Text>
+                    </span>
+                  </Flex>
+                </div>
+              </div>
+            </Card>
+          </Col>
+
+          <Col xs={24} lg={12}>
+            <Card className={styles.storyCard}>
+              <div className={styles.storyImageWrap}>
+                <Image
+                  src="/images/ilustrations/Coding_Workspace.png"
+                  alt={t("marketing.home.about.storyImageAlt")}
+                  fill
+                  className={styles.storyImage}
+                />
+                <div className={styles.storyImageOverlay} />
+                <div className={styles.storyBadge}>
+                  <Text className={styles.storyBadgeTitle}>{t("marketing.home.about.storyBadgeTitle")}</Text>
+                  <Text className={styles.storyBadgeText}>{t("marketing.home.about.storyBadgeText")}</Text>
+                </div>
+              </div>
+            </Card>
+          </Col>
+        </Row>
+
+        <Card className={styles.statsStrip}>
+          <Row gutter={[0, 0]}>
             {about.stats.map((stat) => (
               <Col xs={24} sm={12} md={6} key={stat.id}>
-                <Flex
-                  className={styles.stat}
-                  vertical
-                  align="center"
-                  justify="center"
-                >
+                <div className={styles.statItem}>
                   <Text className={styles.statValue}>{stat.value}</Text>
-                  <Text className={styles.statLabel}>{t(stat.labelKey)}</Text>
-                </Flex>
+                <Text className={styles.statLabel}>{t(stat.labelKey)}</Text>
+                </div>
               </Col>
             ))}
           </Row>
         </Card>
+      </MarketingSection>
 
-        <Flex className={styles.sectionHeading} vertical align="center">
-          <Title level={2} className={styles.sectionTitle}>
-            {t("marketing.about.eyebrow")}
-          </Title>
-          <Text className={styles.sectionDescription}>
-            {t("marketing.about.description")}
-          </Text>
+      <MarketingSection className={styles.sectionPad}>
+        <Row gutter={[24, 24]} align="stretch">
+          <Col xs={24} lg={10}>
+            <Card className={styles.panelCard}>
+              <div className={styles.panelCopy}>
+                <Text className={styles.sectionKicker}>{t("marketing.home.about.visionLabel")}</Text>
+                <Title level={2} className={styles.sectionTitle}>{t("marketing.home.about.visionTitle")}</Title>
+                <Text className={styles.panelDescription}>{t("marketing.home.about.visionDescription")}</Text>
+              </div>
+            </Card>
+          </Col>
+
+          <Col xs={24} lg={14}>
+            <Card className={styles.panelCard}>
+              <div className={styles.panelCopy}>
+                <Text className={styles.sectionKicker}>{t("marketing.home.about.missionLabel")}</Text>
+                <Title level={2} className={styles.panelTitle}>{t("marketing.home.about.missionTitle")}</Title>
+                <div className={styles.missionList}>
+                  {missionItems.map((item) => (
+                    <div className={styles.missionItem} key={item}>
+                      <Icon className={styles.missionIcon} type="CheckCircleFilled" />
+                      <Text className={styles.panelDescription}>{t(item)}</Text>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Card>
+          </Col>
+        </Row>
+      </MarketingSection>
+
+      <MarketingSection className={styles.sectionPad}>
+        <Flex className={styles.sectionHeader} vertical>
+          <Text className={styles.sectionKicker}>{t("marketing.home.about.principlesLabel")}</Text>
+          <Title level={2} className={styles.sectionTitle}>{t("marketing.home.about.principlesTitle")}</Title>
+          <Text className={styles.sectionDescription}>{t("marketing.home.about.principlesDescription")}</Text>
         </Flex>
+
         <Row gutter={[18, 18]}>
           {about.values.map((value) => (
             <Col xs={24} sm={12} lg={6} key={value.id}>
@@ -493,80 +785,56 @@ export default function Page() {
                   <Icon type={value.icon as IconName} />
                 </div>
                 <Text className={styles.valueName}>{t(value.titleKey)}</Text>
-                <Text className={styles.valueDescription}>
-                  {t(value.descriptionKey)}
-                </Text>
+                <Text className={styles.valueDescription}>{t(value.descriptionKey)}</Text>
               </Card>
             </Col>
           ))}
         </Row>
       </MarketingSection>
 
-      <MarketingSection className={styles.lowerSection}>
-        <Row gutter={[20, 20]} align="stretch">
-          <Col xs={24} lg={15}>
-            <Card className={styles.teamCard}>
-              <Row align="stretch">
-                <Col xs={24} sm={11}>
-                  <Flex
-                    className={styles.teamCopy}
-                    vertical
-                    align="flex-start"
-                    justify="center"
-                  >
-                    <Title level={3} className={styles.teamTitle}>
-                      {t("marketing.about.title")}
-                    </Title>
-                    <Text className={styles.teamDescription}>
-                      {t("marketing.about.description")}
-                    </Text>
-                    <Button
-                      href="/kontak"
-                      icon={<Icon type="TeamOutlined" />}
-                      className={styles.heroButton}
-                    >
-                      {t("common.contactSales")}
-                    </Button>
-                  </Flex>
-                </Col>
-                <Col xs={24} sm={13}>
-                  <div className={styles.teamPhoto}>
-                    <Image
-                      src="/images/ilustrations/Office_Call.png"
-                      alt={t("marketing.about.title")}
-                      fill
-                      className={styles.teamImage}
-                    />
+      <MarketingSection className={styles.sectionPad}>
+        <Flex className={styles.sectionHeader} vertical>
+          <Text className={styles.sectionKicker}>{t("marketing.home.about.journeyLabel")}</Text>
+          <Title level={2} className={styles.sectionTitle}>{t("marketing.home.about.journeyTitle")}</Title>
+          <Text className={styles.sectionDescription}>{t("marketing.home.about.journeyDescription")}</Text>
+        </Flex>
+
+        <div className={styles.timelineWrap}>
+          <div className={styles.timelineTrack} />
+          <Row className={styles.timelineGrid} gutter={[18, 18]}>
+            {journeyItems.map((item) => (
+              <Col xs={24} sm={12} lg={6} key={item.year}>
+                <Card className={styles.timelineCard}>
+                  <div className={styles.timelineInner}>
+                    <span className={styles.timelineDot}>{item.year}</span>
+                    <Text className={styles.timelineYear}>{item.year}</Text>
+                    <Text className={styles.timelineTitle}>{t(item.titleKey)}</Text>
+                    <Text className={styles.timelineDescription}>{t(item.descriptionKey)}</Text>
                   </div>
-                </Col>
-              </Row>
-            </Card>
-          </Col>
-          <Col xs={24} lg={9}>
-            <Card className={styles.purposeCard}>
-              {about.values.slice(0, 2).map((value) => (
-                <Flex
-                  className={styles.purposeItem}
-                  align="flex-start"
-                  gap={16}
-                  key={value.id}
-                >
-                  <div className={styles.purposeIcon}>
-                    <Icon type={value.icon as IconName} />
-                  </div>
-                  <div>
-                    <Text className={styles.valueName}>
-                      {t(value.titleKey)}
-                    </Text>
-                    <Text className={styles.valueDescription}>
-                      {t(value.descriptionKey)}
-                    </Text>
-                  </div>
-                </Flex>
-              ))}
-            </Card>
-          </Col>
-        </Row>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </div>
+      </MarketingSection>
+
+      <MarketingSection className={styles.cta}>
+        <Card className={styles.ctaCard}>
+          <div className={styles.ctaInner}>
+            <div className={styles.ctaGlow} />
+            <Text className={styles.sectionKicker}>{t("marketing.home.about.ctaLabel")}</Text>
+            <Title level={2} className={styles.ctaTitle}>{t("marketing.home.about.ctaTitle")}</Title>
+            <Text className={styles.ctaDescription}>{t("marketing.home.about.ctaDescription")}</Text>
+            <Flex className={styles.ctaActions} gap={12} wrap="wrap">
+              <Button type="primary" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
+                {t("marketing.home.about.ctaAction")}
+              </Button>
+              <Button href="/fitur" icon={<Icon type="ArrowRightOutlined" />}>
+                {t("marketing.home.about.ctaSecondaryAction")}
+              </Button>
+            </Flex>
+          </div>
+        </Card>
       </MarketingSection>
     </main>
   );

@@ -8,7 +8,7 @@ import { AuthProvider } from "@/context/auth-context";
 import { ThemeProvider, useThemeMode } from "@/context/theme-context";
 import { antdTheme, darkAntdTheme } from "@/theme/antd-theme";
 
-const mswEnabled = process.env.NEXT_PUBLIC_ENABLE_MSW === "true";
+const mswEnabled = process.env.NODE_ENV !== "production" && process.env.NEXT_PUBLIC_ENABLE_MSW !== "false";
 
 function createRequestId() {
   if (typeof crypto !== "undefined" && "randomUUID" in crypto)

@@ -154,6 +154,7 @@
     }
   },
   "marketing": {
+    "fallbackBadge": "Fallback mode: local data is being used while the API is unavailable",
     "home": {
       "eyebrow": "Technology for growth",
       "titlePrefix": "Building",
@@ -202,11 +203,62 @@
       "about": {
         "kicker": "About Us",
         "title": "A Technology Partner for a Better Future",
+        "subtitle": "Helping businesses grow through reliable and sustainable digital solutions",
         "description": "We believe technology is an enabler for positive change. PT. Vistara Teknologi Indonesia helps companies, SMEs, and organizations build innovative, reliable, and sustainable digital solutions.",
         "action": "Get to Know Us",
         "imageAlt": "Vistara office interior",
         "panelLabel": "DESIGN SYSTEM",
         "panelTitle": "One Design, Many Solutions",
+        "storyLabel": "About Vistara",
+        "storyTitle": "More Than Just a Technology Company",
+        "storyDescription": "We build platforms and systems that connect strategy, design, and execution so businesses can move faster and stay consistent.",
+        "storyQuote": "We believe good technology should feel simple, impactful, and ready to grow with the business.",
+        "storyQuoteAuthor": "Vistara Team",
+        "storyImageAlt": "Vistara workspace and team",
+        "storyBadgeTitle": "Ideas Into Impact",
+        "storyBadgeText": "Every solution is designed for real outcomes.",
+        "visionLabel": "Vision & Mission",
+        "visionTitle": "To be a trusted technology partner for digital transformation",
+        "visionDescription": "We want to help organizations build a clear, efficient, and long-lasting digital foundation.",
+        "missionLabel": "Our Mission",
+        "missionTitle": "What we protect in every project",
+        "missionItems": {
+          "quality": "Deliver solutions that are clean, stable, and easy to use.",
+          "people": "Keep the working process collaborative with client teams.",
+          "growth": "Help businesses grow with systems ready to scale.",
+          "trust": "Build long-term relationships based on results and trust."
+        },
+        "principlesLabel": "Our Values",
+        "principlesTitle": "Principles that guide our work",
+        "principlesDescription": "These four values shape how we design, build, and support clients.",
+        "journeyLabel": "Our Journey",
+        "journeyTitle": "Vistara Growth Milestones",
+        "journeyDescription": "How we evolved from the early foundation to the path ahead.",
+        "journey": {
+          "items": {
+            "2022": {
+              "title": "Vistara was founded",
+              "description": "Started the journey as a digital partner for modern business needs."
+            },
+            "2023": {
+              "title": "Expanded team and services",
+              "description": "Added design, engineering, and implementation capabilities."
+            },
+            "2024": {
+              "title": "Shaping more mature products",
+              "description": "Strengthened delivery processes to be more stable and scalable."
+            },
+            "2025": {
+              "title": "Focused on broader impact",
+              "description": "Building solutions for businesses that want to move faster."
+            }
+          }
+        },
+        "ctaLabel": "With Vistara",
+        "ctaTitle": "Let's Turn Ideas Into Real Impact",
+        "ctaDescription": "Discuss your needs with our team and see how digital solutions can accelerate your business goals.",
+        "ctaAction": "Contact Us",
+        "ctaSecondaryAction": "View Services",
         "stats": {
           "projects": "Projects Delivered",
           "clients": "Satisfied Clients",

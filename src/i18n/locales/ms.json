@@ -154,6 +154,7 @@
     }
   },
   "marketing": {
+    "fallbackBadge": "Mod fallback: data tempatan digunakan sementara menunggu API hidup",
     "home": {
       "eyebrow": "Teknologi untuk pertumbuhan",
       "titlePrefix": "Membina",
@@ -202,11 +203,62 @@
       "about": {
         "kicker": "Tentang Kami",
         "title": "Rakan Teknologi untuk Masa Depan yang Lebih Baik",
+        "subtitle": "Membantu perniagaan berkembang melalui penyelesaian digital yang boleh dipercayai dan mampan",
         "description": "Kami percaya teknologi ialah pemangkin perubahan positif. PT. Vistara Teknologi Indonesia membantu syarikat, PKS, dan organisasi membina penyelesaian digital yang inovatif, boleh dipercayai, dan mampan.",
         "action": "Kenali Kami",
         "imageAlt": "Bahagian dalaman pejabat Vistara",
         "panelLabel": "SISTEM REKA BENTUK",
         "panelTitle": "Satu Reka Bentuk, Banyak Solusi",
+        "storyLabel": "Tentang Vistara",
+        "storyTitle": "Lebih Daripada Sekadar Syarikat Teknologi",
+        "storyDescription": "Kami membina platform dan sistem yang menghubungkan strategi, reka bentuk, dan pelaksanaan supaya perniagaan boleh bergerak lebih pantas dan konsisten.",
+        "storyQuote": "Kami percaya teknologi yang baik harus terasa ringkas, memberi impak, dan sedia berkembang bersama perniagaan.",
+        "storyQuoteAuthor": "Pasukan Vistara",
+        "storyImageAlt": "Ruang kerja dan pasukan Vistara",
+        "storyBadgeTitle": "Ideas Into Impact",
+        "storyBadgeText": "Setiap penyelesaian direka untuk hasil yang nyata.",
+        "visionLabel": "Visi & Misi",
+        "visionTitle": "Menjadi rakan teknologi yang dipercayai untuk transformasi digital",
+        "visionDescription": "Kami mahu membantu organisasi membina asas digital yang jelas, cekap, dan tahan lama.",
+        "missionLabel": "Misi Kami",
+        "missionTitle": "Apa yang kami jaga dalam setiap projek",
+        "missionItems": {
+          "quality": "Menyampaikan penyelesaian yang kemas, stabil, dan mudah digunakan.",
+          "people": "Menjaga proses kerja yang kolaboratif bersama pasukan klien.",
+          "growth": "Membantu perniagaan berkembang dengan sistem yang bersedia untuk skala.",
+          "trust": "Membina hubungan jangka panjang berasaskan hasil dan kepercayaan."
+        },
+        "principlesLabel": "Nilai Kami",
+        "principlesTitle": "Prinsip yang membimbing kerja kami",
+        "principlesDescription": "Empat nilai ini membentuk cara kami mereka, membina, dan menyokong klien.",
+        "journeyLabel": "Perjalanan Kami",
+        "journeyTitle": "Tonggak Pertumbuhan Vistara",
+        "journeyDescription": "Bagaimana kami berkembang daripada asas awal ke arah masa depan.",
+        "journey": {
+          "items": {
+            "2022": {
+              "title": "Vistara ditubuhkan",
+              "description": "Memulakan perjalanan sebagai rakan digital untuk keperluan perniagaan moden."
+            },
+            "2023": {
+              "title": "Memperluas pasukan dan perkhidmatan",
+              "description": "Menambah keupayaan reka bentuk, kejuruteraan, dan pelaksanaan."
+            },
+            "2024": {
+              "title": "Membentuk produk yang lebih matang",
+              "description": "Mengukuhkan proses penghantaran supaya lebih stabil dan boleh skala."
+            },
+            "2025": {
+              "title": "Fokus pada impak yang lebih luas",
+              "description": "Membina penyelesaian untuk perniagaan yang mahu bergerak lebih pantas."
+            }
+          }
+        },
+        "ctaLabel": "Bersama Vistara",
+        "ctaTitle": "Mari Menukar Idea Menjadi Impak Nyata",
+        "ctaDescription": "Bincangkan keperluan anda dengan pasukan kami dan lihat bagaimana penyelesaian digital dapat mempercepat matlamat perniagaan anda.",
+        "ctaAction": "Hubungi Kami",
+        "ctaSecondaryAction": "Lihat Perkhidmatan",
         "stats": {
           "projects": "Projek Disiapkan",
           "clients": "Klien Berpuas Hati",
