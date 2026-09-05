@@ -83,6 +83,9 @@
     "newsletterTitle": "Technology and business insights in your inbox",
     "newsletterPlaceholder": "Your email address",
     "newsletterAction": "Subscribe",
+    "newsletterSent": "The product offer has been sent to that email address.",
+    "newsletterFailed": "The product offer could not be sent. Please try again.",
+    "newsletterInvalid": "Enter a valid email address.",
     "social": {
       "linkedin": "LinkedIn",
       "instagram": "Instagram",

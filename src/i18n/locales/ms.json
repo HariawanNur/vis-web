@@ -83,6 +83,9 @@
     "newsletterTitle": "Wawasan teknologi dan perniagaan dalam e-mel anda",
     "newsletterPlaceholder": "Alamat e-mel anda",
     "newsletterAction": "Langgan",
+    "newsletterSent": "Tawaran produk telah dihantar ke alamat e-mel tersebut.",
+    "newsletterFailed": "Tawaran produk gagal dihantar. Sila cuba lagi.",
+    "newsletterInvalid": "Masukkan alamat e-mel yang sah.",
     "social": {
       "linkedin": "LinkedIn",
       "instagram": "Instagram",

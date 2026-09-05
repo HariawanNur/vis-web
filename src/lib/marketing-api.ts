@@ -98,6 +98,15 @@ export interface MarketingContactSubmission {
   submittedAt: string
 }
 
+export interface MarketingNewsletterInput {
+  email: string
+}
+
+export interface MarketingNewsletterSubmission {
+  id: string
+  sentAt: string
+}
+
 interface ApiEnvelope<T> {
   success?: boolean
   data?: T
@@ -144,4 +153,23 @@ export const submitMarketingContact = async (
     body: JSON.stringify(input),
   })
   return parseResponse<MarketingContactSubmission>(response)
+}
+
+export const submitMarketingNewsletter = async (
+  input: MarketingNewsletterInput,
+  locale: Locale,
+  signal?: AbortSignal
+): Promise<MarketingNewsletterSubmission> => {
+  const url = new URL(`${getApiUrl()}/marketing/newsletter`)
+  url.searchParams.set("locale", locale)
+  const response = await fetch(url, {
+    ...localeRequest(locale, signal),
+    method: "POST",
+    headers: {
+      "Accept-Language": locale,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(input),
+  })
+  return parseResponse<MarketingNewsletterSubmission>(response)
 }

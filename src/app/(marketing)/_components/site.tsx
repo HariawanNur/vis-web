@@ -18,7 +18,9 @@ import {
 } from "@/components";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useI18n, type Locale } from "@/i18n";
+import { submitMarketingNewsletter } from "@/lib/marketing-api";
 import { marketingTokens } from "@/theme";
+import { message } from "@/components";
 
 const { Text, Title } = Typography;
 
@@ -570,11 +572,34 @@ export function Header() {
 
 export function Footer() {
   const { styles } = useStyles();
-  const { t } = useI18n();
+  const { locale, t } = useI18n();
   const year = new Date().getFullYear();
   const contactEmail = t("footer.contactEmail");
   const contactPhone = t("footer.contactPhone");
   const whatsappNumber = contactPhone.replace(/\D/g, "");
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterSending, setNewsletterSending] = useState(false);
+
+  const onNewsletterSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const email = newsletterEmail.trim();
+
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      message.error(t("footer.newsletterInvalid"));
+      return;
+    }
+
+    setNewsletterSending(true);
+    try {
+      await submitMarketingNewsletter({ email }, locale);
+      setNewsletterEmail("");
+      message.success(t("footer.newsletterSent"));
+    } catch {
+      message.error(t("footer.newsletterFailed"));
+    } finally {
+      setNewsletterSending(false);
+    }
+  };
 
   return (
     <footer className={styles.footer}>
@@ -661,10 +686,22 @@ export function Footer() {
                 {t("footer.newsletterTitle")}
               </Title>
               <Text className={styles.footerText}>{t("footer.newsletterNote")}</Text>
-              <div className={styles.newsletter}>
-                <Input aria-label={t("footer.newsletterPlaceholder")} placeholder={t("footer.newsletterPlaceholder")} />
-                <Button type="primary" aria-label={t("footer.newsletterAction")} icon={<Icon type="ArrowRightOutlined" />} />
-              </div>
+              <form className={styles.newsletter} onSubmit={onNewsletterSubmit}>
+                <Input
+                  aria-label={t("footer.newsletterPlaceholder")}
+                  placeholder={t("footer.newsletterPlaceholder")}
+                  type="email"
+                  value={newsletterEmail}
+                  onChange={(event) => setNewsletterEmail(event.target.value)}
+                />
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  aria-label={t("footer.newsletterAction")}
+                  icon={<Icon type="ArrowRightOutlined" />}
+                  loading={newsletterSending}
+                />
+              </form>
             </Col>
           </Row>
 

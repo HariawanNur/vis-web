@@ -83,6 +83,9 @@
     "newsletterTitle": "Insight teknologi dan bisnis di email Anda",
     "newsletterPlaceholder": "Alamat email Anda",
     "newsletterAction": "Berlangganan",
+    "newsletterSent": "Penawaran produk telah dikirim ke email tersebut.",
+    "newsletterFailed": "Penawaran produk gagal dikirim. Coba lagi.",
+    "newsletterInvalid": "Masukkan alamat email yang valid.",
     "social": {
       "linkedin": "LinkedIn",
       "instagram": "Instagram",

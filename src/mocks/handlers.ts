@@ -2,7 +2,7 @@ import { delay, http, HttpResponse } from "msw"
 import { getApiUrl } from "@/lib/runtime-env"
 import { marketingSiteData } from "@/lib/marketing-data"
 import type { Locale } from "@/i18n"
-import type { MarketingContactInput } from "@/lib/marketing-api"
+import type { MarketingContactInput, MarketingNewsletterInput } from "@/lib/marketing-api"
 import {
   consumeMockBackupCode,
   consumeMfaChallenge,
@@ -97,6 +97,39 @@ export const handlers = [
         ? crypto.randomUUID()
         : `contact-${Date.now()}`,
       submittedAt: new Date().toISOString(),
+    })
+  }),
+
+  http.post(`${API_URL}/marketing/newsletter`, async ({ request }) => {
+    const locale = getRequestLocale(request)
+    const body = (await request.json().catch(() => null)) as MarketingNewsletterInput | null
+    const email = body?.email?.trim()
+
+    if (!email) {
+      return jsonError(
+        locale === "en"
+          ? "Email is required"
+          : locale === "ms"
+            ? "E-mel diperlukan"
+            : "Email wajib diisi"
+      )
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      return jsonError(
+        locale === "en"
+          ? "Enter a valid email address"
+          : locale === "ms"
+            ? "Masukkan alamat e-mel yang sah"
+            : "Masukkan alamat email yang valid"
+      )
+    }
+
+    await delay(250)
+    return authResponse({
+      id: typeof crypto.randomUUID === "function"
+        ? crypto.randomUUID()
+        : `newsletter-${Date.now()}`,
+      sentAt: new Date().toISOString(),
     })
   }),
 
