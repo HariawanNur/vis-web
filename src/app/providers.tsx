@@ -2,7 +2,6 @@
 
 import { useEffect, useState, type ReactNode } from "react";
 import { App as AntApp, ConfigProvider } from "antd";
-import { StyleProvider } from "antd-style";
 import { BootstrapLoader } from "@/components";
 import { I18nProvider } from "@/i18n";
 import { AuthProvider } from "@/context/auth-context";
@@ -18,21 +17,27 @@ function createRequestId() {
 }
 
 function BootstrapGate({ children }: { children: ReactNode }) {
-  const [ready, setReady] = useState(!mswEnabled);
+  const [ready, setReady] = useState(false);
   const [slow, setSlow] = useState(false);
   const [error, setError] = useState<Error | null>(null);
   const [requestId, setRequestId] = useState("");
   const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
-    if (!mswEnabled) return;
-
     let active = true;
+
+    if (!mswEnabled) {
+      setReady(true);
+      return () => {
+        active = false;
+      };
+    }
+
+    setReady(false);
     const slowTimer = window.setTimeout(() => {
       if (active) setSlow(true);
     }, 6000);
 
-    setReady(false);
     setSlow(false);
     setError(null);
     setRequestId("");
@@ -81,16 +86,14 @@ function ThemedApp({ children }: { children: ReactNode }) {
 
 export function Providers({ children }: { children: ReactNode }) {
   return (
-    <StyleProvider>
-      <ThemeProvider>
-        <ThemedApp>
-          <I18nProvider>
-            <AuthProvider>
-              <BootstrapGate>{children}</BootstrapGate>
-            </AuthProvider>
-          </I18nProvider>
-        </ThemedApp>
-      </ThemeProvider>
-    </StyleProvider>
+    <ThemeProvider>
+      <ThemedApp>
+        <I18nProvider>
+          <AuthProvider>
+            <BootstrapGate>{children}</BootstrapGate>
+          </AuthProvider>
+        </I18nProvider>
+      </ThemedApp>
+    </ThemeProvider>
   );
 }

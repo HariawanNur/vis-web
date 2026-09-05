@@ -11,17 +11,13 @@ import { Icon, type IconName } from "./Icon";
 import { Progress } from "./Progress";
 import { Typography } from "./Typography";
 import { useI18n, type TranslationKey } from "@/i18n";
-import { designSystem } from "@/theme/antd-theme";
 
 const { Paragraph, Text, Title } = Typography;
 
 const steps: Array<{ icon: IconName; labelKey: TranslationKey }> = [
   { icon: "ApiOutlined", labelKey: "bootstrap.steps.auth" },
   { icon: "BankOutlined", labelKey: "bootstrap.steps.tenant" },
-  {
-    icon: "SafetyCertificateOutlined",
-    labelKey: "bootstrap.steps.permissions",
-  },
+  { icon: "SafetyCertificateOutlined", labelKey: "bootstrap.steps.permissions" },
   { icon: "AppstoreOutlined", labelKey: "bootstrap.steps.workspace" },
 ];
 
@@ -35,267 +31,364 @@ export interface BootstrapLoaderProps {
   brandSlot?: ReactNode;
 }
 
-const useStyles = createStyles(({ css }) => ({
+const useStyles = createStyles(({ css, token }) => ({
   page: css`
     position: fixed;
     inset: 0;
     z-index: 9999;
-    min-height: 100dvh;
     overflow: auto;
-    background: linear-gradient(180deg, #fff 0%, #fdfcff 72%, #f5efff 100%);
+    background:
+      radial-gradient(circle at 18% 18%, rgba(22, 119, 255, 0.14), transparent 28%),
+      radial-gradient(circle at 84% 14%, rgba(56, 189, 248, 0.12), transparent 24%),
+      linear-gradient(180deg, ${token.colorBgLayout} 0%, ${token.colorBgBase} 100%);
+    color: ${token.colorText};
   `,
-  content: css`
-    width: min(920px, calc(100% - 64px));
+  backdrop: css`
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.26), transparent 18%),
+      radial-gradient(circle at 50% 100%, rgba(7, 17, 31, 0.08), transparent 34%);
+  `,
+  shell: css`
+    position: relative;
+    width: min(1180px, calc(100% - 48px));
     min-height: 100dvh;
     margin: 0 auto;
-    padding: 72px 0 150px;
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      width: min(620px, calc(100% - 48px));
-      padding-top: 56px;
+    padding: 28px 0 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+
+    @media (max-width: ${token.screenLG}px) {
+      width: min(960px, calc(100% - 32px));
     }
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      width: calc(100% - 32px);
-      padding: 38px 0 130px;
+
+    @media (max-width: ${token.screenSM}px) {
+      width: calc(100% - 24px);
+      padding: 18px 0 24px;
+      gap: 16px;
     }
+  `,
+  topBar: css`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
   `,
   brand: css`
-    position: relative;
-    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
   `,
   mark: css`
-    display: block;
-    width: 132px;
-    height: 88px;
-    margin-bottom: 18px;
+    width: 72px;
+    height: 48px;
     object-fit: contain;
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      width: 102px;
-      height: 68px;
+    flex: 0 0 auto;
+
+    @media (max-width: ${token.screenSM}px) {
+      width: 58px;
+      height: 40px;
     }
+  `,
+  brandText: css`
+    min-width: 0;
   `,
   brandName: css`
     margin: 0 !important;
-    color: #10152f !important;
-    font-size: 34px !important;
-    letter-spacing: 10px;
+    color: ${token.colorText} !important;
+    font-size: 20px !important;
+    letter-spacing: 0.14em;
     font-weight: 800 !important;
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      font-size: 27px !important;
-      letter-spacing: 7px;
-    }
+    line-height: 1 !important;
   `,
   tagline: css`
-    color: #55607d !important;
-    font-size: 14px;
+    display: block;
+    color: ${token.colorTextSecondary} !important;
+    font-size: 12px;
+    line-height: 1.4;
   `,
-  heading: css`
-    margin: 48px 0 0 !important;
-    color: ${designSystem.palette.primaryDark}!important;
-    font-size: 21px !important;
+  statusPill: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 999px;
+    background: ${token.colorBgContainer};
+    color: ${token.colorTextSecondary};
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 8px 24px rgba(7, 17, 31, 0.06);
+  `,
+  stage: css`
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.92fr);
+    gap: 20px;
+    align-items: stretch;
+
+    @media (max-width: ${token.screenLG}px) {
+      grid-template-columns: 1fr;
+    }
+  `,
+  heroPanel: css`
+    padding: 34px;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 28px;
+    background: linear-gradient(180deg, ${token.colorBgContainer} 0%, ${token.colorBgElevated} 100%);
+    box-shadow: ${token.boxShadowSecondary};
+
+    @media (max-width: ${token.screenSM}px) {
+      padding: 22px;
+      border-radius: 22px;
+    }
+  `,
+  eyebrow: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: rgba(22, 119, 255, 0.08);
+    color: ${token.colorPrimary};
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  `,
+  title: css`
+    margin: 14px 0 12px !important;
+    color: ${token.colorText} !important;
+    font-size: 42px !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.04em;
+    font-weight: 800 !important;
+
+    @media (max-width: ${token.screenSM}px) {
+      font-size: 31px !important;
+    }
+  `,
+  titleAccent: css`
+    color: ${token.colorPrimary};
   `,
   subtitle: css`
-    margin: 6px 0 0 !important;
-    color: ${designSystem.palette.textSecondary}!important;
+    max-width: 560px;
+    margin: 0 !important;
+    color: ${token.colorTextSecondary} !important;
+    font-size: 16px;
+    line-height: 1.75;
   `,
   progressArea: css`
-    width: min(700px, 100%);
-    margin: 36px auto 0;
+    margin-top: 28px;
+    max-width: 640px;
   `,
   progress: css`
-    .ant-progress-text {
-      color: ${designSystem.palette.primary};
-      font-weight: 700;
-    }
     .ant-progress-inner {
-      height: 7px !important;
+      height: 10px !important;
+      background: ${token.colorFillSecondary};
     }
+
     .ant-progress-bg {
-      height: 7px !important;
+      height: 10px !important;
+      background: linear-gradient(90deg, ${token.colorPrimary}, #60a5fa);
+      box-shadow: 0 8px 16px rgba(22, 119, 255, 0.28);
+    }
+
+    .ant-progress-text {
+      color: ${token.colorTextSecondary};
+      font-weight: 700;
     }
   `,
   indeterminateTrack: css`
-    height: 7px;
+    height: 10px;
     overflow: hidden;
     border-radius: 999px;
-    background: ${designSystem.palette.tintPrimary};
+    background: ${token.colorFillSecondary};
   `,
   indeterminateBar: css`
-    width: 38%;
+    width: 36%;
     height: 100%;
     border-radius: 999px;
-    background: linear-gradient(
-      90deg,
-      ${designSystem.palette.primary},
-      #a878ef
-    );
-    animation: bootstrap-slide 1.45s ease-in-out infinite;
+    background: linear-gradient(90deg, ${token.colorPrimary}, #60a5fa);
+    animation: bootstrap-slide 1.5s ease-in-out infinite;
+
     @keyframes bootstrap-slide {
       0% {
-        transform: translateX(-110%);
+        transform: translateX(-120%);
       }
       50% {
-        transform: translateX(165%);
+        transform: translateX(170%);
       }
       100% {
         transform: translateX(380%);
       }
     }
   `,
-  steps: css`
-    width: 100%;
-    margin-top: 42px;
+  helperRow: css`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+  `,
+  helperChip: css`
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: ${token.colorFillQuaternary};
+    color: ${token.colorTextSecondary};
+    font-size: 12px;
+  `,
+  sidePanel: css`
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  `,
+  stepsCard: css`
+    padding: 26px;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 28px;
+    background: linear-gradient(180deg, ${token.colorBgContainer} 0%, ${token.colorBgElevated} 100%);
+    box-shadow: ${token.boxShadowSecondary};
+
+    @media (max-width: ${token.screenSM}px) {
+      padding: 20px;
+      border-radius: 22px;
+    }
+  `,
+  sectionTitle: css`
+    margin: 0 0 14px !important;
+    color: ${token.colorText} !important;
+    font-size: 14px !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   `,
   stepCol: css`
-    position: relative;
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 31px;
-      left: calc(50% + 40px);
-      width: calc(100% - 80px);
-      height: 1px;
-      background: ${designSystem.palette.border};
-    }
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      &:not(:last-child)::after {
-        display: none;
-      }
-    }
+    margin-bottom: 12px;
   `,
-  step: css`
-    min-height: 150px;
-    padding: 0 10px;
-    text-align: center;
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      min-height: 76px;
-      padding: 11px 8px;
-      text-align: left;
-      border-bottom: 1px solid ${designSystem.palette.borderSoft};
-      flex-direction: row !important;
-      align-items: center !important;
-      justify-content: space-between !important;
-    }
+  stepItem: css`
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 18px;
+    background: ${token.colorBgContainer};
   `,
   stepMain: css`
-    flex-direction: column;
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      flex-direction: row;
-    }
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
   `,
   stepIcon: css`
-    width: 62px;
-    height: 62px;
-    border-radius: 50%;
-    color: ${designSystem.palette.primary};
-    background: ${designSystem.palette.tintPrimary};
-    font-size: 28px;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: rgba(22, 119, 255, 0.1);
+    color: ${token.colorPrimary};
+    flex: 0 0 auto;
   `,
   stepLabel: css`
-    max-width: 150px;
-    color: ${designSystem.palette.text};
-    font-size: 12px;
-    line-height: 1.55;
+    color: ${token.colorText};
+    font-size: 13px;
     font-weight: 600;
+    line-height: 1.5;
   `,
   stateIcon: css`
+    flex: 0 0 auto;
+    margin-top: 2px;
     font-size: 18px;
   `,
   completed: css`
-    color: ${designSystem.palette.success};
+    color: ${token.colorSuccess};
   `,
   active: css`
-    color: ${designSystem.palette.primary};
+    color: ${token.colorPrimary};
   `,
   pending: css`
-    color: ${designSystem.palette.textQuaternary};
+    color: ${token.colorTextQuaternary};
   `,
   reassurance: css`
-    width: min(560px, 100%);
-    margin: 16px auto 0 !important;
-    border-color: #ded0f5 !important;
-    background: linear-gradient(135deg, #fbf8ff, #f5efff);
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(22, 119, 255, 0.08), rgba(96, 165, 250, 0.05));
+    box-shadow: ${token.boxShadow};
+
     .ant-card-body {
-      padding: 19px 24px;
+      padding: 18px 20px;
     }
   `,
   reassuranceIcon: css`
-    color: ${designSystem.palette.primary};
-    font-size: 32px;
+    color: ${token.colorPrimary};
+    font-size: 30px;
   `,
   reassuranceTitle: css`
     display: block;
-    color: ${designSystem.palette.text};
+    color: ${token.colorText};
     font-size: 13px;
   `,
   reassuranceText: css`
     display: block;
     margin-top: 3px;
-    color: ${designSystem.palette.textSecondary};
-    font-size: 11px;
+    color: ${token.colorTextSecondary};
+    font-size: 12px;
     line-height: 1.55;
   `,
   slow: css`
+    align-self: center;
     width: min(620px, 100%);
-    margin: 18px auto 0;
+    padding: 14px 18px;
+    border-radius: 18px;
+    border: 1px solid rgba(250, 173, 20, 0.28);
+    background: rgba(250, 173, 20, 0.08);
+    color: ${token.colorWarning};
     text-align: center;
-    color: ${designSystem.palette.warning};
-    font-size: 12px;
   `,
   errorCard: css`
-    width: min(620px, 100%);
-    margin: 34px auto 0 !important;
-    border-color: #fecaca !important;
-    background: #fffafa;
+    width: min(700px, 100%);
+    margin: 0 auto;
+    border: 1px solid rgba(255, 120, 117, 0.28);
+    border-radius: 28px;
+    background: ${token.colorBgContainer};
+    box-shadow: ${token.boxShadowSecondary};
+
     .ant-card-body {
-      padding: 24px;
+      padding: 26px;
     }
   `,
   errorIcon: css`
-    color: ${designSystem.palette.error};
+    color: ${token.colorError};
     font-size: 32px;
   `,
   errorTitle: css`
     margin: 0 !important;
-    color: ${designSystem.palette.text}!important;
-    font-size: 17px !important;
+    color: ${token.colorText} !important;
+    font-size: 18px !important;
   `,
   errorDescription: css`
     margin: 6px 0 12px !important;
-    color: ${designSystem.palette.textSecondary}!important;
-    font-size: 12px;
+    color: ${token.colorTextSecondary} !important;
+    font-size: 13px;
   `,
   requestId: css`
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-    color: ${designSystem.palette.textSecondary};
-    font-size: 11px;
+    color: ${token.colorTextSecondary};
+    font-size: 12px;
   `,
-  waves: css`
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 145px;
-    overflow: hidden;
-    pointer-events: none;
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      left: -5%;
-      width: 110%;
-      height: 145px;
-      border-radius: 50% 50% 0 0/55% 55% 0 0;
-    }
-    &::before {
-      bottom: -75px;
-      background: rgba(124, 58, 237, 0.16);
-      transform: rotate(3deg);
-    }
-    &::after {
-      bottom: -100px;
-      background: rgba(124, 58, 237, 0.26);
-      transform: rotate(-2deg);
-    }
+  footerNote: css`
+    margin-top: 4px;
+    color: ${token.colorTextTertiary};
+    font-size: 12px;
+    text-align: center;
   `,
 }));
 
@@ -310,195 +403,125 @@ export function BootstrapLoader({
 }: BootstrapLoaderProps) {
   const { styles } = useStyles();
   const { t } = useI18n();
+
   const currentLabel =
     activeStep >= steps.length
       ? t("bootstrap.steps.ready")
       : t(steps[Math.max(0, activeStep)].labelKey);
+
   return (
-    <div
-      className={`bl-page ${styles.page}`}
-      role={error ? "alert" : "status"}
-      aria-live="polite"
-      aria-busy={!error}
-    >
-      <Flex className={`bl-content ${styles.content}`} vertical align="center">
-        {brandSlot ?? (
-          <Flex className={`bl-brand ${styles.brand}`} vertical align="center">
-            <Image
-              className={`bl-mark ${styles.mark}`}
-              src="/images/logo.webp"
-              alt={t("app.logoAlt")}
-              width={132}
-              height={88}
-              priority
-            />
-            <Title className={`bl-brandName ${styles.brandName}`}>
-              {t("app.brand").toUpperCase()}
-            </Title>
-            <Text className={`bl-tagline ${styles.tagline}`}>
-              {t("app.tagline")}
-            </Text>
-          </Flex>
-        )}
-        <Title level={2} className={`bl-heading ${styles.heading}`}>
-          {error ? t("bootstrap.errorTitle") : currentLabel}
-        </Title>
-        <Paragraph className={`bl-subtitle ${styles.subtitle}`}>
-          {error ? t("bootstrap.errorDescription") : t("bootstrap.subtitle")}
-        </Paragraph>
-        {!error && (
-          <div className={`bl-progressArea ${styles.progressArea}`}>
-            {typeof progress === "number" ? (
-              <Progress
-                className={styles.progress}
-                percent={Math.max(0, Math.min(100, progress))}
-              />
-            ) : (
-              <div
-                className={`bl-indeterminateTrack ${styles.indeterminateTrack}`}
-                role="progressbar"
-                aria-label={currentLabel}
-              >
-                <div
-                  className={`bl-indeterminateBar ${styles.indeterminateBar}`}
-                />
+    <div className={styles.page} role={error ? "alert" : "status"} aria-live="polite" aria-busy={!error}>
+      <div className={styles.backdrop} />
+      <div className={styles.shell}>
+        <div className={styles.topBar}>
+          {brandSlot ?? (
+            <Flex className={styles.brand} align="center">
+              <Image className={styles.mark} src="/images/logo.webp" alt={t("app.logoAlt")} width={72} height={48} priority />
+              <div className={styles.brandText}>
+                <Title className={styles.brandName}>{t("app.brand").toUpperCase()}</Title>
+                <Text className={styles.tagline}>{t("app.tagline")}</Text>
               </div>
-            )}
-          </div>
-        )}
-        {!error && (
-          <Row className={`bl-steps ${styles.steps}`} gutter={[12, 0]}>
-            {steps.map((step, index) => {
-              const state =
-                index < activeStep
-                  ? "completed"
-                  : index === activeStep
-                    ? "active"
-                    : "pending";
-              return (
-                <Col
-                  className={`bl-stepCol ${styles.stepCol}`}
-                  xs={24}
-                  lg={6}
-                  key={step.labelKey}
-                >
-                  <Flex
-                    className={`bl-step ${styles.step}`}
-                    vertical
-                    align="center"
-                    justify="flex-start"
-                    gap={12}
-                  >
-                    <Flex
-                      className={`bl-stepMain ${styles.stepMain}`}
-                      align="center"
-                      gap={14}
-                    >
-                      <Flex
-                        className={`bl-stepIcon ${styles.stepIcon}`}
-                        align="center"
-                        justify="center"
-                      >
-                        <Icon type={step.icon} />
-                      </Flex>
-                      <Text className={`bl-stepLabel ${styles.stepLabel}`}>
-                        {t(step.labelKey)}
-                      </Text>
-                    </Flex>
-                    <Icon
-                      className={`bl-stateIcon bl-${state} ${styles.stateIcon} ${styles[state]}`}
-                      type={
-                        state === "completed"
-                          ? "CheckCircleFilled"
-                          : state === "active"
-                            ? "LoadingOutlined"
-                            : "ClockCircleOutlined"
-                      }
-                      spin={state === "active"}
-                    />
-                  </Flex>
-                </Col>
-              );
-            })}
-          </Row>
-        )}
-        {!error && slow && (
-          <Flex
-            className={`bl-slow ${styles.slow}`}
-            vertical
-            align="center"
-            gap={12}
-          >
-            <Text>{t("bootstrap.slow")}</Text>
-            {onRetry && (
-              <Button onClick={onRetry} icon={<Icon type="ReloadOutlined" />}>
-                {t("status.retry")}
-              </Button>
-            )}
-          </Flex>
-        )}
-        {error && (
-          <Card className={`bl-errorCard ${styles.errorCard}`}>
+            </Flex>
+          )}
+
+          <span className={styles.statusPill}>
+            <Icon type={error ? "WarningOutlined" : "LoadingOutlined"} spin={!error} />
+            {error ? t("status.error") : currentLabel}
+          </span>
+        </div>
+
+        {error ? (
+          <Card className={styles.errorCard}>
             <Flex gap={16} align="flex-start">
-              <Icon
-                type="WarningOutlined"
-                className={`bl-errorIcon ${styles.errorIcon}`}
-              />
-              <Flex vertical align="flex-start">
-                <Title
-                  level={3}
-                  className={`bl-errorTitle ${styles.errorTitle}`}
-                >
-                  {t("bootstrap.errorTitle")}
-                </Title>
-                <Paragraph
-                  className={`bl-errorDescription ${styles.errorDescription}`}
-                >
-                  {t("bootstrap.errorDescription")}
-                </Paragraph>
-                {requestId && (
-                  <Text className={`bl-requestId ${styles.requestId}`}>
-                    {t("bootstrap.requestId")}: {requestId}
-                  </Text>
-                )}
+              <Icon type="WarningOutlined" className={styles.errorIcon} />
+              <Flex vertical align="flex-start" gap={2}>
+                <Title level={3} className={styles.errorTitle}>{t("bootstrap.errorTitle")}</Title>
+                <Paragraph className={styles.errorDescription}>{t("bootstrap.errorDescription")}</Paragraph>
+                {requestId && <Text className={styles.requestId}>{t("bootstrap.requestId")}: {requestId}</Text>}
                 {onRetry && (
-                  <Button
-                    type="primary"
-                    onClick={onRetry}
-                    icon={<Icon type="ReloadOutlined" />}
-                  >
+                  <Button type="primary" onClick={onRetry} icon={<Icon type="ReloadOutlined" />}>
                     {t("status.retry")}
                   </Button>
                 )}
               </Flex>
             </Flex>
           </Card>
+        ) : (
+          <div className={styles.stage}>
+            <Card className={styles.heroPanel}>
+              <Text className={styles.eyebrow}>{t("marketing.home.eyebrow")}</Text>
+              <Title level={2} className={styles.title}>
+                {t("marketing.home.titlePrefix")} <span className={styles.titleAccent}>{t("marketing.home.titleAccent")}</span> {t("marketing.home.titleSuffix")}
+              </Title>
+              <Paragraph className={styles.subtitle}>{t("app.description")}</Paragraph>
+
+              <div className={styles.progressArea}>
+                {typeof progress === "number" ? (
+                  <Progress className={styles.progress} percent={Math.max(0, Math.min(100, progress))} />
+                ) : (
+                  <div className={styles.indeterminateTrack} role="progressbar" aria-label={currentLabel}>
+                    <div className={styles.indeterminateBar} />
+                  </div>
+                )}
+              </div>
+
+              <div className={styles.helperRow}>
+                <span className={styles.helperChip}><Icon type="CheckCircleFilled" /> {t("bootstrap.securityTitle")}</span>
+                <span className={styles.helperChip}><Icon type="SafetyCertificateOutlined" /> {t("bootstrap.securityDescription")}</span>
+              </div>
+
+              {slow && (
+                <Flex className={styles.slow} vertical align="center" gap={10}>
+                  <Text>{t("bootstrap.slow")}</Text>
+                  {onRetry && (
+                    <Button onClick={onRetry} icon={<Icon type="ReloadOutlined" />}>
+                      {t("status.retry")}
+                    </Button>
+                  )}
+                </Flex>
+              )}
+            </Card>
+
+            <div className={styles.sidePanel}>
+              <Card className={styles.stepsCard}>
+                <Title level={5} className={styles.sectionTitle}>{t("bootstrap.subtitle")}</Title>
+                <Row gutter={[12, 12]}>
+                  {steps.map((step, index) => {
+                    const state = index < activeStep ? "completed" : index === activeStep ? "active" : "pending";
+                    return (
+                      <Col xs={24} sm={12} key={step.labelKey} className={styles.stepCol}>
+                        <div className={styles.stepItem}>
+                          <div className={styles.stepMain}>
+                            <div className={styles.stepIcon}><Icon type={step.icon} /></div>
+                            <Text className={styles.stepLabel}>{t(step.labelKey)}</Text>
+                          </div>
+                          <Icon
+                            className={`${styles.stateIcon} ${styles[state]}`}
+                            type={state === "completed" ? "CheckCircleFilled" : state === "active" ? "LoadingOutlined" : "ClockCircleOutlined"}
+                            spin={state === "active"}
+                          />
+                        </div>
+                      </Col>
+                    );
+                  })}
+                </Row>
+              </Card>
+
+              <Card className={styles.reassurance}>
+                <Flex align="center" gap={14}>
+                  <Icon type="SafetyCertificateOutlined" className={styles.reassuranceIcon} />
+                  <span>
+                    <Text strong className={styles.reassuranceTitle}>{t("bootstrap.securityTitle")}</Text>
+                    <Text className={styles.reassuranceText}>{t("bootstrap.securityDescription")}</Text>
+                  </span>
+                </Flex>
+              </Card>
+            </div>
+          </div>
         )}
-        {!error && (
-          <Card className={`bl-reassurance ${styles.reassurance}`}>
-            <Flex align="center" gap={16}>
-              <Icon
-                type="SafetyCertificateOutlined"
-                className={`bl-reassuranceIcon ${styles.reassuranceIcon}`}
-              />
-              <span>
-                <Text
-                  strong
-                  className={`bl-reassuranceTitle ${styles.reassuranceTitle}`}
-                >
-                  {t("bootstrap.securityTitle")}
-                </Text>
-                <Text
-                  className={`bl-reassuranceText ${styles.reassuranceText}`}
-                >
-                  {t("bootstrap.securityDescription")}
-                </Text>
-              </span>
-            </Flex>
-          </Card>
-        )}
-      </Flex>
-      <div className={`bl-waves ${styles.waves}`} />
+
+        {!error && <Text className={styles.footerNote}>{t("app.tagline")}</Text>}
+      </div>
     </div>
   );
 }

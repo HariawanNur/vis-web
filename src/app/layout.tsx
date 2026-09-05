@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 
 import "./globals.css"
 import { Providers } from "./providers"
+import { StyleRegistry } from "./style-registry"
 
 const inter = Inter({ subsets: ["latin"] })
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com"
@@ -36,7 +37,9 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <StyleRegistry>
+          <Providers>{children}</Providers>
+        </StyleRegistry>
       </body>
     </html>
   )
