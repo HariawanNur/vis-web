@@ -39,7 +39,7 @@ const industries = [
 
 const projectCards = [
   {
-    image: "/images/sample/09_tanihub_marketplace.jpg",
+    image: "/images/sample/17_digital_agriculture_marketplace.jpg",
     titleKey: "marketing.home.projects.items.agri.title",
     descriptionKey: "marketing.home.projects.items.agri.description",
     tagKeys: ["marketing.home.projects.tags.ecommerce", "marketing.home.projects.tags.webMobile"],
