@@ -164,17 +164,20 @@ const useStyles = createStyles(({ css, token }) => ({
     }
   `,
   locale: css`
-    width: 92px;
+    width: 76px;
 
     .ant-select-selector {
-      height: 40px !important;
+      height: 38px !important;
       border-color: ${token.colorBorderSecondary} !important;
+      border-radius: 999px !important;
+      padding-inline: 10px !important;
     }
 
     .ant-select-selection-item {
       display: flex;
       align-items: center;
       font-weight: 700;
+      justify-content: center;
     }
   `,
   mobileActions: css`
@@ -454,7 +457,7 @@ export function Header() {
             ))}
           </Flex>
 
-          <Flex className={styles.controls} align="center" gap={10}>
+          <Flex className={styles.controls} align="center" gap={8}>
             <Select
               className={styles.locale}
               aria-label={t("nav.changeLanguage")}
