@@ -1,374 +1,874 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Button,
-  Card,
-  Col,
-  createStyles,
-  Flex,
-  Icon,
-  type IconName,
-  Row,
-  Skeleton,
-  Typography,
-} from "@/components";
+import { Button, Col, createStyles, Flex, Icon, Row, Typography } from "@/components";
 import { useI18n } from "@/i18n";
-import { useMarketingData } from "@/lib/use-marketing-data";
-import { designSystem } from "@/theme/antd-theme";
 import { MarketingContainer, MarketingSection } from "../_components/site";
 
 const { Text, Title } = Typography;
-const statIcons: IconName[] = [
-  "ShopOutlined",
-  "CalendarOutlined",
-  "ClockCircleOutlined",
-  "CustomerServiceOutlined",
-];
 
-const useStyles = createStyles(({ css }) => ({
+const serviceCards = [
+  {
+    code: "KBL 62191",
+    icon: "ShoppingCartOutlined",
+    titleKey: "marketing.home.services.items.ecommerce.title",
+    descriptionKey: "marketing.home.services.items.ecommerce.description",
+  },
+  {
+    code: "KBL 62199",
+    icon: "CodeOutlined",
+    titleKey: "marketing.home.services.items.custom.title",
+    descriptionKey: "marketing.home.services.items.custom.description",
+  },
+  {
+    code: "KBL 62209",
+    icon: "TeamOutlined",
+    titleKey: "marketing.home.services.items.consulting.title",
+    descriptionKey: "marketing.home.services.items.consulting.description",
+  },
+] as const;
+
+const industries = [
+  { titleKey: "marketing.home.industries.items.commerce", image: "/images/ilustrations/Office_Call.png" },
+  { titleKey: "marketing.home.industries.items.manufacturing", image: "/images/ilustrations/Device_Mockup_1.png" },
+  { titleKey: "marketing.home.industries.items.agri", image: "/images/ilustrations/Salon_Interior.png" },
+  { titleKey: "marketing.home.industries.items.education", image: "/images/ilustrations/Device_Mockup_2.png" },
+  { titleKey: "marketing.home.industries.items.health", image: "/images/ilustrations/Office_Call.png" },
+  { titleKey: "marketing.home.industries.items.finance", image: "/images/ilustrations/Device_Mockup_1.png" },
+] as const;
+
+const projectCards = [
+  {
+    image: "/images/ilustrations/Device_Mockup_1.png",
+    titleKey: "marketing.home.projects.items.agri.title",
+    descriptionKey: "marketing.home.projects.items.agri.description",
+    tagKeys: ["marketing.home.projects.tags.ecommerce", "marketing.home.projects.tags.webMobile"],
+  },
+  {
+    image: "/images/ilustrations/Salon_Interior.png",
+    titleKey: "marketing.home.projects.items.ops.title",
+    descriptionKey: "marketing.home.projects.items.ops.description",
+    tagKeys: ["marketing.home.projects.tags.custom", "marketing.home.projects.tags.iot"],
+  },
+  {
+    image: "/images/ilustrations/Device_Mockup_2.png",
+    titleKey: "marketing.home.projects.items.education.title",
+    descriptionKey: "marketing.home.projects.items.education.description",
+    tagKeys: ["marketing.home.projects.tags.webApp", "marketing.home.projects.tags.cloud"],
+  },
+] as const;
+
+const clientLogos = [
+  "TANI MAJU",
+  "SENTRA DISTRIBUSI",
+  "EduSmart",
+  "KLINIK SEHAT",
+  "FINTRUST",
+  "AgroLink",
+] as const;
+
+const useStyles = createStyles(({ css, token }) => ({
   page: css`
-    background: #fff;
-    min-height: calc(100vh - 80px);
+    background: ${token.colorBgLayout};
   `,
   hero: css`
-    height: 508px;
     position: relative;
     overflow: hidden;
-    background: #fbfaff;
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      height: 720px;
+    min-height: 760px;
+    background: #07111f;
+
+    @media (max-width: ${token.screenLG}px) {
+      min-height: 920px;
+    }
+
+    @media (max-width: ${token.screenSM}px) {
+      min-height: 1040px;
     }
   `,
-  background: css`
+  heroBackground: css`
     object-fit: cover;
-    object-position: 72% center;
+    object-position: center;
+    filter: saturate(0.92) contrast(1.02);
   `,
-  fade: css`
+  heroShade: css`
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      90deg,
-      #fff 0%,
-      rgba(255, 255, 255, 0.98) 34%,
-      rgba(255, 255, 255, 0.6) 49%,
-      rgba(255, 255, 255, 0) 69%
-    );
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      background: linear-gradient(
-        180deg,
-        #fff 0%,
-        rgba(255, 255, 255, 0.96) 56%,
-        rgba(255, 255, 255, 0.35)
-      );
-    }
+    background:
+      linear-gradient(90deg, rgba(7, 17, 31, 0.96) 0%, rgba(7, 17, 31, 0.78) 42%, rgba(7, 17, 31, 0.24) 100%),
+      radial-gradient(circle at 78% 20%, rgba(22, 119, 255, 0.22), transparent 28%),
+      radial-gradient(circle at 18% 88%, rgba(14, 165, 233, 0.12), transparent 32%);
   `,
   heroInner: css`
-    height: 100%;
     position: relative;
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      align-items: flex-start !important;
-      padding-top: 48px;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+    gap: 40px;
+    align-items: center;
+    min-height: 760px;
+    padding-block: 52px;
+
+    @media (max-width: ${token.screenLG}px) {
+      grid-template-columns: 1fr;
+      align-items: start;
+      min-height: 920px;
+      padding-top: 44px;
+    }
+
+    @media (max-width: ${token.screenSM}px) {
+      min-height: 1040px;
+      padding-top: 28px;
+      padding-bottom: 36px;
     }
   `,
-  copy: css`
-    position: relative;
-    z-index: 2;
-    width: 610px;
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      width: 100%;
-    }
+  heroCopy: css`
+    max-width: 700px;
+    color: #fff;
   `,
   eyebrow: css`
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 16px;
-    background: #f2eaff;
-    color: #6727af;
-    font-size: 11px;
-    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
   `,
-  headline: css`
-    margin: 28px 0 14px !important;
-    color: #11152f !important;
-    font-size: 52px !important;
-    line-height: 1.08 !important;
-    letter-spacing: -2px;
-    font-weight: 900 !important;
-    @media (max-width: ${designSystem.breakpoints.sm - 1}px) {
-      font-size: 40px !important;
+  heroTitle: css`
+    margin: 16px 0 18px !important;
+    color: #f8fbff !important;
+    font-size: 60px !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.04em;
+    font-weight: 800 !important;
+
+    @media (max-width: ${token.screenLG}px) {
+      font-size: 48px !important;
+      line-height: 1.08 !important;
+    }
+
+    @media (max-width: ${token.screenSM}px) {
+      font-size: 38px !important;
+      line-height: 1.1 !important;
     }
   `,
-  description: css`
-    max-width: 570px;
-    color: #38415f;
-    font-size: 16px;
-    line-height: 1.72;
+  heroTitleAccent: css`
+    color: ${token.colorPrimary};
+    display: block;
   `,
-  actions: css`
+  heroDesc: css`
+    max-width: 560px;
+    color: rgba(226, 232, 240, 0.9);
+    font-size: 18px;
+    line-height: 1.7;
+  `,
+  heroActions: css`
     margin-top: 30px;
     .ant-btn {
-      height: 49px;
-      min-width: 154px;
-    }
-    .ant-btn-default {
-      border-color: #7132bb;
-      color: #6328ae;
+      height: 48px;
+      padding-inline: 20px;
+      font-weight: 700;
     }
   `,
-  devices: css`
-    position: absolute;
-    z-index: 2;
-    width: 700px;
-    height: auto;
-    right: 40px;
-    bottom: 48px;
-    filter: drop-shadow(0 15px 13px rgba(28, 19, 39, 0.16));
-    @media (max-width: ${designSystem.breakpoints.lg - 1}px) {
-      width: min(650px, 92%);
-      right: 4%;
-      bottom: 8px;
-    }
+  heroPager: css`
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 34px;
+    color: rgba(226, 232, 240, 0.74);
+    font-size: 13px;
+    letter-spacing: 0.18em;
   `,
-  content: css`
+  heroPagerLine: css`
+    width: 56px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.22);
+  `,
+  heroVisual: css`
     position: relative;
+    width: 100%;
+    min-height: 560px;
+
+    @media (max-width: ${token.screenLG}px) {
+      min-height: 520px;
+    }
   `,
-  stats: css`
-    margin-top: -120px;
-    margin-bottom: 38px;
+  heroFrame: css`
+    position: absolute;
+    inset: 0;
     overflow: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 22px;
+    background: rgba(15, 23, 42, 0.28);
+    box-shadow: 0 24px 80px rgba(7, 17, 31, 0.42);
+  `,
+  heroVisualImage: css`
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.9;
+  `,
+  heroVisualGlow: css`
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(7, 17, 31, 0.08) 0%, rgba(7, 17, 31, 0.54) 100%),
+      radial-gradient(circle at 24% 32%, rgba(22, 119, 255, 0.18), transparent 22%),
+      radial-gradient(circle at 74% 68%, rgba(99, 102, 241, 0.12), transparent 25%);
+  `,
+  heroFloatingCard: css`
+    position: absolute;
+    top: 70px;
+    right: 22px;
+    width: 248px;
+    padding: 16px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 18px;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(14px);
+  `,
+  heroFloatingItem: css`
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 8px;
+    color: #f8fbff;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+  `,
+  heroFloatingIcon: css`
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background: rgba(22, 119, 255, 0.18);
+    color: #7cc1ff;
+    flex: 0 0 auto;
+  `,
+  heroFloatingTitle: css`
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+  `,
+  heroFloatingDesc: css`
+    display: block;
+    margin-top: 2px;
+    color: rgba(226, 232, 240, 0.72);
+    font-size: 12px;
+  `,
+  heroSlogan: css`
+    position: absolute;
+    right: 42px;
+    bottom: 54px;
+    color: rgba(255, 255, 255, 0.96);
+    font-size: 34px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 0.94;
+    text-align: right;
+    transform: rotate(-10deg);
+    text-shadow: 0 12px 32px rgba(7, 17, 31, 0.45);
+  `,
+  sectionHead: css`
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 28px;
+
+    @media (max-width: ${token.screenSM}px) {
+      align-items: start;
+      flex-direction: column;
+    }
+  `,
+  sectionKicker: css`
+    color: ${token.colorPrimary};
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  `,
+  sectionTitle: css`
+    margin: 6px 0 0 !important;
+    color: ${token.colorText} !important;
+    font-size: 34px !important;
+    line-height: 1.14 !important;
+    letter-spacing: -0.03em;
+
+    @media (max-width: ${token.screenSM}px) {
+      font-size: 28px !important;
+    }
+  `,
+  sectionLink: css`
+    color: ${token.colorPrimary};
+    font-size: 14px;
+    font-weight: 700;
+  `,
+  servicesGrid: css`
     .ant-card-body {
       padding: 0;
     }
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      margin-top: -96px;
-    }
   `,
-  statCol: css`
+  serviceCard: css`
     position: relative;
-    &:not(:last-child)::after {
-      content: "";
-      position: absolute;
-      top: 20px;
-      right: 0;
-      bottom: 20px;
-      border-right: 1px solid #e4e3ec;
-    }
-    @media (max-width: ${designSystem.breakpoints.md - 1}px) {
-      &:nth-child(2)::after {
-        display: none;
-      }
-      &:nth-child(-n + 2) {
-        border-bottom: 1px solid #e4e3ec;
-      }
-    }
-  `,
-  stat: css`
-    min-height: 94px;
-    padding: 18px;
-    color: #141a36;
-    > span:first-child {
-      color: #7132bb;
-      font-size: 26px;
-    }
-    b,
-    small {
-      display: block;
-    }
-    b {
-      font-size: 21px;
-    }
-    small {
-      margin-top: 5px;
-      color: #59617b;
-      font-size: 13px;
-    }
-  `,
-  sectionTitle: css`
-    margin: 0 !important;
-    text-align: center;
-    color: #11152f !important;
-    font-size: 30px !important;
-  `,
-  subtitle: css`
-    display: block;
-    margin: 10px 0 30px;
-    text-align: center;
-    color: #59617b;
-  `,
-  feature: css`
     height: 100%;
+    padding: 28px 24px 26px;
+    border: 1px solid ${token.colorBorderSecondary};
+    border-radius: 18px;
+    background: ${token.colorBgContainer};
+    box-shadow: 0 1px 2px rgba(7, 17, 31, 0.04);
+    transition:
+      transform 180ms ease,
+      box-shadow 180ms ease,
+      border-color 180ms ease;
+
+    &:hover {
+      transform: translateY(-3px);
+      border-color: ${token.colorPrimaryBorder};
+      box-shadow: 0 2px 4px rgba(7, 17, 31, 0.04), 0 16px 40px rgba(7, 17, 31, 0.1);
+    }
+  `,
+  serviceBadge: css`
+    position: absolute;
+    top: 18px;
+    right: 18px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: ${token.colorFillQuaternary};
+    color: ${token.colorPrimary};
+    font-size: 11px;
+    font-weight: 700;
+  `,
+  serviceIcon: css`
+    display: grid;
+    place-items: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    background: ${token.colorPrimaryBg};
+    color: ${token.colorPrimary};
+    font-size: 28px;
+  `,
+  serviceTitle: css`
+    margin: 18px 0 8px !important;
+    color: ${token.colorText} !important;
+    font-size: 20px !important;
+    line-height: 1.25 !important;
+    font-weight: 700 !important;
+  `,
+  serviceDesc: css`
+    color: ${token.colorTextSecondary};
+    font-size: 14px;
+    line-height: 1.75;
+  `,
+  serviceAction: css`
+    margin-top: 18px;
+    color: ${token.colorPrimary};
+    font-size: 14px;
+    font-weight: 700;
+  `,
+  aboutWrap: css`
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 28px;
+    align-items: center;
+
+    @media (max-width: ${token.screenLG}px) {
+      grid-template-columns: 1fr;
+    }
+  `,
+  aboutMedia: css`
+    position: relative;
+    min-height: 420px;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 1px solid ${token.colorBorderSecondary};
+    box-shadow: 0 18px 48px rgba(7, 17, 31, 0.12);
+  `,
+  aboutImage: css`
+    object-fit: cover;
+    object-position: center;
+  `,
+  aboutPanel: css`
+    position: absolute;
+    inset: auto 18px 18px auto;
+    width: 180px;
+    padding: 14px;
+    border-radius: 16px;
+    background: rgba(7, 17, 31, 0.72);
+    color: #fff;
+    backdrop-filter: blur(8px);
+  `,
+  aboutTitle: css`
+    margin: 10px 0 16px !important;
+    color: ${token.colorText} !important;
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+    letter-spacing: -0.03em;
+  `,
+  aboutDesc: css`
+    color: ${token.colorTextSecondary};
+    font-size: 16px;
+    line-height: 1.85;
+    margin-bottom: 22px;
+  `,
+  statsGrid: css`
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+
+    @media (max-width: ${token.screenMD}px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  `,
+  statCard: css`
+    padding: 16px 14px;
+    border-radius: 16px;
+    border: 1px solid ${token.colorBorderSecondary};
+    background: ${token.colorBgContainer};
+  `,
+  statValue: css`
+    display: block;
+    color: ${token.colorPrimary};
+    font-size: 28px;
+    line-height: 1;
+    font-weight: 800;
+  `,
+  statLabel: css`
+    display: block;
+    margin-top: 6px;
+    color: ${token.colorTextSecondary};
+    font-size: 13px;
+  `,
+  industryGrid: css`
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+
+    @media (max-width: ${token.screenLG}px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: ${token.screenSM}px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  `,
+  industryCard: css`
+    position: relative;
+    overflow: hidden;
     min-height: 150px;
-    .ant-card-body {
-      height: 100%;
-      padding: 22px;
-    }
-    h3 {
-      margin: 0 0 8px !important;
-      font-size: 15px !important;
-    }
-    p {
-      margin: 0;
-      color: #3e4763;
-      font-size: 12px;
-      line-height: 1.65;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #0b1831;
+    box-shadow: 0 10px 24px rgba(7, 17, 31, 0.08);
+  `,
+  industryImage: css`
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.38;
+    filter: grayscale(0.15) saturate(0.9);
+  `,
+  industryShade: css`
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(7, 17, 31, 0.1) 0%, rgba(7, 17, 31, 0.82) 100%);
+  `,
+  industryText: css`
+    position: absolute;
+    inset: auto 12px 12px 12px;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.3;
+  `,
+  projectGrid: css`
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    @media (max-width: ${token.screenLG}px) {
+      grid-template-columns: 1fr;
     }
   `,
-  featureIcon: css`
-    flex: 0 0 auto;
-    color: #7132bb;
-    font-size: 36px;
+  projectCard: css`
+    overflow: hidden;
+    height: 100%;
+    border-radius: 18px;
+    border: 1px solid ${token.colorBorderSecondary};
+    background: ${token.colorBgContainer};
+    box-shadow: 0 1px 2px rgba(7, 17, 31, 0.04);
   `,
-  state: css`
-    min-height: 300px;
-    text-align: center;
-    color: #59617b;
+  projectImageWrap: css`
+    position: relative;
+    min-height: 180px;
   `,
-  skeleton: css`
-    margin-top: 24px;
+  projectImage: css`
+    object-fit: cover;
+    object-position: center;
+  `,
+  projectBody: css`
+    padding: 20px;
+  `,
+  tagRow: css`
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  `,
+  tag: css`
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: ${token.colorFillQuaternary};
+    color: ${token.colorTextSecondary};
+    font-size: 12px;
+    font-weight: 700;
+  `,
+  clientsGrid: css`
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 12px;
+
+    @media (max-width: ${token.screenLG}px) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @media (max-width: ${token.screenSM}px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  `,
+  clientCard: css`
+    display: grid;
+    place-items: center;
+    min-height: 82px;
+    border-radius: 14px;
+    border: 1px solid ${token.colorBorderSecondary};
+    background: ${token.colorBgContainer};
+    color: ${token.colorTextSecondary};
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  `,
+  cta: css`
+    position: relative;
+    overflow: hidden;
+    border-radius: 24px;
+    background: linear-gradient(135deg, #07111f 0%, #0a2f6e 52%, #1677ff 100%);
+    color: #fff;
+    box-shadow: 0 24px 64px rgba(7, 17, 31, 0.18);
+  `,
+  ctaInner: css`
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 34px 32px;
+
+    @media (max-width: ${token.screenMD}px) {
+      flex-direction: column;
+      align-items: start;
+    }
+  `,
+  ctaTitle: css`
+    margin: 0 0 8px !important;
+    color: #fff !important;
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+  `,
+  ctaDesc: css`
+    color: rgba(226, 232, 240, 0.84);
+    font-size: 16px;
+  `,
+  ctaGlow: css`
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 8% 25%, rgba(255, 255, 255, 0.12), transparent 22%),
+      radial-gradient(circle at 82% 75%, rgba(255, 255, 255, 0.08), transparent 26%);
   `,
 }));
 
 export default function Page() {
   const { styles } = useStyles();
-  const { locale, t } = useI18n();
-  const { data, error, loading, refetch } = useMarketingData(locale);
+  const { t } = useI18n();
+
+  const heroStats = [
+    { id: "projects", value: "50+", label: t("marketing.home.about.stats.projects") },
+    { id: "clients", value: "30+", label: t("marketing.home.about.stats.clients") },
+    { id: "industries", value: "5+", label: t("marketing.home.about.stats.industries") },
+    { id: "satisfaction", value: "99%", label: t("marketing.home.about.stats.satisfaction") },
+  ] as const;
 
   return (
     <main className={styles.page}>
       <section className={styles.hero}>
         <Image
-          src="/images/ilustrations/Salon_Interior.png"
+          src="/images/ilustrations/Office_Call.png"
           fill
           priority
           alt={t("app.description")}
-          className={styles.background}
+          className={styles.heroBackground}
         />
-        <div className={styles.fade} />
+        <div className={styles.heroShade} />
+
         <MarketingContainer className={styles.heroInner}>
-          <div className={styles.copy}>
-            <Text className={styles.eyebrow}>
-              {t("marketing.home.eyebrow")}
-            </Text>
-            <Title className={styles.headline}>
-              {t("marketing.home.title")}
+          <div className={styles.heroCopy}>
+            <Text className={styles.eyebrow}>{t("marketing.home.eyebrow")}</Text>
+            <Title className={styles.heroTitle}>
+              {t("marketing.home.titlePrefix")}
+              <span className={styles.heroTitleAccent}>{t("marketing.home.titleAccent")}</span>
+              {t("marketing.home.titleSuffix")}
             </Title>
-            <Text className={styles.description}>
+            <Text className={styles.heroDesc}>
               {t("marketing.home.description")}
             </Text>
-            <Flex className={styles.actions} gap={12} wrap="wrap">
-              <Button
-                type="primary"
-                size="large"
-                href="/kontak"
-                icon={<Icon type="PlayCircleFilled" />}
-              >
-                {t("common.bookDemo")}
+            <Flex className={styles.heroActions} gap={12} wrap="wrap">
+              <Button type="primary" size="large" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
+                {t("marketing.home.primaryAction")}
               </Button>
-              <Button
-                size="large"
-                href="/kontak"
-                icon={<Icon type="MailOutlined" />}
-              >
-                {t("common.contactSales")}
+              <Button size="large" href="/tentang-kami" icon={<Icon type="EyeOutlined" />}>
+                {t("marketing.home.secondaryAction")}
               </Button>
             </Flex>
+            <div className={styles.heroPager} aria-label={t("marketing.home.pagerLabel")}>
+              <span>01</span>
+              <span className={styles.heroPagerLine} />
+              <span>02</span>
+              <span className={styles.heroPagerLine} />
+              <span>03</span>
+            </div>
           </div>
-          <Image
-            className={styles.devices}
-            src="/images/ilustrations/Device_Mockup_1.png"
-            width={612}
-            height={408}
-            priority
-            alt={t("app.fullTitle")}
-          />
+
+          <div className={styles.heroVisual}>
+            <div className={styles.heroFrame}>
+              <Image
+                src="/images/ilustrations/Device_Mockup_1.png"
+                fill
+                priority
+                alt={t("app.fullTitle")}
+                className={styles.heroVisualImage}
+              />
+              <div className={styles.heroVisualGlow} />
+            </div>
+
+            <div className={styles.heroFloatingCard}>
+              {[
+                [t("marketing.home.highlights.innovative.title"), t("marketing.home.highlights.innovative.description")],
+                [t("marketing.home.highlights.trusted.title"), t("marketing.home.highlights.trusted.description")],
+                [t("marketing.home.highlights.sustainable.title"), t("marketing.home.highlights.sustainable.description")],
+              ].map(([title, desc]) => (
+                <div key={title} className={styles.heroFloatingItem}>
+                  <span className={styles.heroFloatingIcon}>
+                    <Icon type="CheckCircleOutlined" />
+                  </span>
+                  <span>
+                    <span className={styles.heroFloatingTitle}>{title}</span>
+                    <span className={styles.heroFloatingDesc}>{desc}</span>
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.heroSlogan}>
+              {t("marketing.home.sloganLine1")}
+              <br />
+              {t("marketing.home.sloganLine2")}
+            </div>
+          </div>
         </MarketingContainer>
       </section>
 
-      <MarketingSection className={styles.content}>
-        {loading && (
-          <>
-            <Card className={styles.stats}>
-              <Skeleton active paragraph={{ rows: 2 }} />
-            </Card>
-            <Text>{t("status.loading")}</Text>
-            <Skeleton
-              className={styles.skeleton}
-              active
-              paragraph={{ rows: 8 }}
-              title={{ width: "45%" }}
-            />
-          </>
-        )}
-
-        {!loading && error && (
-          <Flex
-            className={styles.state}
-            vertical
-            align="center"
-            justify="center"
-            gap={16}
-            role="alert"
-          >
-            <Title level={3}>{t("status.error")}</Title>
-            <Button
-              type="primary"
-              onClick={refetch}
-              icon={<Icon type="ReloadOutlined" />}
-            >
-              {t("status.retry")}
-            </Button>
-          </Flex>
-        )}
-
-        {!loading && data && (
-          <>
-            <Card className={styles.stats}>
-              <Row>
-                {data.home.stats.map((stat, index) => (
-                  <Col className={styles.statCol} xs={12} md={6} key={stat.id}>
-                    <Flex
-                      className={styles.stat}
-                      align="center"
-                      justify="center"
-                      gap={16}
-                    >
-                      <Icon type={statIcons[index % statIcons.length]} />
-                      <span>
-                        <b>{stat.value}</b>
-                        <small>{t(stat.labelKey)}</small>
-                      </span>
-                    </Flex>
-                  </Col>
-                ))}
-              </Row>
-            </Card>
+      <MarketingSection>
+        <div className={styles.sectionHead}>
+          <div>
+            <Text className={styles.sectionKicker}>{t("marketing.home.services.kicker")}</Text>
             <Title level={2} className={styles.sectionTitle}>
-              {t("marketing.features.title")}
+              {t("marketing.home.services.title")}
             </Title>
-            <Text className={styles.subtitle}>
-              {t("marketing.features.description")}
+          </div>
+          <Button type="link" className={styles.sectionLink} href="/fitur" icon={<Icon type="ArrowRightOutlined" />}>
+            {t("marketing.home.services.link")}
+          </Button>
+        </div>
+
+        <Row gutter={[16, 16]} className={styles.servicesGrid}>
+          {serviceCards.map((card) => (
+            <Col xs={24} lg={8} key={card.code}>
+              <article className={styles.serviceCard}>
+                <span className={styles.serviceBadge}>{card.code}</span>
+                <div className={styles.serviceIcon}>
+                  <Icon type={card.icon} />
+                </div>
+                <Title level={3} className={styles.serviceTitle}>
+                  {t(card.titleKey)}
+                </Title>
+                <Text className={styles.serviceDesc}>{t(card.descriptionKey)}</Text>
+                <div className={styles.serviceAction}>
+                  {t("marketing.home.services.learnMore")} <Icon type="ArrowRightOutlined" />
+                </div>
+              </article>
+            </Col>
+          ))}
+        </Row>
+      </MarketingSection>
+
+      <MarketingSection>
+        <div className={styles.aboutWrap}>
+          <div className={styles.aboutMedia}>
+            <Image
+              src="/images/ilustrations/Salon_Interior.png"
+              fill
+              alt={t("marketing.home.about.imageAlt")}
+              className={styles.aboutImage}
+            />
+            <div className={styles.aboutPanel}>
+              <Text style={{ display: "block", color: "rgba(255,255,255,.72)", fontSize: 12 }}>{t("marketing.home.about.panelLabel")}</Text>
+              <Title level={4} style={{ margin: "6px 0 0", color: "#fff" }}>
+                {t("marketing.home.about.panelTitle")}
+              </Title>
+            </div>
+          </div>
+
+          <div>
+            <Text className={styles.sectionKicker}>{t("marketing.home.about.kicker")}</Text>
+            <Title level={2} className={styles.aboutTitle}>
+              {t("marketing.home.about.title")}
+            </Title>
+            <Text className={styles.aboutDesc}>
+              {t("marketing.home.about.description")}
             </Text>
-            <Row gutter={[18, 18]} justify="center">
-              {data.home.features.map((feature) => (
-                <Col xs={24} sm={12} lg={6} key={feature.id}>
-                  <Card className={styles.feature}>
-                    <Flex align="flex-start" gap={16}>
-                      <Icon
-                        className={styles.featureIcon}
-                        type={feature.icon as IconName}
-                      />
-                      <div>
-                        <Title level={3}>{t(feature.titleKey)}</Title>
-                        <p>{t(feature.descriptionKey)}</p>
-                      </div>
-                    </Flex>
-                  </Card>
-                </Col>
+            <Button type="primary" href="/tentang-kami" icon={<Icon type="ArrowRightOutlined" />}>
+              {t("marketing.home.about.action")}
+            </Button>
+
+            <div style={{ height: 24 }} />
+
+            <div className={styles.statsGrid}>
+              {heroStats.map(({ id, value, label }) => (
+                <div key={id} className={styles.statCard}>
+                  <span className={styles.statValue}>{value}</span>
+                  <span className={styles.statLabel}>{label}</span>
+                </div>
               ))}
-            </Row>
-          </>
-        )}
+            </div>
+          </div>
+        </div>
+      </MarketingSection>
+
+      <MarketingSection>
+        <div className={styles.sectionHead}>
+          <div>
+            <Text className={styles.sectionKicker}>{t("marketing.home.industries.kicker")}</Text>
+            <Title level={2} className={styles.sectionTitle}>
+              {t("marketing.home.industries.title")}
+            </Title>
+          </div>
+          <Button type="link" className={styles.sectionLink} href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
+            {t("marketing.home.industries.link")}
+          </Button>
+        </div>
+
+        <div className={styles.industryGrid}>
+          {industries.map((item) => (
+            <div className={styles.industryCard} key={item.titleKey}>
+              <Image
+                src={item.image}
+                fill
+                alt={t(item.titleKey)}
+                className={styles.industryImage}
+              />
+              <div className={styles.industryShade} />
+              <div className={styles.industryText}>{t(item.titleKey)}</div>
+            </div>
+          ))}
+        </div>
+      </MarketingSection>
+
+      <MarketingSection>
+        <div className={styles.sectionHead}>
+          <div>
+            <Text className={styles.sectionKicker}>{t("marketing.home.projects.kicker")}</Text>
+            <Title level={2} className={styles.sectionTitle}>
+              {t("marketing.home.projects.title")}
+            </Title>
+          </div>
+          <Button type="link" className={styles.sectionLink} href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
+            {t("marketing.home.projects.link")}
+          </Button>
+        </div>
+
+        <div className={styles.projectGrid}>
+          {projectCards.map((project) => (
+            <article key={project.titleKey} className={styles.projectCard}>
+              <div className={styles.projectImageWrap}>
+                <Image src={project.image} fill alt={t(project.titleKey)} className={styles.projectImage} />
+              </div>
+              <div className={styles.projectBody}>
+                <Title level={4} style={{ margin: 0 }}>
+                  {t(project.titleKey)}
+                </Title>
+                <Text style={{ display: "block", marginTop: 8, color: "#4b5563", lineHeight: 1.7 }}>
+                  {t(project.descriptionKey)}
+                </Text>
+                <div className={styles.tagRow}>
+                  {project.tagKeys.map((tagKey) => (
+                    <span key={tagKey} className={styles.tag}>
+                      {t(tagKey)}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </MarketingSection>
+
+      <MarketingSection>
+        <div className={styles.sectionHead}>
+          <div>
+            <Text className={styles.sectionKicker}>{t("marketing.home.clients.kicker")}</Text>
+            <Title level={2} className={styles.sectionTitle}>
+              {t("marketing.home.clients.title")}
+            </Title>
+          </div>
+          <Button type="link" className={styles.sectionLink} href="/tentang-kami" icon={<Icon type="ArrowRightOutlined" />}>
+            {t("marketing.home.clients.link")}
+          </Button>
+        </div>
+
+        <div className={styles.clientsGrid}>
+          {clientLogos.map((client) => (
+            <div key={client} className={styles.clientCard}>
+              {client}
+            </div>
+          ))}
+        </div>
+      </MarketingSection>
+
+      <MarketingSection>
+        <div className={styles.cta}>
+          <div className={styles.ctaGlow} />
+          <div className={styles.ctaInner}>
+            <div>
+              <Title level={2} className={styles.ctaTitle}>
+                {t("marketing.home.cta.title")}
+              </Title>
+              <Text className={styles.ctaDesc}>
+                {t("marketing.home.cta.description")}
+              </Text>
+            </div>
+            <Button type="primary" size="large" href="/kontak" icon={<Icon type="ArrowRightOutlined" />}>
+              {t("marketing.home.cta.action")}
+            </Button>
+          </div>
+        </div>
       </MarketingSection>
     </main>
   );

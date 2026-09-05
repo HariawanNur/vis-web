@@ -347,7 +347,7 @@
     "changeLanguage": "Ganti bahasa"
   },
   "footer": {
-    "summary": "Satu platform sederhana untuk menjalankan dan mengembangkan bisnis kecantikan Anda.",
+    "summary": "Satu platform digital untuk menjalankan dan mengembangkan solusi bisnis Anda.",
     "product": "Produk",
     "company": "Perusahaan",
     "support": "Dukungan",
@@ -355,7 +355,7 @@
     "privacy": "Kebijakan privasi",
     "terms": "Ketentuan layanan",
     "copyright": "Hak cipta dilindungi.",
-    "newsletterTitle": "Tips pertumbuhan salon di email Anda",
+    "newsletterTitle": "Insight teknologi dan bisnis di email Anda",
     "newsletterPlaceholder": "Alamat email Anda",
     "newsletterAction": "Berlangganan"
   },
@@ -422,9 +422,115 @@
   },
   "marketing": {
     "home": {
-      "eyebrow": "Manajemen salon jadi sederhana",
-      "title": "Lebih banyak waktu untuk pelanggan. Lebih sedikit waktu untuk administrasi.",
-      "description": "Kelola booking, pembayaran, staf, stok, dan hubungan pelanggan dari satu tempat.",
+      "eyebrow": "Teknologi untuk pertumbuhan",
+      "titlePrefix": "Membangun",
+      "titleAccent": "Solusi Digital",
+      "titleSuffix": "Tanpa Batas",
+      "description": "PT. Vistara Teknologi Indonesia adalah mitra teknologi untuk mewujudkan ide menjadi solusi digital yang berdampak nyata bagi bisnis Anda.",
+      "primaryAction": "Konsultasi Gratis",
+      "secondaryAction": "Lihat Portofolio",
+      "pagerLabel": "Navigasi slide",
+      "sloganLine1": "Ideas",
+      "sloganLine2": "Into Impact",
+      "highlights": {
+        "innovative": {
+          "title": "Inovatif",
+          "description": "Teknologi terkini"
+        },
+        "trusted": {
+          "title": "Terpercaya",
+          "description": "Bersama menuju sukses"
+        },
+        "sustainable": {
+          "title": "Berkelanjutan",
+          "description": "Solusi jangka panjang"
+        }
+      },
+      "services": {
+        "kicker": "Layanan Kami",
+        "title": "Solusi Teknologi End-to-End untuk Bisnis Anda",
+        "link": "Lihat Semua Layanan",
+        "learnMore": "Pelajari Lebih Lanjut",
+        "items": {
+          "ecommerce": {
+            "title": "Pengembangan Aplikasi E-Commerce",
+            "description": "Membangun platform perdagangan digital yang aman, scalable, dan berorientasi pada pertumbuhan bisnis."
+          },
+          "custom": {
+            "title": "Pengembangan Aplikasi & Sistem Khusus",
+            "description": "Solusi perangkat lunak untuk kebutuhan bisnis, IoT, keamanan siber, integrasi, dan aplikasi khusus lainnya."
+          },
+          "consulting": {
+            "title": "Konsultansi & Manajemen Teknologi Informasi",
+            "description": "Konsultansi, perencanaan sistem, implementasi, manajemen fasilitas komputer, dan dukungan operasional TI."
+          }
+        }
+      },
+      "about": {
+        "kicker": "Tentang Kami",
+        "title": "Mitra Teknologi untuk Masa Depan yang Lebih Baik",
+        "description": "Kami percaya bahwa teknologi adalah enabler bagi perubahan positif. PT. Vistara Teknologi Indonesia hadir untuk membantu perusahaan, UMKM, maupun organisasi membangun solusi digital yang inovatif, andal, dan berkelanjutan.",
+        "action": "Lebih Mengenal Kami",
+        "imageAlt": "Interior kantor Vistara",
+        "panelLabel": "DESIGN SYSTEM",
+        "panelTitle": "Satu Desain, Banyak Solusi",
+        "stats": {
+          "projects": "Proyek Selesai",
+          "clients": "Klien Puas",
+          "industries": "Industri Tersentuh",
+          "satisfaction": "Tingkat Kepuasan"
+        }
+      },
+      "industries": {
+        "kicker": "Industri",
+        "title": "Solusi untuk Berbagai Sektor",
+        "link": "Lihat Semua Industri",
+        "items": {
+          "commerce": "Perdagangan & E-Commerce",
+          "manufacturing": "Manufaktur & Distribusi",
+          "agri": "Pertanian & Agribisnis",
+          "education": "Pendidikan",
+          "health": "Kesehatan",
+          "finance": "Keuangan"
+        }
+      },
+      "projects": {
+        "kicker": "Proyek Unggulan",
+        "title": "Solusi Nyata, Dampak Nyata",
+        "link": "Lihat Semua Proyek",
+        "tags": {
+          "ecommerce": "E-Commerce",
+          "webMobile": "Web & Mobile",
+          "custom": "Custom Application",
+          "iot": "IoT",
+          "webApp": "Web Application",
+          "cloud": "Cloud"
+        },
+        "items": {
+          "agri": {
+            "title": "Marketplace Pertanian",
+            "description": "Platform e-commerce untuk produk pertanian lokal dengan fitur logistik terintegrasi."
+          },
+          "ops": {
+            "title": "Sistem Manajemen Operasional",
+            "description": "Aplikasi khusus untuk manajemen operasional dan monitoring berbasis web."
+          },
+          "education": {
+            "title": "Platform Edukasi Digital",
+            "description": "Solusi pembelajaran online dengan fitur kelas virtual dan manajemen konten."
+          }
+        }
+      },
+      "clients": {
+        "kicker": "Klien Kami",
+        "title": "Dipercaya oleh Berbagai Organisasi",
+        "link": "Lihat Semua Klien"
+      },
+      "cta": {
+        "title": "Siap Memulai Transformasi Digital?",
+        "description": "Diskusikan kebutuhan Anda dengan tim kami. Konsultasi awal gratis.",
+        "action": "Hubungi Kami"
+      },
       "stats": {
         "salons": "bisnis kecantikan",
         "bookings": "booking dikelola",

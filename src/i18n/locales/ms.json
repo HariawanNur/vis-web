@@ -344,7 +344,7 @@
     "changeLanguage": "Tukar bahasa"
   },
   "footer": {
-    "summary": "Satu platform ringkas untuk mengurus dan mengembangkan perniagaan kecantikan anda.",
+    "summary": "Satu platform digital untuk mengurus dan mengembangkan penyelesaian perniagaan anda.",
     "product": "Produk",
     "company": "Syarikat",
     "support": "Sokongan",
@@ -352,7 +352,7 @@
     "privacy": "Dasar privasi",
     "terms": "Terma perkhidmatan",
     "copyright": "Hak cipta terpelihara.",
-    "newsletterTitle": "Petua pertumbuhan salon dalam e-mel anda",
+    "newsletterTitle": "Wawasan teknologi dan perniagaan dalam e-mel anda",
     "newsletterPlaceholder": "Alamat e-mel anda",
     "newsletterAction": "Langgan"
   },
@@ -419,9 +419,115 @@
   },
   "marketing": {
     "home": {
-      "eyebrow": "Pengurusan salon menjadi mudah",
-      "title": "Lebih masa untuk pelanggan. Kurang masa untuk pentadbiran.",
-      "description": "Urus tempahan, pembayaran, kakitangan, stok dan hubungan pelanggan dari satu tempat.",
+      "eyebrow": "Teknologi untuk pertumbuhan",
+      "titlePrefix": "Membina",
+      "titleAccent": "Penyelesaian Digital",
+      "titleSuffix": "Tanpa Batas",
+      "description": "PT. Vistara Teknologi Indonesia ialah rakan teknologi yang menukar idea kepada penyelesaian digital dengan impak perniagaan yang nyata.",
+      "primaryAction": "Konsultasi Percuma",
+      "secondaryAction": "Lihat Portfolio",
+      "pagerLabel": "Navigasi slaid",
+      "sloganLine1": "Ideas",
+      "sloganLine2": "Into Impact",
+      "highlights": {
+        "innovative": {
+          "title": "Inovatif",
+          "description": "Teknologi terkini"
+        },
+        "trusted": {
+          "title": "Dipercayai",
+          "description": "Bersama menuju kejayaan"
+        },
+        "sustainable": {
+          "title": "Lestari",
+          "description": "Penyelesaian jangka panjang"
+        }
+      },
+      "services": {
+        "kicker": "Perkhidmatan Kami",
+        "title": "Penyelesaian Teknologi End-to-End untuk Perniagaan Anda",
+        "link": "Lihat Semua Perkhidmatan",
+        "learnMore": "Ketahui Lebih Lanjut",
+        "items": {
+          "ecommerce": {
+            "title": "Pembangunan Aplikasi E-Dagang",
+            "description": "Membina platform perdagangan digital yang selamat, boleh skala, dan berfokus pada pertumbuhan perniagaan."
+          },
+          "custom": {
+            "title": "Aplikasi & Sistem Khas",
+            "description": "Penyelesaian perisian untuk keperluan perniagaan, IoT, keselamatan siber, integrasi, dan aplikasi tersuai lain."
+          },
+          "consulting": {
+            "title": "Perundingan & Pengurusan TI",
+            "description": "Perundingan, perancangan sistem, pelaksanaan, pengurusan fasiliti komputer, dan sokongan operasi TI."
+          }
+        }
+      },
+      "about": {
+        "kicker": "Tentang Kami",
+        "title": "Rakan Teknologi untuk Masa Depan yang Lebih Baik",
+        "description": "Kami percaya teknologi ialah pemangkin perubahan positif. PT. Vistara Teknologi Indonesia membantu syarikat, PKS, dan organisasi membina penyelesaian digital yang inovatif, boleh dipercayai, dan mampan.",
+        "action": "Kenali Kami",
+        "imageAlt": "Bahagian dalaman pejabat Vistara",
+        "panelLabel": "SISTEM REKA BENTUK",
+        "panelTitle": "Satu Reka Bentuk, Banyak Solusi",
+        "stats": {
+          "projects": "Projek Disiapkan",
+          "clients": "Klien Berpuas Hati",
+          "industries": "Industri Diliputi",
+          "satisfaction": "Tahap Kepuasan"
+        }
+      },
+      "industries": {
+        "kicker": "Industri",
+        "title": "Penyelesaian untuk Pelbagai Sektor",
+        "link": "Lihat Semua Industri",
+        "items": {
+          "commerce": "Perdagangan & E-Dagang",
+          "manufacturing": "Pembuatan & Pengedaran",
+          "agri": "Pertanian & Agribisnes",
+          "education": "Pendidikan",
+          "health": "Kesihatan",
+          "finance": "Kewangan"
+        }
+      },
+      "projects": {
+        "kicker": "Projek Unggulan",
+        "title": "Penyelesaian Nyata, Impak Nyata",
+        "link": "Lihat Semua Projek",
+        "tags": {
+          "ecommerce": "E-Dagang",
+          "webMobile": "Web & Mudah Alih",
+          "custom": "Aplikasi Tersuai",
+          "iot": "IoT",
+          "webApp": "Aplikasi Web",
+          "cloud": "Awan"
+        },
+        "items": {
+          "agri": {
+            "title": "Pasaran Pertanian",
+            "description": "Platform e-dagang untuk produk pertanian tempatan dengan ciri logistik bersepadu."
+          },
+          "ops": {
+            "title": "Sistem Pengurusan Operasi",
+            "description": "Aplikasi tersuai untuk pengurusan operasi dan pemantauan berasaskan web."
+          },
+          "education": {
+            "title": "Platform Pendidikan Digital",
+            "description": "Penyelesaian pembelajaran dalam talian dengan kelas maya dan pengurusan kandungan."
+          }
+        }
+      },
+      "clients": {
+        "kicker": "Klien Kami",
+        "title": "Dipercayai oleh Pelbagai Organisasi",
+        "link": "Lihat Semua Klien"
+      },
+      "cta": {
+        "title": "Bersedia Memulakan Transformasi Digital?",
+        "description": "Bincangkan keperluan anda dengan pasukan kami. Konsultasi awal adalah percuma.",
+        "action": "Hubungi Kami"
+      },
       "stats": {
         "salons": "perniagaan kecantikan",
         "bookings": "tempahan diurus",

@@ -344,7 +344,7 @@
     "changeLanguage": "Change language"
   },
   "footer": {
-    "summary": "One simple platform to run and grow your beauty business.",
+    "summary": "A digital platform to run and grow your business solutions.",
     "product": "Product",
     "company": "Company",
     "support": "Support",
@@ -352,7 +352,7 @@
     "privacy": "Privacy policy",
     "terms": "Terms of service",
     "copyright": "All rights reserved.",
-    "newsletterTitle": "Salon growth tips in your inbox",
+    "newsletterTitle": "Technology and business insights in your inbox",
     "newsletterPlaceholder": "Your email address",
     "newsletterAction": "Subscribe"
   },
@@ -419,9 +419,115 @@
   },
   "marketing": {
     "home": {
-      "eyebrow": "Salon management, made simple",
-      "title": "More time for clients. Less time on admin.",
-      "description": "Manage bookings, payments, staff, stock, and customer relationships from one place.",
+      "eyebrow": "Technology for growth",
+      "titlePrefix": "Building",
+      "titleAccent": "Digital Solutions",
+      "titleSuffix": "Without Limits",
+      "description": "PT. Vistara Teknologi Indonesia is a technology partner that turns ideas into digital solutions with real business impact.",
+      "primaryAction": "Free Consultation",
+      "secondaryAction": "View Portfolio",
+      "pagerLabel": "Slide navigation",
+      "sloganLine1": "Ideas",
+      "sloganLine2": "Into Impact",
+      "highlights": {
+        "innovative": {
+          "title": "Innovative",
+          "description": "Latest technology"
+        },
+        "trusted": {
+          "title": "Trusted",
+          "description": "Growing together"
+        },
+        "sustainable": {
+          "title": "Sustainable",
+          "description": "Long-term solutions"
+        }
+      },
+      "services": {
+        "kicker": "Our Services",
+        "title": "End-to-End Technology Solutions for Your Business",
+        "link": "View All Services",
+        "learnMore": "Learn More",
+        "items": {
+          "ecommerce": {
+            "title": "E-Commerce App Development",
+            "description": "Build secure, scalable digital commerce platforms focused on business growth."
+          },
+          "custom": {
+            "title": "Custom Apps & Systems",
+            "description": "Software solutions for business needs, IoT, cybersecurity, integrations, and other custom applications."
+          },
+          "consulting": {
+            "title": "IT Consulting & Management",
+            "description": "Consulting, system planning, implementation, computer facilities management, and IT operations support."
+          }
+        }
+      },
+      "about": {
+        "kicker": "About Us",
+        "title": "A Technology Partner for a Better Future",
+        "description": "We believe technology is an enabler for positive change. PT. Vistara Teknologi Indonesia helps companies, SMEs, and organizations build innovative, reliable, and sustainable digital solutions.",
+        "action": "Get to Know Us",
+        "imageAlt": "Vistara office interior",
+        "panelLabel": "DESIGN SYSTEM",
+        "panelTitle": "One Design, Many Solutions",
+        "stats": {
+          "projects": "Projects Delivered",
+          "clients": "Satisfied Clients",
+          "industries": "Industries Served",
+          "satisfaction": "Satisfaction Rate"
+        }
+      },
+      "industries": {
+        "kicker": "Industries",
+        "title": "Solutions for Multiple Sectors",
+        "link": "View All Industries",
+        "items": {
+          "commerce": "Trade & E-Commerce",
+          "manufacturing": "Manufacturing & Distribution",
+          "agri": "Agriculture & Agribusiness",
+          "education": "Education",
+          "health": "Healthcare",
+          "finance": "Finance"
+        }
+      },
+      "projects": {
+        "kicker": "Featured Projects",
+        "title": "Real Solutions, Real Impact",
+        "link": "View All Projects",
+        "tags": {
+          "ecommerce": "E-Commerce",
+          "webMobile": "Web & Mobile",
+          "custom": "Custom Application",
+          "iot": "IoT",
+          "webApp": "Web Application",
+          "cloud": "Cloud"
+        },
+        "items": {
+          "agri": {
+            "title": "Agricultural Marketplace",
+            "description": "An e-commerce platform for local agricultural products with integrated logistics features."
+          },
+          "ops": {
+            "title": "Operational Management System",
+            "description": "A custom application for web-based operations management and monitoring."
+          },
+          "education": {
+            "title": "Digital Education Platform",
+            "description": "An online learning solution with virtual classes and content management."
+          }
+        }
+      },
+      "clients": {
+        "kicker": "Our Clients",
+        "title": "Trusted by Diverse Organizations",
+        "link": "View All Clients"
+      },
+      "cta": {
+        "title": "Ready to Start Your Digital Transformation?",
+        "description": "Discuss your needs with our team. Initial consultation is free.",
+        "action": "Contact Us"
+      },
       "stats": {
         "salons": "beauty businesses",
         "bookings": "bookings managed",
