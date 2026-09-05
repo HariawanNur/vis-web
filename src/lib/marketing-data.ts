@@ -104,7 +104,7 @@ export const marketingSiteData: MarketingSiteData = {
     info: [
       { id: "email", icon: "MailOutlined", labelKey: "form.email", value: "hello@kasera.id", href: "mailto:hello@kasera.id" },
       { id: "phone", icon: "PhoneOutlined", labelKey: "form.phone", value: "+6285117158205", href: "tel:+62215550199" },
-      { id: "address", icon: "EnvironmentOutlined", labelKey: "form.address", value: "Jakarta, Indonesia" },
+      { id: "address", icon: "EnvironmentOutlined", labelKey: "form.address", value: "Jalan Bhakti Abri RT/RW: 003/008, Kel. Sukamaju Baru, Kec. Tapos, Kota/Kab. Depok, Provinsi Jawa Barat, Indonesia." },
     ],
     businessTypeOptions: [
       { id: "salon", labelKey: "form.options.business.salon" },
