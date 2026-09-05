@@ -78,9 +78,9 @@ export const marketingTokens = {
   },
   section: {
     maxWidth: 1440,
-    desktopPadding: 96,
-    tabletPadding: 72,
-    mobilePadding: 48,
+    desktopPadding: 33,
+    tabletPadding: 21,
+    mobilePadding: 9,
   },
   header: {
     desktopHeight: 72,
