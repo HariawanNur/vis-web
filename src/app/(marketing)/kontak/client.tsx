@@ -34,11 +34,11 @@ const officeLocation = [
   {
     id: "vistara-office",
     title: "Vistara Teknologi Indonesia",
-    description: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
-    info: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    description: "Jl. Bhakti Abri No. 146, Depok, Indonesia 16455",
+    info: "Jl. Bhakti Abri No. 146, Depok, Indonesia 16455",
     category: "office" as const,
-    latitude: -6.175392,
-    longitude: 106.827153,
+    latitude: -6.406202,
+    longitude: 106.878060,
     status: "on_track" as const,
     statusLabel: "Kantor Utama",
     progress: 100,
@@ -50,22 +50,22 @@ const contactInfoItems = [
   {
     icon: "HomeOutlined",
     label: "Alamat Kantor",
-    value: "Jl. Contoh Raya No. 123\nJakarta, Indonesia 12345",
+    value: "Jl. Bhakti Abri No. 146\nDepok, Indonesia 16455",
     href: undefined,
     hrefLabel: "Lihat di Google Maps",
   },
   {
     icon: "PhoneOutlined",
     label: "Telepon",
-    value: "+62 21 1234 5678",
-    href: "tel:+622112345678",
+    value: "+62 851 1715 8205",
+    href: "tel:+6285117158205",
     subtext: "Senin - Jumat, 09.00 - 18.00 WIB",
   },
   {
     icon: "MailOutlined",
     label: "Email",
-    value: "info@vistara.co.id",
-    href: "mailto:info@vistara.co.id",
+    value: "vistarateknologiindonesia@gmail.com",
+    href: "mailto:vistarateknologiindonesia@gmail.com",
     subtext: "Kami akan membalas dalam 1×24 jam",
   },
   {
@@ -931,7 +931,7 @@ export default function Page() {
             type="primary"
             icon={<Icon type="ArrowRightOutlined" />}
             className={styles.mapButton}
-            href="#"
+            href="https://www.google.com/maps?q=-6.423123,106.812345"
             target="_blank"
             rel="noreferrer"
           >

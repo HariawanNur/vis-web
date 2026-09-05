@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Button, Col, createStyles, Icon, MarketingHero, Row, Typography } from "@/components";
 import { useI18n } from "@/i18n";
-import { MarketingContainer, MarketingSection } from "../_components/site";
+import { MarketingSection } from "../_components/site";
 
 const { Text, Title } = Typography;
 

@@ -28,14 +28,14 @@ const contactCards: { icon: IconName; label: string; value: string; href?: strin
   {
     icon: "MailOutlined",
     label: "Email",
-    value: "info@vistara.co.id",
-    href: "mailto:info@vistara.co.id",
+    value: "vistarateknologiindonesia@gmail.com",
+    href: "mailto:vistarateknologiindonesia@gmail.com",
   },
   {
     icon: "PhoneOutlined",
     label: "Telepon",
-    value: "+62 21 1234 5678",
-    href: "tel:+622112345678",
+    value: "+62 851 1715 8205",
+    href: "tel:+6285117158205",
   },
   {
     icon: "EnvironmentOutlined",

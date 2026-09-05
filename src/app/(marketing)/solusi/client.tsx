@@ -577,8 +577,8 @@ export default function Page() {
         titleAccent={<strong>Tantangan Nyata</strong>}
         titleSuffix={null}
         description={t("marketing.solutions.description")}
-        primaryAction={{ label: t("marketing.solutions.ctaPrimary"), href: "#solusi", icon: <Icon type="ArrowRightOutlined" /> }}
-        secondaryAction={{ label: t("marketing.solutions.ctaSecondary"), href: "#studi-kasus", icon: <Icon type="ArrowRightOutlined" /> }}
+        primaryAction={{ label: t("marketing.solutions.ctaPrimary"), href: "/kontak", icon: <Icon type="ArrowRightOutlined" /> }}
+        secondaryAction={{ label: t("marketing.solutions.ctaSecondary"), href: "/layanan", icon: <Icon type="ArrowRightOutlined" /> }}
         afterActions={
           <div className={styles.featurePills}>
             {[
@@ -617,7 +617,7 @@ export default function Page() {
               {t("marketing.solutions.areas.description")}
             </Paragraph>
           </div>
-          <Button type="link" href="#" className={styles.linkButton}>
+          <Button type="link" href="/kontak" className={styles.linkButton}>
             {t("marketing.solutions.areas.viewAll")} <Icon type="ArrowRightOutlined" />
           </Button>
         </Flex>
@@ -653,7 +653,7 @@ export default function Page() {
           {t("marketing.solutions.industries.title")}
         </Title>
         <Flex justify="flex-end" style={{ marginTop: -24 }}>
-          <Button type="link" href="#" className={styles.linkButton}>
+          <Button type="link" href="/kontak" className={styles.linkButton}>
             {t("marketing.solutions.industries.viewAll")} <Icon type="ArrowRightOutlined" />
           </Button>
         </Flex>
@@ -693,7 +693,7 @@ export default function Page() {
               {t("marketing.solutions.caseStudy.title")}
             </Title>
           </div>
-          <Button type="link" href="#" className={styles.linkButton}>
+          <Button type="link" href="/kontak" className={styles.linkButton}>
             {t("marketing.solutions.caseStudy.viewAll")} <Icon type="ArrowRightOutlined" />
           </Button>
         </Flex>

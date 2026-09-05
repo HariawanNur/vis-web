@@ -5,17 +5,15 @@ import { useEffect, useRef, useState } from "react";
 import {
   Button,
   Card,
-  Col,
   createStyles,
   Flex,
   Icon,
   MarketingHero,
-  Row,
   Typography,
   type IconName,
 } from "@/components";
 import { designSystem } from "@/theme/antd-theme";
-import { MarketingContainer, MarketingSection } from "../_components/site";
+import { MarketingSection } from "../_components/site";
 
 const { Paragraph, Text, Title } = Typography;
 
@@ -64,19 +62,19 @@ const contactCards = [
   {
     icon: "MailOutlined",
     title: "Email",
-    value: "info@vistara.co.id",
+    value: "vistarateknologiindonesia@gmail.com",
     subtitle: "Kami akan membalas dalam 1×24 jam",
   },
   {
     icon: "PhoneOutlined",
     title: "Telepon",
-    value: "+62 21 1234 5678",
+    value: "+62 851 1715 8205",
     subtitle: "Senin - Jumat, 09.00 - 18.00 WIB",
   },
   {
     icon: "EnvironmentOutlined",
     title: "Alamat",
-    value: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    value: "Jl. Bhakti Abri No. 146, Depok, Indonesia 16455",
     subtitle: "Kantor Pusat Vistara",
   },
 ] as const;
@@ -662,8 +660,8 @@ export default function Page() {
                 <p>
                   Syarat dan ketentuan berikut berlaku untuk penggunaan seluruh produk,
                   platform, situs web, dan aplikasi yang disediakan oleh PT. Vistara
-                  Teknologi Indonesia ("Perusahaan"). Dengan mengakses atau menggunakan
-                  layanan kami, Anda ("Pengguna") menyatakan telah membaca, memahami,
+                  Teknologi Indonesia (&quot;Perusahaan&quot;). Dengan mengakses atau menggunakan
+                  layanan kami, Anda (&quot;Pengguna&quot;) menyatakan telah membaca, memahami,
                   dan setuju untuk terikat oleh ketentuan ini.
                 </p>
                 <p>
@@ -1010,8 +1008,8 @@ export default function Page() {
               </div>
               <div className={styles.sectionBody}>
                 <p>
-                  Layanan disediakan dalam kondisi "sebagaimana adanya" dan "sebagaimana
-                  tersedia" tanpa jaminan apa pun, baik tersurat maupun tersirat.
+                  Layanan disediakan dalam kondisi &quot;sebagaimana adanya&quot; dan &quot;sebagaimana
+                  tersedia&quot; tanpa jaminan apa pun, baik tersurat maupun tersirat.
                   Perusahaan tidak menjamin bahwa layanan akan selalu tersedia, bebas
                   dari kesalahan, atau sesuai dengan kebutuhan Pengguna.
                 </p>

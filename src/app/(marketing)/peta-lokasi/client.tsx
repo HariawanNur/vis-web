@@ -26,14 +26,14 @@ const contactCards = [
     icon: "HomeOutlined",
     title: "Alamat",
     lines: [
-      "Jl. Contoh Raya No. 123",
-      "Jakarta, Indonesia 12345"
+      "Jl. Bhakti Abri No. 146",
+      "Depok, Indonesia 16455"
     ],
   },
   {
     icon: "PhoneOutlined",
     title: "Telepon",
-    lines: ["+62 21 1234 5678", "Senin - Jumat, 09.00 - 18.00 WIB"],
+    lines: ["+62 851 1715 8205", "Senin - Jumat, 09.00 - 18.00 WIB"],
   },
   {
     icon: "ClockCircleOutlined",
@@ -53,8 +53,8 @@ const officeLocation = [
   {
     id: "vistara-office",
     title: "Vistara Teknologi Indonesia",
-    description: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
-    info: "Jl. Contoh Raya No. 123, Jakarta, Indonesia 12345",
+    description: "Jl. Bhakti Abri No. 146, Depok, Indonesia 16455",
+    info: "Jl. Bhakti Abri No. 146, Depok, Indonesia 16455",
     category: "office",
     latitude: -6.175392,
     longitude: 106.827153,
