@@ -74,15 +74,15 @@ const useStyles = createStyles(({ css, token }) => ({
   hero: css`
     position: relative;
     overflow: hidden;
-    min-height: 760px;
+    min-height: 700px;
     background: #07111f;
 
     @media (max-width: ${token.screenLG}px) {
-      min-height: 920px;
+      min-height: 860px;
     }
 
     @media (max-width: ${token.screenSM}px) {
-      min-height: 1040px;
+      min-height: 960px;
     }
   `,
   heroBackground: css`
@@ -105,18 +105,18 @@ const useStyles = createStyles(({ css, token }) => ({
     grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
     gap: 40px;
     align-items: center;
-    min-height: 760px;
-    padding-block: 52px;
+    min-height: 700px;
+    padding-block: 56px;
 
     @media (max-width: ${token.screenLG}px) {
       grid-template-columns: 1fr;
       align-items: start;
-      min-height: 920px;
+      min-height: 860px;
       padding-top: 44px;
     }
 
     @media (max-width: ${token.screenSM}px) {
-      min-height: 1040px;
+      min-height: 960px;
       padding-top: 28px;
       padding-bottom: 36px;
     }
@@ -192,32 +192,6 @@ const useStyles = createStyles(({ css, token }) => ({
     position: relative;
     width: 100%;
     min-height: 560px;
-
-    @media (max-width: ${token.screenLG}px) {
-      min-height: 520px;
-    }
-  `,
-  heroFrame: css`
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    border-radius: 22px;
-    background: rgba(15, 23, 42, 0.28);
-    box-shadow: 0 24px 80px rgba(7, 17, 31, 0.42);
-  `,
-  heroVisualImage: css`
-    object-fit: cover;
-    object-position: center;
-    opacity: 0.9;
-  `,
-  heroVisualGlow: css`
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(180deg, rgba(7, 17, 31, 0.08) 0%, rgba(7, 17, 31, 0.54) 100%),
-      radial-gradient(circle at 24% 32%, rgba(22, 119, 255, 0.18), transparent 22%),
-      radial-gradient(circle at 74% 68%, rgba(99, 102, 241, 0.12), transparent 25%);
   `,
   heroFloatingCard: css`
     position: absolute;
@@ -610,7 +584,7 @@ export default function Page() {
     <main className={styles.page}>
       <section className={styles.hero}>
         <Image
-          src="/images/ilustrations/Office_Call.png"
+          src="/images/ilustrations/Late_Night_Coding.png"
           fill
           priority
           alt={t("app.description")}
@@ -647,17 +621,6 @@ export default function Page() {
           </div>
 
           <div className={styles.heroVisual}>
-            <div className={styles.heroFrame}>
-              <Image
-                src="/images/ilustrations/Device_Mockup_1.png"
-                fill
-                priority
-                alt={t("app.fullTitle")}
-                className={styles.heroVisualImage}
-              />
-              <div className={styles.heroVisualGlow} />
-            </div>
-
             <div className={styles.heroFloatingCard}>
               {[
                 [t("marketing.home.highlights.innovative.title"), t("marketing.home.highlights.innovative.description")],
@@ -723,7 +686,7 @@ export default function Page() {
         <div className={styles.aboutWrap}>
           <div className={styles.aboutMedia}>
             <Image
-              src="/images/ilustrations/Salon_Interior.png"
+              src="/images/ilustrations/Vistara_Office_Reception_1.png"
               fill
               alt={t("marketing.home.about.imageAlt")}
               className={styles.aboutImage}
