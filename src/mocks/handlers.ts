@@ -77,7 +77,7 @@ export const handlers = [
         locale === "en"
           ? "Name, email, and message are required"
           : locale === "ms"
-            ? "Nama, e-mel dan mesej diperlukan"
+            ? "Nama, E-mail dan mesej diperlukan"
             : "Nama, email, dan pesan wajib diisi"
       )
     }
@@ -86,7 +86,7 @@ export const handlers = [
         locale === "en"
           ? "Enter a valid email address"
           : locale === "ms"
-            ? "Masukkan alamat e-mel yang sah"
+            ? "Masukkan alamat E-mail yang sah"
             : "Masukkan alamat email yang valid"
       )
     }
@@ -110,7 +110,7 @@ export const handlers = [
         locale === "en"
           ? "Email is required"
           : locale === "ms"
-            ? "E-mel diperlukan"
+            ? "E-mail diperlukan"
             : "Email wajib diisi"
       )
     }
@@ -119,7 +119,7 @@ export const handlers = [
         locale === "en"
           ? "Enter a valid email address"
           : locale === "ms"
-            ? "Masukkan alamat e-mel yang sah"
+            ? "Masukkan alamat E-mail yang sah"
             : "Masukkan alamat email yang valid"
       )
     }

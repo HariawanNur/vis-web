@@ -1,7 +1,10 @@
 "use client";
 
+"use client";
+
 import Image from "next/image";
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 import {
   Button,
@@ -13,7 +16,6 @@ import {
   Icon,
   MarketingHero,
   Input,
-  message,
   Row,
   Select,
   Typography,
@@ -669,22 +671,56 @@ export default function Page() {
 
   const contactOptions = marketingData?.contact?.businessTypeOptions ?? [];
 
+  // const onFinish = async (values: Record<string, string>) => {
+  //   setSubmitting(true);
+  //   try {
+  //     const input: MarketingContactInput = {
+  //       name: values.name,
+  //       email: values.email,
+  //       phone: values.phone,
+  //       businessType: values.businessType,
+  //       teamSize: values.company,
+  //       message: values.message,
+  //     };
+  //     await submitMarketingContact(input, locale);
+  //     message.success(t("status.contactSent"));
+  //     form.resetFields();
+  //   } catch {
+  //     message.error(t("status.contactFailed"));
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
+
   const onFinish = async (values: Record<string, string>) => {
     setSubmitting(true);
+
     try {
-      const input: MarketingContactInput = {
-        name: values.name,
-        email: values.email,
-        phone: values.phone,
-        businessType: values.businessType,
-        teamSize: values.company,
-        message: values.message,
-      };
-      await submitMarketingContact(input, locale);
-      message.success(t("status.contactSent"));
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name: values.name,
+          email: values.email,
+          phone: values.phone,
+          company: values.company || "-",
+          businessType: values.businessType,
+          message: values.message,
+        },
+        {
+          publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+        }
+      );
+
+      alert("Pesan berhasil dikirim. Terima kasih, kami akan segera menghubungi Anda.");
+
       form.resetFields();
-    } catch {
-      message.error(t("status.contactFailed"));
+    } catch (error) {
+      console.error("EmailJS error:", error);
+
+      alert(
+        "Pesan gagal dikirim. Silakan coba lagi atau hubungi kami melalui email."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -708,24 +744,24 @@ export default function Page() {
       />
 
       <div className={styles.pillsBar}>
-          <MarketingContainer>
-            <Row gutter={[0, 0]}>
-              {[
-                { icon: "ThunderboltOutlined", label: "Respons Cepat", sub: "(< 24 jam)" },
-                { icon: "TeamOutlined", label: "Tim Profesional", sub: "& Berpengalaman" },
-                { icon: "AimOutlined", label: "Solusi yang", sub: "Terarah" },
-              ].map((item) => (
-                <Col xs={24} sm={8} key={item.label} className={styles.pillItem}>
-                  <span className={styles.pillIcon}>
-                    <Icon type={item.icon as IconName} />
-                  </span>
-                  <Text className={styles.pillText}>{item.label}</Text>
-                  <Text className={styles.pillSub}>{item.sub}</Text>
-                </Col>
-              ))}
-            </Row>
-          </MarketingContainer>
-        </div>
+        <MarketingContainer>
+          <Row gutter={[0, 0]}>
+            {[
+              { icon: "ThunderboltOutlined", label: "Respons Cepat", sub: "(< 24 jam)" },
+              { icon: "TeamOutlined", label: "Tim Profesional", sub: "& Berpengalaman" },
+              { icon: "AimOutlined", label: "Solusi yang", sub: "Terarah" },
+            ].map((item) => (
+              <Col xs={24} sm={8} key={item.label} className={styles.pillItem}>
+                <span className={styles.pillIcon}>
+                  <Icon type={item.icon as IconName} />
+                </span>
+                <Text className={styles.pillText}>{item.label}</Text>
+                <Text className={styles.pillSub}>{item.sub}</Text>
+              </Col>
+            ))}
+          </Row>
+        </MarketingContainer>
+      </div>
       <MarketingSection className={styles.section}>
         <Row gutter={[32, 32]} align="top">
           <Col xs={24} lg={14}>
@@ -971,9 +1007,8 @@ export default function Page() {
           {faqItems.map((item, index) => (
             <div
               key={item.question}
-              className={`${styles.faqItem} ${
-                expandedFaq === index ? styles.faqItemExpanded : ""
-              }`}
+              className={`${styles.faqItem} ${expandedFaq === index ? styles.faqItemExpanded : ""
+                }`}
             >
               <div
                 className={styles.faqQuestion}
@@ -990,9 +1025,8 @@ export default function Page() {
                 <span className={styles.faqQuestionText}>{item.question}</span>
                 <Icon
                   type={expandedFaq === index ? "MinusOutlined" : "PlusOutlined"}
-                  className={`${styles.faqIcon} ${
-                    expandedFaq === index ? styles.faqIconExpanded : ""
-                  }`}
+                  className={`${styles.faqIcon} ${expandedFaq === index ? styles.faqIconExpanded : ""
+                    }`}
                 />
               </div>
               {expandedFaq === index && (

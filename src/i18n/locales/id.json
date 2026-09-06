@@ -140,11 +140,14 @@
     "privacyConsent": "Dengan mengirim formulir, Anda menyetujui kebijakan privasi kami.",
     "options": {
       "business": {
-        "salon": "Salon rambut atau kecantikan",
-        "barbershop": "Barbershop",
-        "spa": "Spa",
-        "clinic": "Klinik kecantikan",
-        "other": "Lainnya"
+        "technology": "Teknologi & Software",
+        "finance": "Keuangan & Fintech",
+        "retail": "Retail & E-commerce",
+        "manufacturing": "Manufaktur",
+        "healthcare": "Kesehatan",
+        "education": "Pendidikan",
+        "government": "Pemerintahan",
+        "other": "Lain-lain"
       },
       "team": {
         "oneToFive": "1-5 orang",
@@ -475,8 +478,8 @@
       },
       "values": {
         "salonFirst": {
-          "title": "Utamakan salon",
-          "description": "Kami mulai dari tantangan nyata para profesional kecantikan."
+          "title": "Pahami Kebutuhan Klien",
+          "description": "Kami mulai dari memahami tantangan nyata dan kebutuhan bisnis setiap klien"
         },
         "simple": {
           "title": "Tetap sederhana",
@@ -549,12 +552,30 @@
         "description": "Kami menyediakan lingkungan kerja yang mendukung perkembangan karier, memberi ruang untuk berinovasi, dan menciptakan dampak nyata bagi masyarakat."
       },
       "values": {
-        "careerDev": { "title": "Pengembangan Karier", "description": "Pelatihan, sertifikasi, dan mentoring berkelanjutan." },
-        "flexible": { "title": "Kerja Fleksibel", "description": "Hybrid work dan jam kerja yang adaptif." },
-        "meaningful": { "title": "Proyek Bermakna", "description": "Teknologi untuk dampak nyata di berbagai industri." },
-        "solid": { "title": "Tim yang Solid", "description": "Kolaborasi dengan talenta lintas disiplin." },
-        "wellbeing": { "title": "Kesejahteraan Karyawan", "description": "Asuransi, benefit kesehatan, dan program wellbeing." },
-        "inclusive": { "title": "Lingkungan Inklusif", "description": "Kesetaraan kesempatan untuk semua." }
+        "careerDev": {
+          "title": "Pengembangan Karier",
+          "description": "Pelatihan, sertifikasi, dan mentoring berkelanjutan."
+        },
+        "flexible": {
+          "title": "Kerja Fleksibel",
+          "description": "Hybrid work dan jam kerja yang adaptif."
+        },
+        "meaningful": {
+          "title": "Proyek Bermakna",
+          "description": "Teknologi untuk dampak nyata di berbagai industri."
+        },
+        "solid": {
+          "title": "Tim yang Solid",
+          "description": "Kolaborasi dengan talenta lintas disiplin."
+        },
+        "wellbeing": {
+          "title": "Kesejahteraan Karyawan",
+          "description": "Asuransi, benefit kesehatan, dan program wellbeing."
+        },
+        "inclusive": {
+          "title": "Lingkungan Inklusif",
+          "description": "Kesetaraan kesempatan untuk semua."
+        }
       },
       "openings": {
         "label": "Lowongan Terbaru",
@@ -566,11 +587,46 @@
         "location": "Semua Lokasi",
         "detail": "Lihat Detail",
         "list": [
-          { "title": "Frontend Developer", "team": "Product & Engineering", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "CodeOutlined" },
-          { "title": "Backend Developer", "team": "Product & Engineering", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "DatabaseOutlined" },
-          { "title": "UI/UX Designer", "team": "Product & Design", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "Hybrid", "icon": "EditOutlined" },
-          { "title": "DevOps Engineer", "team": "Infrastructure", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "On-site", "icon": "CloudServerOutlined" },
-          { "title": "IT Consultant", "team": "Consulting & Solutions", "location": "Jakarta, Indonesia", "type": "Full-time", "mode": "On-site", "icon": "TeamOutlined" }
+          {
+            "title": "Frontend Developer",
+            "team": "Product & Engineering",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "mode": "Hybrid",
+            "icon": "CodeOutlined"
+          },
+          {
+            "title": "Backend Developer",
+            "team": "Product & Engineering",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "mode": "Hybrid",
+            "icon": "DatabaseOutlined"
+          },
+          {
+            "title": "UI/UX Designer",
+            "team": "Product & Design",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "mode": "Hybrid",
+            "icon": "EditOutlined"
+          },
+          {
+            "title": "DevOps Engineer",
+            "team": "Infrastructure",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "mode": "On-site",
+            "icon": "CloudServerOutlined"
+          },
+          {
+            "title": "IT Consultant",
+            "team": "Consulting & Solutions",
+            "location": "Jakarta, Indonesia",
+            "type": "Full-time",
+            "mode": "On-site",
+            "icon": "TeamOutlined"
+          }
         ]
       },
       "culture": {
@@ -578,18 +634,38 @@
         "title": "Budaya Kerja yang Menginspirasi",
         "viewGallery": "Lihat Galeri",
         "items": [
-          { "title": "Kolaborasi Tanpa Batas", "image": "/images/ilustrations/Office_Call.png" },
-          { "title": "Ruang untuk Berinovasi", "image": "/images/ilustrations/Coding_Workspace.png" },
-          { "title": "Bersama Menciptakan Dampak", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
-          { "title": "Lingkungan Kerja yang Nyaman", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" }
+          {
+            "title": "Kolaborasi Tanpa Batas",
+            "image": "/images/ilustrations/Office_Call.png"
+          },
+          {
+            "title": "Ruang untuk Berinovasi",
+            "image": "/images/ilustrations/Coding_Workspace.png"
+          },
+          {
+            "title": "Bersama Menciptakan Dampak",
+            "image": "/images/ilustrations/Vistara_Office_Reception_1.png"
+          },
+          {
+            "title": "Lingkungan Kerja yang Nyaman",
+            "image": "/images/ilustrations/Vistara_Office_Reception_2.png"
+          }
         ]
       },
       "testimonials": {
         "label": "Apa Kata Tim Kami",
         "title": "Cerita Mereka di Vistara",
         "items": [
-          { "quote": "Vistara memberi saya ruang belajar yang besar untuk berkembang dan berkontribusi pada proyek nyata yang berdampak.", "name": "Aisyah Rahma", "role": "UI/UX Designer" },
-          { "quote": "Lingkungan kerja di Vistara sangat kolaboratif. Setiap ide dihargai dan kami selalu didorong untuk terus belajar.", "name": "Dimas Pratama", "role": "Backend Developer" }
+          {
+            "quote": "Vistara memberi saya ruang belajar yang besar untuk berkembang dan berkontribusi pada proyek nyata yang berdampak.",
+            "name": "Aisyah Rahma",
+            "role": "UI/UX Designer"
+          },
+          {
+            "quote": "Lingkungan kerja di Vistara sangat kolaboratif. Setiap ide dihargai dan kami selalu didorong untuk terus belajar.",
+            "name": "Dimas Pratama",
+            "role": "Backend Developer"
+          }
         ]
       },
       "faq": {
@@ -627,21 +703,54 @@
         "description": "Solusi lengkap untuk menjawab kebutuhan digital bisnis Anda, didukung oleh tim berpengalaman dan pendekatan yang berorientasi pada hasil nyata.",
         "viewAll": "Lihat Semua Layanan",
         "items": [
-          { "title": "Pengembangan Aplikasi E-Commerce", "kbl": "KBLI 62191", "description": "Membangun platform perdagangan digital yang aman, scalable, dan berorientasi pada pertumbuhan bisnis Anda.", "icon": "ShoppingCartOutlined" },
-          { "title": "Pengembangan Aplikasi & Sistem Khusus", "kbl": "KBLI 62199", "description": "Solusi perangkat lunak untuk kebutuhan bisnis spesifik, integrasi sistem, IoT, cybersecurity, dan aplikasi khusus lainnya.", "icon": "CodeOutlined" },
-          { "title": "Konsultansi Komputer & Manajemen TI", "kbl": "KBLI 62209", "description": "Konsultansi teknologi, perencanaan sistem, manajemen infrastruktur, keamanan, dan pengelolaan fasilitas komputer.", "icon": "TeamOutlined" }
+          {
+            "title": "Pengembangan Aplikasi E-Commerce",
+            "kbl": "KBLI 62191",
+            "description": "Membangun platform perdagangan digital yang aman, scalable, dan berorientasi pada pertumbuhan bisnis Anda.",
+            "icon": "ShoppingCartOutlined"
+          },
+          {
+            "title": "Pengembangan Aplikasi & Sistem Khusus",
+            "kbl": "KBLI 62199",
+            "description": "Solusi perangkat lunak untuk kebutuhan bisnis spesifik, integrasi sistem, IoT, cybersecurity, dan aplikasi khusus lainnya.",
+            "icon": "CodeOutlined"
+          },
+          {
+            "title": "Konsultansi Komputer & Manajemen TI",
+            "kbl": "KBLI 62209",
+            "description": "Konsultansi teknologi, perencanaan sistem, manajemen infrastruktur, keamanan, dan pengelolaan fasilitas komputer.",
+            "icon": "TeamOutlined"
+          }
         ]
       },
       "supporting": {
         "label": "Layanan Pendukung",
         "title": "Layanan Pemenuhan Kebutuhan Digital Lainnya",
         "items": [
-          { "title": "Pengembangan Web & Mobile", "icon": "MobileOutlined" },
-          { "title": "Integrasi Sistem", "icon": "ApiOutlined" },
-          { "title": "Internet of Things (IoT)", "icon": "WifiOutlined" },
-          { "title": "Keamanan Siber (Cybersecurity)", "icon": "SafetyOutlined" },
-          { "title": "Data & Cloud Solution", "icon": "CloudOutlined" },
-          { "title": "Pemeliharaan & Dukungan Teknis", "icon": "ToolOutlined" }
+          {
+            "title": "Pengembangan Web & Mobile",
+            "icon": "MobileOutlined"
+          },
+          {
+            "title": "Integrasi Sistem",
+            "icon": "ApiOutlined"
+          },
+          {
+            "title": "Internet of Things (IoT)",
+            "icon": "WifiOutlined"
+          },
+          {
+            "title": "Keamanan Siber (Cybersecurity)",
+            "icon": "SafetyOutlined"
+          },
+          {
+            "title": "Data & Cloud Solution",
+            "icon": "CloudOutlined"
+          },
+          {
+            "title": "Pemeliharaan & Dukungan Teknis",
+            "icon": "ToolOutlined"
+          }
         ]
       },
       "process": {
@@ -650,11 +759,31 @@
         "description": "Kami menerapkan proses kerja yang terstruktur dan transparan untuk memastikan setiap solusi yang kami hadirkan sesuai dengan tujuan bisnis Anda.",
         "cta": "Konsultasi Proyek Anda",
         "steps": [
-          { "number": "01", "title": "Analisis Kebutuhan", "description": "Memahami tujuan, tantangan, dan kebutuhan bisnis Anda." },
-          { "number": "02", "title": "Perancangan Solusi", "description": "Menyusun arsitektur dan roadmap yang tepat." },
-          { "number": "03", "title": "Pengembangan & Implementasi", "description": "Membangun solusi dengan standar kualitas tinggi." },
-          { "number": "04", "title": "Pengujian & Evaluasi", "description": "Memastikan solusi berjalan optimal dan aman." },
-          { "number": "05", "title": "Dukungan Berkelanjutan", "description": "Mendampingi pertumbuhan bisnis Anda." }
+          {
+            "number": "01",
+            "title": "Analisis Kebutuhan",
+            "description": "Memahami tujuan, tantangan, dan kebutuhan bisnis Anda."
+          },
+          {
+            "number": "02",
+            "title": "Perancangan Solusi",
+            "description": "Menyusun arsitektur dan roadmap yang tepat."
+          },
+          {
+            "number": "03",
+            "title": "Pengembangan & Implementasi",
+            "description": "Membangun solusi dengan standar kualitas tinggi."
+          },
+          {
+            "number": "04",
+            "title": "Pengujian & Evaluasi",
+            "description": "Memastikan solusi berjalan optimal dan aman."
+          },
+          {
+            "number": "05",
+            "title": "Dukungan Berkelanjutan",
+            "description": "Mendampingi pertumbuhan bisnis Anda."
+          }
         ]
       },
       "industries": {
@@ -662,12 +791,30 @@
         "title": "Solusi untuk Berbagai Industri",
         "viewAll": "Lihat Semua Industri",
         "items": [
-          { "title": "E-Commerce & Retail", "image": "/images/ilustrations/Salon_Interior.png" },
-          { "title": "Pendidikan", "image": "/images/ilustrations/Coding_Workspace.png" },
-          { "title": "Kesehatan", "image": "/images/ilustrations/Office_Call.png" },
-          { "title": "Manufaktur & Distribusi", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
-          { "title": "Keuangan", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
-          { "title": "Pemerintahan", "image": "/images/ilustrations/Salon_Interior.png" }
+          {
+            "title": "E-Commerce & Retail",
+            "image": "/images/ilustrations/Salon_Interior.png"
+          },
+          {
+            "title": "Pendidikan",
+            "image": "/images/ilustrations/Coding_Workspace.png"
+          },
+          {
+            "title": "Kesehatan",
+            "image": "/images/ilustrations/Office_Call.png"
+          },
+          {
+            "title": "Manufaktur & Distribusi",
+            "image": "/images/ilustrations/Vistara_Office_Reception_1.png"
+          },
+          {
+            "title": "Keuangan",
+            "image": "/images/ilustrations/Vistara_Office_Reception_2.png"
+          },
+          {
+            "title": "Pemerintahan",
+            "image": "/images/ilustrations/Salon_Interior.png"
+          }
         ]
       },
       "caseStudy": {
@@ -703,7 +850,17 @@
       "eyebrow": "Portofolio Vistara",
       "title": "Solusi Nyata, Dampak Nyata",
       "description": "Berbagai proyek yang telah kami kerjakan bersama klien dari berbagai industri, menghadirkan solusi teknologi yang relevan, inovatif, dan berdampak nyata bagi pertumbuhan bisnis.",
-      "filters": ["Semua", "E-Commerce", "Sistem Informasi", "Cloud & Infrastruktur", "IoT", "Keamanan Siber", "Pemerintahan", "Pendidikan", "Kesehatan"],
+      "filters": [
+        "Semua",
+        "E-Commerce",
+        "Sistem Informasi",
+        "Cloud & Infrastruktur",
+        "IoT",
+        "Keamanan Siber",
+        "Pemerintahan",
+        "Pendidikan",
+        "Kesehatan"
+      ],
       "searchPlaceholder": "Cari proyek atau klien...",
       "industryFilter": "Semua Industri",
       "techFilter": "Semua Teknologi",
@@ -711,19 +868,68 @@
       "sortNewest": "Terbaru",
       "viewAllProjects": "Lihat Semua Portofolio",
       "stats": {
-        "completed": { "value": "50+", "label": "Proyek Selesai" },
-        "clients": { "value": "30+", "label": "Klien Puas" },
-        "industries": { "value": "10+", "label": "Industri" }
+        "completed": {
+          "value": "50+",
+          "label": "Proyek Selesai"
+        },
+        "clients": {
+          "value": "30+",
+          "label": "Klien Puas"
+        },
+        "industries": {
+          "value": "10+",
+          "label": "Industri"
+        }
       },
       "projects": [
-        { "title": "Marketplace Pertanian Digital", "tag": "E-Commerce", "description": "Platform perdagangan hasil pertanian lokal yang menghubungkan petani dengan pasar lebih luas.", "image": "/images/ilustrations/Salon_Interior.png" },
-        { "title": "Sistem Manajemen Rumah Sakit", "tag": "Sistem Informasi", "description": "Solusi digital untuk manajemen pasien, rekam medis, dan operasional rumah sakit.", "image": "/images/ilustrations/Coding_Workspace.png" },
-        { "title": "Migrasi Infrastruktur ke Cloud", "tag": "Cloud & Infrastruktur", "description": "Modernisasi infrastruktur TI dengan arsitektur cloud yang scalable, aman, dan efisien.", "image": "/images/ilustrations/Office_Call.png" },
-        { "title": "Portal Layanan Publik", "tag": "Pemerintahan", "description": "Platform layanan publik terpadu untuk meningkatkan transparansi dan efisiensi pelayanan.", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
-        { "title": "Monitoring Produksi Berbasis IoT", "tag": "IoT", "description": "Solusi IoT untuk pemantauan mesin dan optimasi proses produksi secara real-time.", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
-        { "title": "Audit & Penguatan Keamanan", "tag": "Keamanan Siber", "description": "Assessment keamanan, implementasi security best practice, dan monitoring berkelanjutan.", "image": "/images/ilustrations/Salon_Interior.png" },
-        { "title": "Platform Pembelajaran Digital", "tag": "Pendidikan", "description": "Ekosistem pembelajaran online untuk sekolah dan institusi pendidikan.", "image": "/images/ilustrations/Coding_Workspace.png" },
-        { "title": "Sistem Analitik Keuangan", "tag": "Keuangan", "description": "Platform analitik dan pelaporan keuangan untuk pengambilan keputusan yang lebih cepat.", "image": "/images/ilustrations/Office_Call.png" }
+        {
+          "title": "Marketplace Pertanian Digital",
+          "tag": "E-Commerce",
+          "description": "Platform perdagangan hasil pertanian lokal yang menghubungkan petani dengan pasar lebih luas.",
+          "image": "/images/ilustrations/Salon_Interior.png"
+        },
+        {
+          "title": "Sistem Manajemen Rumah Sakit",
+          "tag": "Sistem Informasi",
+          "description": "Solusi digital untuk manajemen pasien, rekam medis, dan operasional rumah sakit.",
+          "image": "/images/ilustrations/Coding_Workspace.png"
+        },
+        {
+          "title": "Migrasi Infrastruktur ke Cloud",
+          "tag": "Cloud & Infrastruktur",
+          "description": "Modernisasi infrastruktur TI dengan arsitektur cloud yang scalable, aman, dan efisien.",
+          "image": "/images/ilustrations/Office_Call.png"
+        },
+        {
+          "title": "Portal Layanan Publik",
+          "tag": "Pemerintahan",
+          "description": "Platform layanan publik terpadu untuk meningkatkan transparansi dan efisiensi pelayanan.",
+          "image": "/images/ilustrations/Vistara_Office_Reception_1.png"
+        },
+        {
+          "title": "Monitoring Produksi Berbasis IoT",
+          "tag": "IoT",
+          "description": "Solusi IoT untuk pemantauan mesin dan optimasi proses produksi secara real-time.",
+          "image": "/images/ilustrations/Vistara_Office_Reception_2.png"
+        },
+        {
+          "title": "Audit & Penguatan Keamanan",
+          "tag": "Keamanan Siber",
+          "description": "Assessment keamanan, implementasi security best practice, dan monitoring berkelanjutan.",
+          "image": "/images/ilustrations/Salon_Interior.png"
+        },
+        {
+          "title": "Platform Pembelajaran Digital",
+          "tag": "Pendidikan",
+          "description": "Ekosistem pembelajaran online untuk sekolah dan institusi pendidikan.",
+          "image": "/images/ilustrations/Coding_Workspace.png"
+        },
+        {
+          "title": "Sistem Analitik Keuangan",
+          "tag": "Keuangan",
+          "description": "Platform analitik dan pelaporan keuangan untuk pengambilan keputusan yang lebih cepat.",
+          "image": "/images/ilustrations/Office_Call.png"
+        }
       ],
       "caseStudy": {
         "label": "Studi Kasus Unggulan",
@@ -732,9 +938,18 @@
         "projectTitle": "TaniHub - Marketplace Pertanian Digital",
         "description": "Kami membantu TaniHub membangun platform e-commerce untuk menghubungkan petani lokal dengan pembeli di seluruh Indonesia. Solusi ini meningkatkan efisiensi rantai pasok dan membuka akses pasar yang lebih luas bagi petani.",
         "stats": [
-          { "value": "300% dalam 1 tahun", "label": "Peningkatan transaksi" },
-          { "value": "10.000+ petani bergabung", "label": "" },
-          { "value": "Cover area 34 provinsi", "label": "" }
+          {
+            "value": "300% dalam 1 tahun",
+            "label": "Peningkatan transaksi"
+          },
+          {
+            "value": "10.000+ petani bergabung",
+            "label": ""
+          },
+          {
+            "value": "Cover area 34 provinsi",
+            "label": ""
+          }
         ],
         "viewFull": "Lihat Studi Kasus Lengkap",
         "video": "Tonton Video (2:30)"
@@ -743,7 +958,14 @@
         "label": "Klien Kami",
         "title": "Dipercaya oleh Berbagai Organisasi",
         "description": "Kami bangga dapat bekerja sama dengan organisasi dari berbagai industri.",
-        "names": ["TaniHub", "RS Sejahtera", "EduSmart", "Bank Nusantara", "Pemda Digital", "Industri Maju"]
+        "names": [
+          "TaniHub",
+          "RS Sejahtera",
+          "EduSmart",
+          "Bank Nusantara",
+          "Pemda Digital",
+          "Industri Maju"
+        ]
       },
       "cta": {
         "label": "Mari Berkolaborasi",
@@ -770,14 +992,46 @@
         "description": "Kami menghadirkan solusi teknologi yang dirancang sesuai kebutuhan industri dan tujuan bisnis Anda.",
         "viewAll": "Lihat Semua Solusi",
         "items": [
-          { "title": "Solusi E-Commerce", "description": "Platform perdagangan digital yang aman, scalable, dan mudah dikelola.", "icon": "ShoppingCartOutlined" },
-          { "title": "Sistem Informasi Kustom", "description": "Aplikasi web & mobile sesuai proses bisnis unik Anda.", "icon": "CodeOutlined" },
-          { "title": "Solusi Cloud & Infrastruktur", "description": "Arsitektur cloud, migrasi, dan pengelolaan infrastruktur modern.", "icon": "CloudOutlined" },
-          { "title": "Internet of Things (IoT)", "description": "Solusi IoT untuk monitoring, otomasi, dan efisiensi operasional.", "icon": "WifiOutlined" },
-          { "title": "Keamanan Siber", "description": "Perlindungan sistem, data, dan infrastruktur dari ancaman digital.", "icon": "SafetyOutlined" },
-          { "title": "Data & Kecerdasan Buatan", "description": "Pemanfaatan data untuk insight bisnis yang lebih cerdas.", "icon": "BarChartOutlined" },
-          { "title": "Integrasi Sistem", "description": "Menghubungkan berbagai sistem untuk alur kerja yang efisien.", "icon": "ApiOutlined" },
-          { "title": "Konsultasi & Manajemen TI", "description": "Perencanaan, audit, dan pengelolaan fasilitas TI Anda.", "icon": "TeamOutlined" }
+          {
+            "title": "Solusi E-Commerce",
+            "description": "Platform perdagangan digital yang aman, scalable, dan mudah dikelola.",
+            "icon": "ShoppingCartOutlined"
+          },
+          {
+            "title": "Sistem Informasi Kustom",
+            "description": "Aplikasi web & mobile sesuai proses bisnis unik Anda.",
+            "icon": "CodeOutlined"
+          },
+          {
+            "title": "Solusi Cloud & Infrastruktur",
+            "description": "Arsitektur cloud, migrasi, dan pengelolaan infrastruktur modern.",
+            "icon": "CloudOutlined"
+          },
+          {
+            "title": "Internet of Things (IoT)",
+            "description": "Solusi IoT untuk monitoring, otomasi, dan efisiensi operasional.",
+            "icon": "WifiOutlined"
+          },
+          {
+            "title": "Keamanan Siber",
+            "description": "Perlindungan sistem, data, dan infrastruktur dari ancaman digital.",
+            "icon": "SafetyOutlined"
+          },
+          {
+            "title": "Data & Kecerdasan Buatan",
+            "description": "Pemanfaatan data untuk insight bisnis yang lebih cerdas.",
+            "icon": "BarChartOutlined"
+          },
+          {
+            "title": "Integrasi Sistem",
+            "description": "Menghubungkan berbagai sistem untuk alur kerja yang efisien.",
+            "icon": "ApiOutlined"
+          },
+          {
+            "title": "Konsultasi & Manajemen TI",
+            "description": "Perencanaan, audit, dan pengelolaan fasilitas TI Anda.",
+            "icon": "TeamOutlined"
+          }
         ]
       },
       "industries": {
@@ -785,12 +1039,36 @@
         "title": "Mendorong Kemajuan di Berbagai Sektor",
         "viewAll": "Lihat Semua Industri",
         "items": [
-          { "title": "E-Commerce & Retail", "description": "Platform digital untuk pertumbuhan penjualan.", "image": "/images/ilustrations/Salon_Interior.png" },
-          { "title": "Pendidikan", "description": "Solusi teknologi untuk ekosistem belajar modern.", "image": "/images/ilustrations/Coding_Workspace.png" },
-          { "title": "Kesehatan", "description": "Sistem informasi untuk layanan kesehatan yang lebih baik.", "image": "/images/ilustrations/Office_Call.png" },
-          { "title": "Manufaktur & Distribusi", "description": "Otomasi dan integrasi untuk rantai pasok yang efisien.", "image": "/images/ilustrations/Vistara_Office_Reception_1.png" },
-          { "title": "Keuangan", "description": "Sistem digital untuk layanan keuangan yang aman dan andal.", "image": "/images/ilustrations/Vistara_Office_Reception_2.png" },
-          { "title": "Pemerintahan", "description": "Transformasi digital untuk layanan publik yang lebih transparan.", "image": "/images/ilustrations/Salon_Interior.png" }
+          {
+            "title": "E-Commerce & Retail",
+            "description": "Platform digital untuk pertumbuhan penjualan.",
+            "image": "/images/ilustrations/Salon_Interior.png"
+          },
+          {
+            "title": "Pendidikan",
+            "description": "Solusi teknologi untuk ekosistem belajar modern.",
+            "image": "/images/ilustrations/Coding_Workspace.png"
+          },
+          {
+            "title": "Kesehatan",
+            "description": "Sistem informasi untuk layanan kesehatan yang lebih baik.",
+            "image": "/images/ilustrations/Office_Call.png"
+          },
+          {
+            "title": "Manufaktur & Distribusi",
+            "description": "Otomasi dan integrasi untuk rantai pasok yang efisien.",
+            "image": "/images/ilustrations/Vistara_Office_Reception_1.png"
+          },
+          {
+            "title": "Keuangan",
+            "description": "Sistem digital untuk layanan keuangan yang aman dan andal.",
+            "image": "/images/ilustrations/Vistara_Office_Reception_2.png"
+          },
+          {
+            "title": "Pemerintahan",
+            "description": "Transformasi digital untuk layanan publik yang lebih transparan.",
+            "image": "/images/ilustrations/Salon_Interior.png"
+          }
         ]
       },
       "caseStudy": {
@@ -798,9 +1076,24 @@
         "title": "Solusi Kami, Dampak Nyata",
         "viewAll": "Lihat Semua Studi Kasus",
         "items": [
-          { "tag": "E-Commerce", "title": "Marketplace Pertanian Digital", "description": "Menghubungkan petani lokal dengan jaringan pasok yang lebih luas melalui platform digital.", "image": "/images/ilustrations/Salon_Interior.png" },
-          { "tag": "Manufaktur", "title": "Sistem Monitoring Produksi", "description": "Solusi IoT untuk pemantauan mesin dan peningkatan efisiensi produksi.", "image": "/images/ilustrations/Coding_Workspace.png" },
-          { "tag": "Pemerintahan", "title": "Portal Layanan Publik", "description": "Platform layanan publik terpadu untuk meningkatkan akses dan transparansi.", "image": "/images/ilustrations/Office_Call.png" }
+          {
+            "tag": "E-Commerce",
+            "title": "Marketplace Pertanian Digital",
+            "description": "Menghubungkan petani lokal dengan jaringan pasok yang lebih luas melalui platform digital.",
+            "image": "/images/ilustrations/Salon_Interior.png"
+          },
+          {
+            "tag": "Manufaktur",
+            "title": "Sistem Monitoring Produksi",
+            "description": "Solusi IoT untuk pemantauan mesin dan peningkatan efisiensi produksi.",
+            "image": "/images/ilustrations/Coding_Workspace.png"
+          },
+          {
+            "tag": "Pemerintahan",
+            "title": "Portal Layanan Publik",
+            "description": "Platform layanan publik terpadu untuk meningkatkan akses dan transparansi.",
+            "image": "/images/ilustrations/Office_Call.png"
+          }
         ]
       },
       "process": {
@@ -809,11 +1102,31 @@
         "description": "Kami bekerja sama dengan Anda melalui proses yang terstruktur dan transparan.",
         "viewAll": "Lihat Semua Proses",
         "steps": [
-          { "number": "01", "title": "Diskusi Awal", "description": "Memahami kebutuhan dan tantangan Anda." },
-          { "number": "02", "title": "Analisis & Perancangan", "description": "Menyusun solusi dan arsitektur terbaik." },
-          { "number": "03", "title": "Pengembangan", "description": "Membangun solusi dengan standar kualitas tinggi." },
-          { "number": "04", "title": "Implementasi", "description": "Deploy dan integrasi ke lingkungan Anda." },
-          { "number": "05", "title": "Dukungan Berkelanjutan", "description": "Monitoring, pemeliharaan, dan pengembangan lebih lanjut." }
+          {
+            "number": "01",
+            "title": "Diskusi Awal",
+            "description": "Memahami kebutuhan dan tantangan Anda."
+          },
+          {
+            "number": "02",
+            "title": "Analisis & Perancangan",
+            "description": "Menyusun solusi dan arsitektur terbaik."
+          },
+          {
+            "number": "03",
+            "title": "Pengembangan",
+            "description": "Membangun solusi dengan standar kualitas tinggi."
+          },
+          {
+            "number": "04",
+            "title": "Implementasi",
+            "description": "Deploy dan integrasi ke lingkungan Anda."
+          },
+          {
+            "number": "05",
+            "title": "Dukungan Berkelanjutan",
+            "description": "Monitoring, pemeliharaan, dan pengembangan lebih lanjut."
+          }
         ]
       },
       "cta": {
@@ -854,45 +1167,228 @@
       "label": "Mengapa Berlangganan?",
       "title": "Manfaat Newsletter Kami",
       "description": "Kami menghadirkan konten berkualitas yang relevan dengan kebutuhan Anda.",
-      "freeInsight": { "title": "Insight Gratis", "description": "Akses artikel dan analisis mendalam tentang tren teknologi tanpa biaya." },
-      "weeklyUpdate": { "title": "Update Mingguan", "description": "Ringkasan perkembangan terkini dikirim setiap minggu ke email Anda." },
-      "exclusiveContent": { "title": "Konten Eksklusif", "description": "Dapatkan akses ke studi kasus dan whitepaper yang tidak tersedia untuk publik." }
+      "freeInsight": {
+        "title": "Insight Gratis",
+        "description": "Akses artikel dan analisis mendalam tentang tren teknologi tanpa biaya."
+      },
+      "weeklyUpdate": {
+        "title": "Update Mingguan",
+        "description": "Ringkasan perkembangan terkini dikirim setiap minggu ke email Anda."
+      },
+      "exclusiveContent": {
+        "title": "Konten Eksklusif",
+        "description": "Dapatkan akses ke studi kasus dan whitepaper yang tidak tersedia untuk publik."
+      }
     },
-    "interests": { "technology": "Teknologi", "business": "Bisnis", "design": "Desain", "caseStudies": "Studi Kasus" },
-    "cta": { "label": "Siap Memulai?", "title": "Diskusikan Ide Anda dengan Tim Vistara", "description": "Tidak ada ide yang terlalu kecil. Mari wujudkan bersama.", "action": "Konsultasi Gratis" }
+    "interests": {
+      "technology": "Teknologi",
+      "business": "Bisnis",
+      "design": "Desain",
+      "caseStudies": "Studi Kasus"
+    },
+    "cta": {
+      "label": "Siap Memulai?",
+      "title": "Diskusikan Ide Anda dengan Tim Vistara",
+      "description": "Tidak ada ide yang terlalu kecil. Mari wujudkan bersama.",
+      "action": "Konsultasi Gratis"
+    }
   },
   "statusPage": {
-    "hero": { "titlePrefix": "Status", "alt": "Status Layanan Vistara", "eyebrow": "STATUS LAYANAN", "titleAccent": "Layanan", "description": "Pantau status operasional seluruh layanan Vistara secara real-time." },
-    "section": { "label": "Status Terkini", "title": "Status Sistem", "description": "Berikut adalah status operasional seluruh layanan kami.", "overallStatus": "Semua Sistem Operasional", "lastUpdated": "Terakhir diperbarui" },
-    "service": { "responseLabel": "Response Time" },
-    "services": { "website": "Website", "api": "API", "dashboard": "Dashboard", "email": "Email Service", "database": "Database", "cdn": "CDN" },
-    "states": { "operational": "Operasional", "maintenance": "Maintenance" },
-    "cta": { "label": "Siap Memulai?", "title": "Diskusikan Ide Anda dengan Tim Vistara", "description": "Tidak ada ide yang terlalu kecil. Mari wujudkan bersama.", "action": "Konsultasi Gratis" }
+    "hero": {
+      "titlePrefix": "Status",
+      "alt": "Status Layanan Vistara",
+      "eyebrow": "STATUS LAYANAN",
+      "titleAccent": "Layanan",
+      "description": "Pantau status operasional seluruh layanan Vistara secara real-time."
+    },
+    "section": {
+      "label": "Status Terkini",
+      "title": "Status Sistem",
+      "description": "Berikut adalah status operasional seluruh layanan kami.",
+      "overallStatus": "Semua Sistem Operasional",
+      "lastUpdated": "Terakhir diperbarui"
+    },
+    "service": {
+      "responseLabel": "Response Time"
+    },
+    "services": {
+      "website": "Website",
+      "api": "API",
+      "dashboard": "Dashboard",
+      "email": "Email Service",
+      "database": "Database",
+      "cdn": "CDN"
+    },
+    "states": {
+      "operational": "Operasional",
+      "maintenance": "Maintenance"
+    },
+    "cta": {
+      "label": "Siap Memulai?",
+      "title": "Diskusikan Ide Anda dengan Tim Vistara",
+      "description": "Tidak ada ide yang terlalu kecil. Mari wujudkan bersama.",
+      "action": "Konsultasi Gratis"
+    }
   },
   "faqPage": {
-    "hero": { "titlePrefix": "Pertanyaan", "alt": "FAQ", "eyebrow": "FAQ", "titleAccent": "Umum", "description": "Temukan jawaban atas pertanyaan yang paling sering ditanyakan mengenai layanan, harga, aspek teknis, dan dukungan dari PT. Vistara Teknologi Indonesia.", "visualTitle": "Kami Siap\nMembantu Anda", "visualDescription": "Jawaban atas pertanyaan Anda ada di sini" },
+    "hero": {
+      "titlePrefix": "Pertanyaan",
+      "alt": "FAQ",
+      "eyebrow": "FAQ",
+      "titleAccent": "Umum",
+      "description": "Temukan jawaban atas pertanyaan yang paling sering ditanyakan mengenai layanan, harga, aspek teknis, dan dukungan dari PT. Vistara Teknologi Indonesia.",
+      "visualTitle": "Kami Siap\nMembantu Anda",
+      "visualDescription": "Jawaban atas pertanyaan Anda ada di sini"
+    },
     "searchPlaceholder": "Cari pertanyaan Anda di sini...",
-    "categories": { "all": "Semua", "services": "Layanan", "pricing": "Harga", "technical": "Teknis", "support": "Dukungan" },
-    "items": { "q1": { "question": "Apa saja layanan yang disediakan oleh Vistara?", "answer": "Vistara menyediakan berbagai layanan teknologi informasi termasuk pengembangan aplikasi web dan mobile, konsultasi IT, transformasi digital, pengembangan platform e-commerce, serta solusi bisnis berbasis cloud. Kami melayani berbagai skala proyek dari startup hingga perusahaan enterprise." }, "q2": { "question": "Bagaimana cara memulai kerja sama dengan Vistara?", "answer": "Anda dapat memulai dengan menghubungi tim kami melalui halaman kontak atau email ke vistarateknologiindonesia@gmail.com. Tim kami akan menjadwalkan konsultasi awal gratis untuk memahami kebutuhan bisnis Anda, kemudian menyusun proposal yang sesuai dengan tujuan dan anggaran proyek Anda." }, "q3": { "question": "Apakah Vistara menerima proyek skala kecil?", "answer": "Tentu, kami menerima proyek dari berbagai skala. Kami memahami bahwa setiap bisnis memiliki kebutuhan yang berbeda. Tim kami akan menyesuaikan solusi dan pendekatan sesuai dengan skala dan kompleksitas proyek Anda, termasuk proyek-proyek berskala kecil dan menengah." }, "q4": { "question": "Bagaimana model penetapan harga di Vistara?", "answer": "Kami menawarkan beberapa model harga yang fleksibel: project-based (harga tetap per proyek), time-based (per jam atau per bulan), dan retainer (langganan bulanan untuk dukungan berkelanjutan). Harga disesuaikan dengan kompleksitas, durasi, dan lingkup proyek. Hubungi kami untuk mendapatkan penawaran yang tepat." }, "q5": { "question": "Apakah tersedia konsultasi gratis sebelum memulai proyek?", "answer": "Ya, kami menyediakan konsultasi awal gratis selama 30-60 menit. Dalam sesi ini, tim kami akan mendengarkan kebutuhan Anda, memberikan gambaran solusi yang tepat, dan memberikan estimasi biaya awal. Tidak ada kewajiban untuk melanjutkan setelah konsultasi." }, "q6": { "question": "Apakah ada opsi pembayaran bertahap?", "answer": "Ya, untuk proyek berskala besar, kami menyediakan opsi pembayaran bertahap yang disesuaikan dengan milestone proyek. Biasanya pembayaran dibagi menjadi 3-4 tahap sesuai dengan progres pekerjaan. Detail pembayaran akan tertuang dalam perjanjian kontrak." }, "q7": { "question": "Teknologi apa saja yang digunakan oleh Vistara?", "answer": "Vistara menggunakan teknologi modern dan terkini termasuk React, Next.js, TypeScript, Node.js, Python, React Native, Flutter, serta infrastruktur cloud dari AWS, GCP, dan Azure. Kami memilih teknologi yang paling sesuai dengan kebutuhan proyek Anda untuk hasil optimal." }, "q8": { "question": "Bagaimana Vistara menjamin keamanan data klien?", "answer": "Keamanan data adalah prioritas utama kami. Kami menerapkan standar keamanan tinggi termasuk enkripsi data end-to-end, autentikasi multi-faktor, audit keamanan berkala, penetration testing, serta kepatuhan terhadap standar ISO 27001 dan peraturan perlindungan data yang berlaku." }, "q9": { "question": "Apakah Vistara menyediakan layanan migrasi sistem?", "answer": "Ya, kami menyediakan layanan migrasi sistem dari platform lama ke platform baru. Tim kami akan melakukan analisis menyeluruh terhadap sistem yang ada, merencanakan strategi migrasi yang minim risiko, dan memastikan transisi yang mulus tanpa gangguan operasional yang signifikan." }, "q10": { "question": "Bagaimana cara menghubungi dukungan teknis Vistara?", "answer": "Anda dapat menghubungi dukungan teknis kami melalui email ke support@vistara.co.id, telepon ke +62 21 5555 0123, atau melalui portal ticketing yang tersedia untuk klien. Tim dukungan kami beroperasi pada hari kerja, Senin hingga Jumat, pukul 09.00 hingga 18.00 WIB." }, "q11": { "question": "Apakah Vistara menyediakan layanan pemeliharaan pasca-peluncuran?", "answer": "Ya, kami menyediakan layanan pemeliharaan dan dukungan pasca-peluncuran yang mencakup pemantauan performa, perbaikan bug, pembaruan keamanan, serta pengembangan fitur baru. Kami menawarkan paket SLA (Service Level Agreement) dengan tingkat respons yang disesuaikan." }, "q12": { "question": "Berapa lama waktu respons untuk tiket dukungan?", "answer": "Waktu respons kami bervariasi berdasarkan tingkat prioritas: Critical (1 jam), High (4 jam), Medium (1 hari kerja), dan Low (3 hari kerja). Klien dengan paket SLA premium mendapat prioritas respons yang lebih cepat dan akses langsung ke tim teknis senior." } },
+    "categories": {
+      "all": "Semua",
+      "services": "Layanan",
+      "pricing": "Harga",
+      "technical": "Teknis",
+      "support": "Dukungan"
+    },
+    "items": {
+      "q1": {
+        "question": "Apa saja layanan yang disediakan oleh Vistara?",
+        "answer": "Vistara menyediakan berbagai layanan teknologi informasi termasuk pengembangan aplikasi web dan mobile, konsultasi IT, transformasi digital, pengembangan platform e-commerce, serta solusi bisnis berbasis cloud. Kami melayani berbagai skala proyek dari startup hingga perusahaan enterprise."
+      },
+      "q2": {
+        "question": "Bagaimana cara memulai kerja sama dengan Vistara?",
+        "answer": "Anda dapat memulai dengan menghubungi tim kami melalui halaman kontak atau email ke vistarateknologiindonesia@gmail.com. Tim kami akan menjadwalkan konsultasi awal gratis untuk memahami kebutuhan bisnis Anda, kemudian menyusun proposal yang sesuai dengan tujuan dan anggaran proyek Anda."
+      },
+      "q3": {
+        "question": "Apakah Vistara menerima proyek skala kecil?",
+        "answer": "Tentu, kami menerima proyek dari berbagai skala. Kami memahami bahwa setiap bisnis memiliki kebutuhan yang berbeda. Tim kami akan menyesuaikan solusi dan pendekatan sesuai dengan skala dan kompleksitas proyek Anda, termasuk proyek-proyek berskala kecil dan menengah."
+      },
+      "q4": {
+        "question": "Bagaimana model penetapan harga di Vistara?",
+        "answer": "Kami menawarkan beberapa model harga yang fleksibel: project-based (harga tetap per proyek), time-based (per jam atau per bulan), dan retainer (langganan bulanan untuk dukungan berkelanjutan). Harga disesuaikan dengan kompleksitas, durasi, dan lingkup proyek. Hubungi kami untuk mendapatkan penawaran yang tepat."
+      },
+      "q5": {
+        "question": "Apakah tersedia konsultasi gratis sebelum memulai proyek?",
+        "answer": "Ya, kami menyediakan konsultasi awal gratis selama 30-60 menit. Dalam sesi ini, tim kami akan mendengarkan kebutuhan Anda, memberikan gambaran solusi yang tepat, dan memberikan estimasi biaya awal. Tidak ada kewajiban untuk melanjutkan setelah konsultasi."
+      },
+      "q6": {
+        "question": "Apakah ada opsi pembayaran bertahap?",
+        "answer": "Ya, untuk proyek berskala besar, kami menyediakan opsi pembayaran bertahap yang disesuaikan dengan milestone proyek. Biasanya pembayaran dibagi menjadi 3-4 tahap sesuai dengan progres pekerjaan. Detail pembayaran akan tertuang dalam perjanjian kontrak."
+      },
+      "q7": {
+        "question": "Teknologi apa saja yang digunakan oleh Vistara?",
+        "answer": "Vistara menggunakan teknologi modern dan terkini termasuk React, Next.js, TypeScript, Node.js, Python, React Native, Flutter, serta infrastruktur cloud dari AWS, GCP, dan Azure. Kami memilih teknologi yang paling sesuai dengan kebutuhan proyek Anda untuk hasil optimal."
+      },
+      "q8": {
+        "question": "Bagaimana Vistara menjamin keamanan data klien?",
+        "answer": "Keamanan data adalah prioritas utama kami. Kami menerapkan standar keamanan tinggi termasuk enkripsi data end-to-end, autentikasi multi-faktor, audit keamanan berkala, penetration testing, serta kepatuhan terhadap standar ISO 27001 dan peraturan perlindungan data yang berlaku."
+      },
+      "q9": {
+        "question": "Apakah Vistara menyediakan layanan migrasi sistem?",
+        "answer": "Ya, kami menyediakan layanan migrasi sistem dari platform lama ke platform baru. Tim kami akan melakukan analisis menyeluruh terhadap sistem yang ada, merencanakan strategi migrasi yang minim risiko, dan memastikan transisi yang mulus tanpa gangguan operasional yang signifikan."
+      },
+      "q10": {
+        "question": "Bagaimana cara menghubungi dukungan teknis Vistara?",
+        "answer": "Anda dapat menghubungi dukungan teknis kami melalui email ke support@vistara.co.id, telepon ke +62 21 5555 0123, atau melalui portal ticketing yang tersedia untuk klien. Tim dukungan kami beroperasi pada hari kerja, Senin hingga Jumat, pukul 09.00 hingga 18.00 WIB."
+      },
+      "q11": {
+        "question": "Apakah Vistara menyediakan layanan pemeliharaan pasca-peluncuran?",
+        "answer": "Ya, kami menyediakan layanan pemeliharaan dan dukungan pasca-peluncuran yang mencakup pemantauan performa, perbaikan bug, pembaruan keamanan, serta pengembangan fitur baru. Kami menawarkan paket SLA (Service Level Agreement) dengan tingkat respons yang disesuaikan."
+      },
+      "q12": {
+        "question": "Berapa lama waktu respons untuk tiket dukungan?",
+        "answer": "Waktu respons kami bervariasi berdasarkan tingkat prioritas: Critical (1 jam), High (4 jam), Medium (1 hari kerja), dan Low (3 hari kerja). Klien dengan paket SLA premium mendapat prioritas respons yang lebih cepat dan akses langsung ke tim teknis senior."
+      }
+    },
     "noResults": "Tidak ditemukan pertanyaan yang sesuai dengan pencarian Anda. Coba kata kunci lain atau lihat semua kategori.",
-    "cta": { "label": "Masih Ada Pertanyaan?", "title": "Kami Siap Membantu", "description": "Jika Anda tidak menemukan jawaban atas pertanyaan Anda di atas, jangan ragu untuk menghubungi tim kami. Kami dengan senang hati akan menjawab setiap pertanyaan Anda.", "primaryAction": "Hubungi Kami", "secondaryAction": "Kembali ke Beranda" }
+    "cta": {
+      "label": "Masih Ada Pertanyaan?",
+      "title": "Kami Siap Membantu",
+      "description": "Jika Anda tidak menemukan jawaban atas pertanyaan Anda di atas, jangan ragu untuk menghubungi tim kami. Kami dengan senang hati akan menjawab setiap pertanyaan Anda.",
+      "primaryAction": "Hubungi Kami",
+      "secondaryAction": "Kembali ke Beranda"
+    }
   },
   "cookiesPage": {
-    "hero": { "titlePrefix": "Kebijakan", "alt": "Kebijakan Cookies", "eyebrow": "KEBIJAKAN COOKIES", "titleAccent": "Cookies", "description": "Kebijakan ini menjelaskan bagaimana PT. Vistara Teknologi Indonesia menggunakan cookies dan teknologi serupa saat Anda mengunjungi dan menggunakan situs web kami.", "visualTitle": "Privasi Anda,\nKomitmen Kami", "visualDescription": "Pengelolaan cookies yang transparan dan bertanggung jawab" },
-    "sidebar": { "title": "Daftar Isi", "questionTitle": "Pertanyaan?", "questionText": "Jika Anda memiliki pertanyaan tentang kebijakan cookies kami, jangan ragu untuk menghubungi kami.", "questionAction": "Hubungi Kami" },
+    "hero": {
+      "titlePrefix": "Kebijakan",
+      "alt": "Kebijakan Cookies",
+      "eyebrow": "KEBIJAKAN COOKIES",
+      "titleAccent": "Cookies",
+      "description": "Kebijakan ini menjelaskan bagaimana PT. Vistara Teknologi Indonesia menggunakan cookies dan teknologi serupa saat Anda mengunjungi dan menggunakan situs web kami.",
+      "visualTitle": "Privasi Anda,\nKomitmen Kami",
+      "visualDescription": "Pengelolaan cookies yang transparan dan bertanggung jawab"
+    },
+    "sidebar": {
+      "title": "Daftar Isi",
+      "questionTitle": "Pertanyaan?",
+      "questionText": "Jika Anda memiliki pertanyaan tentang kebijakan cookies kami, jangan ragu untuk menghubungi kami.",
+      "questionAction": "Hubungi Kami"
+    },
     "lastUpdated": "Terakhir diperbarui: 1 September 2026",
     "print": "Cetak",
-    "sections": { "whatIsCookies": "Apa itu Cookies", "cookieTypes": "Cookie yang Kami Gunakan", "whyWeUse": "Mengapa Kami Menggunakan Cookies", "managePreferences": "Mengelola Preferensi Cookies", "thirdParty": "Cookie Pihak Ketiga", "contactUs": "Hubungi Kami" },
-    "section1": { "p1": "Cookies adalah file teks kecil yang disimpan di perangkat Anda (komputer, tablet, atau ponsel) saat Anda mengunjungi situs web. Cookies umumnya digunakan agar situs web dapat mengenali perangkat pengguna dan mengingat informasi tertentu tentang kunjungan sebelumnya.", "p2": "Cookies membantu kami menyediakan pengalaman browsing yang lebih baik, memahami cara pengunjung berinteraksi dengan situs kami, dan meningkatkan kualitas layanan kami. Cookies yang kami gunakan tidak menyimpan informasi yang dapat diidentifikasi secara langsung." },
-    "section2": { "intro": "Kami menggunakan berbagai jenis cookies untuk berbagai tujuan. Berikut adalah kategori cookies yang kami gunakan:" },
-    "cookieTypes": { "essential": { "title": "Essensial", "description": "Cookie yang diperlukan agar situs web dapat berfungsi dengan baik. Cookie ini tidak dapat dinonaktifkan karena merupakan bagian dari cara kerja layanan kami." }, "functional": { "title": "Fungsional", "description": "Cookie yang memungkinkan situs web mengingat pilihan yang Anda buat, seperti bahasa, wilayah, atau pengaturan tampilan, untuk memberikan pengalaman yang lebih personal." }, "analytics": { "title": "Analitik", "description": "Cookie yang mengumpulkan informasi tentang cara pengunjung menggunakan situs web, seperti halaman yang paling sering dikunjungi dan waktu respons server, untuk membantu kami meningkatkan kinerja situs." }, "marketing": { "title": "Pemasaran", "description": "Cookie yang digunakan untuk melacak aktivitas pengunjung di berbagai situs web. Tujuannya adalah menampilkan iklan yang relevan dan menarik bagi pengguna individu." } },
-    "reasons": { "ensureFunction": "Memastikan situs web berfungsi dengan baik dan sesuai ekspektasi pengguna.", "rememberPreferences": "Mengingat preferensi dan pengaturan yang telah Anda pilih.", "analyzeTraffic": "Menganalisis lalu lintas dan pola penggunaan untuk meningkatkan kualitas layanan.", "relevantContent": "Menyediakan konten dan iklan yang relevan dengan minat Anda.", "security": "Melindungi keamanan akun dan mencegah penyalahgunaan." },
-    "section3": { "intro": "Kami menggunakan cookies untuk berbagai tujuan, antara lain:" },
-    "section4": { "p1": "Anda memiliki hak untuk mengontrol penggunaan cookies. Anda dapat mengatur preferensi cookies melalui pengaturan browser yang Anda gunakan. Sebagian besar browser memungkinkan Anda untuk memblokir atau menghapus cookies dari situs web tertentu atau semua situs web.", "p2": "Namun, perlu diingat bahwa menonaktifkan atau memblokir cookies tertentu dapat mempengaruhi fungsionalitas dan pengalaman Anda saat menggunakan situs web kami. Fitur-fitur tertentu mungkin tidak berfungsi dengan baik jika cookies dinonaktifkan." },
-    "section5": { "p1": "Situs web kami mungkin menggunakan cookie pihak ketiga yang disediakan oleh layanan analitik seperti Google Analytics. Cookie pihak ketiga ini membantu kami menganalisis lalu lintas web dan memahami cara pengunjung menggunakan situs kami.", "p2": "Informasi yang dikumpulkan oleh cookie pihak ketiga dikirim dan disimpan oleh penyedia layanan masing-masing sesuai dengan kebijakan privasi mereka. Kami menyarankan Anda untuk membaca kebijakan privasi dari penyedia layanan pihak ketiga tersebut untuk memahami bagaimana mereka mengelola data." },
-    "section6": { "intro": "Jika Anda memiliki pertanyaan, keluhan, atau permintaan terkait Kebijakan Cookies ini, silakan hubungi kami melalui saluran berikut:" },
-    "contact": { "email": "Email", "phone": "Telepon", "address": "Alamat" },
-    "bottomContact": { "label": "Hubungi Kami", "title": "Ada Pertanyaan?", "description": "Tim kami siap membantu Anda mengenai kebijakan cookies dan privasi data." }
+    "sections": {
+      "whatIsCookies": "Apa itu Cookies",
+      "cookieTypes": "Cookie yang Kami Gunakan",
+      "whyWeUse": "Mengapa Kami Menggunakan Cookies",
+      "managePreferences": "Mengelola Preferensi Cookies",
+      "thirdParty": "Cookie Pihak Ketiga",
+      "contactUs": "Hubungi Kami"
+    },
+    "section1": {
+      "p1": "Cookies adalah file teks kecil yang disimpan di perangkat Anda (komputer, tablet, atau ponsel) saat Anda mengunjungi situs web. Cookies umumnya digunakan agar situs web dapat mengenali perangkat pengguna dan mengingat informasi tertentu tentang kunjungan sebelumnya.",
+      "p2": "Cookies membantu kami menyediakan pengalaman browsing yang lebih baik, memahami cara pengunjung berinteraksi dengan situs kami, dan meningkatkan kualitas layanan kami. Cookies yang kami gunakan tidak menyimpan informasi yang dapat diidentifikasi secara langsung."
+    },
+    "section2": {
+      "intro": "Kami menggunakan berbagai jenis cookies untuk berbagai tujuan. Berikut adalah kategori cookies yang kami gunakan:"
+    },
+    "cookieTypes": {
+      "essential": {
+        "title": "Essensial",
+        "description": "Cookie yang diperlukan agar situs web dapat berfungsi dengan baik. Cookie ini tidak dapat dinonaktifkan karena merupakan bagian dari cara kerja layanan kami."
+      },
+      "functional": {
+        "title": "Fungsional",
+        "description": "Cookie yang memungkinkan situs web mengingat pilihan yang Anda buat, seperti bahasa, wilayah, atau pengaturan tampilan, untuk memberikan pengalaman yang lebih personal."
+      },
+      "analytics": {
+        "title": "Analitik",
+        "description": "Cookie yang mengumpulkan informasi tentang cara pengunjung menggunakan situs web, seperti halaman yang paling sering dikunjungi dan waktu respons server, untuk membantu kami meningkatkan kinerja situs."
+      },
+      "marketing": {
+        "title": "Pemasaran",
+        "description": "Cookie yang digunakan untuk melacak aktivitas pengunjung di berbagai situs web. Tujuannya adalah menampilkan iklan yang relevan dan menarik bagi pengguna individu."
+      }
+    },
+    "reasons": {
+      "ensureFunction": "Memastikan situs web berfungsi dengan baik dan sesuai ekspektasi pengguna.",
+      "rememberPreferences": "Mengingat preferensi dan pengaturan yang telah Anda pilih.",
+      "analyzeTraffic": "Menganalisis lalu lintas dan pola penggunaan untuk meningkatkan kualitas layanan.",
+      "relevantContent": "Menyediakan konten dan iklan yang relevan dengan minat Anda.",
+      "security": "Melindungi keamanan akun dan mencegah penyalahgunaan."
+    },
+    "section3": {
+      "intro": "Kami menggunakan cookies untuk berbagai tujuan, antara lain:"
+    },
+    "section4": {
+      "p1": "Anda memiliki hak untuk mengontrol penggunaan cookies. Anda dapat mengatur preferensi cookies melalui pengaturan browser yang Anda gunakan. Sebagian besar browser memungkinkan Anda untuk memblokir atau menghapus cookies dari situs web tertentu atau semua situs web.",
+      "p2": "Namun, perlu diingat bahwa menonaktifkan atau memblokir cookies tertentu dapat mempengaruhi fungsionalitas dan pengalaman Anda saat menggunakan situs web kami. Fitur-fitur tertentu mungkin tidak berfungsi dengan baik jika cookies dinonaktifkan."
+    },
+    "section5": {
+      "p1": "Situs web kami mungkin menggunakan cookie pihak ketiga yang disediakan oleh layanan analitik seperti Google Analytics. Cookie pihak ketiga ini membantu kami menganalisis lalu lintas web dan memahami cara pengunjung menggunakan situs kami.",
+      "p2": "Informasi yang dikumpulkan oleh cookie pihak ketiga dikirim dan disimpan oleh penyedia layanan masing-masing sesuai dengan kebijakan privasi mereka. Kami menyarankan Anda untuk membaca kebijakan privasi dari penyedia layanan pihak ketiga tersebut untuk memahami bagaimana mereka mengelola data."
+    },
+    "section6": {
+      "intro": "Jika Anda memiliki pertanyaan, keluhan, atau permintaan terkait Kebijakan Cookies ini, silakan hubungi kami melalui saluran berikut:"
+    },
+    "contact": {
+      "email": "Email",
+      "phone": "Telepon",
+      "address": "Alamat"
+    },
+    "bottomContact": {
+      "label": "Hubungi Kami",
+      "title": "Ada Pertanyaan?",
+      "description": "Tim kami siap membantu Anda mengenai kebijakan cookies dan privasi data."
+    }
   },
   "admin": {
     "audit": {

@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "@ant-design/icons": "^6.3.2",
+    "@emailjs/browser": "^4.4.1",
     "antd": "^6.6.0",
     "antd-style": "^4.1.0",
     "classnames": "^2.5.1",

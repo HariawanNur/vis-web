@@ -83,13 +83,13 @@ export const marketingSiteData: MarketingSiteData = {
   },
   about: {
     stats: [
-      { id: "founded", value: "2022", labelKey: "marketing.home.about.stats.projects" },
+      { id: "founded", value: "2023", labelKey: "marketing.home.about.stats.projects" },
       { id: "team", value: "30+", labelKey: "marketing.home.about.stats.clients" },
       { id: "cities", value: "25+", labelKey: "marketing.home.about.stats.industries" },
       { id: "customers", value: "500+", labelKey: "marketing.home.about.stats.satisfaction" },
     ],
     values: [
-      { id: "salon-first", icon: "ShieldOutlined", titleKey: "marketing.about.values.salonFirst.title", descriptionKey: "marketing.about.values.salonFirst.description" },
+      { id: "salon-first", icon: "LockOutlined", titleKey: "marketing.about.values.salonFirst.title", descriptionKey: "marketing.about.values.salonFirst.description" },
       { id: "simple", icon: "BulbOutlined", titleKey: "marketing.about.values.simple.title", descriptionKey: "marketing.about.values.simple.description" },
       { id: "reliable", icon: "SafetyCertificateOutlined", titleKey: "marketing.about.values.reliable.title", descriptionKey: "marketing.about.values.reliable.description" },
       { id: "grow-together", icon: "TeamOutlined", titleKey: "marketing.about.values.grow.title", descriptionKey: "marketing.about.values.grow.description" },
@@ -107,10 +107,13 @@ export const marketingSiteData: MarketingSiteData = {
       { id: "address", icon: "EnvironmentOutlined", labelKey: "form.address", value: "Jalan Bhakti Abri RT/RW: 003/008, Kel. Sukamaju Baru, Kec. Tapos, Kota/Kab. Depok, Provinsi Jawa Barat, Indonesia." },
     ],
     businessTypeOptions: [
-      { id: "salon", labelKey: "form.options.business.salon" },
-      { id: "barbershop", labelKey: "form.options.business.barbershop" },
-      { id: "spa", labelKey: "form.options.business.spa" },
-      { id: "clinic", labelKey: "form.options.business.clinic" },
+      { id: "technology", labelKey: "form.options.business.technology" },
+      { id: "finance", labelKey: "form.options.business.finance" },
+      { id: "retail", labelKey: "form.options.business.retail" },
+      { id: "manufacturing", labelKey: "form.options.business.manufacturing" },
+      { id: "healthcare", labelKey: "form.options.business.healthcare" },
+      { id: "education", labelKey: "form.options.business.education" },
+      { id: "government", labelKey: "form.options.business.government" },
       { id: "other", labelKey: "form.options.business.other" },
     ],
     teamSizeOptions: [
