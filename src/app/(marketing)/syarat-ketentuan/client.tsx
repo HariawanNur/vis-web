@@ -62,7 +62,7 @@ const contactCards = [
   {
     icon: "MailOutlined",
     title: "Email",
-    value: "vistarateknologiindonesia@gmail.com",
+    value: "info@vistaratech.co.id",
     subtitle: "Kami akan membalas dalam 1×24 jam",
   },
   {

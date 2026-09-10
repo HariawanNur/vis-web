@@ -66,8 +66,8 @@ const contactInfoItems = [
   {
     icon: "MailOutlined",
     label: "Email",
-    value: "vistarateknologiindonesia@gmail.com",
-    href: "mailto:vistarateknologiindonesia@gmail.com",
+    value: "info@vistaratech.co.id",
+    href: "mailto:info@vistaratech.co.id",
     subtext: "Kami akan membalas dalam 1×24 jam",
   },
   {

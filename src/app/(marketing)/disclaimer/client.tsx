@@ -28,8 +28,8 @@ const contactCards: { icon: IconName; label: string; value: string; href?: strin
   {
     icon: "MailOutlined",
     label: "Email",
-    value: "vistarateknologiindonesia@gmail.com",
-    href: "mailto:vistarateknologiindonesia@gmail.com",
+    value: "info@vistaratech.co.id",
+    href: "mailto:info@vistaratech.co.id",
   },
   {
     icon: "PhoneOutlined",
